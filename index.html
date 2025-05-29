@@ -34,16 +34,6 @@
       text-decoration: none;
       font-weight: bold;
     }
-    .language-switch {
-      position: absolute;
-      right: 1rem;
-      top: 1rem;
-    }
-    .language-switch img {
-      height: 24px;
-      cursor: pointer;
-      margin-left: 10px;
-    }
     .hero {
       position: relative;
       background-image: url('assets/images/bg-greece.jpg');
@@ -118,31 +108,13 @@
       background-color: #003366;
       color: white;
     }
-    .hidden { display: none; }
   </style>
-  <script>
-    function switchLanguage(lang) {
-      document.querySelectorAll('[lang]').forEach(el => {
-        el.classList.add('hidden');
-      });
-      document.querySelectorAll('[lang="' + lang + '"]').forEach(el => {
-        el.classList.remove('hidden');
-      });
-    }
-  </script>
 </head>
-<body onload="switchLanguage('bg')">
-  <div class="language-switch">
-    <img src="assets/images/bg-flag.png" alt="BG" onclick="switchLanguage('bg')" />
-    <img src="assets/images/gr-flag.png" alt="GR" onclick="switchLanguage('gr')" />
-  </div>
-
+<body>
   <header>
     <img src="assets/images/logo.png" alt="Plamen Mollov Logo" />
-    <h1 lang="bg">Пламен Асенов Моллов</h1>
-    <h1 class="hidden" lang="gr">Πλάμεν Ασένοφ Μόλλοβ</h1>
-    <p lang="bg">Заклет преводач от и на гръцки език с над 17 години опит и истинска любов към езика</p>
-    <p class="hidden" lang="gr">Επίσημος μεταφραστής από και προς τα ελληνικά με πάνω από 17 χρόνια εμπειρίας και αγάπη για τη γλώσσα</p>
+    <h1>Пламен Асенов Моллов</h1>
+    <p>Заклет преводач от и на гръцки език с над 17 години опит и истинска любов към езика</p>
   </header>
 
   <nav>
@@ -153,69 +125,57 @@
   </nav>
 
   <div class="hero">
-    <h1 lang="bg">Добре дошли в света на езика, който обединява култури</h1>
-    <h1 class="hidden" lang="gr">Καλώς ήρθατε στον κόσμο της γλώσσας που ενώνει πολιτισμούς</h1>
-    <p lang="bg">🇧🇬 България и Гърция 🇬🇷 – две нации, един езиков мост, една страст</p>
-    <p class="hidden" lang="gr">🇧🇬 Βουλγαρία και Ελλάδα 🇬🇷 – δύο έθνη, μία γλωσσική γέφυρα, ένα πάθος</p>
+    <h1>Добре дошли в света на езика, който обединява култури</h1>
+    <p>🇧🇬 България и Гърция 🇬🇷 – две нации, един езиков мост, една страст</p>
   </div>
 
   <section id="about">
-    <h2 class="section-title" lang="bg">За мен</h2>
-    <h2 class="section-title hidden" lang="gr">Σχετικά με εμένα</h2>
-    <p lang="bg">Казвам се Пламен Асенов Моллов и съм заклет преводач от и на гръцки език с над 17 години опит... (тук следва пълен превод)</p>
-    <p class="hidden" lang="gr">Το όνομά μου είναι Πλάμεν Ασένοφ Μόλλοβ και είμαι επίσημος μεταφραστής... (πλήρης μετάφραση)</p>
+    <h2 class="section-title">За мен / Σχετικά με εμένα</h2>
+    <p style="text-align: justify;">
+      Казвам се Пламен Асенов Моллов и съм заклет преводач от и на гръцки език с над 17 години опит. Завършил съм специалност "Български език и новогръцки език" в ПУ „Паисий Хилендарски“ – гр. Пловдив. Участвах в престижни програми като <strong>Сократ – Еразъм</strong> в Солунския университет „Аристотел“, където усъвършенствах знанията си по гръцки език и култура. Моята мисия е да създавам мостове между хората чрез езика, с уважение, точност и вдъхновение.
+    </p>
+    <p style="text-align: justify;">
+      Το όνομά μου είναι Πλάμεν Ασένοφ Μόλλοβ και είμαι επίσημος μεταφραστής από και προς την ελληνική γλώσσα με εμπειρία άνω των 17 ετών. Σπούδασα Βουλγαρική και Νεοελληνική φιλολογία στο Πανεπιστήμιο της Φιλιππούπολης και συμμετείχα στο πρόγραμμα <strong>Socrates – Erasmus</strong> στο Αριστοτέλειο Πανεπιστήμιο Θεσσαλονίκης. Η αποστολή μου είναι να φέρνω κοντά τους πολιτισμούς μέσω της γλώσσας.
+    </p>
   </section>
 
   <section id="services">
-    <h2 class="section-title" lang="bg">Услуги</h2>
-    <h2 class="section-title hidden" lang="gr">Υπηρεσίες</h2>
-    <ul lang="bg">
+    <h2 class="section-title">Услуги / Υπηρεσίες</h2>
+    <ul>
       <li>✍️ Писмени преводи на документи, литературни и специализирани текстове</li>
       <li>🎙️ Устни преводи при събития, срещи, обучения</li>
       <li>📜 Легализирани преводи за държавни и частни институции</li>
     </ul>
-    <ul class="hidden" lang="gr">
-      <li>✍️ Γραπτές μεταφράσεις εγγράφων, λογοτεχνικών και εξειδικευμένων κειμένων</li>
-      <li>🎙️ Διερμηνεία σε εκδηλώσεις, συναντήσεις, σεμινάρια</li>
-      <li>📜 Επικυρωμένες μεταφράσεις για κρατικούς και ιδιωτικούς φορείς</li>
-    </ul>
+    <p><em>Μεταφράσεις που εμπνέουν εμπιστοσύνη, ακρίβεια και σεβασμό στον λόγο.</em></p>
   </section>
 
   <section id="testimonials">
-    <h2 class="section-title" lang="bg">Мнения на клиенти</h2>
-    <h2 class="section-title hidden" lang="gr">Μαρτυρίες Πελατών</h2>
-    <div class="testimonial" lang="bg">“Преводите са винаги точни и навременни.” <strong>Иван Георгиев</strong></div>
-    <div class="testimonial" lang="bg">“Най-добрият преводач, с когото съм работила!” <strong>Елена Тодорова</strong></div>
-    <div class="testimonial" lang="bg">“Отзивчив и коректен професионалист.” <strong>Александър Петров</strong></div>
-    <div class="testimonial" lang="bg">“Преводите са с високо качество.” <strong>Миглена Христова</strong></div>
-    <div class="testimonial" lang="bg">“Препоръчвам горещо!” <strong>Стоянка Илиева</strong></div>
-
-    <div class="testimonial hidden" lang="gr">“Άψογη εξυπηρέτηση και ακρίβεια στη μετάφραση.” <strong>Μαρία Παπαδοπούλου</strong></div>
-    <div class="testimonial hidden" lang="gr">“Εξαιρετικός μεταφραστής!” <strong>Γιώργος Νικολάου</strong></div>
-    <div class="testimonial hidden" lang="gr">“Πάντα στην ώρα του και επαγγελματίας.” <strong>Ελένη Κωνσταντίνου</strong></div>
-    <div class="testimonial hidden" lang="gr">“Με βοήθησε να επικοινωνήσω σωστά με Βούλγαρους συνεργάτες.” <strong>Αναστασία Δημητρίου</strong></div>
-    <div class="testimonial hidden" lang="gr">“Πολύ ευγενικός και συνεργάσιμος.” <strong>Κώστας Λεοντίου</strong></div>
-    <div class="testimonial hidden" lang="gr">“Άριστη γνώση και των δύο γλωσσών.” <strong>Κατερίνα Σπυροπούλου</strong></div>
-    <div class="testimonial hidden" lang="gr">“Επαγγελματισμός και σεβασμός.” <strong>Νίκος Ζαχαριάδης</strong></div>
+    <h2 class="section-title">Мнения на клиенти</h2>
+    <div class="testimonial">
+      “Изключително професионален подход и невероятно качество на преводите. Препоръчвам с две ръце!”
+      <strong>Мария Димитрова</strong>
+    </div>
+    <div class="testimonial">
+      “Благодарение на Пламен, успях да сключа важен договор в Гърция. Истински мост между културите.”
+      <strong>Дияна Иванова</strong>
+    </div>
   </section>
 
   <section id="contact">
-    <h2 class="section-title" lang="bg">Контакт</h2>
-    <h2 class="section-title hidden" lang="gr">Επικοινωνία</h2>
+    <h2 class="section-title">Контакт / Επικοινωνία</h2>
+    <p>📧 Email: <a href="mailto:mollovplamen@gmail.com">mollovplamen@gmail.com</a></p>
     <form action="mailto:mollovplamen@gmail.com" method="POST" enctype="text/plain">
-      <label lang="bg">Име:<br /><input type="text" name="name" required /></label>
-      <label class="hidden" lang="gr">Όνομα:<br /><input type="text" name="name" required /></label>
-      <label>Email:<br /><input type="email" name="email" required /></label>
-      <label lang="bg">Съобщение:<br /><textarea name="message" rows="5" required></textarea></label>
-      <label class="hidden" lang="gr">Μήνυμα:<br /><textarea name="message" rows="5" required></textarea></label>
-      <button type="submit" lang="bg">Изпрати</button>
-      <button type="submit" class="hidden" lang="gr">Αποστολή</button>
+      <label>Име / Όνομα:<br /><input type="text" name="name" required /></label><br />
+      <label>Email:<br /><input type="email" name="email" required /></label><br />
+      <label>Съобщение / Μήνυμα:<br /><textarea name="message" rows="5" required></textarea></label><br />
+      <label>Прикачи файл:<br /><input type="file" name="file" /></label><br />
+      <button type="submit">Изпрати / Αποστολή</button>
     </form>
   </section>
 
   <footer>
-    <p lang="bg">&copy; 2025 Пламен Моллов – Преводи с любов към гръцкия език</p>
-    <p class="hidden" lang="gr">&copy; 2025 Πλάμεν Μόλλοβ – Μεταφράσεις με αγάπη για την ελληνική γλώσσα</p>
+    <p>&copy; 2025 Пламен Моллов – Преводи с любов към гръцкия език</p>
+    <p>🇧🇬 България | Γραικία 🇬🇷</p>
   </footer>
 </body>
 </html>
