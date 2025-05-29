@@ -1,129 +1,130 @@
-
 <!DOCTYPE html>
 <html lang="bg">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prevodigr.com – Пламен Асенов Моллов</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plamen Mollov – Преводи от и на гръцки език</title>
+  <link rel="stylesheet" href="styles.css" />
   <style>
     body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      font-family: 'Roboto', sans-serif;
-      background-color: #f9f9f9;
+      padding: 0;
+      background: linear-gradient(to bottom, #f0f0f0, #e6f2ff);
       color: #333;
     }
     header {
-      background-color: #002244;
+      background-color: #003366;
       color: white;
-      padding: 1em;
+      padding: 1rem;
       text-align: center;
     }
     header img {
-      max-height: 80px;
+      height: 180px;
     }
     nav {
-      background: #003366;
-      color: white;
       display: flex;
       justify-content: center;
-      gap: 1em;
-      padding: 0.8em 0;
+      gap: 1rem;
+      background-color: #0055a5;
+      padding: 0.5rem;
     }
     nav a {
       color: white;
       text-decoration: none;
       font-weight: bold;
     }
-    section {
-      padding: 2em;
-      max-width: 960px;
-      margin: auto;
-    }
-    .services {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1em;
-    }
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 1em;
-    }
-    input, textarea {
-      padding: 0.7em;
-      font-size: 1em;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-    input[type="submit"] {
-      background-color: #002244;
+    .hero {
+      background-image: url('assets/images/bg-greek-bulgarian.jpg');
+      background-size: cover;
+      background-position: center;
       color: white;
-      border: none;
-      cursor: pointer;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+    }
+    section {
+      padding: 2rem;
+      background-color: white;
+      margin: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #003366;
+    }
+    ul li {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
     }
     footer {
-      background-color: #002244;
-      color: white;
       text-align: center;
-      padding: 1em;
-    }
-    @media (max-width: 600px) {
-      .services {
-        grid-template-columns: 1fr;
-      }
+      padding: 1rem;
+      background-color: #003366;
+      color: white;
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="logo.png" alt="Prevodigr Logo">
+    <img src="assets/images/logo.png" alt="Plamen Mollov Logo" />
     <h1>Пламен Асенов Моллов</h1>
-    <p>Заклет преводач от и на гръцки език</p>
+    <p>Заклет преводач от и на гръцки език с 17 години опит</p>
   </header>
+
   <nav>
     <a href="#about">За мен</a>
     <a href="#services">Услуги</a>
     <a href="#prices">Цени</a>
-    <a href="#reviews">Мнения</a>
     <a href="#contact">Контакт</a>
   </nav>
+
+  <div class="hero">
+    <h1>Добре дошли в света на професионалните преводи</h1>
+    <p>🇧🇬 Гърция и България 🇬🇷 – две култури, един езиков мост</p>
+  </div>
+
   <section id="about">
-    <h2>За мен</h2>
-    <p>Аз съм Пламен Асенов Моллов – заклет преводач от и на гръцки език с над 17 години опит в областта на устните и писмените преводи. Завършил съм специалност „Български език и новогръцки език“ в Пловдивския университет „Паисий Хилендарски“. Професионалният ми път включва участия в международните програми „Сократ“ и „Еразъм“ в Аристотеловия университет в Солун. Занимавам се с преводи на официални документи, специализирани текстове и художествени произведения. Предлагам прецизни, стилово издържани и грамотни преводи, изцяло съобразени с нуждите на клиента.</p>
+    <h2 class="section-title">За мен</h2>
+    <p>Казвам се Пламен Асенов Моллов и съм заклет преводач от и на гръцки език с 17 години опит. Завършил съм специалност Български език и новогръцки език в ПУ „Паисий Хилендарски“ – гр. Пловдив. Участвал съм в програми Сократ и Еразъм в Солунския университет „Аристотел“.</p>
+    <p>Занимавам се с преводи на официални документи, специализирани текстове, художествена литература и устни преводи. Моята мисия е да свързвам култури чрез езика.</p>
   </section>
+
   <section id="services">
-    <h2>Услуги</h2>
-    <div class="services">
-      <div><strong>Официални документи</strong><br>Актове за раждане, дипломи, нотариални пълномощни и др.</div>
-      <div><strong>Специализирани преводи</strong><br>Право, медицина, техника, финанси</div>
-      <div><strong>Художествени текстове</strong><br>Превод с езиков финес и културна чувствителност</div>
-      <div><strong>Устни преводи</strong><br>Конферентен, придружителен и др.</div>
-    </div>
+    <h2 class="section-title">Услуги</h2>
+    <ul>
+      <li>✍️ Писмени преводи</li>
+      <li>🎙️ Устни преводи</li>
+      <li>📜 Официални документи</li>
+      <li>📘 Художествени и специализирани текстове</li>
+    </ul>
   </section>
+
   <section id="prices">
-    <h2>Цени</h2>
-    <p><em>Цените се договарят индивидуално според сложността, обема и сроковете.</em></p>
+    <h2 class="section-title">Цени</h2>
+    <p>Всички цени са <strong>по договаряне</strong>, в зависимост от вида и сложността на текста. За конкретна оферта, моля свържете се с мен чрез формата за контакт.</p>
   </section>
-  <section id="reviews">
-    <h2>Мнения на клиенти</h2>
-    <p>„Изключителен професионализъм и бързина. Препоръчвам с две ръце!“ – Клиент А</p>
-    <p>„Преводите на г-н Моллов са прецизни и винаги навреме.“ – Клиент Б</p>
-  </section>
+
   <section id="contact">
-    <h2>Контакт</h2>
-    <form action="mailto:mollovplamen@gmail.com" method="post" enctype="text/plain">
-      <input type="text" name="name" placeholder="Вашето име" required>
-      <input type="email" name="email" placeholder="Вашият email" required>
-      <textarea name="message" rows="5" placeholder="Вашето съобщение" required></textarea>
-      <label>Прикачете документ:
-        <input type="file" name="attachment">
-      </label>
-      <input type="submit" value="Изпрати">
+    <h2 class="section-title">Контакт</h2>
+    <p>📧 Email: <a href="mailto:mollovplamen@gmail.com">mollovplamen@gmail.com</a></p>
+    <form action="mailto:mollovplamen@gmail.com" method="POST" enctype="text/plain">
+      <label>Име:<br /><input type="text" name="name" required /></label><br /><br />
+      <label>Email:<br /><input type="email" name="email" required /></label><br /><br />
+      <label>Съобщение:<br /><textarea name="message" rows="5" required></textarea></label><br /><br />
+      <label>Прикачи файл:<br /><input type="file" name="file" /></label><br /><br />
+      <button type="submit">Изпрати</button>
     </form>
   </section>
+
   <footer>
-    &copy; 2025 Пламен Моллов | Преводач от и на гръцки език | Email: mollovplamen@gmail.com
+    <p>&copy; 2025 Пламен Моллов – Преводи от и на гръцки език</p>
+    <p>🇧🇬 България | Гърция 🇬🇷</p>
   </footer>
 </body>
 </html>
