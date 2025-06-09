@@ -109,6 +109,53 @@
       color: white;
     }
   </style>
+<style>
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  .menu-toggle span {
+    height: 4px;
+    background: white;
+    margin: 5px 0;
+    width: 25px;
+    border-radius: 2px;
+  }
+  @media (max-width: 768px) {
+    nav {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background-color: #0055a5;
+    }
+    .nav-links a {
+      padding: 1rem;
+      border-top: 1px solid rgba(255,255,255,0.2);
+    }
+    .menu-toggle {
+      display: flex;
+      margin-left: 1rem;
+    }
+    nav.active .nav-links {
+      display: flex;
+    }
+  }
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const nav = document.querySelector("nav");
+    const toggle = document.querySelector(".menu-toggle");
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("active");
+    });
+  });
+</script>
+
 </head>
 <body>
   <header>
@@ -118,12 +165,20 @@
   </header>
 
   <nav>
+  <div class="menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <div class="nav-links">
     <a href="#about">За мен</a>
     <a href="#services">Услуги</a>
+    <a href="#prices">Цени</a>
     <a href="#real-estate">Недвижими имоти в Гърция</a>
     <a href="#testimonials">Мнения</a>
     <a href="#contact">Контакт</a>
-  </nav>
+    </div>
+</nav>
 
   <div class="hero">
     <h1><strong>Добре дошли в света на езика, който обединява култури</strong></h1>
