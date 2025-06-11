@@ -45,7 +45,17 @@
 
 
     .hero {
-  height: 100vh;
+  height: 180px;
+  padding: 1.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-image: url('assets/images/bg-greece.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: scroll;
 
       position: relative;
       background-image: url('assets/images/bg-greece.jpg');
@@ -113,7 +123,14 @@
       background-color: #003366;
       color: white;
     }
-  </style>
+  
+@media (max-width: 600px) {
+  .hero {
+    height: 140px;
+    padding: 1rem;
+  }
+}
+</style>
 <style>
   .menu-toggle {
     display: none;
@@ -150,6 +167,13 @@
       display: flex;
     }
   }
+
+@media (max-width: 600px) {
+  .hero {
+    height: 140px;
+    padding: 1rem;
+  }
+}
 </style>
 <script>
   document.addEventListener("DOMContentLoaded", function() {
@@ -161,6 +185,7 @@
   });
 </script>
 
+  <link rel="preload" href="assets/images/bg-greece.jpg" as="image" />
 </head>
 <body>
   <header>
