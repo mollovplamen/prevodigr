@@ -45,6 +45,13 @@
 
 
     .hero {
+  height: 350px;
+  padding: 3rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
       position: relative;
       background-image: url('assets/images/bg-greece.jpg');
       background-size: cover;
@@ -53,14 +60,7 @@
       padding: 5rem 2rem;
       text-align: center;
     }
-    .hero::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 0;
-    }
+    
     .hero h1, .hero p {
       position: relative;
       z-index: 1;
@@ -190,12 +190,7 @@
     </div>
 </nav>
 
-  <div class="hero">
-    <h1><strong>Добре дошли в света на езика, който обединява култури</strong></h1>
-    <h1><strong>Καλώς ήρθατε στον κόσμο της γλώσσας που ενώνει πολιτισμούς</strong></h1>
-    <p><em>България и Гърция – две нации, един езиков мост, една страст!</p></em></p>
-    <p><em>Βουλγαρία και Ελλάδα – δύο έθνη, μία γλωσσική γέφυρα, ένα πάθος!</p></em></p>
-  </div>
+  <div class="hero"></div>
 
   <section id="about">
     <h2 class="section-title">За мен / Σχετικά με εμένα</h2>
