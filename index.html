@@ -320,10 +320,14 @@
 <div style="margin-top: 2rem; border-top: 2px solid #ccc; padding-top: 2rem;">
 <h3>Попълни формата и поискай своята оферта още днес!<br/>Συμπλήρωσε τη φόρμα και ζήτησε την προσφορά σου σήμερα!</h3>
 <form action="https://formsubmit.co/mollovplamen@gmail.com" enctype="multipart/form-data" method="POST">
-<input name="Име и фамилия" placeholder="Име и фамилия / Ονοματεπώνυμο" required="" type="text"/>
-<input name="Имейл" placeholder="Имейл адрес / Email" required="" type="email"/>
-<input name="Телефон" placeholder="Телефон / Τηλέφωνο" required="" type="tel"/>
-<textarea name="Описание" placeholder="Кратко описание... / Περιγραφή..." required="" rows="4"></textarea>
+<label for="ime">Име и фамилия / Ονοματεπώνυμο</label>
+<input id="ime" name="Име и фамилия" placeholder="Име и фамилия / Ονοματεπώνυμο" required="" type="text"/>
+<label for="email">Имейл адрес / Email</label>
+<input id="email" name="Имейл" placeholder="Имейл адрес / Email" required="" type="email"/>
+<label for="phone">Телефон / Τηλέφωνο</label>
+<input id="phone" name="Телефон" placeholder="Телефон / Τηλέφωνο" required="" type="tel"/>
+<label for="opisanie">Описание / Περιγραφή</label>
+<textarea id="opisanie" name="Описание" placeholder="Кратко описание... / Περιγραφή..." required="" rows="4"></textarea>
 <input name="attachment" required="" type="file"/>
 <button type="submit">Изпрати / Αποστολή</button>
 <input name="_captcha" type="hidden" value="false"/>
