@@ -20,6 +20,10 @@
   line-height: 1.4;
 }
 .gdpr-label input[type="checkbox"] {
+  margin: 0 0.4rem 0 0;
+  transform: scale(1.1);
+}
+.gdpr-label input[type="checkbox"] {
   margin: 0;
   transform: scale(1.1);
 }
@@ -128,13 +132,35 @@ body {
       border-radius: 6px;
     }
     button {
-      background-color: #003366;
-      color: white;
-      padding: 0.8rem 1.2rem;
-      border: none;
-      border-radius: 6px;
-      font-size: 1rem;
-    }
+  background-color: #003366;
+  color: white;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+  position: relative;
+}
+button:hover {
+  background-color: #0055a5;
+}
+button:active {
+  transform: scale(0.96);
+}
+button:hover::after {
+  content: " 👋";
+  position: absolute;
+  right: -2rem;
+  animation: wave 1s infinite;
+}
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(20deg); }
+  50% { transform: rotate(-10deg); }
+  75% { transform: rotate(10deg); }
+  100% { transform: rotate(0deg); }
+}
     footer {
       text-align: center;
       padding: 1rem;
@@ -364,7 +390,7 @@ body {
 
 <label class="gdpr-label">
   <input type="checkbox" name="gdpr" required>
-  Съгласен/на съм с / Συμφωνώ με την <a href="privacy.html" target="_blank">Политиката за поверителност / Πολιτική απορρήτου</a>
+  Съгласен/на съм / Συμφωνώ με την <a href="privacy.html" target="_blank">Политиката за поверителност / Πολιτική απορρήτου</a>
 </label>
 <button type="submit">Изпрати / Αποστολή</button>
 <input name="_captcha" type="hidden" value="false"/>
@@ -393,7 +419,7 @@ body {
 
 <label class="gdpr-label">
   <input type="checkbox" name="gdpr" required>
-  Съгласен/на съм с / Συμφωνώ με την <a href="privacy.html" target="_blank">Политиката за поверителност / Πολιτική απορρήτου</a>
+  Съгласен/на съм / Συμφωνώ με την <a href="privacy.html" target="_blank">Политиката за поверителност / Πολιτική απορρήτου</a>
 </label>
 <button type="submit">Изпрати / Αποστολή</button>
 <input name="_subject" type="hidden" value="Ново клиентско мнение / Νέα αξιολόγηση πελάτη"/>
