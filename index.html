@@ -35,12 +35,7 @@ body {
       background: linear-gradient(to bottom, #fff, #f0f8ff);
       color: #333;
     }
-    header {
-      background-color: #002b5c;
-      color: white;
-      padding: 1rem;
-      text-align: center;
-    }
+    
     header img {
       height: 160px;
     }
@@ -183,6 +178,85 @@ button:hover::after {
   100% { transform: translateY(-10px); opacity: 0; }
 }
 
+
+
+  10% {
+    opacity: 1;
+  }
+  50% {
+    top: 60%;
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .welcome-text {
+    font-size: 1.5rem;
+  }
+}
+
+
+header {
+  background-color: #002b5c;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.welcome-text {
+  position: absolute;
+  font-family: 'Parisienne', cursive;
+  font-size: 2.2rem;
+  white-space: nowrap;
+  color: white;
+  z-index: 10;
+  animation: scrollVertical 10s linear infinite;
+}
+
+.welcome-left {
+  left: 10px;
+}
+
+.welcome-right {
+  right: 10px;
+}
+
+@keyframes scrollVertical {
+  0% {
+    top: -60px;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    top: 60%;
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    top: 95%;
+    opacity: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .welcome-text {
+    font-size: 1.5rem;
+  }
+}
+
 </style>
 <style>
   .menu-toggle {
@@ -269,27 +343,7 @@ button:hover::after {
   }
 }
 </script><style>
-.welcome-text {
-  position: absolute;
-  top: 20px;
-  color: white;
-  font-family: 'Parisienne', cursive;
-  font-size: 2.2rem;
-  animation: fadeInOut 6s infinite ease-in-out;
-  z-index: 10;
-  white-space: nowrap;
-}
 
-.welcome-left {
-  left: 10px;
-}
-
-.welcome-right {
-  right: 10px;
-}
-
-@keyframes fadeInOut {
-  0%, 100% { opacity: 0; transform: translateY(-10px); }
   50% { opacity: 1; transform: translateY(0); }
 }
 
