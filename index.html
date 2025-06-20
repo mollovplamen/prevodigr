@@ -6,7 +6,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Plamen Mollov – Преводи от и на гръцки език</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&amp;display=swap" rel="stylesheet"/>
 <style>
     
 /* GDPR checkbox styling */
@@ -268,9 +268,40 @@ button:hover::after {
     "availableLanguage": ["Bulgarian", "Greek"]
   }
 }
-</script></head>
+</script><style>
+.welcome-text {
+  position: absolute;
+  top: 20px;
+  color: white;
+  font-family: 'Parisienne', cursive;
+  font-size: 2.2rem;
+  animation: fadeInOut 6s infinite ease-in-out;
+  z-index: 10;
+  white-space: nowrap;
+}
+
+.welcome-left {
+  left: 10px;
+}
+
+.welcome-right {
+  right: 10px;
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0; transform: translateY(-10px); }
+  50% { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .welcome-text {
+    font-size: 1.5rem;
+    top: 10px;
+  }
+}
+</style><link href="https://fonts.googleapis.com/css2?family=Parisienne&amp;display=swap" rel="stylesheet"/></head>
 <body>
-<header>
+<header><span class="welcome-text welcome-right">Καλώς ήρθατε</span><span class="welcome-text welcome-left">Добре дошли</span>
 <img alt="Plamen Mollov Logo" src="assets/images/logo.png"/>
 <h1>Пламен Асенов Моллов</h1>
 <h2><strong>Заклет преводач от и на гръцки език с над 17 години опит и истинска любов към езика</strong></h2>
@@ -367,7 +398,7 @@ button:hover::after {
 </ul>
 <p><strong>📩 Свържете се с мен, за да уговорим индивидуална среща или консултация.<br/>
   📩 Επικοινωνήστε μαζί μου για προσωπικό ραντεβού ή συμβουλή.</strong></p>
-<p><strong><a href="https://www.dimokritosrealestate.gr/" target="_blank" rel="noopener noreferrer">Актуални оферти за недвижими имоти в Гърция / Τρέχουσες προσφορές ακινήτων στην Ελλάδα</a></strong></p></strong></p>
+<p><strong><a href="https://www.dimokritosrealestate.gr/" rel="noopener noreferrer" target="_blank">Актуални оферти за недвижими имоти в Гърция / Τρέχουσες προσφορές ακινήτων στην Ελλάδα</a></strong></p>
 </section>
 <section id="prices">
 <h2 class="section-title">Цени / Τιμές</h2>
@@ -382,14 +413,9 @@ button:hover::after {
 <input name="Телефон" placeholder="Телефон / Τηλέφωνο" required="" type="tel"/>
 <textarea name="Описание" placeholder="Кратко описание... / Περιγραφή..." required="" rows="4"></textarea>
 <label for="attachment"><strong>📎 Прикачен файл / Επισύναψη αρχείου:</strong></label>
-<input id="attachment" name="attachment" required type="file">
-
-
-
-
-
+<input id="attachment" name="attachment" required="" type="file"/>
 <label class="gdpr-label">
-  <input type="checkbox" name="gdpr" required>
+<input name="gdpr" required="" type="checkbox"/>
   Съгласен/на съм / Συμφωνώ με την <a href="privacy.html" target="_blank">Политиката за поверителност / Πολιτική απορρήτου</a>
 </label>
 <button type="submit">Изпрати / Αποστολή</button>
@@ -416,9 +442,8 @@ button:hover::after {
 <form action="https://formsubmit.co/mollovplamen@gmail.com" method="POST">
 <input name="Име/Όνομα" placeholder="Вашето име / Το όνομα σας" required="" type="text"/>
 <textarea name="Мнение/Αξιολόγηση" placeholder="Вашето мнение / Η αξιολόγηση σας" required="" rows="4"></textarea>
-
 <label class="gdpr-label">
-  <input type="checkbox" name="gdpr" required>
+<input name="gdpr" required="" type="checkbox"/>
   Съгласен/на съм / Συμφωνώ με την <a href="privacy.html" target="_blank">Политиката за поверителност / Πολιτική απορρήτου</a>
 </label>
 <button type="submit">Изпрати / Αποστολή</button>
