@@ -587,27 +587,18 @@ header {
 </div>
 <div style="margin-top: 2rem;">
 <h3>🗣️ Споделете вашето мнение / Αφήστε την αξιολόγηση σας</h3>
+<form action="https://formspree.io/f/movwnrdg" method="POST" enctype="multipart/form-data">
+<input type="hidden" name="_captcha" value="false">
+<input name="Име/Όνομα" placeholder="Вашето име / Το όνομα σας" required="" type="text"/>
+<textarea name="Мнение/Αξιολόγηση" placeholder="Вашето мнение / Η αξιολόγηση σας" required="" rows="4"></textarea>
+<label class="gdpr-label">
+<input name="gdpr" required="" type="checkbox"/>
+  Съгласен/на съм / Συμφωνώ με την <a href="privacy.html" target="_blank">Политиката за поверителност / Πολιτική απορρήτου</a>
+</label>
+<button type="submit">Изпрати / Αποστολή</button>
+<input name="_subject" type="hidden" value="Ново клиентско мнение / Νέα αξιολόγηση πελάτη"/>
 
-<form action="https://formsubmit.co/mollovplamen@gmail.com" method="POST" enctype="multipart/form-data">
-  <input type="hidden" name="_next" value="thanks.html">
-  <input type="hidden" name="_captcha" value="false">
-
-  <input name="Име и фамилия" type="text" placeholder="Име и фамилия / Ονοματεπώνυμο" required>
-  <input name="Имейл" type="email" placeholder="Имейл адрес / Email" required>
-  <input name="Телефон" type="tel" placeholder="Телефон / Τηλέφωνο" required>
-  <textarea name="Описание" rows="4" placeholder="Кратко описание... / Περιγραφή..." required></textarea>
-
-  <label for="attachment"><strong>📎 Прикачен файл / Επισύναψη αρχείου:</strong></label>
-  <input id="attachment" name="attachment" type="file" required>
-
-  <label class="gdpr-label">
-    <input type="checkbox" name="gdpr" required>
-    Съгласен/на съм / Συμφωνώ с <a href="privacy.html" target="_blank">Политиката за поверителност / Πολιτική απορρήτου</a>
-  </label>
-
-  <button type="submit">Изпрати / Αποστολή</button>
 </form>
-
 </div>
 </section>
 <section id="contact">
