@@ -233,7 +233,7 @@ header {
   white-space: nowrap;
   color: white;
   z-index: 10;
-  animation: scrollVertical 10s linear infinite; animation-delay: 0s;
+  animation: scrollVertical 10s linear infinite; animation-delay: 0s; animation-delay: 0s;
   writing-mode: vertical-rl;
   text-orientation: mixed;
   transform: rotate(180deg);
@@ -294,6 +294,17 @@ header {
     animation-duration: 12s !important;
     animation-delay: 0s !important;
     opacity: 1 !important;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .welcome-text {
+    font-size: 1.4rem !important;
+    font-weight: 400 !important;
+    opacity: 1 !important;
+    animation: scrollVertical 14s linear infinite !important;
+    animation-delay: 0s !important;
   }
 }
 
@@ -359,6 +370,17 @@ header {
   }
 }
 
+
+@media (max-width: 768px) {
+  .welcome-text {
+    font-size: 1.4rem !important;
+    font-weight: 400 !important;
+    opacity: 1 !important;
+    animation: scrollVertical 14s linear infinite !important;
+    animation-delay: 0s !important;
+  }
+}
+
 </style>
 <script>
   document.addEventListener("DOMContentLoaded", function() {
@@ -403,6 +425,17 @@ header {
     animation-duration: 12s !important;
     animation-delay: 0s !important;
     opacity: 1 !important;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .welcome-text {
+    font-size: 1.4rem !important;
+    font-weight: 400 !important;
+    opacity: 1 !important;
+    animation: scrollVertical 14s linear infinite !important;
+    animation-delay: 0s !important;
   }
 }
 
@@ -516,6 +549,8 @@ header {
 <div style="margin-top: 2rem; border-top: 2px solid #ccc; padding-top: 2rem;">
 <h3>Попълни формата и поискай своята оферта още днес!<br/>Συμπλήρωσε τη φόρμα και ζήτησε την προσφορά σου σήμερα!</h3>
 <form action="https://formsubmit.co/mollovplamen@gmail.com" enctype="multipart/form-data" method="POST">
+<input type="hidden" name="_next" value="https://www.prevodigr.eu/thanks.html">
+<input type="hidden" name="_captcha" value="false">
 <input name="Име и фамилия" placeholder="Име и фамилия / Ονοματεπώνυμο" required="" type="text"/>
 <input name="Имейл" placeholder="Имейл адрес / Email" required="" type="email"/>
 <input name="Телефон" placeholder="Телефон / Τηλέφωνο" required="" type="tel"/>
@@ -549,6 +584,8 @@ header {
 <div style="margin-top: 2rem;">
 <h3>🗣️ Споделете вашето мнение / Αφήστε την αξιολόγηση σας</h3>
 <form action="https://formsubmit.co/mollovplamen@gmail.com" method="POST">
+<input type="hidden" name="_next" value="https://www.prevodigr.eu/thanks.html">
+<input type="hidden" name="_captcha" value="false">
 <input name="Име/Όνομα" placeholder="Вашето име / Το όνομα σας" required="" type="text"/>
 <textarea name="Мнение/Αξιολόγηση" placeholder="Вашето мнение / Η αξιολόγηση σας" required="" rows="4"></textarea>
 <label class="gdpr-label">
