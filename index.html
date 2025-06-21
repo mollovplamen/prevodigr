@@ -143,12 +143,7 @@ button:hover {
 button:active {
   transform: scale(0.96);
 }
-button:hover::after {
-  content: " 👌";
-  position: absolute;
-  right: -2rem;
-  animation: wave 1s infinite;
-}
+
 @keyframes wave {
   0% { transform: rotate(0deg); }
   25% { transform: rotate(20deg); }
@@ -549,7 +544,7 @@ header {
 
 <div style="margin-top: 2rem; border-top: 2px solid #ccc; padding: 2rem; background-color: #f4f8ff; border-radius: 10px;">
   <h3 style="color:#003366; font-size: 1.5rem; margin-bottom: 1rem;">
-    Как да заявите оферта за превод / Πώς να ζητήσετε προσφορά
+    Как да заявите оферта за превод? / Πώς να ζητήσετε προσφορά;
   </h3>
   <p style="font-size: 1rem; color:#003366;">
     Следвайте стъпките по-долу, за да ни изпратите Вашата заявка:<br/>
@@ -566,7 +561,10 @@ header {
     <div style="background-color: white; border-left: 4px solid #00509d; padding: 1rem; border-radius: 6px;">
       <strong style="color: #00509d;">Стъпка 2 / Βήμα 2:</strong><br/>
       Въведете нашия имейл адрес: <strong>mollovplamen@gmail.com</strong><br/>
-      Πληκτρολογήστε το email μας: <strong>mollovplamen@gmail.com</strong>
+      Πληκτρολογήστε το email μας: <strong>mollovplamen@gmail.com</strong><br/><br/>
+  <button onclick="copyEmail()" style="background-color: #003366; color: white; padding: 0.6rem 1.2rem; border: none; border-radius: 6px; font-size: 1rem;">
+    Копирай имейла / Αντιγραφή email
+  </button>
     </div>
 
     <div style="background-color: white; border-left: 4px solid #00509d; padding: 1rem; border-radius: 6px;">
@@ -588,31 +586,30 @@ header {
     </div>
   </div>
 
-  <div style="margin-top: 2rem;">
-    <button onclick="copyEmail()" style="background-color: #003366; color: white; padding: 0.8rem 1.5rem; border: none; border-radius: 6px; margin-right: 2rem; font-size: 1rem;">
-      Копирай имейла / Αντιγραφή email
+  
+<div style="margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 1rem;">
+  <a href="https://outlook.live.com/mail/0/" target="_blank">
+    <button type="button" style="background-color: #0078d7; color: white; padding: 0.8rem 1.5rem; border: none; border-radius: 6px; font-size: 1rem; min-width: 160px;">
+      Отвори Hotmail / Άνοιγμα Hotmail
     </button>
-    <a href="https://outlook.live.com/mail/0/" target="_blank">
-      <button type="button" style="background-color: #0078d7; color: white; padding: 0.8rem 1.5rem; border: none; border-radius: 6px; margin-right: 2rem; font-size: 1rem;">
-        Отвори Hotmail / Άνοιγμα Hotmail
-      </button>
-    </a>
-    <a href="https://mail.google.com" target="_blank">
-      <button type="button" style="background-color: #00509d; color: white; padding: 0.8rem 1.5rem; border: none; border-radius: 6px; margin-right: 2rem; font-size: 1rem;">
-        Отвори Gmail / Άνοιγμα Gmail
-      </button>
-    </a>
-    <a href="https://www.abv.bg" target="_blank">
-      <button type="button" style="background-color: #339933; color: white; padding: 0.8rem 1.5rem; border: none; border-radius: 6px; margin-right: 2rem; font-size: 1rem;">
-        Отвори ABV / Άνοιγμα ABV
-      </button>
-    </a>
-    <a href="https://mail.yahoo.com" target="_blank">
-      <button type="button" style="background-color: #720e9e; color: white; padding: 0.8rem 1.5rem; border: none; border-radius: 6px; font-size: 1rem;">
-        Отвори Yahoo / Άνοιγμα Yahoo
-      </button>
-    </a>
-  </div>
+  </a>
+  <a href="https://mail.google.com" target="_blank">
+    <button type="button" style="background-color: #00509d; color: white; padding: 0.8rem 1.5rem; border: none; border-radius: 6px; font-size: 1rem; min-width: 160px;">
+      Отвори Gmail / Άνοιγμα Gmail
+    </button>
+  </a>
+  <a href="https://www.abv.bg" target="_blank">
+    <button type="button" style="background-color: #339933; color: white; padding: 0.8rem 1.5rem; border: none; border-radius: 6px; font-size: 1rem; min-width: 160px;">
+      Отвори ABV / Άνοιγμα ABV
+    </button>
+  </a>
+  <a href="https://mail.yahoo.com" target="_blank">
+    <button type="button" style="background-color: #720e9e; color: white; padding: 0.8rem 1.5rem; border: none; border-radius: 6px; font-size: 1rem; min-width: 160px;">
+      Отвори Yahoo / Άνοιγμα Yahoo
+    </button>
+  </a>
+</div>
+
 </div>
 
 <script>
