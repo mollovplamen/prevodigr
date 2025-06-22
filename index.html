@@ -773,7 +773,56 @@ label[for="file"]:hover {
       font-style: italic;
       color: #444;
     }
-  </style></head>
+  </style>
+<style>
+  form {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    max-width: 640px;
+    margin: 3rem auto;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  form label {
+    font-weight: 600;
+    display: block;
+    margin-top: 1.3rem;
+    color: #003366;
+  }
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="tel"],
+  form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-top: 0.3rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    background: #f9f9f9;
+  }
+  form textarea {
+    resize: vertical;
+  }
+  form button {
+    margin-top: 2rem;
+    padding: 1rem;
+    width: 100%;
+    background: linear-gradient(to right, #00509e, #00aaff);
+    color: white;
+    font-weight: bold;
+    border: none;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  form button:hover {
+    background: linear-gradient(to right, #004080, #0088cc);
+  }
+</style>
+</head>
 <body>
 <header><span class="welcome-text welcome-right">Καλώς ήρθατε</span><span class="welcome-text welcome-left">Добре дошли</span>
 <img alt="Plamen Mollov Logo" src="assets/images/logo.png"/>
@@ -879,19 +928,27 @@ label[for="file"]:hover {
 <p>Предлагам конкурентни цени за качествени преводи. Всеки проект се оценява индивидуално според обема, сложността и срока за изпълнение.</p>
 <p>Προσφέρω ανταγωνιστικές τιμές για ποιοτικές μεταφράσεις. Κάθε έργο αξιολογείται ξεχωριστά ανάλογα με τον όγκο, τη δυσκολία και τον χρόνο παράδοσης.</p>
 <h3 style="margin-top: 2rem;">📩 Заявете превод онлайн / Υποβάλετε αίτημα για μετάφραση</h3>
-<form action="https://formspree.io/f/mwkgrgdo" id="myForm" method="POST">
-<label>Име / Όνομα:</label>
-<input name="name" required="" type="text"/>
-<label>Имейл / Email:</label>
-<input name="email" required="" type="email"/>
-<label>Описание / Περιγραφή:</label>
-<textarea name="message" required="" rows="4"></textarea>
-<label>📎 Прикачване на файл / Επισύναψη αρχείου:</label>
-<input id="file-upload" required="" type="file"/>
-<div class="file-status" id="file-status">Не е избран файл</div>
+
+<form action="https://formspree.io/f/mwkgrgdo" method="POST">
 <input id="filelink" name="filelink" type="hidden"/>
-<button disabled="" id="submit-button" type="submit">📤 Изпрати заявка / Υποβολή αιτήματος</button>
-</form>
+<label for="name">Име / Όνομα:</label>
+<input id="name" name="name" required="" type="text"/>
+<label for="email">Имейл / Email:</label>
+<input id="email" name="email" required="" type="email"/>
+<label for="phone">Телефон / Τηλέφωνο:</label>
+<input id="phone" name="phone" type="tel"/>
+<label for="message">Описание / Περιγραφή:</label>
+<textarea id="message" name="message" required="" rows="4"></textarea>
+<label>📎 Прикачване на файл / Επισύναψη αρχείου:</label>
+<input data-clearable="" data-crop="disabled" data-multiple="false" id="uploadcare" name="filelink" role="uploadcare-uploader" type="hidden">
+<button type="submit">📤 Изпрати заявка / Υποβολή αιτήματος</button>
+</input></form>
+<script>
+  UPLOADCARE_PUBLIC_KEY = 'demopublickey'; // заменя се при нужда с твой ключ
+  uploadcare.registerTab('preview', uploadcareTabEffects);
+</script>
+<script src="https://ucarecdn.com/libs/widget/3.x/uploadcare.full.min.js"></script>
+
 <script>
   const fileInput = document.getElementById("file-upload");
   const status = document.getElementById("file-status");
