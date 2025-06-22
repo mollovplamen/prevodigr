@@ -664,6 +664,31 @@ label[for="file"]:hover {
     color: #444;
   }
 </style>
+<script>
+  UPLOADCARE_PUBLIC_KEY = 'demopublickey';
+</script>
+<script src="https://ucarecdn.com/libs/widget/3.x/uploadcare.full.min.js"></script>
+<script>
+  UPLOADCARE_PUBLIC_KEY = 'demopublickey';
+</script>
+<script src="https://ucarecdn.com/libs/widget/3.x/uploadcare.full.min.js"></script>
+
+<style>
+.uploadcare--widget__button_type_open {
+  font-size: 1.1rem !important;
+  font-weight: 600;
+  background: linear-gradient(to right, #00509e, #007acc) !important;
+  color: white !important;
+  padding: 12px 18px !important;
+  border-radius: 8px !important;
+}
+.uploadcare--widget__button_type_open:hover {
+  background: linear-gradient(to right, #004080, #0066cc) !important;
+}
+.uploadcare--powered-by {
+  display: none !important;
+}
+</style>
 </head>
 <body>
 <header><span class="welcome-text welcome-right">Καλώς ήρθατε</span><span class="welcome-text welcome-left">Добре дошли</span>
@@ -770,7 +795,7 @@ label[for="file"]:hover {
 <p>Предлагам конкурентни цени за качествени преводи. Всеки проект се оценява индивидуално според обема, сложността и срока за изпълнение.</p>
 <p>Προσφέρω ανταγωνιστικές τιμές για ποιοτικές μεταφράσεις. Κάθε έργο αξιολογείται ξεχωριστά ανάλογα με τον όγκο, τη δυσκολία και τον χρόνο παράδοσης.</p>
 <h3 style="margin-top: 2rem;">📩 Заявете превод онлайн / Υποβάλετε αίτημα για μετάφραση</h3>
-<form action="https://formsubmit.co/el/luvipu" enctype="multipart/form-data" method="POST"><input name="_next" type="hidden" value="https://www.prevodigr.eu/thanks.html"/><input name="_captcha" type="hidden" value="false"/>
+<form action="https://formsubmit.co/el/luvipu" enctype="multipart/form-data" method="POST">
 <input name="_next" type="hidden" value="https://www.prevodigr.eu/thanks.html"/>
 <input name="_captcha" type="hidden" value="false"/>
 <label for="name">Име / Όνομα:</label>
@@ -782,13 +807,12 @@ label[for="file"]:hover {
 <label for="message">Описание / Περιγραφή:</label>
 <textarea id="message" name="message" required="" rows="4"></textarea>
 <label for="file">📎 Прикачване на файл / Επισύναψη αρχείου:</label>
-<input accept=".pdf,.doc,.docx,.jpg,.png" id="file" name="file" required="" type="file"/>
 <p id="file-name"></p>
 <label class="checkbox-label">
 <input name="gdpr" required="" type="checkbox"/>
     Съгласен съм с <a href="privacy.html" target="_blank">политиката за поверителност / πολιτική απορρήτου</a>
 </label>
-<button type="submit">📤 Изпрати заявка / Υποβολή αιτήματος</button>
+<input data-clearable="true" data-label="📎 Прикачване на файл / Επισύναψη αρχείου" data-locale="auto" data-multiple="false" data-tabs="file url camera facebook gdrive dropbox" name="filelink" role="uploadcare-uploader" style="margin-top: 10px; display:block;" type="hidden"/><button type="submit">📤 Изпрати заявка / Υποβολή αιτήματος</button>
 </form>
 <script>
   const fileInput = document.getElementById('file');
