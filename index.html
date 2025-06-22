@@ -711,10 +711,10 @@ label[for="file"]:hover {
 
 <style>
       form {
-        background: #fefefe;
+        background: #fff;
         padding: 2rem;
         border-radius: 12px;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.07);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.07);
         max-width: 600px;
         margin: 2rem auto;
         font-family: 'Segoe UI', sans-serif;
@@ -748,23 +748,22 @@ label[for="file"]:hover {
       form button:hover {
         background: linear-gradient(to right, #004a99, #007fff);
       }
-      form .checkbox-label {
-        margin-top: 1.5rem;
+      .checkbox-label {
+        margin-top: 1.2rem;
         font-size: 0.95rem;
       }
     </style>
-<form action="https://formsubmit.io/send/mollovplamen@gmail.com" enctype="multipart/form-data" method="POST">
-<input name="_redirect" type="hidden" value="thanks.html"/>
+<form action="https://formsubmit.co/mollovplamen@gmail.com" enctype="multipart/form-data" method="POST">
+<input name="_next" type="hidden" value="thanks.html"/>
 <input name="_captcha" type="hidden" value="false"/>
-<input name="_formsubmit_id" type="hidden" value="formsubmit-embedded"/>
 <label for="name">Име / Όνομα:</label>
 <input id="name" name="name" placeholder="Вашето име / Το όνομά σας" required="" type="text"/>
 <label for="email">Имейл / Email:</label>
-<input id="email" name="email" placeholder="Имейл адрес / Ηλεκτρονικό ταχυδρομείο" required="" type="email"/>
+<input id="email" name="email" placeholder="имейл / ηλεκτρονικό ταχυδρομείο" required="" type="email"/>
 <label for="phone">Телефон / Τηλέφωνο:</label>
-<input id="phone" name="phone" placeholder="Вашият телефон / Το τηλέφωνό σας" type="tel"/>
+<input id="phone" name="phone" placeholder="телефон / τηλέφωνο" type="tel"/>
 <label for="message">Описание / Περιγραφή:</label>
-<textarea id="message" name="message" placeholder="Опишете заявката си / Περιγράψτε το αίτημά σας" required="" rows="4"></textarea>
+<textarea id="message" name="message" placeholder="Описание на услугата / Περιγραφή της υπηρεσίας" required="" rows="4"></textarea>
 <label for="file">📎 Прикачване на файл / Επισύναψη αρχείου:</label>
 <input accept=".pdf,.doc,.docx,.jpg,.png" id="file" name="file" required="" type="file"/>
 <label class="checkbox-label">
