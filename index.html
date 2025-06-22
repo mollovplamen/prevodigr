@@ -708,24 +708,72 @@ label[for="file"]:hover {
 <p>Предлагам конкурентни цени за качествени преводи. Всеки проект се оценява индивидуално според обема, сложността и срока за изпълнение.</p>
 <p>Προσφέρω ανταγωνιστικές τιμές για ποιοτικές μεταφράσεις. Κάθε έργο αξιολογείται ξεχωριστά ανάλογα με τον όγκο, τη δυσκολία και τον χρόνο παράδοσης.</p>
 <h3 style="margin-top: 2rem;">📩 Заявете превод онлайн / Υποβάλετε αίτημα για μετάφραση</h3>
-<form action="https://formsubmit.co/mollovplamen@gmail.com" enctype="multipart/form-data" method="POST">
+
+<style>
+      form {
+        background: #fefefe;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.07);
+        max-width: 600px;
+        margin: 2rem auto;
+        font-family: 'Segoe UI', sans-serif;
+      }
+      form label {
+        font-weight: 600;
+        display: block;
+        margin-top: 1.3rem;
+      }
+      form input, form textarea {
+        width: 100%;
+        padding: 0.75rem;
+        margin-top: 0.4rem;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        font-size: 1rem;
+      }
+      form button {
+        margin-top: 2rem;
+        padding: 1rem;
+        width: 100%;
+        background: linear-gradient(to right, #003366, #0066cc);
+        color: white;
+        font-weight: bold;
+        border: none;
+        font-size: 1.1rem;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+      form button:hover {
+        background: linear-gradient(to right, #004a99, #007fff);
+      }
+      form .checkbox-label {
+        margin-top: 1.5rem;
+        font-size: 0.95rem;
+      }
+    </style>
+<form action="https://formsubmit.io/send/mollovplamen@gmail.com" enctype="multipart/form-data" method="POST">
+<input name="_redirect" type="hidden" value="thanks.html"/>
 <input name="_captcha" type="hidden" value="false"/>
-<input name="_next" type="hidden" value="thanks.html"/>
-<input name="_subject" type="hidden" value="Нова заявка за превод / Νέο αίτημα για μετάφραση"/>
-<input name="Име / Όνομα" placeholder="Вашето име / Το όνομά σας" required="" type="text"/>
-<input name="Имейл / Email" placeholder="Вашият имейл / Το email σας" required="" type="email"/>
-<input name="Телефон / Τηλέφωνο" placeholder="Телефон / Τηλέφωνο" required="" type="tel"/>
-<textarea name="Описание / Περιγραφή" placeholder="Опишете какво желаете / Περιγράψτε τι χρειάζεστε" required="" rows="4"></textarea>
-<label for="file">📎 Прикачване на файл / Επισύναψη αρχείου</label><div id="file-name"></div><input accept=".pdf,.doc,.docx,.jpg,.png" id="file" name="file" placeholder="Прикачване на файл / Επισύναψη αρχείου" required="" title="Прикачване на файл / Επισύναψη αρχείου" type="file"/>
-<label class="gdpr-label">
+<input name="_formsubmit_id" type="hidden" value="formsubmit-embedded"/>
+<label for="name">Име / Όνομα:</label>
+<input id="name" name="name" placeholder="Вашето име / Το όνομά σας" required="" type="text"/>
+<label for="email">Имейл / Email:</label>
+<input id="email" name="email" placeholder="Имейл адрес / Ηλεκτρονικό ταχυδρομείο" required="" type="email"/>
+<label for="phone">Телефон / Τηλέφωνο:</label>
+<input id="phone" name="phone" placeholder="Вашият телефон / Το τηλέφωνό σας" type="tel"/>
+<label for="message">Описание / Περιγραφή:</label>
+<textarea id="message" name="message" placeholder="Опишете заявката си / Περιγράψτε το αίτημά σας" required="" rows="4"></textarea>
+<label for="file">📎 Прикачване на файл / Επισύναψη αρχείου:</label>
+<input accept=".pdf,.doc,.docx,.jpg,.png" id="file" name="file" required="" type="file"/>
+<label class="checkbox-label">
 <input name="gdpr" required="" type="checkbox"/>
-      Съгласен/на съм / Συμφωνώ с <a href="privacy.html" target="_blank">Политиката за поверителност / Πολιτική απορρήτου</a>
-</label>
-<input name="_captcha" type="hidden" value="false"/>
-<input name="_next" type="hidden" value="thanks.html"/>
-<input name="_subject" type="hidden" value="Нова заявка за превод / Νέο αίτημα για μετάφραση"/>
-<button id="submit-btn" type="submit">📤 Изпрати заявка / Αποστολή αίτησης</button>
+        Съгласен съм с политиката за поверителност / Συμφωνώ με την πολιτική απορρήτου
+      </label>
+<button type="submit">📤 Изпрати заявка / Υποβολή αιτήματος</button>
 </form>
+
 </section>
 <section id="testimonials">
 <h2 class="section-title">Мнения на клиенти /  Αξιολογήσεις πελατών</h2>
