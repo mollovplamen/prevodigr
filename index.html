@@ -557,6 +557,51 @@ header {
     padding: 1rem;
   }
 }
+</style><style>
+#file {
+  display: none;
+}
+label[for="file"] {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: #004a99;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  transition: background 0.3s ease;
+}
+label[for="file"]:hover {
+  background-color: #0066cc;
+}
+</style><style>
+#file {
+  display: none;
+}
+label[for="file"] {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: #004a99;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  transition: background 0.3s ease;
+}
+label[for="file"]:hover {
+  background-color: #0066cc;
+}
+#file-name {
+  font-size: 0.95rem;
+  color: #333;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-style: italic;
+}
 </style></head>
 <body>
 <header><span class="welcome-text welcome-right">Καλώς ήρθατε</span><span class="welcome-text welcome-left">Добре дошли</span>
@@ -664,11 +709,14 @@ header {
 <p>Προσφέρω ανταγωνιστικές τιμές για ποιοτικές μεταφράσεις. Κάθε έργο αξιολογείται ξεχωριστά ανάλογα με τον όγκο, τη δυσκολία και τον χρόνο παράδοσης.</p>
 <h3 style="margin-top: 2rem;">📩 Заявете превод онлайн / Υποβάλετε αίτημα για μετάφραση</h3>
 <form action="https://formsubmit.co/mollovplamen@gmail.com" enctype="multipart/form-data" method="POST">
+<input name="_captcha" type="hidden" value="false"/>
+<input name="_next" type="hidden" value="thanks.html"/>
+<input name="_subject" type="hidden" value="Нова заявка за превод / Νέο αίτημα για μετάφραση"/>
 <input name="Име / Όνομα" placeholder="Вашето име / Το όνομά σας" required="" type="text"/>
 <input name="Имейл / Email" placeholder="Вашият имейл / Το email σας" required="" type="email"/>
 <input name="Телефон / Τηλέφωνο" placeholder="Телефон / Τηλέφωνο" required="" type="tel"/>
 <textarea name="Описание / Περιγραφή" placeholder="Опишете какво желаете / Περιγράψτε τι χρειάζεστε" required="" rows="4"></textarea>
-<input accept=".pdf,.doc,.docx,.jpg,.png" name="file" required="" type="file"/>
+<label for="file">📎 Прикачване на файл / Επισύναψη αρχείου</label><div id="file-name"></div><input accept=".pdf,.doc,.docx,.jpg,.png" id="file" name="file" placeholder="Прикачване на файл / Επισύναψη αρχείου" required="" title="Прикачване на файл / Επισύναψη αρχείου" type="file"/>
 <label class="gdpr-label">
 <input name="gdpr" required="" type="checkbox"/>
       Съгласен/на съм / Συμφωνώ с <a href="privacy.html" target="_blank">Политиката за поверителност / Πολιτική απορρήτου</a>
@@ -773,5 +821,19 @@ document.addEventListener("DOMContentLoaded", function () {
       button.innerText = "Изпращане... / Αποστολή...";
       button.style.opacity = "0.7";
     });
-    </script></body>
+    </script><script>
+document.addEventListener("DOMContentLoaded", function () {
+  const fileInput = document.getElementById("file");
+  const fileNameDisplay = document.getElementById("file-name");
+  if (fileInput && fileNameDisplay) {
+    fileInput.addEventListener("change", function () {
+      if (fileInput.files.length > 0) {
+        fileNameDisplay.textContent = "📁 " + fileInput.files[0].name;
+      } else {
+        fileNameDisplay.textContent = "";
+      }
+    });
+  }
+});
+</script></body>
 </html>
