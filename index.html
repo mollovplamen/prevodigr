@@ -303,8 +303,6 @@ header {
   }
 }
 
-
-form + p { display: none; }
 </style>
 <style>
   .menu-toggle {
@@ -606,35 +604,19 @@ label[for="file"]:hover {
 }
 </style>
 <style>
-  p:contains("Form should POST") {
-    display: none !important;
-  }
-</style>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const ps = document.querySelectorAll("p");
-    ps.forEach(p => {
-      if (p.textContent.includes("Form should POST")) {
-        p.style.display = "none";
-      }
-    });
-  });
-</script>
-
-<style>
   form {
     background: #ffffff;
     border-radius: 12px;
     padding: 2rem;
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    max-width: 600px;
-    margin: 2rem auto;
+    max-width: 620px;
+    margin: 3rem auto;
     font-family: 'Segoe UI', sans-serif;
   }
   form label {
-    display: block;
     font-weight: 600;
-    margin-top: 1.5rem;
+    display: block;
+    margin-top: 1.3rem;
     color: #003366;
   }
   form input[type="text"],
@@ -644,30 +626,29 @@ label[for="file"]:hover {
   form textarea {
     width: 100%;
     padding: 0.8rem;
-    margin-top: 0.4rem;
+    margin-top: 0.3rem;
     border-radius: 8px;
     border: 1px solid #ccc;
     font-size: 1rem;
+    background: #f9f9f9;
   }
   form input[type="file"] {
-    background-color: #f2f2f2;
     cursor: pointer;
   }
   form textarea {
     resize: vertical;
   }
   form button {
-    display: block;
-    width: 100%;
-    padding: 1rem;
     margin-top: 2rem;
-    font-size: 1.1rem;
-    color: white;
+    padding: 1rem;
+    width: 100%;
     background: linear-gradient(to right, #00509e, #00aaff);
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
+    color: white;
     font-weight: bold;
+    border: none;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    cursor: pointer;
     transition: background 0.3s ease;
   }
   form button:hover {
@@ -683,21 +664,6 @@ label[for="file"]:hover {
     color: #444;
   }
 </style>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const fileInput = document.getElementById('file');
-    const fileName = document.getElementById('file-name');
-    if (fileInput && fileName) {
-      fileInput.addEventListener('change', function () {
-        if (fileInput.files.length > 0) {
-          fileName.textContent = "📎 Избран файл: " + fileInput.files[0].name;
-        } else {
-          fileName.textContent = "";
-        }
-      });
-    }
-  });
-</script>
 </head>
 <body>
 <header><span class="welcome-text welcome-right">Καλώς ήρθατε</span><span class="welcome-text welcome-left">Добре дошли</span>
@@ -804,15 +770,8 @@ label[for="file"]:hover {
 <p>Предлагам конкурентни цени за качествени преводи. Всеки проект се оценява индивидуално според обема, сложността и срока за изпълнение.</p>
 <p>Προσφέρω ανταγωνιστικές τιμές για ποιοτικές μεταφράσεις. Κάθε έργο αξιολογείται ξεχωριστά ανάλογα με τον όγκο, τη δυσκολία και τον χρόνο παράδοσης.</p>
 <h3 style="margin-top: 2rem;">📩 Заявете превод онлайн / Υποβάλετε αίτημα για μετάφραση</h3>
-<style>
-  #file-name {
-    font-style: italic;
-    color: #333;
-    margin-top: 0.4rem;
-  }
-</style>
-<form action="https://formsubmit.co/mollovplamen@gmail.com" enctype="multipart/form-data" method="POST">
-<input name="_next" type="hidden" value="thanks.html"/>
+<form action="https://formsubmit.co/el/luvipu" enctype="multipart/form-data" method="POST">
+<input name="_next" type="hidden" value="https://www.prevodigr.eu/thanks.html"/>
 <input name="_captcha" type="hidden" value="false"/>
 <label for="name">Име / Όνομα:</label>
 <input id="name" name="name" required="" type="text"/>
@@ -831,6 +790,17 @@ label[for="file"]:hover {
 </label>
 <button type="submit">📤 Изпрати заявка / Υποβολή αιτήματος</button>
 </form>
+<script>
+  const fileInput = document.getElementById('file');
+  const fileName = document.getElementById('file-name');
+  fileInput.addEventListener('change', () => {
+    if (fileInput.files.length > 0) {
+      fileName.textContent = "📎 Избран файл: " + fileInput.files[0].name;
+    } else {
+      fileName.textContent = "";
+    }
+  });
+</script>
 <script>
   const fileInput = document.getElementById('file');
   const fileName = document.getElementById('file-name');
