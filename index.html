@@ -770,6 +770,7 @@ label[for="file"]:hover {
 <p>Предлагам конкурентни цени за качествени преводи. Всеки проект се оценява индивидуално според обема, сложността и срока за изпълнение.</p>
 <p>Προσφέρω ανταγωνιστικές τιμές για ποιοτικές μεταφράσεις. Κάθε έργο αξιολογείται ξεχωριστά ανάλογα με τον όγκο, τη δυσκολία και τον χρόνο παράδοσης.</p>
 <h3 style="margin-top: 2rem;">📩 Заявете превод онлайн / Υποβάλετε αίτημα για μετάφραση</h3>
+
 <form action="https://formsubmit.co/el/luvipu" enctype="multipart/form-data" method="POST">
 <input name="_next" type="hidden" value="https://www.prevodigr.eu/thanks.html"/>
 <input name="_captcha" type="hidden" value="false"/>
@@ -801,17 +802,7 @@ label[for="file"]:hover {
     }
   });
 </script>
-<script>
-  const fileInput = document.getElementById('file');
-  const fileName = document.getElementById('file-name');
-  fileInput.addEventListener('change', () => {
-    if (fileInput.files.length > 0) {
-      fileName.textContent = "📎 Избран файл: " + fileInput.files[0].name;
-    } else {
-      fileName.textContent = "";
-    }
-  });
-</script>
+
 </section>
 <section id="testimonials">
 <h2 class="section-title">Мнения на клиенти /  Αξιολογήσεις πελατών</h2>
