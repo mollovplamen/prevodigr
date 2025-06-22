@@ -6,7 +6,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Plamen Mollov – Преводи от и на гръцки език</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&amp;display=swap" rel="stylesheet"/>
 <style>
     
 /* GDPR checkbox styling */
@@ -246,7 +246,7 @@ button:hover::after {
     });
   });
 </script>
-<meta content="Заклет преводач с гръцки език, устни и писмени преводи, имоти в Гърция, легализация, консултации при покупка на имот." name="description"/><meta content="заклет преводач гръцки език, устни преводи гръцки, писмени преводи, имоти в Гърция, покупко-продажба на имоти, легализация, Ακίνητα στην Ελλάδα, μεταφράσεις ελληνικά, заверки на документи, апостил, апостил на документи, устни и писмени преводи с гръцки език, легализация на документи" name="keywords"/><meta content="Пламен Моллов" name="author"/><link href="https://www.prevodigr.eu" rel="canonical"/><script type="application/ld+json">
+<meta content="Заклет преводач с гръцки език, устни и писмени преводи, имоти в Гърция, легализация, консултации при покупка на имот." name="description"/><meta content="заклет преводач гръцки език, устни преводи гръцки, писмени преводи, имоти в Гърция, покупко-продажба на имоти, легализация, Ακίνητα στην Ελλάδα, μεταφράσεις ελληνικά, заверки на документи, апостил, апостил на документи, устни и писмени преводи с гръцки език, легализация на документи" name="keywords"/><meta content="Пламен Моллов" name="author"/><link href="https://www.prevodigr.eu" rel="canonical"><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
@@ -268,7 +268,7 @@ button:hover::after {
     "availableLanguage": ["Bulgarian", "Greek"]
   }
 }
-</script></head>
+</script></link></head>
 <body>
 <header>
 <img alt="Plamen Mollov Logo" src="assets/images/logo.png"/>
@@ -367,7 +367,7 @@ button:hover::after {
 </ul>
 <p><strong>📩 Свържете се с мен, за да уговорим индивидуална среща или консултация.<br/>
   📩 Επικοινωνήστε μαζί μου για προσωπικό ραντεβού ή συμβουλή.</strong></p>
-<p><strong><a href="https://www.dimokritosrealestate.gr/" target="_blank" rel="noopener noreferrer">Актуални оферти за недвижими имоти в Гърция / Τρέχουσες προσφορές ακινήτων στην Ελλάδα</a></strong></p></strong></p>
+<p><strong><a href="https://www.dimokritosrealestate.gr/" rel="noopener noreferrer" target="_blank">Актуални оферти за недвижими имоти в Гърция / Τρέχουσες προσφορές ακινήτων στην Ελλάδα</a></strong></p>
 </section>
 <section id="prices">
 <h2 class="section-title">Цени / Τιμές</h2>
@@ -376,27 +376,61 @@ button:hover::after {
 <p><em>Οι τιμές καθορίζονται μεμονωμένα, ανάλογα με τη δυσκολία του κειμένου, τον όγκο και τα χρονικά περιθώρια παράδοσης.</em></p>
 <div style="margin-top: 2rem; border-top: 2px solid #ccc; padding-top: 2rem;">
 <h3>Попълни формата и поискай своята оферта още днес!<br/>Συμπλήρωσε τη φόρμα και ζήτησε την προσφορά σου σήμερα!</h3>
-<form action="https://formsubmit.co/mollovplamen@gmail.com" enctype="multipart/form-data" method="POST">
+
+</div>
+</p>
+<form action="https://formspree.io/f/mgvynvrn" id="uploadForm" method="POST">
+<input name="_next" type="hidden" value="https://www.prevodigr.eu/thanks.html"/>
+<input name="_captcha" type="hidden" value="false">
 <input name="Име и фамилия" placeholder="Име и фамилия / Ονοματεπώνυμο" required="" type="text"/>
 <input name="Имейл" placeholder="Имейл адрес / Email" required="" type="email"/>
 <input name="Телефон" placeholder="Телефон / Τηλέφωνο" required="" type="tel"/>
 <textarea name="Описание" placeholder="Кратко описание... / Περιγραφή..." required="" rows="4"></textarea>
-<label for="attachment"><strong>📎 Прикачен файл / Επισύναψη αρχείου:</strong></label>
-<input id="attachment" name="attachment" required type="file">
-
-
-
-
-
+<label for="fileInput"><strong>📎 Прикачен файл / Επισύναψη αρχείου:</strong></label>
+<input id="fileInput" required="" type="file"/>
+<input id="filelink" name="filelink" type="hidden"/>
 <label class="gdpr-label">
-  <input type="checkbox" name="gdpr" required>
-  Съгласен/на съм / Συμφωνώ με την <a href="privacy.html" target="_blank">Политиката за поверителност / Πολιτική απορρήτου</a>
+<input name="gdpr" required="" type="checkbox"/>
+    Съгласен/на съм / Συμφωνώ με την <a href="privacy.html" target="_blank">Политиката за поверителност / Πολιτική απορρήτου</a>
 </label>
-<button type="submit">Изпрати / Αποστολή</button>
-<input name="_captcha" type="hidden" value="false"/>
-</form>
-</div>
-</p></section>
+<button disabled="" id="submitBtn" type="submit">Изпрати / Αποστολή</button>
+<div id="status"></div>
+</input></form>
+<script>
+  const fileInput = document.getElementById("fileInput");
+  const filelinkInput = document.getElementById("filelink");
+  const status = document.getElementById("status");
+  const submitBtn = document.getElementById("submitBtn");
+
+  fileInput.addEventListener("change", async () => {
+    const file = fileInput.files[0];
+    if (!file) return;
+
+    status.innerText = "Качване на файл... / Μεταφόρτωση αρχείου...";
+    submitBtn.disabled = true;
+
+    const formData = new FormData();
+    formData.append("file", file);
+
+    try {
+      const response = await fetch("https://file.io/?expires=1d", {
+        method: "POST",
+        body: formData
+      });
+      const data = await response.json();
+      if (data.success) {
+        filelinkInput.value = data.link;
+        status.innerText = "✅ Файлът е качен / Το αρχείο μεταφορτώθηκε!";
+        submitBtn.disabled = false;
+      } else {
+        status.innerText = "❌ Грешка при качване / Σφάλμα μεταφόρτωσης";
+      }
+    } catch (error) {
+      status.innerText = "❌ Проблем с мрежата / Πρόβλημα σύνδεσης";
+    }
+  });
+</script>
+</section>
 <section id="testimonials">
 <h2 class="section-title">Мнения на клиенти /  Αξιολογήσεις πελατών</h2>
 <div class="testimonial">
@@ -414,17 +448,16 @@ button:hover::after {
 <div style="margin-top: 2rem;">
 <h3>🗣️ Споделете вашето мнение / Αφήστε την αξιολόγηση σας</h3>
 <form action="https://formsubmit.co/mollovplamen@gmail.com" method="POST">
-<input name="Име/Όνομα" placeholder="Вашето име / Το όνομα σας" required="" type="text"/>
+<input name="Име/Όνομα" placeholder="Вашето име / Το όνομα σας" required="" type="text">
 <textarea name="Мнение/Αξιολόγηση" placeholder="Вашето мнение / Η αξιολόγηση σας" required="" rows="4"></textarea>
-
 <label class="gdpr-label">
-  <input type="checkbox" name="gdpr" required>
+<input name="gdpr" required="" type="checkbox"/>
   Съгласен/на съм / Συμφωνώ με την <a href="privacy.html" target="_blank">Политиката за поверителност / Πολιτική απορρήτου</a>
 </label>
 <button type="submit">Изпрати / Αποστολή</button>
-<input name="_subject" type="hidden" value="Ново клиентско мнение / Νέα αξιολόγηση πελάτη"/>
+<input name="_subject" type="hidden" value="Ново клиентско мнение / Νέα αξιολόγηση πελάτη">
 <input name="_captcha" type="hidden" value="false"/>
-</form>
+</input></input></form>
 </div>
 </section>
 <section id="contact">
