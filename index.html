@@ -604,7 +604,101 @@ label[for="file"]:hover {
   text-align: center;
   font-style: italic;
 }
-</style></head>
+</style>
+<style>
+  p:contains("Form should POST") {
+    display: none !important;
+  }
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const ps = document.querySelectorAll("p");
+    ps.forEach(p => {
+      if (p.textContent.includes("Form should POST")) {
+        p.style.display = "none";
+      }
+    });
+  });
+</script>
+
+<style>
+  form {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    max-width: 600px;
+    margin: 2rem auto;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  form label {
+    display: block;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    color: #003366;
+  }
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="tel"],
+  form input[type="file"],
+  form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-top: 0.4rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+  form input[type="file"] {
+    background-color: #f2f2f2;
+    cursor: pointer;
+  }
+  form textarea {
+    resize: vertical;
+  }
+  form button {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    margin-top: 2rem;
+    font-size: 1.1rem;
+    color: white;
+    background: linear-gradient(to right, #00509e, #00aaff);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+  }
+  form button:hover {
+    background: linear-gradient(to right, #004080, #0088cc);
+  }
+  .checkbox-label {
+    margin-top: 1.2rem;
+    font-size: 0.95rem;
+  }
+  #file-name {
+    font-style: italic;
+    margin-top: 0.5rem;
+    color: #444;
+  }
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const fileInput = document.getElementById('file');
+    const fileName = document.getElementById('file-name');
+    if (fileInput && fileName) {
+      fileInput.addEventListener('change', function () {
+        if (fileInput.files.length > 0) {
+          fileName.textContent = "📎 Избран файл: " + fileInput.files[0].name;
+        } else {
+          fileName.textContent = "";
+        }
+      });
+    }
+  });
+</script>
+</head>
 <body>
 <header><span class="welcome-text welcome-right">Καλώς ήρθατε</span><span class="welcome-text welcome-left">Добре дошли</span>
 <img alt="Plamen Mollov Logo" src="assets/images/logo.png"/>
