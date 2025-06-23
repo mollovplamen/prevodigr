@@ -246,7 +246,7 @@ button:hover::after {
     });
   });
 </script>
-<meta content="Заклет преводач с гръцки език, устни и писмени преводи, имоти в Гърция, легализация, консултации при покупка на имот." name="description"/><meta content="заклет преводач гръцки език, устни преводи гръцки, писмени преводи, имоти в Гърция, покупко-продажба на имоти, легализация, Ακίνητα στην Ελλάδα, μεταφράσεις ελληνικά, заверки на документи, апостил, апостил на документи, устни и писмени преводи с гръцки език, легализация на документи" name="keywords"/><meta content="Пламен Моллов" name="author"/><link href="https://www.prevodigr.eu" rel="canonical"><script type="application/ld+json">
+<meta content="Заклет преводач с гръцки език, устни и писмени преводи, имоти в Гърция, легализация, консултации при покупка на имот." name="description"/><meta content="заклет преводач гръцки език, устни преводи гръцки, писмени преводи, имоти в Гърция, покупко-продажба на имоти, легализация, Ακίνητα στην Ελλάδα, μεταφράσεις ελληνικά, заверки на документи, апостил, апостил на документи, устни и писмени преводи с гръцки език, легализация на документи" name="keywords"/><meta content="Пламен Моллов" name="author"/><link href="https://www.prevodigr.eu" rel="canonical"/><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
@@ -268,7 +268,7 @@ button:hover::after {
     "availableLanguage": ["Bulgarian", "Greek"]
   }
 }
-</script></link></head>
+</script></head>
 <body>
 <header>
 <img alt="Plamen Mollov Logo" src="assets/images/logo.png"/>
@@ -372,28 +372,59 @@ button:hover::after {
 <section id="prices">
 <h2 class="section-title">Цени / Τιμές</h2>
 <p style="text-align: justify;">
-<p><em>Цените се договарят индивидуално според сложността, обема и сроковете.</em></p>
-<p><em>Οι τιμές καθορίζονται μεμονωμένα, ανάλογα με τη δυσκολία του κειμένου, τον όγκο και τα χρονικά περιθώρια παράδοσης.</em></p>
+<em>Цените се договарят индивидуално според сложността, обема и сроковете.</em><br/>
+<em>Οι τιμές καθορίζονται μεμονωμένα, ανάλογα με τη δυσκολία του κειμένου, τον όγκο και τα χρονικά περιθώρια παράδοσης.</em>
+</p>
 <div style="margin-top: 2rem; border-top: 2px solid #ccc; padding-top: 2rem;">
-<h3>Попълни формата и поискай своята оферта още днес!<br/>Συμπλήρωσε τη φόρμα και ζήτησε την προσφορά σου σήμερα!</h3>
-
-<iframe 
-  id="offerForm"
-  src="https://forms.fillout.com/t/9NUe5T1CmCus" 
-  width="100%" 
-  height="750" 
-  style="border:none;" 
-  title="Форма за оферта">
+<!-- Рекламен банер с анимация -->
+<div style="
+      background: linear-gradient(135deg, #e0f0ff, #ffffff);
+      border: 2px solid #0055a5;
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      box-shadow: 0 8px 20px rgba(0, 85, 165, 0.15);
+      animation: pulseBanner 4s infinite;
+    ">
+<h3 style="
+        font-size: 2rem;
+        font-family: 'Poppins', sans-serif;
+        color: #003366;
+        font-weight: 700;
+        margin-bottom: 1rem;
+      ">
+        📩 Попълни формата и вземи своята оферта още днес!<br/>
+        📋 Συμπλήρωσε τη φόρμα και ζήτησε την προσφορά σου σήμερα!
+      </h3>
+<p style="font-size: 1.1rem; color: #222;">💬 Безплатна, бърза и напълно онлайн консултация / Δωρεάν, γρήγορη και πλήρως διαδικτυακή συμβουλευτική</p>
+</div>
+<!-- Формата -->
+<iframe height="750" id="offerForm" src="https://forms.fillout.com/t/9NUe5T1CmCus" style="border:none;" title="Форма за оферта" width="100%">
 </iframe>
 <div style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">
-  🔒 <a href="https://prevodigr.eu/privacy.html" target="_blank" style="color:#003366; text-decoration: underline;">
-    Политика за поверителност / Πολιτική απορρήτου
-  </a>
+      🔒 <a href="https://prevodigr.eu/privacy.html" style="color:#003366; text-decoration: underline;" target="_blank">
+        Политика за поверителност / Πολιτική απορρήτου
+      </a>
 </div>
-
-
 </div>
-</p></section>
+</section>
+<style>
+@keyframes pulseBanner {
+  0% { transform: scale(1); box-shadow: 0 8px 20px rgba(0, 85, 165, 0.15); }
+  50% { transform: scale(1.01); box-shadow: 0 10px 24px rgba(0, 85, 165, 0.25); }
+  100% { transform: scale(1); box-shadow: 0 8px 20px rgba(0, 85, 165, 0.15); }
+}
+@media (max-width: 768px) {
+  #prices h3 {
+    font-size: 1.4rem !important;
+    line-height: 1.4;
+  }
+  #prices p {
+    font-size: 1rem !important;
+  }
+}
+</style>
 <section id="testimonials">
 <h2 class="section-title">Мнения на клиенти /  Αξιολογήσεις πελατών</h2>
 <div class="testimonial">
@@ -409,23 +440,47 @@ button:hover::after {
       <strong>Παρασκευαΐδης Χρήστος</strong>
 </div>
 <div style="margin-top: 2rem;">
-<h3>🗣️ Споделете вашето мнение / Αφήστε την αξιολόγηση σας</h3>
-
-<iframe 
-  id="feedbackForm"
-  src="https://forms.fillout.com/t/89sjbQ6ZJ1us" 
-  width="100%" 
-  height="600" 
-  style="border:none;" 
-  title="Форма за мнение">
+<div style="
+        background: linear-gradient(135deg, #e6f2ff, #ffffff);
+        border: 2px solid #0055a5;
+        border-radius: 12px;
+        padding: 1.5rem;
+        text-align: center;
+        margin-bottom: 2rem;
+        box-shadow: 0 8px 20px rgba(0, 85, 165, 0.15);
+        animation: pulseReview 4s infinite;
+        ">
+<h3 style="
+    font-size: 2rem;
+    font-family: 'Poppins', sans-serif;
+    color: #990033;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  ">
+    🗣️ Споделете вашето мнение / Αφήστε την αξιολόγηση σας
+  </h3>
+<p style="font-size: 1.1rem; color: #333;">✍️ Вашето мнение има значение – помогнете на други клиенти с вашата оценка! / Η γνώμη σας μετράει – βοηθήστε άλλους πελάτες με την αξιολόγησή σας!</p>
+</div>
+<style>
+@keyframes pulseReview {
+  0% { transform: scale(1); box-shadow: 0 8px 20px rgba(0, 85, 165, 0.15); }
+  50% { transform: scale(1.01); box-shadow: 0 10px 24px rgba(0, 85, 165, 0.25); }
+  100% { transform: scale(1); box-shadow: 0 8px 20px rgba(0, 85, 165, 0.15); }
+}
+@media (max-width: 768px) {
+  #testimonials h3 {
+    font-size: 1.4rem !important;
+    line-height: 1.4;
+  }
+}
+</style>
+<iframe height="600" id="feedbackForm" src="https://forms.fillout.com/t/89sjbQ6ZJ1us" style="border:none;" title="Форма за мнение" width="100%">
 </iframe>
 <div style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">
-  🔒 <a href="https://prevodigr.eu/privacy.html" target="_blank" style="color:#003366; text-decoration: underline;">
+  🔒 <a href="https://prevodigr.eu/privacy.html" style="color:#003366; text-decoration: underline;" target="_blank">
     Политика за поверителност / Πολιτική απορρήτου
   </a>
 </div>
-
-
 </div>
 </section>
 <section id="contact">
@@ -438,9 +493,6 @@ button:hover::after {
 <p>© 2025 Пламен Моллов – Заклет преводач с гръцки език</p>
 <p>🇧🇬 България | Ελλάδα 🇬🇷</p>
 </footer>
-
-
-
 <script>
   document.addEventListener("DOMContentLoaded", function() {
     const forms = document.querySelectorAll("form");
@@ -460,8 +512,6 @@ button:hover::after {
     });
   });
 </script>
-
-
 <script>
 window.addEventListener("message", function(event) {
   if (event.origin.includes("fillout.com")) {
@@ -472,5 +522,4 @@ window.addEventListener("message", function(event) {
 });
 </script>
 </body>
-
 </html>
