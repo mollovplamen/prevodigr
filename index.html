@@ -376,7 +376,8 @@ button:hover::after {
 <p><em>Οι τιμές καθορίζονται μεμονωμένα, ανάλογα με τη δυσκολία του κειμένου, τον όγκο και τα χρονικά περιθώρια παράδοσης.</em></p>
 <div style="margin-top: 2rem; border-top: 2px solid #ccc; padding-top: 2rem;">
 <h3>Попълни формата и поискай своята оферта още днес!<br/>Συμπλήρωσε τη φόρμα και ζήτησε την προσφορά σου σήμερα!</h3>
-<form action="https://formsubmit.co/el/luvipu" enctype="multipart/form-data" method="POST"><input name="_captcha" type="hidden" value="false"/><input name="_template" type="hidden" value="table"/>
+<form id="uploadForm" action="https://formsubmit.co/el/luvipu" enctype="multipart/form-data" method="POST"><input name="_captcha" type="hidden" value="false"/><input name="_template" type="hidden" value="table"/>
+<input type="hidden" name="_next" value="thanks.html"/>
 <input name="Име и фамилия" placeholder="Име и фамилия / Ονοματεπώνυμο" required="" type="text"/>
 <input name="Имейл" placeholder="Имейл адрес / Email" required="" type="email"/>
 <input name="Телефон" placeholder="Телефон / Τηλέφωνο" required="" type="tel"/>
@@ -409,6 +410,7 @@ button:hover::after {
 <div style="margin-top: 2rem;">
 <h3>🗣️ Споделете вашето мнение / Αφήστε την αξιολόγηση σας</h3>
 <form action="https://formsubmit.co/el/luvipu" method="POST"><input name="_captcha" type="hidden" value="false"/><input name="_template" type="hidden" value="table"/>
+<input type="hidden" name="_next" value="thanks.html"/>
 <input name="Име/Όνομα" placeholder="Вашето име / Το όνομα σας" required="" type="text">
 <textarea name="Мнение/Αξιολόγηση" placeholder="Вашето мнение / Η αξιολόγηση σας" required="" rows="4"></textarea>
 <label class="gdpr-label">
@@ -432,22 +434,27 @@ button:hover::after {
 <p>🇧🇬 България | Ελλάδα 🇬🇷</p>
 </footer>
 
+
+
 <script>
-  const form = document.getElementById("uploadForm");
-  if (form) {
-    form.addEventListener("submit", function(e) {
-      e.preventDefault();
-      const formData = new FormData(form);
-      fetch(form.action, {
-        method: "POST",
-        body: formData
-      }).then(() => {
-        window.location.href = "thanks.html";
-      }).catch(() => {
-        alert("⚠️ Възникна грешка при изпращане.");
+  document.addEventListener("DOMContentLoaded", function() {
+    const forms = document.querySelectorAll("form");
+    forms.forEach(function(form) {
+      form.addEventListener("submit", function(e) {
+        e.preventDefault();
+        const formData = new FormData(form);
+        fetch(form.action, {
+          method: "POST",
+          body: formData
+        }).then(() => {
+          window.location.href = "thanks.html";
+        }).catch(() => {
+          alert("⚠️ Възникна грешка при изпращане.");
+        });
       });
     });
-  }
+  });
 </script>
+
 </body>
 </html>
