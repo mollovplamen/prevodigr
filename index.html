@@ -2,14 +2,242 @@
 <!DOCTYPE html>
 
 <html lang="bg">
-<head><link as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&amp;display=swap&amp;display=swap" rel="preload"/><link as="image" href="bg-greece.webp" rel="preload"/><link as="image" href="logo.webp" rel="preload"/>
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Plamen Mollov – Преводи от и на гръцки език</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+    
+/* GDPR checkbox styling */
+.gdpr-label {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+.gdpr-label input[type="checkbox"] {
+  margin: 0 0.4rem 0 0;
+  transform: scale(1.1);
+}
+.gdpr-label input[type="checkbox"] {
+  margin: 0;
+  transform: scale(1.1);
+}
+
+body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #fff, #f0f8ff);
+      color: #333;
+    }
+    header {
+      background-color: #002b5c;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    header img {
+      height: 160px;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      background-color: #0055a5;
+      padding: 0.5rem;
+    }
+    
+    
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.1rem;
+      padding: 0.9rem 1.5rem;
+      margin: 0.4rem;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    nav a:hover {
+      background-color: rgba(255, 255, 255, 0.25);
+    }
+    html {
+      scroll-behavior: smooth;
+    }
 
 
+    .hero {
+  position: relative;
+  background-image: url('assets/images/bg-greece.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: white;
+  width: 100%;
+  aspect-ratio: 16 / 4;
+  overflow: hidden;
+}
+    
+    .hero h1, .hero p {
+      position: relative;
+      z-index: 1;
+    }
+    section {
+      padding: 2rem;
+      background-color: white;
+      margin: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #003366;
+    }
+    .testimonial {
+      background-color: #f0f8ff;
+      padding: 1rem;
+      border-left: 4px solid #003366;
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+    .testimonial strong {
+      display: block;
+      margin-top: 0.5rem;
+      text-align: right;
+      color: #003366;
+    }
+    form {
+      background-color: #e6f2ff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input, textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+  background-color: #003366;
+  color: white;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+  position: relative;
+}
+button:hover {
+  background-color: #0055a5;
+}
+button:active {
+  transform: scale(0.96);
+}
+button:hover::after {
+  content: " 👋";
+  position: absolute;
+  right: -2rem;
+  animation: wave 1s infinite;
+}
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(20deg); }
+  50% { transform: rotate(-10deg); }
+  75% { transform: rotate(10deg); }
+  100% { transform: rotate(0deg); }
+}
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #003366;
+      color: white;
+    }
+  
+.hero-letter {
+  position: absolute;
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #002b5c;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  animation: fade-float 4s ease-in-out infinite;
+  opacity: 0;
+}
+@keyframes fade-float {
+  0%   { transform: translateY(0px); opacity: 0; }
+  50%  { transform: translateY(-5px); opacity: 1; }
+  100% { transform: translateY(-10px); opacity: 0; }
+}
 
-<script defer="defer">
+</style>
+<style>
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  .menu-toggle span {
+    height: 4px;
+    background: white;
+    margin: 5px 0;
+    width: 25px;
+    border-radius: 2px;
+  }
+  @media (max-width: 768px) {
+    nav {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background-color: #0055a5;
+    }
+    .nav-links a {
+      padding: 1rem;
+      border-top: 1px solid rgba(255,255,255,0.2);
+    }
+    .menu-toggle {
+      display: flex;
+      margin-left: 1rem;
+    }
+    nav.active .nav-links {
+      display: flex;
+    }
+  }
+
+.hero-letter {
+  position: absolute;
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #002b5c;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  animation: fade-float 4s ease-in-out infinite;
+  opacity: 0;
+}
+@keyframes fade-float {
+  0%   { transform: translateY(0px); opacity: 0; }
+  50%  { transform: translateY(-5px); opacity: 1; }
+  100% { transform: translateY(-10px); opacity: 0; }
+}
+
+</style>
+<script>
   document.addEventListener("DOMContentLoaded", function() {
     const nav = document.querySelector("nav");
     const toggle = document.querySelector(".menu-toggle");
@@ -18,14 +246,14 @@
     });
   });
 </script>
-<meta content="Заклет преводач с гръцки език, устни и писмени преводи, имоти в Гърция, легализация, консултации при покупка на имот." name="description"/><meta content="заклет преводач гръцки език, устни преводи гръцки, писмени преводи, имоти в Гърция, покупко-продажба на имоти, легализация, Ακίνητα στην Ελλάδα, μεταφράσεις ελληνικά, заверки на документи, апостил, апостил на документи, устни и писмени преводи с гръцки език, легализация на документи" name="keywords"/><meta content="Пламен Моллов" name="author"/><link href="https://www.prevodigr.eu" rel="canonical"/><script defer="defer" type="application/ld+json">
+<meta content="Заклет преводач с гръцки език, устни и писмени преводи, имоти в Гърция, легализация, консултации при покупка на имот." name="description"/><meta content="заклет преводач гръцки език, устни преводи гръцки, писмени преводи, имоти в Гърция, покупко-продажба на имоти, легализация, Ακίνητα στην Ελλάδα, μεταφράσεις ελληνικά, заверки на документи, апостил, апостил на документи, устни и писмени преводи с гръцки език, легализация на документи" name="keywords"/><meta content="Пламен Моллов" name="author"/><link href="https://www.prevodigr.eu" rel="canonical"/><script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "Пламен Моллов – Заклет преводач от и на гръцки език",
   "url": "https://www.prevodigr.eu",
-  "logo": "https://www.prevodigr.eu/logo.webp",
-  "image": "https://www.prevodigr.eu/bg-greece.webp",
+  "logo": "https://www.prevodigr.eu/assets/images/logo.png",
+  "image": "https://www.prevodigr.eu/assets/images/bg-greece.jpg",
   "description": "Заклет преводач с гръцки език с над 17 години опит. Устни и писмени преводи, преводи на документи, легализация, имотни сделки в Гърция.",
   "address": {
     "@type": "PostalAddress",
@@ -40,10 +268,10 @@
     "availableLanguage": ["Bulgarian", "Greek"]
   }
 }
-</script><link href="style.css" rel="stylesheet"/></head>
+</script></head>
 <body>
 <header>
-<img alt="Plamen Mollov Logo" height="160" src="logo.webp" width="160"/>
+<img alt="Plamen Mollov Logo" src="assets/images/logo.png"/>
 <h1>Заклет преводач от и на гръцки език – Пламен Моллов</h1>
 <h2><strong>17 години опит в устни и писмени преводи, заверки, легализации и консултации</strong></h2>
 </header>
@@ -172,7 +400,7 @@
 <p style="font-size: 1.1rem; color: #222;">💬 Безплатна, бърза и напълно онлайн консултация / Δωρεάν, γρήγορη και πλήρως διαδικτυακή συμβουλευτική</p>
 </div>
 <!-- Формата -->
-<iframe height="750" id="offerForm" loading="lazy" src="https://forms.fillout.com/t/9NUe5T1CmCus" style="border:none;" title="Форма за оферта" width="100%">
+<iframe height="750" id="offerForm" src="https://forms.fillout.com/t/9NUe5T1CmCus" style="border:none;" title="Форма за оферта" width="100%">
 </iframe>
 <div style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">
       🔒 <a href="https://prevodigr.eu/privacy.html" style="color:#003366; text-decoration: underline;" target="_blank">
@@ -181,7 +409,22 @@
 </div>
 </div>
 </section>
-
+<style>
+@keyframes pulseBanner {
+  0% { transform: scale(1); box-shadow: 0 8px 20px rgba(0, 85, 165, 0.15); }
+  50% { transform: scale(1.01); box-shadow: 0 10px 24px rgba(0, 85, 165, 0.25); }
+  100% { transform: scale(1); box-shadow: 0 8px 20px rgba(0, 85, 165, 0.15); }
+}
+@media (max-width: 768px) {
+  #prices h3 {
+    font-size: 1.4rem !important;
+    line-height: 1.4;
+  }
+  #prices p {
+    font-size: 1rem !important;
+  }
+}
+</style>
 <section id="testimonials">
 <h2 class="section-title">Мнения на клиенти /  Αξιολογήσεις πελατών</h2>
 <div class="testimonial">
@@ -218,8 +461,20 @@
   </h3>
 <p style="font-size: 1.1rem; color: #333;">✍️ Вашето мнение има значение – помогнете на други клиенти с вашата оценка! / Η γνώμη σας μετράει – βοηθήστε άλλους πελάτες με την αξιολόγησή σας!</p>
 </div>
-
-<iframe height="600" id="feedbackForm" loading="lazy" src="https://forms.fillout.com/t/89sjbQ6ZJ1us" style="border:none;" title="Форма за мнение" width="100%">
+<style>
+@keyframes pulseReview {
+  0% { transform: scale(1); box-shadow: 0 8px 20px rgba(0, 85, 165, 0.15); }
+  50% { transform: scale(1.01); box-shadow: 0 10px 24px rgba(0, 85, 165, 0.25); }
+  100% { transform: scale(1); box-shadow: 0 8px 20px rgba(0, 85, 165, 0.15); }
+}
+@media (max-width: 768px) {
+  #testimonials h3 {
+    font-size: 1.4rem !important;
+    line-height: 1.4;
+  }
+}
+</style>
+<iframe height="600" id="feedbackForm" src="https://forms.fillout.com/t/89sjbQ6ZJ1us" style="border:none;" title="Форма за мнение" width="100%">
 </iframe>
 <div style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">
   🔒 <a href="https://prevodigr.eu/privacy.html" style="color:#003366; text-decoration: underline;" target="_blank">
@@ -238,7 +493,7 @@
 <p>© 2025 Пламен Моллов – Заклет преводач с гръцки език</p>
 <p>🇧🇬 България | Ελλάδα 🇬🇷</p>
 </footer>
-<script defer="defer">
+<script>
   document.addEventListener("DOMContentLoaded", function() {
     const forms = document.querySelectorAll("form");
     forms.forEach(function(form) {
