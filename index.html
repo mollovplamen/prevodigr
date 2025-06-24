@@ -77,19 +77,21 @@ body {
     .hero {
   position: relative;
   background-image: url('assets/images/bg-greece.webp');
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
   background-color: white;
   width: 100%;
   overflow: hidden;
   min-height: 300px;
+  min-height: 320px;
 }
     
     .hero h1, .hero p {
       position: relative;
       z-index: 1;
   min-height: 300px;
+  min-height: 320px;
     }
     section {
       padding: 2rem;
@@ -176,6 +178,7 @@ button:hover::after {
   animation: fade-float 4s ease-in-out infinite;
   opacity: 0;
   min-height: 300px;
+  min-height: 320px;
 }
 @keyframes fade-float {
   0%   { transform: translateY(0px); opacity: 0; }
@@ -307,6 +310,11 @@ button:hover::after {
 <span alt="" aria-hidden="true" class="hero-letter" style="top: 76%; left: 98%; animation-delay: 2.04s;">Θ</span>
 <span alt="" aria-hidden="true" class="hero-letter" style="top: 30%; left: 42%; animation-delay: 5.04s;">η</span>
 <span alt="" aria-hidden="true" class="hero-letter" style="top: 5%; left: 89%; animation-delay: 0.94s;">Ω</span></div>
+<div class="wave-divider">
+<svg preserveaspectratio="none" style="display: block; width: 100%; height: 100px;" viewbox="0 0 1440 200">
+<path d="M0,160 C480,280 960,40 1440,160 L1440,320 L0,320 Z" fill="#e6f2ff"></path>
+</svg>
+</div>
 <section id="about">
 <h2 class="section-title">За мен / Σχετικά με εμένα</h2>
 <p style="text-align: justify;">
@@ -406,7 +414,18 @@ button:hover::after {
   #prices p {
     font-size: 1rem !important;
   }
-}</style>
+}
+
+.wave-divider {
+  margin-top: -4px;
+  overflow: hidden;
+  line-height: 0;
+}
+.wave-divider svg {
+  position: relative;
+  display: block;
+}
+</style>
 <section id="testimonials">
 <h2 class="section-title">Мнения на клиенти /  Αξιολογήσεις πελατών</h2>
 <div class="testimonial">
