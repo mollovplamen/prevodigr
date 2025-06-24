@@ -79,16 +79,17 @@ body {
   background-image: url('assets/images/bg-greece.webp');
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center center;
   background-color: white;
   width: 100%;
-  aspect-ratio: 16 / 4;
   overflow: hidden;
+  min-height: 300px;
 }
     
     .hero h1, .hero p {
       position: relative;
       z-index: 1;
+  min-height: 300px;
     }
     section {
       padding: 2rem;
@@ -174,6 +175,7 @@ button:hover::after {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   animation: fade-float 4s ease-in-out infinite;
   opacity: 0;
+  min-height: 300px;
 }
 @keyframes fade-float {
   0%   { transform: translateY(0px); opacity: 0; }
