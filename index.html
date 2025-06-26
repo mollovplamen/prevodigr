@@ -6,8 +6,8 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Plamen Mollov – Преводи от и на гръцки език</title>
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'>
-<noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet"></noscript>
+<link as="style" css2?family='Poppins:wght@500;600&amp;display=swap"' fonts.googleapis.com="" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&amp;display=swap" https:="" onload="this.onload=null;this.rel='stylesheet'&gt;
+&lt;noscript&gt;&lt;link href=" rel="stylesheet"/>
 <style>
     
 /* GDPR checkbox styling */
@@ -200,7 +200,23 @@ button:hover::after {
     font-size: 1rem;
   }
 }
-</style>
+
+@media (max-width: 768px) {
+  header img {
+    height: 160px;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+  }
+}
+
+.nav-links {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+}
+nav.active .nav-links {
+  max-height: 500px;
+}</style>
 <style>
   .menu-toggle {
     display: none;
@@ -261,11 +277,10 @@ button:hover::after {
 }
 
 </style>
-
 <meta content="Заклет преводач с гръцки език, устни и писмени преводи, имоти в Гърция, легализация, консултации при покупка на имот." name="description"/><meta content="заклет преводач гръцки език, устни преводи гръцки, писмени преводи, имоти в Гърция, покупко-продажба на имоти, легализация, Ακίνητα στην Ελλάδα, μεταφράσεις ελληνικά, заверки на документи, апостил, апостил на документи, устни и писмени преводи с гръцки език, легализация на документи" name="keywords"/><meta content="Пламен Моллов" name="author"/><link href="https://www.prevodigr.eu" rel="canonical"/></head>
 <body>
 <header>
-<img alt="Plamen Mollov Logo" src="assets/images/logo.webp" width="220" height="220" loading="lazy"/>
+<img alt="Plamen Mollov Logo" height="220" loading="lazy" src="assets/images/logo.webp" width="220"/>
 <h1>Заклет преводач от и на гръцки език – Пламен Моллов</h1>
 <h2><strong>17 години опит в устни и писмени преводи, заверки, легализации и консултации</strong></h2>
 </header>
