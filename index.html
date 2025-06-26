@@ -6,7 +6,8 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Plamen Mollov – Преводи от и на гръцки език</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet"></noscript>
 <style>
     
 /* GDPR checkbox styling */
@@ -223,6 +224,12 @@ button:hover::after {
       flex-direction: column;
       width: 100%;
       background-color: #0055a5;
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.5s ease-out;
+      flex-direction: column;
+      width: 100%;
+      background-color: #0055a5;
     }
     .nav-links a {
       padding: 1rem;
@@ -234,6 +241,7 @@ button:hover::after {
     }
     nav.active .nav-links {
       display: flex;
+      max-height: 500px;
     }
   }
 
@@ -257,7 +265,7 @@ button:hover::after {
 <meta content="Заклет преводач с гръцки език, устни и писмени преводи, имоти в Гърция, легализация, консултации при покупка на имот." name="description"/><meta content="заклет преводач гръцки език, устни преводи гръцки, писмени преводи, имоти в Гърция, покупко-продажба на имоти, легализация, Ακίνητα στην Ελλάδα, μεταφράσεις ελληνικά, заверки на документи, апостил, апостил на документи, устни и писмени преводи с гръцки език, легализация на документи" name="keywords"/><meta content="Пламен Моллов" name="author"/><link href="https://www.prevodigr.eu" rel="canonical"/></head>
 <body>
 <header>
-<img alt="Plamen Mollov Logo" src="assets/images/logo.webp"/>
+<img alt="Plamen Mollov Logo" src="assets/images/logo.webp" width="220" height="220" loading="lazy"/>
 <h1>Заклет преводач от и на гръцки език – Пламен Моллов</h1>
 <h2><strong>17 години опит в устни и писмени преводи, заверки, легализации и консултации</strong></h2>
 </header>
