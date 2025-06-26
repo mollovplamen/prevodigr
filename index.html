@@ -38,11 +38,14 @@ body {
     header {
       background-color: #002b5c;
       color: white;
-      padding: 1rem;
+      padding: 0.5rem 1rem;
       text-align: center;
     }
+    header h1, header h2 {
+      margin-top: -0.8rem;
+    }
     header img {
-      height: 160px;
+      height: 220px;
     }
     nav {
       display: flex;
@@ -183,6 +186,19 @@ button:hover::after {
   100% { transform: translateY(-10px); opacity: 0; }
 }
 
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+  header img {
+    height: 120px;
+  }
+  header h1 {
+    font-size: 1.4rem;
+  }
+  header h2 {
+    font-size: 1rem;
+  }
+}
 </style>
 <style>
   .menu-toggle {
