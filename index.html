@@ -44,6 +44,7 @@ body {
     header h1, header h2 {
       margin-top: -0.8rem;
     }
+    header img {
       height: 220px;
     }
     nav {
@@ -188,6 +189,7 @@ button:hover::after {
 
 /* Responsive adjustments for mobile */
 @media (max-width: 768px) {
+  header img {
     height: 120px;
   }
   header h1 {
@@ -200,9 +202,20 @@ button:hover::after {
 
 @media (max-width: 768px) {
   header img {
-    height: 220px !important;
-    aspect-ratio: auto;
+    height: 160px !important;
+    aspect-ratio: 1 / 1;
     object-fit: contain;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+  }
+  nav.active .nav-links {
+    max-height: 500px;
   }
 }
 </style>
