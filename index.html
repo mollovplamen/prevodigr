@@ -225,8 +225,7 @@ button:active {
     max-height: 500px;
   }
 }
-</style>
-<style>
+
   .menu-toggle {
     display: none;
     flex-direction: column;
@@ -279,7 +278,15 @@ button:active {
 }
 
 </style>
-<meta content="Заклет преводач с гръцки език, устни и писмени преводи, имоти в Гърция, легализация, консултации при покупка на имот." name="description"/><meta content="заклет преводач гръцки език, устни преводи гръцки, писмени преводи, имоти в Гърция, покупко-продажба на имоти, легализация, Ακίνητα στην Ελλάδα, μεταφράσεις ελληνικά, заверки на документи, апостил, апостил на документи, устни и писмени преводи с гръцки език, легализация на документи" name="keywords"/><meta content="Пламен Моллов" name="author"/><link href="https://www.prevodigr.eu" rel="canonical"/></head>
+<meta content="Заклет преводач с гръцки език, устни и писмени преводи, имоти в Гърция, легализация, консултации при покупка на имот." name="description"/><meta content="заклет преводач гръцки език, устни преводи гръцки, писмени преводи, имоти в Гърция, покупко-продажба на имоти, легализация, Ακίνητα στην Ελλάδα, μεταφράσεις ελληνικά, заверки на документи, апостил, апостил на документи, устни и писмени преводи с гръцки език, легализация на документи" name="keywords"/><meta content="Пламен Моллов" name="author"/><link href="https://www.prevodigr.eu" rel="canonical"/>
+  <meta property="og:title" content="Пламен Моллов – Преводи от и на гръцки език" />
+  <meta property="og:description" content="Заклет преводач с 17 г. опит, устни и писмени преводи, легализация, консултации, имоти в Гърция." />
+  <meta property="og:image" content="https://www.prevodigr.eu/assets/images/logo.webp" />
+  <meta property="og:url" content="https://www.prevodigr.eu" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" as="style">
+</head>
 <body>
 <header>
 <img alt="Plamen Mollov Logo" src="assets/images/logo.webp"/>
@@ -301,7 +308,7 @@ button:active {
 <a href="#contact">Контакти / Επικοινωνίες</a>
 </div>
 </nav>
-<div class="hero">
+<div class="hero" role="img" aria-label="Фоново изображение с гръцка тематика">
 <span class="hero-letter" style="top: 77%; left: 69%; animation-delay: 1.43s;">Χ</span>
 <span class="hero-letter" style="top: 9%; left: 47%; animation-delay: 2.79s;">Κ</span>
 <span class="hero-letter" style="top: 19%; left: 63%; animation-delay: 4.21s;">Υ</span>
@@ -508,25 +515,7 @@ button:active {
 <p>© 2025 Пламен Моллов – Заклет преводач с гръцки език</p>
 <p>🇧🇬 България | Ελλάδα 🇬🇷</p>
 </footer>
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const forms = document.querySelectorAll("form");
-    forms.forEach(function(form) {
-      form.addEventListener("submit", function(e) {
-        e.preventDefault();
-        const formData = new FormData(form);
-        fetch(form.action, {
-          method: "POST",
-          body: formData
-        }).then(() => {
-          window.location.href = "thanks.html";
-        }).catch(() => {
-          alert("⚠️ Възникна грешка при изпращане.");
-        });
-      });
-    });
-  });
-</script>
+
 <script>
 window.addEventListener("message", function(event) {
   if (event.origin.includes("fillout.com")) {
