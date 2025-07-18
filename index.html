@@ -5,10 +5,10 @@
 <head>
 
 
-<link rel="preload" href="assets/fonts/poppins-v23-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="assets/fonts/poppins-v23-latin-500.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="assets/fonts/poppins-v23-latin-600.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="assets/fonts/poppins-v23-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/poppins-v23-latin-regular.woff2" as="font" type="font/woff2" crossorigin importance="low">
+<link rel="preload" href="assets/fonts/poppins-v23-latin-500.woff2" as="font" type="font/woff2" crossorigin importance="low">
+<link rel="preload" href="assets/fonts/poppins-v23-latin-600.woff2" as="font" type="font/woff2" crossorigin importance="low">
+<link rel="preload" href="assets/fonts/poppins-v23-latin-700.woff2" as="font" type="font/woff2" crossorigin importance="low">
 <!-- Favicon икони за всички устройства -->
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
 <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
@@ -25,6 +25,16 @@
 <title>Пламен Моллов – Преводачески услуги с гръцки език в Пловдив – устни, писмени преводи, заверка и легализация на документи</title>
 
 <style>
+
+/* Оптимизация за рендериране */
+section {
+  content-visibility: auto;
+  contain-intrinsic-size: 1000px;
+}
+.hero-letter {
+  will-change: transform, opacity;
+}
+
     
 /* GDPR checkbox styling */
 .gdpr-label {
