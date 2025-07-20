@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<title>Цени / Τιμές</title>
+<style>
+
+/* Оптимизация за рендериране */
+section {
+  content-visibility: auto;
+  contain-intrinsic-size: 1000px;
+}
+.hero-letter {
+  will-change: transform, opacity;
+}
+
+    
+/* GDPR checkbox styling */
+.gdpr-label {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+.gdpr-label input[type="checkbox"] {
+  margin: 0;
+  transform: scale(1.1);
+}
+
+body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #fff, #f0f8ff);
+      color: #333;
+    }
+    header {
+      background-color: #002b5c;
+      color: white;
+      padding: 0.5rem 1rem;
+      text-align: center;
+    }
+    header h1, header h2 {
+      margin-top: -0.8rem;
+    }
+    header img {
+      height: 220px;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      background-color: #0055a5;
+      padding: 0.5rem;
+    }
+    
+    
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.1rem;
+      padding: 0.9rem 1.5rem;
+      margin: 0.4rem;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    nav a:hover {
+      background-color: rgba(255, 255, 255, 0.25);
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    .hero {
+  position: relative;
+  background-image: url('assets/images/bg-greece.webp');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: white;
+  width: 100%;
+  aspect-ratio: 16 / 4;
+  overflow: hidden;
+}
+    
+    .hero h1, .hero p {
+      position: relative;
+      z-index: 1;
+    }
+    section {
+      padding: 2rem;
+      background-color: white;
+      margin: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #003366;
+    }
+    .testimonial {
+      background-color: #f0f8ff;
+      padding: 1rem;
+      border-left: 4px solid #003366;
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+    .testimonial strong {
+      display: block;
+      margin-top: 0.5rem;
+      text-align: right;
+      color: #003366;
+    }
+    form {
+      background-color: #e6f2ff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input, textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+  background-color: #003366;
+  color: white;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+  position: relative;
+}
+button:hover {
+  background-color: #0055a5;
+}
+button:active {
+  transform: scale(0.96);
+}
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(20deg); }
+  50% { transform: rotate(-10deg); }
+  75% { transform: rotate(10deg); }
+  100% { transform: rotate(0deg); }
+}
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #003366;
+      color: white;
+    }
+
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+  header img {
+    height: 120px;
+  }
+  header h1 {
+    font-size: 1.4rem;
+  }
+  header h2 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  header img {
+    height: 160px !important;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+  }
+  nav.active .nav-links {
+    max-height: 500px;
+  }
+}
+
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  .menu-toggle span {
+    height: 4px;
+    background: white;
+    margin: 5px 0;
+    width: 25px;
+    border-radius: 2px;
+  }
+  @media (max-width: 768px) {
+    nav {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background-color: #0055a5;
+    }
+    .nav-links a {
+      padding: 1rem;
+      border-top: 1px solid rgba(255,255,255,0.2);
+    }
+    .menu-toggle {
+      display: flex;
+      margin-left: 1rem;
+    }
+    nav.active .nav-links {
+      display: flex;
+    }
+  }
+
+.hero-letter {
+  position: absolute;
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #002b5c;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  animation: fade-float 4s ease-in-out infinite;
+  opacity: 0;
+}
+@keyframes fade-float {
+  0%   { transform: translateY(0px); opacity: 0; }
+  50%  { transform: translateY(-5px); opacity: 1; }
+  100% { transform: translateY(-10px); opacity: 0; }
+}
+
+
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('assets/fonts/poppins-v23-latin-regular.woff2') format('woff2');
+  font-weight: 400;
+
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('assets/fonts/poppins-v23-latin-500.woff2') format('woff2');
+  font-weight: 500;
+
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('assets/fonts/poppins-v23-latin-600.woff2') format('woff2');
+  font-weight: 600;
+
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('assets/fonts/poppins-v23-latin-700.woff2') format('woff2');
+  font-weight: 700;
+
+  font-display: swap;
+}
+
+
+@keyframes pulseBanner {
+  0% { transform: scale(1); box-shadow: 0 8px 20px rgba(0, 85, 165, 0.15); }
+  50% { transform: scale(1.01); box-shadow: 0 10px 24px rgba(0, 85, 165, 0.25); }
+  100% { transform: scale(1); box-shadow: 0 8px 20px rgba(0, 85, 165, 0.15); }
+}
+@media (max-width: 768px) {
+  #prices h3 {
+    font-size: 1.4rem !important;
+    line-height: 1.4;
+  }
+  #prices p {
+    font-size: 1rem !important;
+  }
+}
+</style>
+</head>
+<body>
+<section id="prices">
+<h2 class="section-title">Цени / Τιμές</h2>
+<p style="text-align: justify;">
+<em>Цените се договарят индивидуално според сложността, обема и сроковете.</em><br/>
+<em>Οι τιμές καθορίζονται μεμονωμένα, ανάλογα με τη δυσκολία του κειμένου, τον όγκο και τα χρονικά περιθώρια παράδοσης.</em>
+</p>
+<div style="margin-top: 2rem; border-top: 2px solid #ccc; padding-top: 2rem;">
+<!-- Рекламен банер с анимация -->
+<div style="
+      background: linear-gradient(135deg, #e0f0ff, #ffffff);
+      border: 2px solid #0055a5;
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      box-shadow: 0 8px 20px rgba(0, 85, 165, 0.15);
+      animation: pulseBanner 4s infinite;
+    ">
+<h3 style="
+        font-size: 2rem;
+        font-family: 'Poppins', sans-serif;
+        color: #003366;
+        font-weight: 700;
+        margin-bottom: 1rem;
+      ">
+        📩 Попълни формата и вземи своята оферта още днес!<br/>
+        📋 Συμπλήρωσε τη φόρμα και ζήτησε την προσφορά σου σήμερα!
+      </h3>
+<p style="font-size: 1.1rem; color: #222;">💬 Безплатна, бърза и напълно онлайн консултация / Δωρεάν, γρήγορη και πλήρως διαδικτυακή συμβουλευτική</p>
+</div>
+<!-- Формата -->
+<iframe height="750" id="offerForm" loading="lazy" src="https://forms.fillout.com/t/9NUe5T1CmCus" style="border:none;" title="Форма за оферта" width="100%">
+</iframe>
+<div style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">
+      🔒 <a href="https://prevodigr.eu/privacy.html" style="color:#003366; text-decoration: underline;" target="_blank">
+        Политика за поверителност / Πολιτική απορρήτου
+      </a>
+</div>
+</div>
+</section>
+</body>
+</html>
