@@ -380,8 +380,27 @@ button:active {
 <p style="font-size: 1.1rem; color: #222;">💬 Безплатна, бърза и напълно онлайн консултация / Δωρεάν, γρήγορη και πλήρως διαδικτυακή συμβουλευτική</p>
 </div>
 <!-- Формата -->
-<iframe height="800" id="offerForm" loading="lazy" src="https://forms.fillout.com/t/9NUe5T1CmCus" style="border:none;" title="Форма за оферта" width="100%">
-</iframe>
+
+<form name="offer" method="POST" data-netlify="true" action="/thanks.html" enctype="multipart/form-data">
+  <input type="hidden" name="form-name" value="offer" />
+  <p><label>Име / Όνομα:<br><input type="text" name="name" required></label></p>
+  <p><label>Имейл / Email:<br><input type="email" name="email" required></label></p>
+  <p><label>Телефон / Τηλέφωνο:<br><input type="text" name="phone"></label></p>
+  <p><label>Съобщение / Μήνυμα:<br><textarea name="message" rows="5" required></textarea></label></p>
+  
+  
+  <p><label>Прикачване на файл / Επισύναψη αρχείου:<br><input type="file" name="attachment" title="Избор на файл / Επιλογή αρχείου"></label></p>
+
+  <!-- GDPR чекбокс -->
+  <p class="gdpr-label">
+    <input type="checkbox" name="gdpr" required>
+    Съгласявам се с обработката на лични данни съгласно Политиката за поверителност / 
+    Συμφωνώ με την επεξεργασία των προσωπικών δεδομένων σύμφωνα με την Πολιτική απορρήτου
+  </p>
+
+  <p><button type="submit">Изпрати / Υποβολή</button></p>
+</form>
+
 <div style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">
       🔒 <a href="https://prevodigr.eu/privacy.html" style="color:#003366; text-decoration: underline;" target="_blank">
         Политика за поверителност / Πολιτική απορρήτου
@@ -389,19 +408,18 @@ button:active {
 </div>
 </div>
 
-<div style="text-align: center; margin-top: 2rem;">
+<div style="text-align:center; margin-top: 2rem;">
   <a href="index.html" style="
-    background-color: #003366;
+    background: #003366;
     color: white;
-    padding: 1rem 2rem;
-    border-radius: 10px;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-weight: bold;
     text-decoration: none;
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 600;
     display: inline-block;
-    transition: background-color 0.3s ease;
-  ">⬅️ Обратно към начална страница / Επιστροφή στην αρχική σελίδα</a>
+  ">
+    Обратно към началната страница / Επιστροφή στην αρχική σελίδα
+  </a>
 </div>
 
 </section>
