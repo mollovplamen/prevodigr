@@ -347,10 +347,22 @@ button:active {
 }
 
 </style>
-<script type="application/ld+json">{
+<script type="application/ld+json">
+{
   "@context": "https://schema.org",
-  "@type": "Product",
+  "@type": "LocalBusiness",
   "name": "Преводачески услуги от Пламен Моллов",
+  "image": "https://www.prevodigr.eu/assets/images/logo.png",
+  "url": "https://www.prevodigr.eu",
+  "telephone": "+359897098959",
+  "priceRange": "€€",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "ул. Димитър Талев 132",
+    "addressLocality": "Пловдив",
+      "postalCode": "4000",
+    "addressCountry": "BG"
+  },
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "5",
@@ -409,14 +421,9 @@ button:active {
       },
       "datePublished": "2025-07-20"
     }
-  ],
-  "@id": "https://www.prevodigr.eu/testimonials.html",
-  "itemReviewed": {
-    "@type": "Service",
-    "name": "Преводачески услуги от Пламен Моллов",
-    "url": "https://www.prevodigr.eu"
-  }
-}</script>
+  ]
+}
+</script>
 </head>
 <body>
 <section id="testimonials">
@@ -519,24 +526,8 @@ button:active {
 }
 
 </style>
-<!-- Формата -->
-
-<form name="feedback" method="POST" data-netlify="true" action="/thanks.html">
-  <input type="hidden" name="form-name" value="feedback" />
-  <p><label>Име / Όνομα:<br><input type="text" name="name" required></label></p>
-  <p><label>Оценка / Βαθμολογία (1–5):<br><input type="number" name="rating" min="1" max="5" required></label></p>
-  <p><label>Мнение / Αξιολόγηση:<br><textarea name="message" rows="5" required></textarea></label></p>
-  
-  <!-- GDPR чекбокс -->
-  <p class="gdpr-label">
-    <input type="checkbox" name="gdpr" required>
-    Съгласявам се с обработката на лични данни съгласно Политиката за поверителност / 
-    Συμφωνώ με την επεξεργασία των προσωπικών δεδομένων σύμφωνα με την Πολιτική απορρήτου
-  </p>
-
-  <p><button type="submit">Изпрати мнение / Υποβολή αξιολόγησης</button></p>
-</form>
-
+<iframe height="700" id="feedbackForm" loading="lazy" src="https://forms.fillout.com/t/89sjbQ6ZJ1us" style="border:none;" title="Форма за мнение" width="100%">
+</iframe>
 <div style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">
   🔒 <a href="https://prevodigr.eu/privacy.html" style="color:#003366; text-decoration: underline;" target="_blank">
     Политика за поверителност / Πολιτική απορρήτου
@@ -544,18 +535,19 @@ button:active {
 </div>
 </div>
 
-<div style="text-align:center; margin-top: 2rem;">
+<div style="text-align: center; margin-top: 2rem;">
   <a href="index.html" style="
-    background: #003366;
+    background-color: #003366;
     color: white;
-    padding: 0.8rem 1.5rem;
-    border-radius: 8px;
-    font-weight: bold;
+    padding: 1rem 2rem;
+    border-radius: 10px;
     text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
     display: inline-block;
-  ">
-    Обратно към началната страница / Επιστροφή στην αρχική σελίδα
-  </a>
+    transition: background-color 0.3s ease;
+  ">⬅️ Обратно към начална страница / Επιστροφή στην αρχική σελίδα</a>
 </div>
 
 </section>
