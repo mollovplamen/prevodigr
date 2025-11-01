@@ -4,64 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Цени / Τιμές</title>
-<!-- Favicon икони за всички устройства -->
-<link href="/favicon.ico" rel="icon" type="image/x-icon"/>
-<link href="/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
-<link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
-<link href="/site.webmanifest" rel="manifest"/>
-<link href="/web-app-manifest-192x192.png" rel="icon" sizes="192x192" type="image/png"/>
-<link href="/web-app-manifest-512x512.png" rel="icon" sizes="512x512" type="image/png"/>
-<link rel="canonical" href="https://www.prevodigr.eu/prices.html">
-<meta name="description" content="Професионални преводи от и на гръцки език. Писмени и устни преводи, легализация и консултации. Цена: по договаряне.">
-
-<meta property="og:title" content="Цени за преводи от и на гръцки език – Пламен Моллов">
-<meta property="og:description" content="Професионални преводи – писмени и устни, легализация и консултации. Цена: по договаряне.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://www.prevodigr.eu/prices.html">
-<meta property="og:image" content="https://www.prevodigr.eu/assets/images/logo.webp">
-
-<!-- BreadcrumbList JSON-LD -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Начало",
-      "item": "https://www.prevodigr.eu/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Цени",
-      "item": "https://www.prevodigr.eu/prices.html"
-    }
-  ]
-}
-</script>
-
-<!-- Service JSON-LD -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "serviceType": "Преводи и легализация",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "Преводи от и на гръцки език – Пламен Моллов",
-    "url": "https://www.prevodigr.eu"
-  },
-  "offers": [
-    { "@type": "Offer", "name": "Писмени преводи", "price": "по договаряне", "priceCurrency": "BGN" },
-    { "@type": "Offer", "name": "Устни преводи", "price": "по договаряне", "priceCurrency": "BGN" },
-    { "@type": "Offer", "name": "Легализация", "price": "по договаряне", "priceCurrency": "BGN" },
-    { "@type": "Offer", "name": "Консултации", "price": "по договаряне", "priceCurrency": "BGN" }
-  ]
-}
-</script>
-
 <style>
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -97,13 +39,18 @@ a.back-home {
 a.back-home:hover {
   background-color: #0055a5;
 }
+@keyframes scrollText {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
 @keyframes pulseBanner {
   0% { transform: scale(1); box-shadow: 0 8px 20px rgba(0, 85, 165, 0.15); }
-  50% { transform: scale(1.01); box-shadow: 0 10px 24px rgba(0, 85, 165, 0.25); }
+  50% { transform: scale(1.02); box-shadow: 0 10px 24px rgba(0, 85, 165, 0.25); }
   100% { transform: scale(1); box-shadow: 0 8px 20px rgba(0, 85, 165, 0.15); }
 }
-@media (max-width: 768px) {
-  iframe { min-height: 600px !important; }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 </style>
 </head>
@@ -115,33 +62,59 @@ a.back-home:hover {
     <em>Οι τιμές καθορίζονται μεμονωμένα, ανάλογα με τη δυσκολία του κειμένου, τον όγκο και τα χρονικά περιθώρια παράδοσης.</em>
   </p>
 
-  
-
-  <div style="margin-top: 2rem; border-top: 2px solid #ccc; padding-top: 2rem;">
-    <div style="
-      background: linear-gradient(135deg, #e0f0ff, #ffffff);
-      border: 2px solid #0055a5;
-      border-radius: 12px;
-      padding: 1.5rem;
-      text-align: center;
-      margin-bottom: 2rem;
-      box-shadow: 0 8px 20px rgba(0, 85, 165, 0.15);
-      animation: pulseBanner 4s infinite;
+  <!-- 🔵 Постоянен анимиран банер -->
+  <div id="loadingBanner" style="
+    background: linear-gradient(90deg, #003366, #0055a5);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-align: center;
+    padding: 1rem 0;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    position: relative;
+    animation: pulseBanner 4s infinite;
+  ">
+    <div id="scrollingText" style="
+      white-space: nowrap;
+      display: inline-block;
+      animation: scrollText 10s linear infinite;
     ">
-      <h3 style="font-size: 2rem; font-family: 'Poppins', sans-serif; color: #003366; font-weight: 700; margin-bottom: 1rem;">
-        📩 Попълни формата и вземи своята оферта още днес!<br/>
-        📋 Συμπλήρωσε τη φόρμα και ζήτησε την προσφορά σου σήμερα!
-      </h3>
-      <p style="font-size: 1.1rem; color: #222;">💬 Безплатна, бърза и напълно онлайн консултация / Δωρεάν, γρήγορη και πλήρως διαδικτυακή συμβουλευτική</p>
+      🇧🇬 Гарантирано най-добрите цени! — 🇬🇷 Εγγυημένα οι καλύτερες τιμές! — 🇧🇬 Гарантирано най-добрите цени! — 🇬🇷 Εγγυημένα οι καλύτερες τιμές!
     </div>
+  </div>
 
-    <iframe id="offerForm" loading="lazy" src="https://forms.fillout.com/t/9NUe5T1CmCus" style="border:none; width:100%; min-height:700px;" title="Форма за оферта"></iframe>
+  <!-- 🩵 Постоянен банер над формата -->
+  <div id="formBanner" style="
+    background: linear-gradient(135deg, #e0f0ff, #ffffff);
+    border: 2px solid #0055a5;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 20px rgba(0, 85, 165, 0.15);
+    animation: pulseBanner 4s infinite, fadeIn 1.5s ease forwards;
+  ">
+    <h3 style="font-size: 2rem; font-family: 'Poppins', sans-serif; color: #003366; font-weight: 700; margin-bottom: 1rem;">
+      📩 Попълни формата и вземи своята оферта още днес!<br/>
+      📋 Συμπλήρωσε τη φόρμα και ζήτησε την προσφορά σου σήμερα!
+    </h3>
+    <p style="font-size: 1.1rem; color: #222;">
+      💬 Безплатна, бърза и напълно онлайн консултация / Δωρεάν, γρήγορη και πλήρως διαδικτυακή συμβουλευτική
+    </p>
+  </div>
 
-    <div style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">
-      🔒 <a href="privacy.html" style="color:#003366; text-decoration: underline;" target="_blank">
-        Политика за поверителност / Πολιτική απορρήτου
-      </a>
-    </div>
+  <!-- 🧾 Формата -->
+  <iframe id="offerForm" src="https://forms.fillout.com/t/9NUe5T1CmCus"
+    style="border:none; width:100%; min-height:700px;"
+    title="Форма за оферта"></iframe>
+
+  <div style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">
+    🔒 <a href="privacy.html" style="color:#003366; text-decoration: underline;" target="_blank">
+      Политика за поверителност / Πολιτική απορρήτου
+    </a>
   </div>
 
   <div style="text-align: center; margin-top: 2rem;">
