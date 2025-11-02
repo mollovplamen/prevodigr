@@ -170,12 +170,23 @@ a.back-home:hover {
   }
 }
 
-    #formBanner, #loadingBanner {
-        border-width: 2px;
-        border-style: solid;
-        border-color: #0055a5;
-    }
-    </style>
+#formBanner, #loadingBanner {
+    border-width: 2px;
+    border-style: solid;
+    border-color: #0055a5;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#formBanner h3, #loadingBanner {
+    width: 100%;
+}
+
+#formBanner, #loadingBanner {
+    margin: 0 auto;
+    max-width: 100%;
+}
+</style>
 </head>
 <body>
 <section id="prices">
