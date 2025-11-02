@@ -231,15 +231,26 @@ a.back-home:hover {
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const text = document.getElementById("scrollingText");
+
   if (text) {
-    // Принудително рестартиране на анимацията при мобилни устройства
+    // Спираме всякакви предварителни анимации
     text.style.animation = "none";
-    // малка пауза (буквално 50 милисекунди), за да се презареди правилно
+
+    // Изчакваме много кратко, за да принудим браузъра да презареди елемента
     setTimeout(() => {
-      text.style.animation = "scrollBanner 40s linear infinite";
+      // Проверяваме дали сме на мобилно устройство
+      const isMobile = window.matchMedia("(max-width: 768px)").matches;
+      
+      // Ако е мобилно — пускаме мобилната анимация, иначе десктоп
+      if (isMobile) {
+        text.style.animation = "scrollBannerMobile 45s linear infinite";
+      } else {
+        text.style.animation = "scrollBanner 40s linear infinite";
+      }
+
       text.style.animationDelay = "0s";
       text.style.animationPlayState = "running";
-    }, 50);
+    }, 30); // 30 ms — достатъчно кратко, за да стартира веднага
   }
 });
 </script>
