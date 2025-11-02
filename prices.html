@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="bg">
 <head>
@@ -53,7 +52,7 @@ section {
   white-space: nowrap;
   position: relative;
   animation: scrollBanner 40s linear infinite;
-  animation-delay: 0s !important; /* тръгва веднага */
+  animation-delay: 0s;
   will-change: transform; /* по-плавно движение */
 }
 
@@ -61,19 +60,16 @@ section {
   0% {
     transform: translateX(100%);
   }
-  99.999% {
-    transform: translateX(-100%);
-  }
   100% {
-    transform: translateX(100%);
+    transform: translateX(-100%);
   }
 }
 
 /* Мобилна версия — същото движение, но оптимизирано за телефони */
 @media (max-width: 768px) {
   #scrollingText {
-    animation: scrollBannerMobile 45s linear infinite;
-    animation-delay: 0s !important; /* тръгва веднага на телефон */
+    animation: scrollBannerMobile 20s linear infinite;
+    animation-delay: 0s;
     will-change: transform;
   }
 
@@ -81,11 +77,8 @@ section {
     0% {
       transform: translateX(100%);
     }
-    99.999% {
-      transform: translateX(-100%);
-    }
     100% {
-      transform: translateX(100%);
+      transform: translateX(-100%);
     }
   }
 }
@@ -175,24 +168,6 @@ a.back-home:hover {
     font-size: 1rem;
     padding: 0.8rem 1.5rem;
   }
-
-  #scrollingText {
-    animation: scrollBannerMobile 20s linear infinite;
-    animation-delay: 0s !important; /* започва веднага */
-  }
-
-  @keyframes scrollBannerMobile {
-    0% {
-      transform: translateX(100%);
-    }
-    99.999% {
-      transform: translateX(-100%);
-    }
-    100% {
-      transform: translateX(100%);
-    }
-  }
-
 }
 </style>
 </head>
@@ -215,7 +190,7 @@ a.back-home:hover {
     <p>💬 Безплатна, бърза и напълно онлайн консултация / Δωρεάν, γρήγορη και πλήρως διαδικτυακή συμβουλευτική</p>
   </div>
 
-  <iframe id="offerForm" src="https://forms.fillout.com/t/9NUe5T1CmCus" title="Форма за оферта"></iframe>
+  <iframe id="offerForm" src=" https://forms.fillout.com/t/9NUe5T1CmCus" title="Форма за оферта"></iframe>
 
   <div style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">
     🔒 <a href="privacy.html" style="color:#003366; text-decoration: underline;" target="_blank">
@@ -231,26 +206,14 @@ a.back-home:hover {
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const text = document.getElementById("scrollingText");
-
+  
   if (text) {
-    // Спираме всякакви предварителни анимации
-    text.style.animation = "none";
-
-    // Изчакваме много кратко, за да принудим браузъра да презареди елемента
-    setTimeout(() => {
-      // Проверяваме дали сме на мобилно устройство
-      const isMobile = window.matchMedia("(max-width: 768px)").matches;
-      
-      // Ако е мобилно — пускаме мобилната анимация, иначе десктоп
-      if (isMobile) {
-        text.style.animation = "scrollBannerMobile 45s linear infinite";
-      } else {
-        text.style.animation = "scrollBanner 40s linear infinite";
-      }
-
-      text.style.animationDelay = "0s";
-      text.style.animationPlayState = "running";
-    }, 30); // 30 ms — достатъчно кратко, за да стартира веднага
+    // Веднага принудително рестартираме анимацията
+    text.style.animation = 'none';
+    text.offsetHeight; // Това принуждава браузъра да презареди rendering-a
+    text.style.animation = null;
   }
 });
 </script>
+</body>
+</html>
