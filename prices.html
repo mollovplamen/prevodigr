@@ -229,9 +229,12 @@ a.back-home:hover {
 </section>
 
 <script>
-  // Променяме скоростта и добавяме пауза от 2 секунди след всяко преминаване
-  const text = document.getElementById('scrollingText');
-  text.style.animationPlayState = 'running';
+window.addEventListener("load", () => {
+  const text = document.getElementById("scrollingText");
+  // Веднага стартира оригиналната анимация scrollBanner
+  text.style.animation = "scrollBanner 40s linear infinite";
+  text.style.animationDelay = "0s";
+  text.style.animationPlayState = "running";
+});
 </script>
-</body>
-</html>
+
