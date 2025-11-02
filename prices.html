@@ -14,7 +14,6 @@ body {
   color: #333;
 }
 
-/* Унифициран стил на секциите като при testimonials */
 section {
   width: 100%;
   box-sizing: border-box;
@@ -31,7 +30,6 @@ section {
   color: #003366;
 }
 
-/* Банер с движещ се текст */
 #loadingBanner {
   background: linear-gradient(90deg, #003366, #0055a5);
   color: white;
@@ -46,31 +44,21 @@ section {
   position: relative;
 }
 
-/* Анимация на текста от дясно наляво — тръгва веднага */
 #scrollingText {
   display: inline-block;
   white-space: nowrap;
-  animation: scrollBanner 25s linear infinite;
-  padding-left: 100%; /* Започва извън екрана */
+  animation: scrollBanner 20s linear infinite;
 }
 
 @keyframes scrollBanner {
   0% {
-    transform: translateX(0);
+    transform: translateX(100%);
   }
   100% {
     transform: translateX(-100%);
   }
 }
 
-/* Мобилна версия */
-@media (max-width: 768px) {
-  #scrollingText {
-    animation: scrollBanner 15s linear infinite;
-  }
-}
-
-/* Банер с форма */
 #formBanner {
   background: linear-gradient(135deg, #e0f0ff, #ffffff);
   border: 2px solid #0055a5;
@@ -101,7 +89,6 @@ iframe {
   border-radius: 10px;
 }
 
-/* Бутон "Обратно към начална" */
 a.back-home {
   background-color: #003366;
   color: white;
@@ -119,34 +106,19 @@ a.back-home:hover {
   background-color: #0055a5;
 }
 
-/* Мобилна версия като при testimonials */
 @media (max-width: 768px) {
   body {
     padding: 0;
-    font-size: 1.1rem;
-    line-height: 1.6;
   }
   section {
     padding: 1.5rem 15px;
-    width: 100%;
-    margin: 0;
     border-radius: 0;
-  }
-  #loadingBanner, #formBanner, iframe, .back-home {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
   }
   #loadingBanner {
     font-size: 1rem;
-    padding: 0.9rem 0;
   }
   #formBanner h3 {
     font-size: 1.4rem;
-    line-height: 1.4;
-  }
-  #formBanner p {
-    font-size: 1rem;
   }
   .section-title {
     font-size: 1.6rem;
@@ -154,6 +126,9 @@ a.back-home:hover {
   a.back-home {
     font-size: 1rem;
     padding: 0.8rem 1.5rem;
+  }
+  #scrollingText {
+    animation: scrollBanner 15s linear infinite;
   }
 }
 </style>
@@ -189,7 +164,5 @@ a.back-home:hover {
     <a class="back-home" href="index.html">⬅️ Обратно към начална страница / Επιστροφή στην αρχική σελίδα</a>
   </div>
 </section>
-
-<!-- НЯМА JAVASCRIPT КОД - анимацията стартира веднага -->
 </body>
 </html>
