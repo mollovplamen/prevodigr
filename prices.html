@@ -47,17 +47,16 @@ section {
   position: relative;
 }
 
-/* Анимация на текста от дясно наляво, с пауза */
+/* Анимация на текста от дясно наляво — тръгва веднага без пауза */
 #scrollingText {
   display: inline-block;
   white-space: nowrap;
   position: relative;
-  animation: scrollBanner 32s linear infinite;
+  animation: scrollBanner 25s linear infinite;
 }
 
 @keyframes scrollBanner {
   0% { transform: translateX(100%); }
-  90% { transform: translateX(-100%); }
   100% { transform: translateX(-100%); }
 }
 
