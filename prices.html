@@ -1,9 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="bg">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Цени / Τιμές</title>
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
 <style>
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -13,6 +15,7 @@ body {
   color: #333;
 }
 
+/* Унифициран стил на секциите като при testimonials */
 section {
   width: 100%;
   box-sizing: border-box;
@@ -29,6 +32,7 @@ section {
   color: #003366;
 }
 
+/* Банер с движещ се текст */
 #loadingBanner {
   background: linear-gradient(90deg, #003366, #0055a5);
   color: white;
@@ -38,30 +42,26 @@ section {
   text-align: center;
   padding: 1rem 0;
   border-radius: 12px;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   overflow: hidden;
   position: relative;
-  animation: pulseBanner 4s infinite;
 }
 
-/* Контейнер за двоен текст за плавен непрекъснат скрол */
-#scrollContainer {
-  display: flex;
-  width: 200%;
-  animation: scrollTextDesktop 30s linear infinite;
-}
-
+/* Анимация на текста от дясно наляво, с пауза */
 #scrollingText {
-  flex: 0 0 50%;
+  display: inline-block;
   white-space: nowrap;
+  position: relative;
+  animation: scrollBanner 32s linear infinite;
 }
 
-/* Анимация за постоянен десен-наляво скрол */
-@keyframes scrollTextDesktop {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+@keyframes scrollBanner {
+  0% { transform: translateX(100%); }
+  90% { transform: translateX(-100%); }
+  100% { transform: translateX(-100%); }
 }
 
+/* Банер с форма */
 #formBanner {
   background: linear-gradient(135deg, #e0f0ff, #ffffff);
   border: 2px solid #0055a5;
@@ -70,7 +70,6 @@ section {
   text-align: center;
   margin-bottom: 2rem;
   box-shadow: 0 8px 20px rgba(0, 85, 165, 0.15);
-  animation: pulseBanner 4s infinite;
 }
 
 #formBanner h3 {
@@ -93,6 +92,7 @@ iframe {
   border-radius: 10px;
 }
 
+/* Бутон "Обратно към начална" */
 a.back-home {
   background-color: #003366;
   color: white;
@@ -106,55 +106,42 @@ a.back-home {
   transition: background-color 0.3s ease;
   margin-top: 1rem;
 }
-
 a.back-home:hover {
   background-color: #0055a5;
 }
 
-@keyframes pulseBanner {
-  0% { transform: scale(1); box-shadow: 0 8px 20px rgba(0, 85, 165, 0.15); }
-  50% { transform: scale(1.01); box-shadow: 0 10px 24px rgba(0, 85, 165, 0.25); }
-  100% { transform: scale(1); box-shadow: 0 8px 20px rgba(0, 85, 165, 0.15); }
-}
-
+/* Мобилна версия като при testimonials */
 @media (max-width: 768px) {
   body {
     padding: 0;
     font-size: 1.1rem;
     line-height: 1.6;
   }
-
   section {
     padding: 1.5rem 15px;
     width: 100%;
     margin: 0;
     border-radius: 0;
   }
-
   #loadingBanner, #formBanner, iframe, .back-home {
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
   }
-
   #loadingBanner {
     font-size: 1rem;
     padding: 0.9rem 0;
   }
-
   #formBanner h3 {
     font-size: 1.4rem;
     line-height: 1.4;
   }
-
   #formBanner p {
     font-size: 1rem;
   }
-
   .section-title {
     font-size: 1.6rem;
   }
-
   a.back-home {
     font-size: 1rem;
     padding: 0.8rem 1.5rem;
@@ -171,9 +158,8 @@ a.back-home:hover {
   </p>
 
   <div id="loadingBanner">
-    <div id="scrollContainer">
-      <div id="scrollingText">Гарантирано, най-добрите цени! — Εγγυημένα, οι καλύτερες τιμές! — Доверете се на опита! — Εμπιστευτείτε την εμπειρία μας!  </div>
-      <div id="scrollingText">Гарантирано, най-добрите цени! — Εγγυημένα, οι καλύτερες τιμές! — Доверете се на опита! — Εμπιστευτείτε την εμπειρία μας!  </div>
+    <div id="scrollingText">
+      Гарантирано, най-добрите цени! — Εγγυημένα, οι καλύτερες τιμές! — Доверете се на опита! — Εμπιστευτείτε την εμπειρία μας!
     </div>
   </div>
 
@@ -194,5 +180,11 @@ a.back-home:hover {
     <a class="back-home" href="index.html">⬅️ Обратно към начална страница / Επιστροφή στην αρχική σελίδα</a>
   </div>
 </section>
+
+<script>
+  // Променяме скоростта и добавяме пауза от 2 секунди след всяко преминаване
+  const text = document.getElementById('scrollingText');
+  text.style.animationPlayState = 'running';
+</script>
 </body>
 </html>
