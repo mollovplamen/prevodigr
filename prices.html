@@ -41,18 +41,9 @@ a.back-home:hover {
   background-color: #0055a5;
 }
 
-:root {
-  --scroll-duration: 20s; /* Increased the duration */
-}
-
-@keyframes scrollTextDesktop {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
-}
-
-@keyframes scrollTextMobile {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
+@keyframes scrollContinuous {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 @keyframes pulseBanner {
@@ -76,17 +67,23 @@ a.back-home:hover {
   animation: pulseBanner 4s infinite;
 }
 
-#scrollingText {
+#scrollContainer {
+  display: flex;
   white-space: nowrap;
+  animation: scrollContinuous 20s linear infinite;
+  width: 200%;
+}
+
+#scrollingText {
   display: inline-block;
-  animation: scrollTextMobile 20s linear infinite; /* Increased duration for slower scroll */
-  animation-delay: 0s; /* Starts immediately */
+  white-space: nowrap;
+  width: 50%;
 }
 
 @media (max-width: 768px) {
   #loadingBanner { font-size: 1rem; padding: 0.9rem 0; }
-  #scrollingText {
-    animation: scrollTextMobile 20s linear infinite; /* Increased duration for slower scroll */
+  #scrollContainer {
+    animation: scrollContinuous 25s linear infinite; /* малко по-бавно на мобилно */
   }
 }
 </style>
@@ -100,8 +97,13 @@ a.back-home:hover {
   </p>
 
   <div id="loadingBanner">
-    <div id="scrollingText" aria-live="polite">
-      Гарантирано, най-добрите цени! — Εγγυημένα, οι καλύτερες τιμές! — Гарантирано, най-добрите цени! — Εγγυημένα, οι καλύτερες τιμές!
+    <div id="scrollContainer">
+      <div id="scrollingText">
+        Гарантирано, най-добрите цени! — Εγγυημένα, οι καλύτερες τιμές! — Гарантирано, най-добрите цени! — Εγγυημένα, οι καλύτερες τιμές!
+      </div>
+      <div id="scrollingText">
+        Гарантирано, най-добрите цени! — Εγγυημένα, οι καλύτερες τιμές! — Гарантирано, най-добрите цени! — Εγγυημένα, οι καλύτερες τιμές!
+      </div>
     </div>
   </div>
 
