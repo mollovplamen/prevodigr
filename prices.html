@@ -82,8 +82,16 @@ a.back-home:hover {
 
 @media (max-width: 768px) {
   #loadingBanner { font-size: 1rem; padding: 0.9rem 0; }
+
+  /* Fix for mobile overlap: Adjust the container for better spacing */
   #scrollContainer {
-    animation: scrollContinuous 25s linear infinite; /* малко по-бавно на мобилно */
+    animation: scrollContinuous 25s linear infinite; /* slower scroll */
+    flex-wrap: nowrap;
+  }
+
+  #scrollingText {
+    width: 100%; /* Ensure the text takes full width */
+    margin-right: 20px; /* Add margin to prevent overlap */
   }
 }
 </style>
