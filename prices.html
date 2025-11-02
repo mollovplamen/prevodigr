@@ -40,13 +40,26 @@ section {
   border-radius: 12px;
   margin-bottom: 1rem;
   overflow: hidden;
+  position: relative;
   animation: pulseBanner 4s infinite;
 }
 
-#scrollingText {
-  white-space: nowrap;
-  display: inline-block;
+/* Контейнер за двоен текст за плавен непрекъснат скрол */
+#scrollContainer {
+  display: flex;
+  width: 200%;
   animation: scrollTextDesktop 30s linear infinite;
+}
+
+#scrollingText {
+  flex: 0 0 50%;
+  white-space: nowrap;
+}
+
+/* Анимация за постоянен десен-наляво скрол */
+@keyframes scrollTextDesktop {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 #formBanner {
@@ -96,11 +109,6 @@ a.back-home {
 
 a.back-home:hover {
   background-color: #0055a5;
-}
-
-@keyframes scrollTextDesktop {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
 }
 
 @keyframes pulseBanner {
@@ -163,8 +171,9 @@ a.back-home:hover {
   </p>
 
   <div id="loadingBanner">
-    <div id="scrollingText">
-      Гарантирано, най-добрите цени! — Εγγυημένα, οι καλύτερες τιμές! — Доверете се на опита! — Εμπιστευτείτε την εμπειρία μας!
+    <div id="scrollContainer">
+      <div id="scrollingText">Гарантирано, най-добрите цени! — Εγγυημένα, οι καλύτερες τιμές! — Доверете се на опита! — Εμπιστευτείτε την εμπειρία μας!  </div>
+      <div id="scrollingText">Гарантирано, най-добрите цени! — Εγγυημένα, οι καλύτερες τιμές! — Доверете се на опита! — Εμπιστευτείτε την εμπειρία μας!  </div>
     </div>
   </div>
 
