@@ -229,12 +229,17 @@ a.back-home:hover {
 </section>
 
 <script>
-window.addEventListener("load", () => {
+document.addEventListener("DOMContentLoaded", () => {
   const text = document.getElementById("scrollingText");
-  // Веднага стартира оригиналната анимация scrollBanner
-  text.style.animation = "scrollBanner 40s linear infinite";
-  text.style.animationDelay = "0s";
-  text.style.animationPlayState = "running";
+  if (text) {
+    // Принудително рестартиране на анимацията при мобилни устройства
+    text.style.animation = "none";
+    // малка пауза (буквално 50 милисекунди), за да се презареди правилно
+    setTimeout(() => {
+      text.style.animation = "scrollBanner 40s linear infinite";
+      text.style.animationDelay = "0s";
+      text.style.animationPlayState = "running";
+    }, 50);
+  }
 });
 </script>
-
