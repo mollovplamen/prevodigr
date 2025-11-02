@@ -52,13 +52,42 @@ section {
   display: inline-block;
   white-space: nowrap;
   position: relative;
-  animation: scrollBanner 30s linear infinite;
+  animation: scrollBanner 40s linear infinite;
+  animation-delay: 0s !important; /* тръгва веднага */
+  will-change: transform; /* по-плавно движение */
 }
 
 @keyframes scrollBanner {
-  0% { transform: translateX(90%); }
-  100% { transform: translateX(-100%); }
-  
+  0% {
+    transform: translateX(100%);
+  }
+  99.999% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Мобилна версия — същото движение, но оптимизирано за телефони */
+@media (max-width: 768px) {
+  #scrollingText {
+    animation: scrollBannerMobile 45s linear infinite;
+    animation-delay: 0s !important; /* тръгва веднага на телефон */
+    will-change: transform;
+  }
+
+  @keyframes scrollBannerMobile {
+    0% {
+      transform: translateX(100%);
+    }
+    99.999% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
 }
 
 /* Банер с форма */
@@ -149,7 +178,7 @@ a.back-home:hover {
 
   #scrollingText {
     animation: scrollBannerMobile 20s linear infinite;
-    animation-delay: 0s !important; /* ✅ започва веднага */
+    animation-delay: 0s !important; /* започва веднага */
   }
 
   @keyframes scrollBannerMobile {
