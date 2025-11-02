@@ -44,8 +44,13 @@ a.back-home:hover {
   --scroll-duration: 20s;
 }
 
-@keyframes scrollText {
+@keyframes scrollTextDesktop {
   0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes scrollTextMobile {
+  0% { transform: translateX(0%); }
   100% { transform: translateX(-100%); }
 }
 
@@ -73,11 +78,14 @@ a.back-home:hover {
 #scrollingText {
   white-space: nowrap;
   display: inline-block;
-  animation: scrollText var(--scroll-duration) linear infinite;
+  animation: scrollTextDesktop var(--scroll-duration) linear infinite;
 }
 
 @media (max-width: 768px) {
   #loadingBanner { font-size: 1rem; padding: 0.9rem 0; }
+  #scrollingText {
+    animation: scrollTextMobile 15s linear infinite;
+  }
 }
 </style>
 </head>
