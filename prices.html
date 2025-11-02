@@ -146,6 +146,24 @@ a.back-home:hover {
     font-size: 1rem;
     padding: 0.8rem 1.5rem;
   }
+
+  #scrollingText {
+    animation: scrollBannerMobile 20s linear infinite;
+    animation-delay: 0s !important; /* ✅ започва веднага */
+  }
+
+  @keyframes scrollBannerMobile {
+    0% {
+      transform: translateX(100%);
+    }
+    99.999% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
 }
 </style>
 </head>
