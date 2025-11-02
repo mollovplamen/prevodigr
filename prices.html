@@ -42,7 +42,7 @@ a.back-home:hover {
 }
 
 :root {
-  --scroll-duration: 30s; /* Increased duration to allow full text to move smoothly */
+  --scroll-duration: 30s;
 }
 
 @keyframes scrollTextDesktop {
@@ -113,23 +113,29 @@ a.back-home:hover {
 }
 
 @media (max-width: 768px) {
-  #loadingBanner { font-size: 1rem; padding: 0.9rem 0; }
-  #scrollingText {
-    animation: scrollTextMobile 10s linear infinite;
+  section {
+    margin: 0;
+    padding: 1.5rem;
   }
-  #formBanner {
+
+  #prices {
     width: 100%;
+    max-width: 100%;
+  }
+
+  #formBanner {
     padding: 1rem;
+    width: 100%;
   }
-  #formBanner h3 {
-    font-size: 1.6rem;
-  }
-  #formBanner p {
-    font-size: 1rem;
-  }
+
   #offerForm {
     min-height: 600px;
-    max-width: 100%;
+    width: 100%;
+  }
+
+  #scrollingText {
+    animation: scrollTextMobile 10s linear infinite;
+    white-space: normal;
   }
 }
 </style>
