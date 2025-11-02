@@ -46,40 +46,27 @@ section {
   position: relative;
 }
 
-/* Анимация на текста от дясно наляво — тръгва веднага без пауза */
+/* Анимация на текста от дясно наляво — тръгва веднага */
 #scrollingText {
   display: inline-block;
   white-space: nowrap;
-  position: relative;
-  animation: scrollBanner 40s linear infinite;
-  animation-delay: 0s;
-  will-change: transform; /* по-плавно движение */
+  animation: scrollBanner 25s linear infinite;
+  padding-left: 100%; /* Започва извън екрана */
 }
 
 @keyframes scrollBanner {
   0% {
-    transform: translateX(100%);
+    transform: translateX(0);
   }
   100% {
     transform: translateX(-100%);
   }
 }
 
-/* Мобилна версия — същото движение, но оптимизирано за телефони */
+/* Мобилна версия */
 @media (max-width: 768px) {
   #scrollingText {
-    animation: scrollBannerMobile 20s linear infinite;
-    animation-delay: 0s;
-    will-change: transform;
-  }
-
-  @keyframes scrollBannerMobile {
-    0% {
-      transform: translateX(100%);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
+    animation: scrollBanner 15s linear infinite;
   }
 }
 
@@ -203,17 +190,6 @@ a.back-home:hover {
   </div>
 </section>
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const text = document.getElementById("scrollingText");
-  
-  if (text) {
-    // Веднага принудително рестартираме анимацията
-    text.style.animation = 'none';
-    text.offsetHeight; // Това принуждава браузъра да презареди rendering-a
-    text.style.animation = null;
-  }
-});
-</script>
+<!-- НЯМА JAVASCRIPT КОД - анимацията стартира веднага -->
 </body>
 </html>
