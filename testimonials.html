@@ -1,596 +1,152 @@
 <!DOCTYPE html>
-
 <html lang="bg">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Мнения / Αξιολογήσεις</title>
-<!-- Favicon икони за всички устройства -->
-<link href="/favicon.ico" rel="icon" type="image/x-icon"/>
-<link href="/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
-<link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
-<link href="/site.webmanifest" rel="manifest"/>
-<link href="/web-app-manifest-192x192.png" rel="icon" sizes="192x192" type="image/png"/>
-<link href="/web-app-manifest-512x512.png" rel="icon" sizes="512x512" type="image/png"/>
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
 <style>
-
-/* Оптимизация за рендериране */
-section {
-  content-visibility: auto;
-  contain-intrinsic-size: 1000px;
-}
-.hero-letter {
-  will-change: transform, opacity;
-}
-
-    
-/* GDPR checkbox styling */
-.gdpr-label {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-bottom: 1rem;
-  font-size: 0.95rem;
-  line-height: 1.4;
-}
-.gdpr-label input[type="checkbox"] {
-  margin: 0;
-  transform: scale(1.1);
-}
-
 body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to bottom, #fff, #f0f8ff);
-      color: #333;
-    }
-    header {
-      background-color: #002b5c;
-      color: white;
-      padding: 0.5rem 1rem;
-      text-align: center;
-    }
-    header h1, header h2 {
-      margin-top: -0.8rem;
-    }
-    header img {
-      height: 220px;
-    }
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      background-color: #0055a5;
-      padding: 0.5rem;
-    }
-    
-    
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      font-family: 'Poppins', sans-serif;
-      font-size: 1.1rem;
-      padding: 0.9rem 1.5rem;
-      margin: 0.4rem;
-      transition: all 0.3s ease;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 10px;
-      background-color: rgba(255, 255, 255, 0.1);
-    }
-    nav a:hover {
-      background-color: rgba(255, 255, 255, 0.25);
-    }
-    html {
-      scroll-behavior: smooth;
-    }
-
-
-    .hero {
-  position: relative;
-  background-image: url('assets/images/bg-greece.webp');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: white;
-  width: 100%;
-  aspect-ratio: 16 / 4;
-  overflow: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #fff, #f0f8ff);
+  color: #333;
 }
-    
-    .hero h1, .hero p {
-      position: relative;
-      z-index: 1;
-    }
-    section {
-      padding: 2rem;
-      background-color: white;
-      margin: 1rem;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    .section-title {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #003366;
-    }
-    .testimonial {
-      background-color: #f0f8ff;
-      padding: 1rem;
-      border-left: 4px solid #003366;
-      margin-bottom: 1rem;
-      font-style: italic;
-    }
-    .testimonial strong {
-      display: block;
-      margin-top: 0.5rem;
-      text-align: right;
-      color: #003366;
-    }
-    form {
-      background-color: #e6f2ff;
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    input, textarea {
-      width: 100%;
-      padding: 0.8rem;
-      margin-top: 0.5rem;
-      margin-bottom: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
-    button {
+header {
+  background-color: #002b5c;
+  color: white;
+  padding: 0.5rem 1rem;
+  text-align: center;
+}
+header img {
+  height: 220px;
+}
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  background-color: #0055a5;
+  padding: 0.5rem;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  padding: 0.9rem 1.5rem;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+section {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 2rem 1rem;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  margin: 0 auto;
+}
+.section-title {
+  font-size: 2rem;
+  text-align: center;
+  color: #003366;
+}
+.testimonial {
+  background-color: #f0f8ff;
+  padding: 1rem;
+  border-left: 4px solid #003366;
+  margin-bottom: 1rem;
+  font-style: italic;
+  border-radius: 8px;
+}
+.testimonial strong {
+  display: block;
+  margin-top: 0.5rem;
+  text-align: right;
+  color: #003366;
+}
+iframe {
+  border: none;
+  width: 100%;
+  height: 700px;
+  border-radius: 10px;
+}
+a.back-home {
   background-color: #003366;
   color: white;
-  padding: 0.8rem 1.2rem;
-  border: none;
-  border-radius: 6px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: transform 0.1s ease-in-out;
-  position: relative;
-}
-button:hover {
-  background-color: #0055a5;
-}
-button:active {
-  transform: scale(0.96);
-}
-@keyframes wave {
-  0% { transform: rotate(0deg); }
-  25% { transform: rotate(20deg); }
-  50% { transform: rotate(-10deg); }
-  75% { transform: rotate(10deg); }
-  100% { transform: rotate(0deg); }
-}
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background-color: #003366;
-      color: white;
-    }
-
-
-/* Responsive adjustments for mobile */
-@media (max-width: 768px) {
-  header img {
-    height: 120px;
-  }
-  header h1 {
-    font-size: 1.4rem;
-  }
-  header h2 {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 768px) {
-  header img {
-    height: 160px !important;
-    aspect-ratio: 1 / 1;
-    object-fit: contain;
-  }
-}
-
-@media (max-width: 768px) {
-  .nav-links {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease-out;
-  }
-  nav.active .nav-links {
-    max-height: 500px;
-  }
-}
-
-  .menu-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-  }
-  .menu-toggle span {
-    height: 4px;
-    background: white;
-    margin: 5px 0;
-    width: 25px;
-    border-radius: 2px;
-  }
-  @media (max-width: 768px) {
-    nav {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    .nav-links {
-      display: none;
-      flex-direction: column;
-      width: 100%;
-      background-color: #0055a5;
-    }
-    .nav-links a {
-      padding: 1rem;
-      border-top: 1px solid rgba(255,255,255,0.2);
-    }
-    .menu-toggle {
-      display: flex;
-      margin-left: 1rem;
-    }
-    nav.active .nav-links {
-      display: flex;
-    }
-  }
-
-.hero-letter {
-  position: absolute;
-  font-size: 2.2rem;
-  font-weight: bold;
-  color: #002b5c;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  animation: fade-float 4s ease-in-out infinite;
-  opacity: 0;
-}
-@keyframes fade-float {
-  0%   { transform: translateY(0px); opacity: 0; }
-  50%  { transform: translateY(-5px); opacity: 1; }
-  100% { transform: translateY(-10px); opacity: 0; }
-}
-
-
-
-@font-face {
-  font-family: 'Poppins';
-  src: url('assets/fonts/poppins-v23-latin-regular.woff2') format('woff2');
-  font-weight: 400;
-
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Poppins';
-  src: url('assets/fonts/poppins-v23-latin-500.woff2') format('woff2');
-  font-weight: 500;
-
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Poppins';
-  src: url('assets/fonts/poppins-v23-latin-600.woff2') format('woff2');
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
   font-weight: 600;
-
-  font-display: swap;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
 }
-@font-face {
-  font-family: 'Poppins';
-  src: url('assets/fonts/poppins-v23-latin-700.woff2') format('woff2');
-  font-weight: 700;
-
-  font-display: swap;
-}
-
-
-@keyframes pulseBanner {
-  0% { transform: scale(1); box-shadow: 0 8px 20px rgba(0, 85, 165, 0.15); }
-  50% { transform: scale(1.01); box-shadow: 0 10px 24px rgba(0, 85, 165, 0.25); }
-  100% { transform: scale(1); box-shadow: 0 8px 20px rgba(0, 85, 165, 0.15); }
-}
-@media (max-width: 768px) {
-  #prices h3 {
-    font-size: 1.4rem !important;
-    line-height: 1.4;
-  }
-  #prices p {
-    font-size: 1rem !important;
-  }
+a.back-home:hover {
+  background-color: #0055a5;
 }
 
 @media (max-width: 768px) {
   body {
+    padding: 0;
     font-size: 1.1rem;
     line-height: 1.6;
-    padding: 0 1rem;
   }
-
-  header h1 {
-    font-size: 1.6rem;
+  section {
+    padding: 1.5rem 15px;
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
   }
-
-  header h2 {
-    font-size: 1.2rem;
+  .testimonial, iframe, form, .back-home {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
-
-  .section-title {
-    font-size: 1.6rem;
+  header img {
+    height: 140px;
+  }
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+  nav a {
+    width: 90%;
     text-align: center;
   }
-
-  nav a {
-    font-size: 1rem;
-    padding: 0.7rem 1rem;
-  }
-
-  .testimonial {
-    font-size: 1rem;
-  }
-
-  iframe {
-    height: 700px !important;
-  }
-
-  h3 {
-    font-size: 1.4rem !important;
-  }
-
-  p {
-    font-size: 1rem !important;
-  }
-
-  input, textarea, button {
-    font-size: 1rem;
+  .section-title {
+    font-size: 1.6rem;
   }
 }
-
-
-a.back-home:hover {
-  transform: scale(1.05);
-  background-color: #0055a5;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
 </style>
-<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Преводи от и на гръцки език – Пламен Моллов",
-  "image": "https://www.prevodigr.eu/assets/images/logo.png",
-  "url": "https://www.prevodigr.eu",
-  "telephone": "+359897098959",
-  "priceRange": "€€",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "ул. Димитър Талев 132",
-    "addressLocality": "Пловдив",
-    "postalCode": "4000",
-    "addressCountry": "BG",
-    "addressRegion": "Област Пловдив"
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5",
-    "reviewCount": 4
-  },
-  "review": [
-    {
-      "@type": "Review",
-      "reviewBody": "Изключително професионален подход и невероятно качество на преводите. Препоръчвам с две ръце!",
-      "author": {
-        "@type": "Person",
-        "name": "Мария Димитрова"
-      },
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5"
-      },
-      "datePublished": "2025-07-20"
-    },
-    {
-      "@type": "Review",
-      "reviewBody": "Благодарение на Пламен, успях да сключа важен договор в Гърция. Истински мост между културите.",
-      "author": {
-        "@type": "Person",
-        "name": "Дияна Иванова"
-      },
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5"
-      },
-      "datePublished": "2025-07-20"
-    },
-    {
-      "@type": "Review",
-      "reviewBody": "Είμαι πολύ ικανοποιημένος από τις υπηρεσίες του κ. Πλάμεν Μόλλοβ.",
-      "author": {
-        "@type": "Person",
-        "name": "Παρασκευαΐδης Χρήστος"
-      },
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5"
-      },
-      "datePublished": "2025-07-20"
-    },
-    {
-      "@type": "Review",
-      "reviewBody": "Коректни преводачески услуги, щадящи времето на клиента, на достъпни цени. С удоволствие бих ползвал отново!",
-      "author": {
-        "@type": "Person",
-        "name": "Пламен Чингаров"
-      },
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5"
-      },
-      "datePublished": "2025-07-20"
-    }
-  ],
-  "@id": "https://www.prevodigr.eu/#business",
-  "sameAs": [
-    "https://www.facebook.com/PlamenMollov",
-    "https://www.linkedin.com/in/plamenmollov",
-    "https://goo.gl/maps/yourgooglemaplink"
-  ]
-}</script>
-<script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Начало",
-      "item": "https://www.prevodigr.eu/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Отзиви",
-      "item": "https://www.prevodigr.eu/testimonials.html"
-    }
-  ]
-}</script></head>
+</head>
 <body>
 <section id="testimonials">
-<h2 class="section-title">Мнения на клиенти /  Αξιολογήσεις πελατών</h2>
-<div class="testimonial">
-      “Изключително професионален подход и невероятно качество на преводите. Препоръчвам с две ръце!”
-      <strong>Мария Димитрова</strong>
-</div>
-<div class="testimonial">
-      “Благодарение на Пламен, успях да сключа важен договор в Гърция. Истински мост между културите.”
-      <strong>Дияна Иванова</strong>
-</div>
-<div class="testimonial">
-      “Είμαι πολύ ικανοποιημένος από τις υπηρεσίες του κ. Πλάμεν Μόλλοβ.”
-      <strong>Παρασκευαΐδης Χρήστος</strong>
-</div>
-<div class="testimonial">
-      “Коректни преводачески услуги, щадящи времето на клиента, на достъпни цени. С удоволствие бих ползвал отново!” 
-      <strong>Пламен Чингаров</strong>
-</div>
-<div style="margin-top: 2rem;">
-<div style="
-        background: linear-gradient(135deg, #e6f2ff, #ffffff);
-        border: 2px solid #0055a5;
-        border-radius: 12px;
-        padding: 1.5rem;
-        text-align: center;
-        margin-bottom: 2rem;
-        box-shadow: 0 8px 20px rgba(0, 85, 165, 0.15);
-        animation: pulseReview 4s infinite;
-        ">
-<h3 style="
-    font-size: 2rem;
-    font-family: 'Poppins', sans-serif;
-    color: #990033;
-    font-weight: 700;
-    margin-bottom: 1rem;
-  ">
-    🗣️ Споделете вашето мнение / Αφήστε την αξιολόγηση σας
-  </h3>
-<p style="font-size: 1.1rem; color: #333;">✍️ Вашето мнение има значение – помогнете на други клиенти с вашата оценка! / Η γνώμη σας μετράει – βοηθήστε άλλους πελάτες με την αξιολόγησή σας!</p>
-</div>
-<style>
-@keyframes pulseReview {
-  0% { transform: scale(1); box-shadow: 0 8px 20px rgba(0, 85, 165, 0.15); }
-  50% { transform: scale(1.01); box-shadow: 0 10px 24px rgba(0, 85, 165, 0.25); }
-  100% { transform: scale(1); box-shadow: 0 8px 20px rgba(0, 85, 165, 0.15); }
-}
-@media (max-width: 768px) {
-  #testimonials h3 {
-    font-size: 1.4rem !important;
-    line-height: 1.4;
-  }
-}
+  <h2 class="section-title">Мнения на клиенти / Αξιολογήσεις πελατών</h2>
+  <div class="testimonial">“Изключително професионален подход и невероятно качество на преводите. Препоръчвам с две ръце!”<strong>Мария Димитрова</strong></div>
+  <div class="testimonial">“Благодарение на Пламен, успях да сключа важен договор в Гърция. Истински мост между културите.”<strong>Дияна Иванова</strong></div>
+  <div class="testimonial">“Είμαι πολύ ικανοποιημένος από τις υπηρεσίες του κ. Πλάμεν Μόλλοβ.”<strong>Παρασκευαΐδης Χρήστος</strong></div>
+  <div class="testimonial">“Коректни преводачески услуги, щадящи времето на клиента, на достъпни цени. С удоволствие бих ползвал отново!”<strong>Пламен Чингаров</strong></div>
 
-@media (max-width: 768px) {
-  body {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    padding: 0 1rem;
-  }
+  <div style="margin-top:2rem; background:linear-gradient(135deg,#e6f2ff,#ffffff); border:2px solid #0055a5; border-radius:12px; padding:1.5rem; text-align:center; box-shadow:0 8px 20px rgba(0,85,165,0.15);">
+    <h3 style="font-size:1.6rem;color:#990033;font-weight:700;">🗣️ Споделете вашето мнение / Αφήστε την αξιολόγηση σας</h3>
+    <p style="font-size:1.1rem;color:#333;">✍️ Вашето мнение има значение – помогнете на други клиенти с вашата оценка! / Η γνώμη σας μετράει – βοηθήστε άλλους πελάτες με την αξιολόγησή σας!</p>
+  </div>
 
-  header h1 {
-    font-size: 1.6rem;
-  }
-
-  header h2 {
-    font-size: 1.2rem;
-  }
-
-  .section-title {
-    font-size: 1.6rem;
-    text-align: center;
-  }
-
-  nav a {
-    font-size: 1rem;
-    padding: 0.7rem 1rem;
-  }
-
-  .testimonial {
-    font-size: 1rem;
-  }
-
-  iframe {
-    height: 700px !important;
-  }
-
-  h3 {
-    font-size: 1.4rem !important;
-  }
-
-  p {
-    font-size: 1rem !important;
-  }
-
-  input, textarea, button {
-    font-size: 1rem;
-  }
-}
-
-
-a.back-home:hover {
-  transform: scale(1.05);
-  background-color: #0055a5;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-</style>
-<iframe height="700" id="feedbackForm" loading="lazy" src="https://forms.fillout.com/t/89sjbQ6ZJ1us" style="border:none;" title="Форма за мнение" width="100%">
-</iframe>
-<div style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">
-  🔒 <a href="https://prevodigr.eu/privacy.html" style="color:#003366; text-decoration: underline;" target="_blank">
-    Политика за поверителност / Πολιτική απορρήτου
-  </a>
-</div>
-</div>
-<div style="text-align: center; margin-top: 2rem;">
-<a class="back-home" href="index.html" style="
-    background-color: #003366;
-    color: white;
-    padding: 1rem 2rem;
-    border-radius: 10px;
-    text-decoration: none;
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 600;
-    display: inline-block;
-    transition: background-color 0.3s ease;
-  ">⬅️ Обратно към начална страница / Επιστροφή στην αρχική σελίδα</a>
-</div>
+  <iframe src="https://forms.fillout.com/t/89sjbQ6ZJ1us" title="Форма за мнение"></iframe>
+  <div style="margin-top:1rem;text-align:center;font-size:0.9rem;">
+    🔒 <a href="https://prevodigr.eu/privacy.html" style="color:#003366;text-decoration:underline;" target="_blank">Политика за поверителност / Πολιτική απορρήτου</a>
+  </div>
+  <div style="text-align:center;">
+    <a href="index.html" class="back-home">⬅️ Обратно към начална страница / Επιστροφή στην αρχική σελίδα</a>
+  </div>
 </section>
 </body>
 </html>
