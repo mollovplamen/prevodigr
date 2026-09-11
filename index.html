@@ -364,17 +364,6 @@ a:active {
   animation: academy-cta-shine 2.8s ease-in-out infinite;
   pointer-events: none;
 }
-.academy-cta::before {
-  content: "👆";
-  position: absolute;
-  right: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 1.05em;
-  opacity: 0;
-  animation: academy-cta-hand 2.8s ease-in-out infinite;
-  pointer-events: none;
-}
 @keyframes academy-cta-pulse {
   0%, 70%, 100% { transform: scale(1); }
   80% { transform: scale(1.025); }
@@ -384,24 +373,14 @@ a:active {
   0%, 45% { left: -75%; }
   70%, 100% { left: 135%; }
 }
-@keyframes academy-cta-hand {
-  0%, 55%, 100% { opacity: 0; }
-  65%, 82% { opacity: 1; }
-}
 @media (max-width: 768px) {
   .academy-cta {
     animation-duration: 2.4s !important;
   }
-  .academy-cta::before {
-    right: 0.75rem;
-  }
 }
 @media (prefers-reduced-motion: reduce) {
   .academy-cta,
-  .academy-cta::after,
-  .academy-cta::before {
-    animation: none !important;
-  }
+  .academy-cta::after
 }
 </style>
 
