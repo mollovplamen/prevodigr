@@ -337,7 +337,75 @@ a:active {
     "https://goo.gl/maps/yourgooglemaplink"
   ]
 }</script>
-</meta></meta></head>
+</meta></meta>
+<style id="academy-button-effect">
+/* Академия: ефект само върху бутона за вход */
+.academy-cta {
+  position: relative !important;
+  overflow: hidden !important;
+  animation: academy-cta-pulse 2.2s ease-in-out infinite !important;
+}
+.academy-cta::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 45%;
+  height: 100%;
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    rgba(255,255,255,0.15) 35%,
+    rgba(255,255,255,0.9) 50%,
+    rgba(255,255,255,0.15) 65%,
+    transparent 100%
+  );
+  transform: skewX(-18deg);
+  animation: academy-cta-shine 2.8s ease-in-out infinite;
+  pointer-events: none;
+}
+.academy-cta::before {
+  content: "👆";
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.05em;
+  opacity: 0;
+  animation: academy-cta-hand 2.8s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes academy-cta-pulse {
+  0%, 70%, 100% { transform: scale(1); }
+  80% { transform: scale(1.025); }
+  88% { transform: scale(1); }
+}
+@keyframes academy-cta-shine {
+  0%, 45% { left: -75%; }
+  70%, 100% { left: 135%; }
+}
+@keyframes academy-cta-hand {
+  0%, 55%, 100% { opacity: 0; }
+  65%, 82% { opacity: 1; }
+}
+@media (max-width: 768px) {
+  .academy-cta {
+    animation-duration: 2.4s !important;
+  }
+  .academy-cta::before {
+    right: 0.75rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .academy-cta,
+  .academy-cta::after,
+  .academy-cta::before {
+    animation: none !important;
+  }
+}
+</style>
+
+</head>
 <body>
 <header>
 <img alt="Plamen Mollov Logo" fetchpriority="high" src="assets/images/logo.webp"/>
@@ -441,7 +509,7 @@ a:active {
     <h2 class="academy-title">Академия по гръцки език</h2>
     <p class="academy-subtitle">Специален подарък за българоговорящи</p>
     <p class="academy-description">Безплатно интерактивно обучение по гръцки език с интегриран изкуствен интелект – за всички, които искат да научат гръцки и да започнат да говорят уверено, практично и с удоволствие.</p>
-    <a class="academy-button" href="https://academy.prevodigr.eu/" rel="noopener noreferrer" target="_blank">Безплатно интерактивно обучение по гръцки език с интегриран изкуствен интелект</a>
+    <a class="academy-button academy-cta" href="https://academy.prevodigr.eu/" rel="noopener noreferrer" target="_blank">Безплатно интерактивно обучение по гръцки език с интегриран изкуствен интелект</a>
   </div>
 </section>
 
