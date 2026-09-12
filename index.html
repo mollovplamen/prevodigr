@@ -384,6 +384,18 @@ a:active {
 }
 </style>
 
+
+<style id="mobile-wide-layout">
+@media (max-width: 768px) {
+  section {
+    width: calc(100% - 0.5rem);
+    box-sizing: border-box;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+  }
+}
+</style>
+
 </head>
 <body>
 <header>
@@ -483,6 +495,7 @@ a:active {
 </ul>
 <p><strong>📩 Свържете се с мен, за да уговорим индивидуална среща или консултация.<br/>
   📩 Επικοινωνήστε μαζί μου για προσωπικό ραντεβού ή συμβουλή.</strong></p>
+</section>
 <section class="academy-section" id="greek-academy">
   <div class="academy-content">
     <h2 class="academy-title">Академия по гръцки език</h2>
@@ -515,7 +528,213 @@ a:active {
   }
 }
 </style>
+
+<style id="contact-centered-style">
+#contact {
+  text-align: center;
+}
+#contact .section-title {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+#contact p {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  line-height: 1.65;
+}
+#contact p a {
+  font-weight: 600;
+}
+#contact > div {
+  justify-content: center;
+}
+</style>
+
+
+<style id="contact-side-symbols">
+/* Декоративни символи около контактите — само на по-широки екрани */
+@media (min-width: 1100px) {
+  #contact {
+    position: relative;
+    overflow: hidden;
+  }
+
+  #contact::before,
+#contact::after {
+  display: none !important;
+}
+
+
+  #contact > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  @keyframes contactSymbolsFloat {
+    0%, 100% {
+      transform: translateY(-50%) translateX(0);
+      opacity: .16;
+    }
+    50% {
+      transform: translateY(calc(-50% - 8px)) translateX(3px);
+      opacity: .26;
+    }
+  }
+}
+
+/* На телефон и таблет декорацията не се показва, за да остане секцията чиста. */
+@media (max-width: 1099px) {
+  #contact::before,
+  #contact::after {
+    content: none !important;
+    animation: none !important;
+  }
+}
+</style>
+
+
+<style id="contact-landmarks-style">
+.contact-landmark {
+  display: none;
+}
+@media (min-width: 1100px) {
+  #contact {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .contact-landmark {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    width: 250px;
+    height: 170px;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-50%);
+    pointer-events: none;
+    z-index: 0;
+    opacity: .82;
+    animation: contactLandmarkFloat 5s ease-in-out infinite;
+  }
+
+
+  .contact-landmark img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 18px;
+    filter: none;
+    box-shadow: 0 8px 22px rgba(0,43,92,.12);
+  }
+
+  .landmark-acropolis {
+    left: 1.5rem;
+  }
+
+  .landmark-theatre {
+    right: 1.5rem;
+    animation-delay: 1.7s;
+  }
+
+  @keyframes contactLandmarkFloat {
+    0%, 100% {
+      transform: translateY(-50%) translateY(0);
+      opacity: .74;
+    }
+    50% {
+      transform: translateY(-50%) translateY(-7px);
+      opacity: .86;
+    }
+  }
+}
+</style>
+
+
+<style id="contact-three-column-layout">
+@media (min-width: 1100px) {
+  #contact {
+    display: grid !important;
+    grid-template-columns: minmax(180px, 1fr) minmax(420px, 1.7fr) minmax(180px, 1fr);
+    align-items: center;
+    column-gap: 1.5rem;
+    text-align: center;
+  }
+
+  #contact > .contact-landmark {
+    grid-row: 1 / span 20;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    width: 100% !important;
+    max-width: 250px;
+    height: 180px;
+    margin: 0 auto;
+    transform: none !important;
+  }
+
+  #contact > .landmark-acropolis {
+    grid-column: 1;
+    justify-self: center;
+    animation: contactSideFloat 5s ease-in-out infinite;
+  }
+
+  #contact > .landmark-theatre {
+    grid-column: 3;
+    justify-self: center;
+    animation: contactSideFloat 5s ease-in-out infinite;
+    animation-delay: 1.7s;
+  }
+
+  #contact > .contact-landmark img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  #contact > .contact-landmark + .contact-landmark ~ .section-title {
+    grid-column: 2;
+  }
+
+  #contact > .section-title,
+  #contact > p,
+  #contact > div:not(.contact-landmark) {
+    grid-column: 2;
+  }
+
+  #contact > .section-title {
+    margin-top: 0;
+  }
+
+  @keyframes contactSideFloat {
+    0%, 100% {
+      transform: translateY(0);
+      opacity: .30;
+    }
+    50% {
+      transform: translateY(-7px);
+      opacity: .40;
+    }
+  }
+}
+
+@media (max-width: 1099px) {
+  #contact {
+    display: block !important;
+  }
+}
+</style>
+
 <section id="contact">
+<div class="contact-landmark landmark-acropolis" aria-hidden="true">
+  <img src="assets/images/acropolis-athens-crisp.webp" alt="" loading="lazy">
+</div>
+<div class="contact-landmark landmark-theatre" aria-hidden="true">
+  <img src="assets/images/ancient-theatre-plovdiv-crisp.webp" alt="" loading="lazy">
+</div>
+
 <h2 class="section-title">Контакти / Επικοινωνίες</h2>
 <p>📧 Email: <a href="mailto:mollovplamen@gmail.com">mollovplamen@gmail.com</a></p>
 <p>📧 Email: <a href="mailto:info@prevodigr.eu">info@prevodigr.eu</a></p>
