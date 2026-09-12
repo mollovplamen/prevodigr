@@ -459,6 +459,74 @@ a:active {
 }
 </style>
 
+
+<style id="mobile-contact-city-line">
+@media (max-width: 768px) {
+  #contact > p:nth-of-type(3) {
+    line-height: 1.55 !important;
+  }
+
+  #contact .contact-city-greek {
+    white-space: nowrap !important;
+  }
+}
+</style>
+
+
+<style id="contact-city-alignment">
+#contact .contact-city {
+  display: flex !important;
+  align-items: flex-start;
+  justify-content: center;
+  gap: .35rem;
+  text-align: left;
+}
+
+#contact .contact-city-icon {
+  flex: 0 0 auto;
+  line-height: 1.55;
+}
+
+#contact .contact-city-text {
+  display: inline-block;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  #contact .contact-city {
+    justify-content: center !important;
+    text-align: left !important;
+    flex-wrap: nowrap !important;
+  }
+
+  #contact .contact-city-text {
+    white-space: nowrap !important;
+  }
+}
+</style>
+
+
+<style id="contact-phone-one-line">
+#contact .contact-phone {
+  white-space: nowrap !important;
+}
+
+#contact .contact-phone strong {
+  font-weight: 700 !important;
+}
+
+@media (max-width: 768px) {
+  #contact .contact-phone {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap !important;
+    font-size: .95rem !important;
+    line-height: 1.45 !important;
+  }
+}
+</style>
+
 </head>
 <body>
 <header>
@@ -804,8 +872,11 @@ a:active {
 <h2 class="section-title">Контакти / Επικοινωνίες</h2>
 <p>📧 Email: <a href="mailto:mollovplamen@gmail.com">mollovplamen@gmail.com</a></p>
 <p>📧 Email: <a href="mailto:info@prevodigr.eu">info@prevodigr.eu</a></p>
-<p>📍 Град: Пловдив, България / πόλη Πλόβντιβ Βουλγαρίας</p>
-<p>📞 Телефон / Τηλέφωνο: 00359 897 09 89 59</p>
+<p class="contact-city">
+  <span class="contact-city-icon">📍</span>
+  <span class="contact-city-text">Град: Пловдив, България /<br>πόλη Πλόβντιβ Βουλγαρίας</span>
+</p>
+<p class="contact-phone"><strong>📞 Тел./Τηλ.: 00359 897 09 89 59</strong></p>
 <div style="margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 1rem;">
 <a href="viber://chat?number=+359897098959" style="background: #665CAC; color: #fff; padding: 1rem 1.5rem; border-radius: 12px; text-decoration: none; font-weight: bold; transition: transform 0.1s ease-in-out;">Viber</a>
 <a href="https://wa.me/359897098959" style="background: #075E54; color: #ffffff; padding: 1rem 1.5rem; border-radius: 12px; text-decoration: none; font-weight: bold; transition: transform 0.1s ease-in-out;">WhatsApp</a>
