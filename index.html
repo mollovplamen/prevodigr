@@ -23,7 +23,7 @@
 <style>
 
 /* Оптимизация за рендериране */
-section {
+section:not(#services) {
   content-visibility: auto;
   contain-intrinsic-size: 1000px;
 }
@@ -722,6 +722,68 @@ a:active {
   .ai-quick-btn{font-size:.64rem}
 }
 @media(prefers-reduced-motion:reduce){.ai-assistant-window{animation:none!important}}
+</style>
+
+
+<style id="gentle-card-motion">
+/* Леко "подскачане" на избрани карти — без тежки ефекти и без влияние върху видимостта */
+.service-card,
+.oral-card,
+.legal-card,
+.how-step,
+.real-estate-card {
+  transition: transform .28s ease, box-shadow .28s ease;
+  will-change: transform;
+}
+
+@keyframes gentleCardBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* Деликатно движение само когато картата е видима */
+.gentle-bounce {
+  animation: gentleCardBounce 3.8s ease-in-out infinite;
+}
+
+/* На телефон движението е още по-малко */
+@media (max-width: 700px) {
+  .gentle-bounce {
+    animation-duration: 4.6s;
+  }
+  .service-card,
+  .oral-card,
+  .legal-card,
+  .how-step,
+  .real-estate-card {
+    will-change: auto;
+  }
+}
+
+/* При докосване няма конфликт с естествения скрол */
+@media (hover: hover) and (pointer: fine) {
+  .service-card:hover,
+  .oral-card:hover,
+  .legal-card:hover,
+  .how-step:hover,
+  .real-estate-card:hover {
+    transform: translateY(-7px);
+  }
+}
+
+/* Уважаваме настройката за намалено движение */
+@media (prefers-reduced-motion: reduce) {
+  .gentle-bounce {
+    animation: none !important;
+  }
+  .service-card,
+  .oral-card,
+  .legal-card,
+  .how-step,
+  .real-estate-card {
+    transition: none !important;
+  }
+}
 </style>
 
 </head>
@@ -1685,6 +1747,167 @@ document.addEventListener("DOMContentLoaded", function () {
 
   setLanguage("bg");
 
+});
+</script>
+
+
+<style id="mobile-services-fix-v10">
+/* Mobile reliability + faster first render.
+   The service content must never depend on the reveal observer to become visible. */
+section{
+  content-visibility:visible !important;
+  contain-intrinsic-size:auto !important;
+}
+
+/* Keep the existing section animation, but guarantee the complete Services
+   block and its document/legal/oral subsections are visible on every device. */
+#services.reveal,
+#services .reveal,
+#services #how-it-works{
+  opacity:1 !important;
+  transform:none !important;
+}
+
+/* Animate the service cards themselves without hiding their parent section. */
+#services .service-card,
+#services .how-step{
+  animation:service-card-in-v10 .45s ease both;
+}
+#services .service-card:nth-child(2),#services .how-step:nth-child(2){animation-delay:.04s}
+#services .service-card:nth-child(3),#services .how-step:nth-child(3){animation-delay:.08s}
+#services .service-card:nth-child(4),#services .how-step:nth-child(4){animation-delay:.12s}
+#services .service-card:nth-child(5){animation-delay:.16s}
+#services .service-card:nth-child(6){animation-delay:.20s}
+
+@keyframes service-card-in-v10{
+  from{opacity:1;transform:translateY(10px)}
+  to{opacity:1;transform:none}
+}
+
+@media(max-width:700px){
+  /* Prevent any horizontal clipping of the service title/cards. */
+  #services{
+    overflow:visible !important;
+  }
+  #services .service-group,
+  #services .oral-translation-group{
+    width:100%;
+    max-width:100%;
+    box-sizing:border-box;
+  }
+  #services .service-group-title{
+    width:100%;
+    box-sizing:border-box;
+    flex-wrap:wrap;
+  }
+  #services .service-group-title::after{
+    flex:1 1 100%;
+    margin:.25rem 0 0;
+  }
+  #services .service-grid,
+  #services .service-grid.three,
+  #services .legal-grid{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    width:100%;
+  }
+  #services .service-card{
+    width:100%;
+    min-width:0;
+    box-sizing:border-box;
+  }
+  #services .how-it-works-section{
+    display:block !important;
+    width:100% !important;
+    margin:1rem 0 !important;
+    box-sizing:border-box !important;
+  }
+  #services .how-it-works-heading{
+    grid-template-columns:44px minmax(0,1fr);
+    gap:.7rem;
+  }
+  #services .how-it-works-icon{
+    width:44px;
+    height:44px;
+    border-radius:14px;
+    font-size:1.25rem;
+  }
+  #services .how-title{
+    font-size:1.15rem !important;
+  }
+  #services .how-subtitle{
+    font-size:.86rem;
+  }
+  #services .how-steps{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  #services .service-card,#services .how-step{
+    animation:none !important;
+  }
+}
+</style>
+
+
+<style id="mobile-fast-render-v11">
+/* Fast, reliable mobile rendering: content is always present; animation is decorative only. */
+#services, #services * {
+  content-visibility: visible !important;
+}
+#services .service-card, #services .how-step {
+  opacity: 1 !important;
+  will-change: transform;
+}
+@media (max-width:700px) {
+  /* Keep all service blocks in normal document flow and avoid horizontal overflow. */
+  #services .service-group,
+  #services .oral-translation-group,
+  #services .service-grid,
+  #services .legal-grid,
+  #services .how-it-works-section {
+    overflow: visible !important;
+  }
+  #services .service-card, #services .how-step {
+    animation-duration: .32s !important;
+    animation-fill-mode: both;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #services .service-card, #services .how-step {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+</style>
+
+
+<script id="gentle-card-motion-script">
+document.addEventListener('DOMContentLoaded', function () {
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const groups = [
+    '.service-card',
+    '.oral-card',
+    '.legal-card',
+    '.how-step',
+    '.real-estate-card'
+  ];
+
+  let cards = [];
+  groups.forEach(selector => {
+    document.querySelectorAll(selector).forEach(card => cards.push(card));
+  });
+
+  // Keep the effect restrained: one card at a time, with a small delay.
+  cards.slice(0, 24).forEach((card, index) => {
+    setTimeout(() => {
+      card.classList.add('gentle-bounce');
+      setTimeout(() => card.classList.remove('gentle-bounce'), 1900);
+    }, 900 + index * 1150);
+  });
 });
 </script>
 
