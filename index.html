@@ -1050,7 +1050,6 @@ a:active {
   }
 }
 </style>
-
 <style id="how-it-works-static-v16">
 /* "Как работи услугата" остава статична двуезична секция */
 #how-it-works .how-step {
@@ -1090,6 +1089,40 @@ a:active {
   #about .language-label-flag {
     width: 27px;
     height: 18px;
+  }
+}
+</style>
+
+<style id="contact-mobile-alignment-v17">
+/* Контактните бутони са центрирани и на мобилен телефон */
+#contact .contact-actions,
+#contact .contact-buttons,
+#contact .contact-cta-group {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#contact .contact-actions a,
+#contact .contact-buttons a,
+#contact .contact-cta-group a {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 700px) {
+  #contact .contact-actions a,
+  #contact .contact-buttons a,
+  #contact .contact-cta-group a {
+    width: 100%;
+    max-width: 100%;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
   }
 }
 </style>
@@ -1385,8 +1418,8 @@ nav a{font-size:clamp(.9rem,1.05vw,1.08rem)!important;padding:.82rem 1.2rem!impo
 <h2 class="section-heading"><span class="section-icon">☎️</span>Контакти / Επικοινωνίες</h2>
 <div class="contact-grid">
 <div class="contact-main">
-<div class="contact-item"><span class="ci">✉️</span><div><strong>Email / Ηλεκτρονικό ταχυδρομείο</strong><br/><a href="mailto:mollovplamen@gmail.com">mollovplamen@gmail.com</a></div></div>
-<div class="contact-item"><span class="ci">✉️</span><div><strong>Email / Ηλεκτρονικό ταχυδρομείο</strong><br/><a href="mailto:info@prevodigr.eu">info@prevodigr.eu</a></div></div>
+<div class="contact-item"><span class="ci">✉️</span><div><strong>Email</strong><br/><a href="mailto:mollovplamen@gmail.com">mollovplamen@gmail.com</a></div></div>
+<div class="contact-item"><span class="ci">✉️</span><div><strong>Email</strong><br/><a href="mailto:info@prevodigr.eu">info@prevodigr.eu</a></div></div>
 <div class="contact-item"><span class="ci">📍</span><div><strong>Град / Πόλη</strong><br/>Пловдив, България / Πλόβντιβ, Βουλγαρία</div></div>
 <div class="contact-item"><span class="ci">📞</span><div><strong>Телефон / Τηλέφωνο</strong><br/>00359 897 09 89 59</div></div>
 <div class="contact-actions">
