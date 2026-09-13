@@ -527,6 +527,203 @@ a:active {
 }
 </style>
 
+
+<style id="ai-assistant-widget">
+
+/* AI асистент — форма за индивидуална оферта */
+.ai-lead-card{
+  width:100%;
+  box-sizing:border-box;
+  margin:0 0 10px;
+  padding:13px;
+  border-radius:15px;
+  background:#fff;
+  border:1px solid #cfe0ee;
+  box-shadow:0 4px 14px rgba(0,43,92,.08);
+}
+.ai-lead-title{
+  margin:0 0 5px;
+  color:#003366;
+  font:700 .92rem/1.35 'Poppins','Segoe UI',sans-serif;
+}
+.ai-lead-subtitle{
+  margin:0 0 10px;
+  color:#526b80;
+  font:400 .72rem/1.45 'Poppins','Segoe UI',sans-serif;
+}
+.ai-lead-form{
+  display:flex;
+  flex-direction:column;
+  gap:7px;
+}
+.ai-lead-form input,
+.ai-lead-form textarea{
+  width:100%!important;
+  box-sizing:border-box!important;
+  margin:0!important;
+  padding:9px 10px!important;
+  border:1px solid #bfd1df!important;
+  border-radius:9px!important;
+  background:#fff!important;
+  color:#17324d!important;
+  font:400 .75rem/1.35 'Poppins','Segoe UI',sans-serif!important;
+  outline:none;
+}
+.ai-lead-form input:focus,
+.ai-lead-form textarea:focus{
+  border-color:#0055a5!important;
+  box-shadow:0 0 0 3px rgba(0,85,165,.10);
+}
+.ai-lead-form textarea{
+  min-height:72px;
+  resize:vertical;
+}
+.ai-lead-submit{
+  width:100%!important;
+  min-height:40px;
+  margin:2px 0 0!important;
+  padding:8px 12px!important;
+  border:0!important;
+  border-radius:9px!important;
+  background:#003366!important;
+  color:#fff!important;
+  font:700 .75rem 'Poppins','Segoe UI',sans-serif!important;
+  cursor:pointer;
+}
+.ai-lead-submit:hover{background:#0055a5!important}
+.ai-lead-submit:disabled{opacity:.65;cursor:wait}
+.ai-lead-cancel{
+  width:100%!important;
+  margin:0!important;
+  padding:6px 8px!important;
+  border:0!important;
+  background:transparent!important;
+  color:#5c7184!important;
+  font:600 .68rem 'Poppins','Segoe UI',sans-serif!important;
+  cursor:pointer;
+}
+.ai-lead-cancel:hover{color:#003366!important}
+.ai-lead-error{
+  margin:2px 0 0;
+  color:#a52a2a;
+  font:600 .68rem/1.35 'Poppins','Segoe UI',sans-serif;
+}
+.ai-lead-success{
+  padding:4px 1px;
+  color:#17663a;
+  font:600 .76rem/1.5 'Poppins','Segoe UI',sans-serif;
+}
+
+/* Професионален AI асистент — самостоятелен плаващ компонент */
+.ai-assistant-launcher{
+  position:fixed;right:22px;bottom:22px;width:70px;height:70px;border:0;border-radius:50%;
+  padding:0;z-index:9998;cursor:pointer;background:linear-gradient(145deg,#0068c9,#002b5c);
+  box-shadow:0 10px 28px rgba(0,43,92,.30),0 0 0 4px rgba(255,255,255,.9);
+  display:flex;align-items:center;justify-content:center;transition:transform .25s ease,box-shadow .25s ease
+}
+.ai-assistant-launcher:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 14px 34px rgba(0,43,92,.38),0 0 0 4px #fff}
+.ai-assistant-launcher:focus-visible{outline:3px solid #7ec8ff;outline-offset:3px}
+.ai-bot{position:relative;width:42px;height:40px;border-radius:50% 50% 46% 46%;background:linear-gradient(145deg,#fff,#eaf5ff);box-shadow:0 3px 9px rgba(0,0,0,.18)}
+.ai-bot:before{content:"";position:absolute;width:6px;height:8px;border-radius:50%;background:#0055a5;left:10px;top:13px;box-shadow:16px 0 0 #0055a5}
+.ai-bot:after{content:"";position:absolute;width:15px;height:7px;left:13px;top:24px;border-radius:0 0 12px 12px;border:2px solid #0055a5;border-top:0;background:#dff0ff;box-sizing:border-box}
+.ai-bot-antenna{position:absolute;width:4px;height:9px;border-radius:4px;background:#fff;left:19px;top:-8px}
+.ai-bot-antenna:after{content:"";position:absolute;width:7px;height:7px;border-radius:50%;background:#ffd54a;left:-1.5px;top:-5px;box-shadow:0 0 9px rgba(255,213,74,.8)}
+.ai-assistant-badge{position:absolute;right:-3px;top:-3px;min-width:20px;height:20px;border-radius:50%;background:#20a464;border:2px solid #fff;font:700 10px/16px Arial,sans-serif;color:#fff;text-align:center}
+.ai-character-label{position:absolute;left:50%;bottom:-18px;transform:translateX(-50%);font:700 8px/1 Arial,sans-serif;color:#fff;white-space:nowrap}
+.ai-assistant-window{
+  position:fixed;right:22px;bottom:104px;width:410px;height:600px;max-width:calc(100vw - 32px);
+  max-height:calc(100vh - 125px);z-index:9999;display:none;flex-direction:column;overflow:hidden;
+  border-radius:22px;background:#fff;box-shadow:0 20px 60px rgba(0,30,70,.30),0 0 0 1px rgba(0,43,92,.10);
+  font-family:'Poppins','Segoe UI',sans-serif
+}
+.ai-assistant-window.open{display:flex;animation:ai-window-in .22s ease-out}
+@keyframes ai-window-in{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:none}}
+.ai-assistant-header{
+  flex:0 0 auto;padding:16px 17px;background:linear-gradient(135deg,#002b5c,#0055a5);
+  color:#fff;display:flex;align-items:center;gap:11px
+}
+.ai-assistant-avatar{
+  width:45px;height:45px;flex:0 0 45px;border-radius:50%;background:#fff;
+  display:flex;align-items:center;justify-content:center;box-shadow:0 3px 10px rgba(0,0,0,.16)
+}
+.ai-assistant-avatar .ai-bot{transform:scale(.62)}
+.ai-assistant-head-text{min-width:0;flex:1}
+.ai-assistant-head-text strong{display:block;font-size:1rem;line-height:1.3}
+.ai-assistant-status{display:flex;align-items:center;gap:5px;margin-top:4px;font-size:.72rem;opacity:.94}
+.ai-status-dot{width:7px;height:7px;border-radius:50%;background:#4ade80;box-shadow:0 0 7px rgba(74,222,128,.8)}
+.ai-assistant-close{
+  border:0!important;background:rgba(255,255,255,.14)!important;color:#fff!important;width:34px!important;height:34px!important;
+  padding:0!important;border-radius:50%!important;font-size:1.35rem!important;line-height:1!important;flex:0 0 34px
+}
+.ai-assistant-close:hover{background:rgba(255,255,255,.25)!important}
+.ai-assistant-language{
+  flex:0 0 auto;display:flex;gap:5px;padding:8px 12px 7px;background:#fff;border-bottom:1px solid #e8eef4
+}
+.ai-lang-btn{
+  flex:1;border:1px solid #c8dceb!important;background:#fff!important;color:#17486e!important;
+  border-radius:9px!important;padding:7px 8px!important;font:600 .73rem 'Poppins','Segoe UI',sans-serif!important
+}
+.ai-lang-btn.active{background:#0055a5!important;color:#fff!important;border-color:#0055a5!important}
+.ai-assistant-messages{
+  flex:1 1 auto;min-height:0;overflow-y:auto;padding:15px 14px;
+  background:linear-gradient(to bottom,#f5faff,#fff);overscroll-behavior:contain
+}
+.ai-msg{
+  max-width:84%;margin:0 0 10px;padding:10px 12px;border-radius:15px;
+  font-size:.86rem;line-height:1.5;word-wrap:break-word;overflow-wrap:anywhere
+}
+.ai-msg.bot{margin-right:auto;color:#17324d;background:#e9f4ff;border-bottom-left-radius:5px}
+.ai-msg.user{margin-left:auto;color:#fff;background:#0055a5;border-bottom-right-radius:5px}
+.ai-assistant-quick{
+  flex:0 0 auto;display:grid;grid-template-columns:1fr 1fr;gap:6px;
+  padding:8px 11px;background:#fff;border-top:1px solid #e8eef4
+}
+.ai-quick-btn{
+  min-height:38px;border:1px solid #b9d5eb!important;background:#f5faff!important;color:#003f73!important;
+  border-radius:9px!important;padding:7px 8px!important;font:600 .73rem/1.2 'Poppins','Segoe UI',sans-serif!important;
+  white-space:normal
+}
+.ai-quick-btn:hover{background:#e6f3ff!important;border-color:#7fb6df!important}
+.ai-assistant-input{
+  flex:0 0 auto;display:flex;align-items:flex-end;gap:8px;padding:10px 11px;
+  background:#fff;border-top:1px solid #e5edf4
+}
+.ai-assistant-input textarea{
+  flex:1;min-width:0;width:auto!important;height:44px;max-height:100px;resize:none;box-sizing:border-box;
+  margin:0!important;padding:10px 12px!important;border:1px solid #bfd1df!important;border-radius:12px!important;
+  font:400 .84rem 'Poppins','Segoe UI',sans-serif!important;line-height:1.35!important;outline:none
+}
+.ai-assistant-input textarea:focus{border-color:#0055a5!important;box-shadow:0 0 0 3px rgba(0,85,165,.10)}
+.ai-send-btn{
+  width:48px!important;height:44px!important;flex:0 0 48px;padding:0!important;border-radius:12px!important;
+  background:#003366!important;font-size:1.08rem!important
+}
+.ai-assistant-note{
+  flex:0 0 auto;padding:5px 11px 9px;text-align:center;color:#71869a;background:#fff;
+  font:400 .61rem/1.35 'Poppins','Segoe UI',sans-serif
+}
+@media(max-width:768px){
+  .ai-assistant-launcher{right:14px;bottom:14px;width:61px;height:61px}
+  .ai-assistant-window{
+    left:9px;right:9px;bottom:83px;width:auto;max-width:none;height:min(650px,calc(100vh - 105px));
+    max-height:calc(100vh - 105px);border-radius:18px
+  }
+  .ai-assistant-header{padding:13px 14px}
+  .ai-assistant-messages{padding:12px 10px}
+  .ai-msg{font-size:.83rem;max-width:89%}
+  .ai-assistant-quick{grid-template-columns:1fr 1fr;padding:7px 9px}
+  .ai-quick-btn{min-height:40px;font-size:.69rem}
+  .ai-assistant-input{padding:9px}
+  .ai-assistant-note{font-size:.57rem}
+}
+@media(max-width:360px){
+  .ai-assistant-window{left:5px;right:5px;bottom:78px}
+  .ai-assistant-quick{gap:5px;padding:6px}
+  .ai-quick-btn{font-size:.64rem}
+}
+@media(prefers-reduced-motion:reduce){.ai-assistant-window{animation:none!important}}
+</style>
+
 </head>
 <body>
 <header>
@@ -883,6 +1080,50 @@ a:active {
 <a href="tel:+359897098959" style="background: #003366; color: #fff; padding: 1rem 1.5rem; border-radius: 12px; text-decoration: none; font-weight: bold; transition: transform 0.1s ease-in-out;">Позвънете сега / Καλέστε τώρα</a>
 </div>
 </section>
+
+<!-- AI асистент — визуален интерфейс -->
+<button class="ai-assistant-launcher" id="aiAssistantLauncher" type="button" aria-label="Отвори AI асистента" aria-expanded="false">
+  <span class="ai-bot"><span class="ai-bot-antenna"></span></span>
+  <span class="ai-assistant-badge">AI</span>
+</button>
+
+<div class="ai-assistant-window" id="aiAssistantWindow" role="dialog" aria-modal="false" aria-label="AI асистент">
+  <div class="ai-assistant-header">
+    <div class="ai-assistant-avatar" aria-hidden="true"><span class="ai-bot"><span class="ai-bot-antenna"></span></span></div>
+    <div class="ai-assistant-head-text">
+      <strong>AI асистент • PrevodiGR</strong>
+      <div class="ai-assistant-status"><span class="ai-status-dot"></span><span id="aiStatusText">На линия</span></div>
+    </div>
+    <button class="ai-assistant-close" id="aiAssistantClose" type="button" aria-label="Затвори">×</button>
+  </div>
+
+  <div class="ai-assistant-language" aria-label="Избор на език">
+    <button class="ai-lang-btn active" type="button" data-lang="bg">🇧🇬 Български</button>
+    <button class="ai-lang-btn" type="button" data-lang="el">🇬🇷 Ελληνικά</button>
+  </div>
+
+  <div class="ai-assistant-messages" id="aiAssistantMessages">
+    <div class="ai-msg bot" data-bg="👋 Здравейте! Аз съм виртуалният асистент на Пламен Моллов. Мога да Ви помогна с информация за преводи, заверки, легализация, устен превод и услуги, свързани с имоти в Гърция.<br><br>Какво бихте искали да попитате?"
+      data-el="👋 Γεια σας! Είμαι ο εικονικός βοηθός του Πλάμεν Μόλλοβ. Μπορώ να σας βοηθήσω με πληροφορίες σχετικά με μεταφράσεις, επικυρώσεις, νομιμοποιήσεις, διερμηνεία και υπηρεσίες που αφορούν ακίνητα στην Ελλάδα.<br><br>Τι θα θέλατε να ρωτήσετε;">
+      👋 Здравейте! Аз съм виртуалният асистент на Пламен Моллов. Мога да Ви помогна с информация за преводи, заверки, легализация, устен превод и услуги, свързани с имоти в Гърция.<br><br>Какво бихте искали да попитате?
+    </div>
+  </div>
+
+  <div class="ai-assistant-quick" id="aiQuickActions">
+    <button class="ai-quick-btn" type="button" data-bg="Цена за превод" data-el="Κόστος μετάφρασης">Цена за превод</button>
+    <button class="ai-quick-btn" type="button" data-bg="Превод на документ" data-el="Μετάφραση εγγράφου">Превод на документ</button>
+    <button class="ai-quick-btn" type="button" data-bg="Легализация / апостил" data-el="Νομιμοποίηση / Apostille">Легализация / апостил</button>
+    <button class="ai-quick-btn" type="button" data-bg="Имоти в Гърция" data-el="Ακίνητα στην Ελλάδα">Имоти в Гърция</button>
+    <button class="ai-quick-btn" type="button" data-action="lead" data-bg="Искам индивидуална оферта" data-el="Ζητώ ατομική προσφορά">Искам индивидуална оферта</button>
+  </div>
+
+  <form class="ai-assistant-input" id="aiAssistantForm">
+    <textarea id="aiAssistantInput" rows="1" placeholder="Напишете въпроса си..." aria-label="Вашият въпрос"></textarea>
+    <button class="ai-send-btn" type="submit" aria-label="Изпрати">➤</button>
+  </form>
+  <div class="ai-assistant-note" id="aiAssistantNote">Можете да пишете на български или гръцки.</div>
+</div>
+
 <footer>
 <p>© 2025 Пламен Моллов – Заклет преводач с гръцки език</p>
 <p>🇧🇬 България | Ελλάδα 🇬🇷</p>
@@ -904,5 +1145,542 @@ window.addEventListener("message", function(event) {
       nav.classList.toggle("active");
     });
   });
-</script></body>
+</script>
+<script id="ai-assistant-ui-script">
+document.addEventListener("DOMContentLoaded", function () {
+
+  const AI_ENDPOINT =
+    "https://prevodigr-ai-assistant.mollovplamen.workers.dev/";
+
+  const launcher = document.getElementById("aiAssistantLauncher");
+  const panel = document.getElementById("aiAssistantWindow");
+  const closeBtn = document.getElementById("aiAssistantClose");
+  const form = document.getElementById("aiAssistantForm");
+  const input = document.getElementById("aiAssistantInput");
+  const messages = document.getElementById("aiAssistantMessages");
+  const status = document.getElementById("aiStatusText");
+  const note = document.getElementById("aiAssistantNote");
+  const langBtns = document.querySelectorAll(".ai-lang-btn");
+  const quickBtns = document.querySelectorAll(".ai-quick-btn");
+
+  let lang = "bg";
+  let isSending = false;
+  let conversationHistory = [];
+
+  const texts = {
+    bg: {
+      title: "AI асистент • PrevodiGR",
+      dialogLabel: "AI асистент",
+      closeLabel: "Затвори",
+      placeholder: "Напишете въпроса си...",
+      status: "На линия",
+      note: "Можете да пишете на български или гръцки.",
+      thinking: "Пиша отговор...",
+      error: "В момента AI асистентът не успя да получи отговор. Моля, опитайте отново след малко.",
+      timeout: "Отговорът се забави повече от очакваното. Моля, опитайте отново.",
+      leadTitle: "Заявка за индивидуална оферта",
+      leadSubtitle: "Оставете данните си и кратко описание на необходимата услуга.",
+      leadName: "Име",
+      leadPhone: "Телефон",
+      leadEmail: "Имейл",
+      leadDescription: "Какво Ви е необходимо?",
+      leadSubmit: "Изпрати запитването",
+      leadCancel: "Отказ",
+      leadSending: "Изпращане...",
+      leadSuccess: "Запитването е изпратено успешно. Ще се свържем с Вас възможно най-скоро.",
+      leadError: "Не успяхме да изпратим запитването. Моля, опитайте отново.",
+      leadRequired: "Моля, попълнете всички полета."
+    },
+    el: {
+      title: "AI βοηθός • PrevodiGR",
+      dialogLabel: "AI βοηθός",
+      closeLabel: "Κλείσιμο",
+      placeholder: "Γράψτε την ερώτησή σας...",
+      status: "Σε σύνδεση",
+      note: "Μπορείτε να γράψετε στα ελληνικά ή στα βουλγαρικά.",
+      thinking: "Γράφω απάντηση...",
+      error: "Αυτή τη στιγμή ο AI βοηθός δεν μπόρεσε να λάβει απάντηση. Παρακαλώ δοκιμάστε ξανά σε λίγο.",
+      timeout: "Η απάντηση καθυστερεί περισσότερο από το αναμενόμενο. Παρακαλώ δοκιμάστε ξανά.",
+      leadTitle: "Αίτημα για ατομική προσφορά",
+      leadSubtitle: "Αφήστε τα στοιχεία σας και μια σύντομη περιγραφή της υπηρεσίας που χρειάζεστε.",
+      leadName: "Όνομα",
+      leadPhone: "Τηλέφωνο",
+      leadEmail: "Email",
+      leadDescription: "Τι χρειάζεστε;",
+      leadSubmit: "Αποστολή αιτήματος",
+      leadCancel: "Ακύρωση",
+      leadSending: "Αποστολή...",
+      leadSuccess: "Το αίτημά σας στάλθηκε επιτυχώς. Θα επικοινωνήσουμε μαζί σας το συντομότερο δυνατό.",
+      leadError: "Δεν ήταν δυνατή η αποστολή του αιτήματος. Παρακαλώ δοκιμάστε ξανά.",
+      leadRequired: "Παρακαλώ συμπληρώστε όλα τα πεδία."
+    }
+  };
+
+  function setInterfaceText() {
+    const t = texts[lang];
+
+    const title = panel.querySelector(".ai-assistant-head-text strong");
+    if (title) title.textContent = t.title;
+
+    panel.setAttribute("aria-label", t.dialogLabel);
+    closeBtn.setAttribute("aria-label", t.closeLabel);
+    input.placeholder = t.placeholder;
+    input.setAttribute("aria-label", t.placeholder);
+    status.textContent = t.status;
+    note.textContent = t.note;
+
+    quickBtns.forEach(function (button) {
+      button.textContent = button.dataset[lang] || "";
+    });
+  }
+
+  function resetConversationForLanguage() {
+    conversationHistory = [];
+    messages.innerHTML = "";
+
+    const welcome = document.createElement("div");
+    welcome.className = "ai-msg bot";
+
+    if (lang === "el") {
+      welcome.innerHTML =
+        "👋 Γεια σας! Είμαι ο εικονικός βοηθός του Πλάμεν Μόλλοβ. " +
+        "Μπορώ να σας βοηθήσω με πληροφορίες σχετικά με μεταφράσεις, " +
+        "επικυρώσεις, νομιμοποιήσεις, διερμηνεία και υπηρεσίες που αφορούν " +
+        "ακίνητα στην Ελλάδα.<br><br>Τι θα θέλατε να ρωτήσετε;";
+    } else {
+      welcome.innerHTML =
+        "👋 Здравейте! Аз съм виртуалният асистент на Пламен Моллов. " +
+        "Мога да Ви помогна с информация за преводи, заверки, легализация, " +
+        "устен превод и услуги, свързани с имоти в Гърция." +
+        "<br><br>Какво бихте искали да попитате?";
+    }
+
+    messages.appendChild(welcome);
+    messages.scrollTop = messages.scrollHeight;
+  }
+
+  function setLanguage(newLang) {
+    lang = newLang === "el" ? "el" : "bg";
+
+    // При смяна на езика започваме напълно нов разговор.
+    // Това предотвратява стара история на български да влияе
+    // върху отговора, когато е избран гръцки език, и обратно.
+    conversationHistory = [];
+
+    langBtns.forEach(function (button) {
+      button.classList.toggle("active", button.dataset.lang === lang);
+    });
+
+    setInterfaceText();
+    resetConversationForLanguage();
+  }
+
+  function openAssistant() {
+    panel.classList.add("open");
+    launcher.setAttribute("aria-expanded", "true");
+    setTimeout(function () {
+      input.focus();
+    }, 100);
+  }
+
+  function closeAssistant() {
+    panel.classList.remove("open");
+    launcher.setAttribute("aria-expanded", "false");
+  }
+
+  function sanitizeAssistantReply(text) {
+    let value = String(text || "");
+    const original = value;
+
+    // В отговорите на чата не показваме директните имейли и телефона.
+    // Вместо тях насочваме посетителя към бутона за индивидуална оферта.
+    const contactPatterns = [
+      /mollovplamen\s*@\s*gmail\s*\.\s*com/gi,
+      /info\s*@\s*prevodigr\s*\.\s*eu/gi,
+      /00359\s*897\s*09\s*89\s*59/gi,
+      /\+359\s*897\s*09\s*89\s*59/gi
+    ];
+
+    let hadContact = false;
+    contactPatterns.forEach(function (pattern) {
+      if (pattern.test(value)) {
+        hadContact = true;
+        value = value.replace(pattern, "");
+      }
+      pattern.lastIndex = 0;
+    });
+
+    if (hadContact) {
+      value = value
+        .replace(/[ \t]+([,.!?;:])/g, "$1")
+        .replace(/\n{3,}/g, "\n\n")
+        .trim();
+
+      const contactPrompt = lang === "el"
+        ? "Για ατομική προσφορά, πατήστε το κουμπί «Ζητώ ατομική προσφορά» παρακάτω."
+        : "За индивидуална оферта натиснете бутона „Искам индивидуална оферта“ по-долу.";
+
+      value += (value ? "\n\n" : "") + contactPrompt;
+    }
+
+    return value || original;
+  }
+
+  function addMessage(text, type) {
+    const element = document.createElement("div");
+    element.className = "ai-msg " + type;
+    element.textContent = type === "bot"
+      ? sanitizeAssistantReply(text)
+      : String(text || "");
+    messages.appendChild(element);
+    messages.scrollTop = messages.scrollHeight;
+    return element;
+  }
+
+  async function requestAI(payload) {
+    let lastResponse = null;
+    let lastData = null;
+
+    for (let attempt = 1; attempt <= 2; attempt++) {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(function () {
+        controller.abort();
+      }, 35000);
+
+      try {
+        const response = await fetch(AI_ENDPOINT, {
+          method: "POST",
+          cache: "no-store",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify(payload),
+          signal: controller.signal
+        });
+
+        const rawText = await response.text();
+        let data = null;
+
+        try {
+          data = rawText ? JSON.parse(rawText) : null;
+        } catch (parseError) {
+          console.error("AI JSON parse error:", parseError, rawText);
+        }
+
+        lastResponse = response;
+        lastData = data;
+
+        if (response.ok && data && typeof data.reply === "string" && data.reply.trim()) {
+          return data.reply.trim();
+        }
+
+        // 502 е нормалният код, който Worker-ът връща при временен проблем.
+        // Правим още един опит от браузъра, за да не показваме грешка при единичен 503.
+        if (attempt === 1 && (response.status === 502 || response.status === 503 || response.status === 504)) {
+          await new Promise(function (resolve) {
+            setTimeout(resolve, 1200);
+          });
+          continue;
+        }
+
+        const serverError = data && typeof data.error === "string" ? data.error : "";
+        throw new Error(serverError || "AI response error");
+
+      } finally {
+        clearTimeout(timeoutId);
+      }
+    }
+
+    console.error("AI final response:", lastResponse, lastData);
+    throw new Error("AI response error");
+  }
+
+
+  function isLeadIntent(text) {
+    const value = String(text || "").toLowerCase().trim();
+
+    if (lang === "el") {
+      return [
+        "ζητώ προσφορά",
+        "ζητάω προσφορά",
+        "θέλω προσφορά",
+        "θέλω να παραγγείλω",
+        "θέλω να κάνω παραγγελία",
+        "θέλω να προχωρήσω",
+        "να προχωρήσουμε",
+        "πώς μπορώ να παραγγείλω",
+        "πως μπορώ να παραγγείλω",
+        "θέλω να ξεκινήσουμε",
+        "θέλω να στείλω το έγγραφο",
+        "θέλω να στείλω τα έγγραφα"
+      ].some(function (phrase) {
+        return value.includes(phrase);
+      });
+    }
+
+    return [
+      "искам оферта",
+      "искам да поръчам",
+      "искам да заявя",
+      "искам да поръчам превод",
+      "искам да направя поръчка",
+      "искам да започнем",
+      "искам да започна",
+      "как да поръчам",
+      "как да заявя",
+      "може да започнем",
+      "можем да започнем",
+      "искам да изпратя документа",
+      "искам да изпратя документите"
+    ].some(function (phrase) {
+      return value.includes(phrase);
+    });
+  }
+
+  function showLeadForm() {
+    const existing = messages.querySelector(".ai-lead-card");
+    if (existing) {
+      messages.scrollTop = messages.scrollHeight;
+      return;
+    }
+
+    const t = texts[lang];
+    const wrapper = document.createElement("div");
+    wrapper.className = "ai-lead-card";
+    wrapper.innerHTML =
+      '<div class="ai-lead-title">' + t.leadTitle + '</div>' +
+      '<div class="ai-lead-subtitle">' + t.leadSubtitle + '</div>' +
+      '<form class="ai-lead-form" novalidate>' +
+        '<input type="text" name="name" autocomplete="name" placeholder="' + t.leadName + '" required>' +
+        '<input type="tel" name="phone" autocomplete="tel" placeholder="' + t.leadPhone + '" required>' +
+        '<input type="email" name="email" autocomplete="email" placeholder="' + t.leadEmail + '" required>' +
+        '<textarea name="description" placeholder="' + t.leadDescription + '" required></textarea>' +
+        '<div class="ai-lead-error" hidden></div>' +
+        '<button class="ai-lead-submit" type="submit">' + t.leadSubmit + '</button>' +
+        '<button class="ai-lead-cancel" type="button">' + t.leadCancel + '</button>' +
+      '</form>';
+
+    messages.appendChild(wrapper);
+    messages.scrollTop = messages.scrollHeight;
+
+    const leadForm = wrapper.querySelector(".ai-lead-form");
+    const submitBtn = wrapper.querySelector(".ai-lead-submit");
+    const cancelBtn = wrapper.querySelector(".ai-lead-cancel");
+    const errorBox = wrapper.querySelector(".ai-lead-error");
+
+    cancelBtn.addEventListener("click", function () {
+      wrapper.remove();
+    });
+
+    leadForm.addEventListener("submit", async function (event) {
+      event.preventDefault();
+
+      if (submitBtn.disabled) return;
+
+      const name = leadForm.elements.name.value.trim();
+      const phone = leadForm.elements.phone.value.trim();
+      const email = leadForm.elements.email.value.trim();
+      const description = leadForm.elements.description.value.trim();
+
+      errorBox.hidden = true;
+      errorBox.textContent = "";
+
+      if (!name || !phone || !email || !description) {
+        errorBox.textContent = t.leadRequired;
+        errorBox.hidden = false;
+        return;
+      }
+
+      if (!leadForm.elements.email.checkValidity()) {
+        errorBox.textContent = t.leadRequired;
+        errorBox.hidden = false;
+        return;
+      }
+
+      submitBtn.disabled = true;
+      cancelBtn.disabled = true;
+      submitBtn.textContent = t.leadSending;
+
+      try {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(function () {
+          controller.abort();
+        }, 20000);
+
+        let response;
+        let data;
+
+        try {
+          response = await fetch(AI_ENDPOINT, {
+            method: "POST",
+            cache: "no-store",
+            headers: {
+              "Content-Type": "application/json",
+              "Accept": "application/json"
+            },
+            body: JSON.stringify({
+              action: "lead",
+              name: name,
+              phone: phone,
+              email: email,
+              description: description,
+              language: lang === "el" ? "el" : "bg"
+            }),
+            signal: controller.signal
+          });
+
+          const rawText = await response.text();
+
+          try {
+            data = rawText ? JSON.parse(rawText) : null;
+          } catch (parseError) {
+            data = null;
+            console.error("Lead JSON parse error:", parseError, rawText);
+          }
+        } finally {
+          clearTimeout(timeoutId);
+        }
+
+        if (!response || !response.ok || !data || data.success !== true) {
+          throw new Error("Lead request failed");
+        }
+
+        wrapper.innerHTML =
+          '<div class="ai-lead-success">✓ ' + t.leadSuccess + '</div>';
+        messages.scrollTop = messages.scrollHeight;
+
+      } catch (error) {
+        console.error("Lead form error:", error);
+        errorBox.textContent =
+          error && error.name === "AbortError"
+            ? t.timeout
+            : t.leadError;
+        errorBox.hidden = false;
+        submitBtn.disabled = false;
+        cancelBtn.disabled = false;
+        submitBtn.textContent = t.leadSubmit;
+      }
+    });
+  }
+
+  async function sendMessage(text) {
+    text = String(text || "").trim();
+
+    if (!text || isSending) return;
+
+    isSending = true;
+    input.disabled = true;
+
+    // Фиксираме езика точно в момента на изпращане.
+    const selectedLanguage = lang === "el" ? "el" : "bg";
+
+    addMessage(text, "user");
+
+    // Използваме само история от текущия разговор.
+    const previousHistory = conversationHistory.slice(-12);
+
+    conversationHistory.push({
+      role: "user",
+      text: text
+    });
+
+    const thinkingMessage = addMessage(
+      texts[selectedLanguage].thinking,
+      "bot"
+    );
+
+    try {
+      const reply = await requestAI({
+        message: text,
+        language: selectedLanguage,
+        history: previousHistory
+      });
+
+      thinkingMessage.remove();
+      addMessage(reply, "bot");
+
+      conversationHistory.push({
+        role: "model",
+        text: reply
+      });
+
+      // При ясно заявено намерение за поръчка/оферта показваме
+      // формата за контакт автоматично. При обикновени въпроси
+      // формата не се натрапва.
+      if (isLeadIntent(text)) {
+        showLeadForm();
+      }
+
+    } catch (error) {
+      console.error("AI Assistant error:", error);
+      thinkingMessage.remove();
+
+      addMessage(
+        error && error.name === "AbortError"
+          ? texts[selectedLanguage].timeout
+          : texts[selectedLanguage].error,
+        "bot"
+      );
+    } finally {
+      isSending = false;
+      input.disabled = false;
+      input.focus();
+      messages.scrollTop = messages.scrollHeight;
+    }
+  }
+
+  launcher.addEventListener("click", function () {
+    if (panel.classList.contains("open")) {
+      closeAssistant();
+    } else {
+      openAssistant();
+    }
+  });
+
+  closeBtn.addEventListener("click", closeAssistant);
+
+  langBtns.forEach(function (button) {
+    button.addEventListener("click", function () {
+      setLanguage(button.dataset.lang);
+    });
+  });
+
+  quickBtns.forEach(function (button) {
+    button.addEventListener("click", function () {
+      openAssistant();
+
+      if (button.dataset.action === "lead") {
+        showLeadForm();
+        return;
+      }
+
+      const quickText = button.dataset[lang];
+      if (quickText) sendMessage(quickText);
+    });
+  });
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const text = input.value.trim();
+    if (!text || isSending) return;
+
+    input.value = "";
+    sendMessage(text);
+  });
+
+  input.addEventListener("keydown", function (event) {
+    if (event.key === "Enter" && !event.shiftKey) {
+      event.preventDefault();
+      form.requestSubmit();
+    }
+  });
+
+  setLanguage("bg");
+
+});
+</script>
+
+</body>
 </html>
