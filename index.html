@@ -2411,105 +2411,162 @@ html,body{
 }
 </style>
 
-<style id="mobile-card-fit-v38">
-@media (max-width:700px){
+
+
+<style id="final-mobile-card-layout-v39">
+@media(max-width:700px){
+
+  /* ===== ВСИЧКИ ОБСЛУЖВАЩИ КАРТИ ===== */
   #services .service-card,
+  #about .about-flip-card,
+  #real-estate .real-estate-flip-card{
+    min-height:0!important;
+    height:var(--dynamic-card-height, auto)!important;
+    overflow:visible!important;
+    box-sizing:border-box!important;
+  }
+
   #services .service-card .flip-card-inner,
-  #services .service-card .flip-card-front,
-  #services .service-card .flip-card-back{
+  #about .about-flip-card .flip-card-inner,
+  #real-estate .real-estate-flip-card .flip-card-inner{
+    height:var(--dynamic-card-height, auto)!important;
     min-height:0!important;
     box-sizing:border-box!important;
   }
 
-  #services .service-card{
-    height:var(--card-height,auto)!important;
-    overflow:visible!important;
-  }
-
-  #services .service-card .flip-card-inner{
-    height:var(--card-height,auto)!important;
-  }
-
-  #services .service-card .flip-card-face{
-    height:var(--card-height,auto)!important;
-    min-width:0!important;
-    max-width:100%!important;
-    padding:1rem!important;
-    overflow:visible!important;
+  #services .service-card .flip-card-face,
+  #about .about-flip-card .flip-card-face,
+  #real-estate .real-estate-flip-card .flip-card-face{
+    height:var(--dynamic-card-height, auto)!important;
+    min-height:0!important;
     box-sizing:border-box!important;
+    overflow:visible!important;
+    width:100%!important;
+    max-width:100%!important;
+  }
+
+  /* ===== ЕДНАКЪВ ШРИФТ ===== */
+  #services .service-card .flip-card-face,
+  #services .service-card .flip-card-face h3,
+  #services .service-card .flip-card-face h4,
+  #services .service-card .flip-card-face p,
+  #services .service-card .flip-card-face li,
+  #about .about-flip-card .flip-card-face,
+  #real-estate .real-estate-flip-card .flip-card-face{
     font-family:'Poppins','Segoe UI',Arial,sans-serif!important;
-    overflow-wrap:break-word!important;
+    overflow-wrap:anywhere!important;
     word-break:normal!important;
     hyphens:none!important;
   }
 
+  /* Заглавия */
   #services .service-card .flip-card-face h3,
   #services .service-card .flip-card-face h4{
-    font-size:clamp(.92rem,3.9vw,1.08rem)!important;
+    font-size:1rem!important;
     line-height:1.28!important;
     font-weight:800!important;
-    margin:0 0 .62rem!important;
+    margin:0 0 .55rem!important;
   }
 
+  /* Описания — еднакъв, спокоен размер */
   #services .service-card .flip-card-face p,
   #services .service-card .flip-card-face li{
-    font-size:clamp(.78rem,3.25vw,.92rem)!important;
-    line-height:1.55!important;
+    font-size:.87rem!important;
+    line-height:1.58!important;
     font-weight:500!important;
-    margin-top:0!important;
+    margin:0!important;
   }
 
-  #services .service-card .flip-card-face h3,
-  #services .service-card .flip-card-face h4,
-  #services .service-card .flip-card-face p,
-  #services .service-card .flip-card-face li{
-    max-width:100%!important;
-    overflow-wrap:anywhere!important;
+  /* Фиксираният абсолютен back остава част от обръщането, но не реже съдържанието. */
+  #services .service-card .flip-card-back,
+  #about .about-flip-card .flip-card-back,
+  #real-estate .real-estate-flip-card .flip-card-back{
+    overflow:visible!important;
   }
 
-  #services .service-group-title{
-    font-size:clamp(1.18rem,5.2vw,1.48rem)!important;
+  /* ===== ЗА МЕН ===== */
+  #about .about-flip-card .flip-card-face{
+    padding:1rem!important;
+  }
+  #about .about-flip-card .flip-card-face p{
+    font-size:.94rem!important;
+    line-height:1.58!important;
+    font-weight:500!important;
+    margin:0 0 .9rem!important;
+    color:#3f5363!important;
+  }
+  #about .about-flip-card .flip-card-face p:last-child{
+    margin-bottom:0!important;
+  }
+
+  /* Карти за опита */
+  #about .experience-card{
+    min-height:145px!important;
+    padding:1.1rem 1rem!important;
+  }
+  #about .experience-card b{
+    font-size:1.08rem!important;
     line-height:1.28!important;
-    font-weight:800!important;
+  }
+  #about .experience-desc{
+    font-size:.9rem!important;
+    line-height:1.48!important;
   }
 
-  #services .service-card .flip-card-button{
-    display:none!important;
-  }
-}
-
-@media (max-width:430px){
+  /* ===== АКАДЕМИЯ: компактен CTA ===== */
   #greek-academy .academy-cta{
-    width:100%!important;
+    width:auto!important;
     max-width:100%!important;
-    min-height:74px!important;
-    box-sizing:border-box!important;
+    min-height:62px!important;
+    padding:.8rem 1rem!important;
+    border-radius:18px!important;
     display:flex!important;
     align-items:center!important;
     justify-content:center!important;
     gap:.45rem!important;
-    padding:1rem 1rem!important;
+    box-sizing:border-box!important;
+    font-family:'Poppins','Segoe UI',Arial,sans-serif!important;
+    font-size:1.14rem!important;
+    line-height:1.15!important;
+    font-weight:800!important;
     text-align:center!important;
-    font-size:clamp(1.08rem,6vw,1.45rem)!important;
-    line-height:1.12!important;
     white-space:normal!important;
   }
   #greek-academy .academy-cta .academy-bg-text,
   #greek-academy .academy-cta .academy-gr-text{
-    max-width:82%!important;
+    max-width:calc(100% - 2rem)!important;
   }
   #greek-academy .academy-cta span:last-child{
     flex:0 0 auto!important;
-    font-size:1.15em!important;
+    font-size:1.05em!important;
   }
 }
-</style>
 
-<style id="final-legal-mobile-size-v38">
-@media(max-width:700px){
-  #services .service-group .service-card:nth-child(3) .flip-card-back p{
-    font-size:clamp(.75rem,3.05vw,.86rem)!important;
-    line-height:1.5!important;
+@media(max-width:390px){
+  #services .service-card .flip-card-face h3,
+  #services .service-card .flip-card-face h4{
+    font-size:.94rem!important;
+  }
+  #services .service-card .flip-card-face p,
+  #services .service-card .flip-card-face li{
+    font-size:.83rem!important;
+    line-height:1.54!important;
+  }
+  #about .about-flip-card .flip-card-face p{
+    font-size:.9rem!important;
+    line-height:1.54!important;
+    margin-bottom:.78rem!important;
+  }
+  #greek-academy .academy-cta{
+    font-size:1.03rem!important;
+    min-height:58px!important;
+    padding:.72rem .85rem!important;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  #greek-academy .academy-cta{
+    animation:none!important;
   }
 }
 </style>
@@ -3632,39 +3689,76 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 </script>
 
-<script id="mobile-card-fit-script-v38">
+
+<script id="dynamic-mobile-card-height-v39">
 document.addEventListener('DOMContentLoaded', function(){
-  const cards = Array.from(document.querySelectorAll('#services .service-card'));
+  const selectors = [
+    '#services .service-card',
+    '#about .about-flip-card',
+    '#real-estate .real-estate-flip-card'
+  ];
+  const cards = Array.from(document.querySelectorAll(selectors.join(',')));
+
+  function measureFace(face, inner, card){
+    const saved = {
+      innerHeight: inner.style.height,
+      innerTransform: inner.style.transform,
+      facePosition: face.style.position,
+      faceInset: face.style.inset,
+      faceHeight: face.style.height,
+      faceMinHeight: face.style.minHeight,
+      faceTransform: face.style.transform,
+      faceVisibility: face.style.visibility,
+      faceDisplay: face.style.display,
+      cardHeight: card.style.height
+    };
+
+    inner.style.height='auto';
+    inner.style.transform='none';
+    card.style.height='auto';
+
+    face.style.position='relative';
+    face.style.inset='auto';
+    face.style.height='auto';
+    face.style.minHeight='0';
+    face.style.transform='none';
+    face.style.visibility='hidden';
+    face.style.display='flex';
+
+    const h=Math.ceil(Math.max(face.scrollHeight, face.getBoundingClientRect().height));
+
+    inner.style.height=saved.innerHeight;
+    inner.style.transform=saved.innerTransform;
+    card.style.height=saved.cardHeight;
+    face.style.position=saved.facePosition;
+    face.style.inset=saved.faceInset;
+    face.style.height=saved.faceHeight;
+    face.style.minHeight=saved.faceMinHeight;
+    face.style.transform=saved.faceTransform;
+    face.style.visibility=saved.faceVisibility;
+    face.style.display=saved.faceDisplay;
+
+    return h;
+  }
 
   function fitCards(){
-    const mobile = window.matchMedia('(max-width:700px)').matches;
+    if(!window.matchMedia('(max-width:700px)').matches){
+      cards.forEach(c=>c.style.removeProperty('--dynamic-card-height'));
+      return;
+    }
 
-    cards.forEach(card => {
-      if (!mobile) {
-        card.style.removeProperty('--card-height');
-        return;
-      }
+    cards.forEach(function(card){
+      const inner=card.querySelector('.flip-card-inner');
+      const front=card.querySelector('.flip-card-front');
+      const back=card.querySelector('.flip-card-back');
+      if(!inner || !front || !back) return;
 
-      const inner = card.querySelector('.flip-card-inner');
-      const front = card.querySelector('.flip-card-front');
-      const back = card.querySelector('.flip-card-back');
-      if (!inner || !front || !back) return;
+      const frontH=measureFace(front,inner,card);
+      const backH=measureFace(back,inner,card);
 
-      const prevTransform = inner.style.transform;
-      const prevHeight = inner.style.height;
-
-      inner.style.transform = 'none';
-      inner.style.height = 'auto';
-      card.style.setProperty('--card-height', 'auto');
-
-      // Measure both languages so one side can never overflow the other.
-      const frontHeight = Math.ceil(front.scrollHeight);
-      const backHeight = Math.ceil(back.scrollHeight);
-      const height = Math.max(frontHeight, backHeight) + 6;
-
-      inner.style.transform = prevTransform;
-      inner.style.height = prevHeight;
-      card.style.setProperty('--card-height', height + 'px');
+      // Small breathing room so text never touches the card border.
+      const finalH=Math.max(frontH,backH)+26;
+      card.style.setProperty('--dynamic-card-height', finalH+'px');
     });
   }
 
@@ -3672,13 +3766,13 @@ document.addEventListener('DOMContentLoaded', function(){
   window.addEventListener('load', fitCards, {passive:true});
   window.addEventListener('resize', fitCards, {passive:true});
 
-  if (document.fonts && document.fonts.ready) {
-    document.fonts.ready.then(fitCards);
+  if(document.fonts && document.fonts.ready){
+    document.fonts.ready.then(function(){ setTimeout(fitCards,80); });
   }
 
-  document.querySelectorAll('.global-language-btn').forEach(btn => {
-    btn.addEventListener('click', function(){
-      setTimeout(fitCards, 100);
+  document.querySelectorAll('.global-language-btn').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      setTimeout(fitCards,120);
     });
   });
 });
