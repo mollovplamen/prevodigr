@@ -2397,7 +2397,6 @@ html,body{
   }
 }
 </style>
-
 <style id="about-mobile-natural-height-v43">
 @media(max-width:700px){
 
@@ -2448,6 +2447,20 @@ html,body{
   /* Финален ред текст да не докосва долния край. */
   #about .about-flip-card .flip-card-face{
     padding-bottom:.9rem!important;
+  }
+}
+</style>
+
+<style id="bg-about-spacing-v44">
+@media(max-width:700px){
+  /* Българският вариант: разстоянието от края на текста
+     до следващите три карти е същото като между самите карти. */
+  body:not(.global-greek) #about .about-flip-card{
+    margin-bottom:0!important;
+  }
+  body:not(.global-greek) #about .about-highlights{
+    margin-top:.7rem!important;
+    gap:.7rem!important;
   }
 }
 </style>
