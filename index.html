@@ -2286,9 +2286,6 @@ html,body{
   }
 }
 </style>
-
-
-
 <style id="all-cards-responsive-typography-v37">
 /* Единен шрифт и предвидимо пренасяне за всички карти */
 .service-card,
@@ -2411,6 +2408,109 @@ html,body{
 #how-it-works .how-steps{
   max-width:100%!important;
   min-width:0!important;
+}
+</style>
+
+<style id="mobile-card-fit-v38">
+@media (max-width:700px){
+  #services .service-card,
+  #services .service-card .flip-card-inner,
+  #services .service-card .flip-card-front,
+  #services .service-card .flip-card-back{
+    min-height:0!important;
+    box-sizing:border-box!important;
+  }
+
+  #services .service-card{
+    height:var(--card-height,auto)!important;
+    overflow:visible!important;
+  }
+
+  #services .service-card .flip-card-inner{
+    height:var(--card-height,auto)!important;
+  }
+
+  #services .service-card .flip-card-face{
+    height:var(--card-height,auto)!important;
+    min-width:0!important;
+    max-width:100%!important;
+    padding:1rem!important;
+    overflow:visible!important;
+    box-sizing:border-box!important;
+    font-family:'Poppins','Segoe UI',Arial,sans-serif!important;
+    overflow-wrap:break-word!important;
+    word-break:normal!important;
+    hyphens:none!important;
+  }
+
+  #services .service-card .flip-card-face h3,
+  #services .service-card .flip-card-face h4{
+    font-size:clamp(.92rem,3.9vw,1.08rem)!important;
+    line-height:1.28!important;
+    font-weight:800!important;
+    margin:0 0 .62rem!important;
+  }
+
+  #services .service-card .flip-card-face p,
+  #services .service-card .flip-card-face li{
+    font-size:clamp(.78rem,3.25vw,.92rem)!important;
+    line-height:1.55!important;
+    font-weight:500!important;
+    margin-top:0!important;
+  }
+
+  #services .service-card .flip-card-face h3,
+  #services .service-card .flip-card-face h4,
+  #services .service-card .flip-card-face p,
+  #services .service-card .flip-card-face li{
+    max-width:100%!important;
+    overflow-wrap:anywhere!important;
+  }
+
+  #services .service-group-title{
+    font-size:clamp(1.18rem,5.2vw,1.48rem)!important;
+    line-height:1.28!important;
+    font-weight:800!important;
+  }
+
+  #services .service-card .flip-card-button{
+    display:none!important;
+  }
+}
+
+@media (max-width:430px){
+  #greek-academy .academy-cta{
+    width:100%!important;
+    max-width:100%!important;
+    min-height:74px!important;
+    box-sizing:border-box!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    gap:.45rem!important;
+    padding:1rem 1rem!important;
+    text-align:center!important;
+    font-size:clamp(1.08rem,6vw,1.45rem)!important;
+    line-height:1.12!important;
+    white-space:normal!important;
+  }
+  #greek-academy .academy-cta .academy-bg-text,
+  #greek-academy .academy-cta .academy-gr-text{
+    max-width:82%!important;
+  }
+  #greek-academy .academy-cta span:last-child{
+    flex:0 0 auto!important;
+    font-size:1.15em!important;
+  }
+}
+</style>
+
+<style id="final-legal-mobile-size-v38">
+@media(max-width:700px){
+  #services .service-group .service-card:nth-child(3) .flip-card-back p{
+    font-size:clamp(.75rem,3.05vw,.86rem)!important;
+    line-height:1.5!important;
+  }
 }
 </style>
 </head>
@@ -2681,7 +2781,6 @@ nav a{font-size:clamp(.9rem,1.05vw,1.08rem)!important;padding:.82rem 1.2rem!impo
 <article class="service-card flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><h4><span class="title-icon">🎓</span> Обучения, семинари и събития</h4><p>Устен превод при обучения, семинари, презентации, конференции и професионални събития. Подходът е съобразен с темпото и характера на събитието, така че информацията да бъде предадена ясно и последователно.</p></div><div class="flip-card-face flip-card-back"><h4><span class="title-icon">🎓</span> Εκπαιδεύσεις, σεμινάρια και εκδηλώσεις</h4><p>Διερμηνεία σε εκπαιδεύσεις, σεμινάρια, παρουσιάσεις, συνέδρια και επαγγελματικές εκδηλώσεις. Η διερμηνεία προσαρμόζεται στον ρυθμό και στον χαρακτήρα της εκδήλωσης, ώστε οι πληροφορίες να μεταδίδονται με σαφήνεια και συνέπεια.</p></div></div></article>
 <article class="service-card flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><h4><span class="title-icon">💻</span> Телефонни и онлайн разговори</h4><p>Езиково посредничество при телефонни разговори, видеосрещи, онлайн консултации и дистанционна комуникация. Подходящо е когато двете страни трябва да обсъдят конкретен въпрос, документ, услуга или административна процедура без присъствена среща.</p></div><div class="flip-card-face flip-card-back"><h4><span class="title-icon">💻</span> Τηλεφωνικές και διαδικτυακές συνομιλίες</h4><p>Γλωσσική υποστήριξη σε τηλεφωνικές συνομιλίες, βιντεοκλήσεις, διαδικτυακές συναντήσεις και εξ αποστάσεως επικοινωνία. Είναι κατάλληλη όταν τα δύο μέρη χρειάζεται να συζητήσουν συγκεκριμένο θέμα, έγγραφο, υπηρεσία ή διοικητική διαδικασία χωρίς συνάντηση από κοντά.</p></div></div></article>
 </div>
-
 </div>
 </section>
 <section class="home-section real-estate reveal" id="real-estate">
@@ -3530,6 +3629,58 @@ document.addEventListener('DOMContentLoaded', function(){
     if(localStorage.getItem('siteLanguage') === 'gr') initial='gr';
   } catch(e) {}
   setLanguage(initial);
+});
+</script>
+
+<script id="mobile-card-fit-script-v38">
+document.addEventListener('DOMContentLoaded', function(){
+  const cards = Array.from(document.querySelectorAll('#services .service-card'));
+
+  function fitCards(){
+    const mobile = window.matchMedia('(max-width:700px)').matches;
+
+    cards.forEach(card => {
+      if (!mobile) {
+        card.style.removeProperty('--card-height');
+        return;
+      }
+
+      const inner = card.querySelector('.flip-card-inner');
+      const front = card.querySelector('.flip-card-front');
+      const back = card.querySelector('.flip-card-back');
+      if (!inner || !front || !back) return;
+
+      const prevTransform = inner.style.transform;
+      const prevHeight = inner.style.height;
+
+      inner.style.transform = 'none';
+      inner.style.height = 'auto';
+      card.style.setProperty('--card-height', 'auto');
+
+      // Measure both languages so one side can never overflow the other.
+      const frontHeight = Math.ceil(front.scrollHeight);
+      const backHeight = Math.ceil(back.scrollHeight);
+      const height = Math.max(frontHeight, backHeight) + 6;
+
+      inner.style.transform = prevTransform;
+      inner.style.height = prevHeight;
+      card.style.setProperty('--card-height', height + 'px');
+    });
+  }
+
+  fitCards();
+  window.addEventListener('load', fitCards, {passive:true});
+  window.addEventListener('resize', fitCards, {passive:true});
+
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(fitCards);
+  }
+
+  document.querySelectorAll('.global-language-btn').forEach(btn => {
+    btn.addEventListener('click', function(){
+      setTimeout(fitCards, 100);
+    });
+  });
 });
 </script>
 </body>
