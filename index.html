@@ -2286,111 +2286,131 @@ html,body{
   }
 }
 </style>
-<style id="oral-note-inline-icon-v35">
-#services .service-note::before{
-  content:none!important;
-  display:none!important;
-}
-#services .service-note p{
-  display:flex!important;
-  align-items:flex-start!important;
-  gap:.55rem!important;
-  padding-left:0!important;
-}
-#services .service-note p .inline-note-icon{
-  flex:0 0 auto!important;
-  display:inline-block!important;
-  font-size:1.12em!important;
-  line-height:1.45!important;
-  margin:0!important;
-}
-#services .service-note p strong{
-  display:inline!important;
-}
-@media(max-width:700px){
-  #services .service-note p{
-    gap:.45rem!important;
-  }
-  #services .service-note p .inline-note-icon{
-    font-size:1.02em!important;
-  }
-}
-</style>
 
-<style id="oral-note-like-service-cards-v36">
-/* Точно като останалите категории: иконка + заглавие, после чисто описание. */
-#services .service-note{
-  position:relative!important;
-  padding:1.25rem 1.4rem!important;
-  display:block!important;
+
+
+<style id="all-cards-responsive-typography-v37">
+/* Единен шрифт и предвидимо пренасяне за всички карти */
+.service-card,
+.service-card .flip-card-face,
+.service-card .flip-card-face h3,
+.service-card .flip-card-face h4,
+.service-card .flip-card-face p,
+.service-card .flip-card-face li,
+.service-card .flip-card-face strong,
+.how-step,
+.how-step h3,
+.how-step p,
+.experience-card,
+.experience-card b,
+.experience-card .experience-desc,
+.section-flip-card .flip-card-face,
+.section-flip-card .flip-card-face h3,
+.section-flip-card .flip-card-face p{
+  font-family:'Poppins','Segoe UI',Arial,sans-serif!important;
+  box-sizing:border-box;
+  overflow-wrap:anywhere;
+  word-break:normal;
+  hyphens:none;
 }
-#services .service-note::before{
-  content:none!important;
-  display:none!important;
-}
-#services .service-note .oral-note-block{
-  width:100%!important;
-  font-family:'Poppins','Segoe UI',sans-serif!important;
-}
-#services .service-note .oral-note-heading{
-  display:flex!important;
-  align-items:center!important;
-  gap:.5rem!important;
-  margin:0 0 .55rem!important;
-}
-#services .service-note .inline-note-icon{
-  display:inline-flex!important;
-  align-items:center!important;
-  justify-content:center!important;
-  flex:0 0 auto!important;
-  width:30px!important;
-  height:30px!important;
-  border-radius:9px!important;
-  background:#e7f4fd!important;
-  border:1px solid #c9e1f0!important;
-  font-size:1.05rem!important;
-  line-height:1!important;
-}
-#services .service-note .oral-note-heading strong{
-  color:#003b70!important;
-  font-size:1.12rem!important;
-  line-height:1.3!important;
+
+/* Заглавията да са отчетливи, но да не се раздуват на мобилен */
+.service-card .flip-card-face h3,
+.service-card .flip-card-face h4{
   font-weight:800!important;
+  line-height:1.28!important;
+  letter-spacing:-0.01em!important;
+  margin-bottom:.7rem!important;
 }
-#services .service-note .oral-note-block > p{
-  margin:0 0 1.05rem!important;
-  padding:0!important;
-  color:#557089!important;
-  font-size:1rem!important;
-  line-height:1.72!important;
+.service-card .flip-card-face p{
   font-weight:500!important;
+  line-height:1.68!important;
+  max-width:100%!important;
+  overflow:visible!important;
 }
-#services .service-note .oral-note-block:last-child > p{
-  margin-bottom:0!important;
+.service-card .flip-card-inner,
+.service-card .flip-card-face{
+  min-width:0!important;
+  max-width:100%!important;
+}
+.service-card .flip-card-back{
+  overflow:visible!important;
 }
 
-/* Единствено избраният език се показва */
-#services .service-note .global-bg-text{display:block!important}
-#services .service-note .global-gr-text{display:none!important}
-body.global-greek #services .service-note .global-bg-text{display:none!important}
-body.global-greek #services .service-note .global-gr-text{display:block!important}
+/* След обръщане картата не трябва да реже съдържанието */
+.service-card.flip-card .flip-card-inner{
+  min-height:0!important;
+}
+.service-card.flip-card .flip-card-face{
+  min-height:0!important;
+}
 
+/* Заглавията на групите също да се държат добре */
+.service-group-title{
+  font-family:'Poppins','Segoe UI',Arial,sans-serif!important;
+  font-weight:800!important;
+  line-height:1.25!important;
+}
+
+/* На мобилен намаляваме само толкова, колкото е нужно за добро пренасяне */
 @media(max-width:700px){
-  #services .service-note{
-    padding:1.05rem 1rem!important;
+  .service-card .flip-card-face h3,
+  .service-card .flip-card-face h4{
+    font-size:clamp(.98rem,4.25vw,1.14rem)!important;
+    line-height:1.28!important;
+    margin-bottom:.58rem!important;
   }
-  #services .service-note .oral-note-heading strong{
-    font-size:1rem!important;
+  .service-card .flip-card-face p{
+    font-size:clamp(.88rem,3.65vw,1rem)!important;
+    line-height:1.62!important;
   }
-  #services .service-note .inline-note-icon{
-    width:28px!important;
-    height:28px!important;
-    font-size:.98rem!important;
+  .service-group-title{
+    font-size:clamp(1.15rem,5.2vw,1.55rem)!important;
   }
-  #services .service-note .oral-note-block > p{
-    font-size:.92rem!important;
-    line-height:1.67!important;
+  .service-card{
+    width:100%!important;
+    min-width:0!important;
   }
+  .service-card .flip-card-face{
+    width:100%!important;
+    padding-left:1rem!important;
+    padding-right:1rem!important;
+  }
+}
+
+/* На много тесни телефони */
+@media(max-width:390px){
+  .service-card .flip-card-face h3,
+  .service-card .flip-card-face h4{
+    font-size:.96rem!important;
+  }
+  .service-card .flip-card-face p{
+    font-size:.86rem!important;
+    line-height:1.58!important;
+  }
+}
+
+/* Удобен размер и на "Как работи" */
+@media(max-width:700px){
+  #how-it-works .how-step h3{
+    font-size:1.02rem!important;
+    line-height:1.3!important;
+    font-weight:800!important;
+  }
+  #how-it-works .how-step p{
+    font-size:.9rem!important;
+    line-height:1.55!important;
+  }
+}
+
+/* Без хоризонтален overflow */
+#services,
+#services .service-group,
+#services .service-card,
+#how-it-works,
+#how-it-works .how-steps{
+  max-width:100%!important;
+  min-width:0!important;
 }
 </style>
 </head>
@@ -2661,7 +2681,7 @@ nav a{font-size:clamp(.9rem,1.05vw,1.08rem)!important;padding:.82rem 1.2rem!impo
 <article class="service-card flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><h4><span class="title-icon">🎓</span> Обучения, семинари и събития</h4><p>Устен превод при обучения, семинари, презентации, конференции и професионални събития. Подходът е съобразен с темпото и характера на събитието, така че информацията да бъде предадена ясно и последователно.</p></div><div class="flip-card-face flip-card-back"><h4><span class="title-icon">🎓</span> Εκπαιδεύσεις, σεμινάρια και εκδηλώσεις</h4><p>Διερμηνεία σε εκπαιδεύσεις, σεμινάρια, παρουσιάσεις, συνέδρια και επαγγελματικές εκδηλώσεις. Η διερμηνεία προσαρμόζεται στον ρυθμό και στον χαρακτήρα της εκδήλωσης, ώστε οι πληροφορίες να μεταδίδονται με σαφήνεια και συνέπεια.</p></div></div></article>
 <article class="service-card flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><h4><span class="title-icon">💻</span> Телефонни и онлайн разговори</h4><p>Езиково посредничество при телефонни разговори, видеосрещи, онлайн консултации и дистанционна комуникация. Подходящо е когато двете страни трябва да обсъдят конкретен въпрос, документ, услуга или административна процедура без присъствена среща.</p></div><div class="flip-card-face flip-card-back"><h4><span class="title-icon">💻</span> Τηλεφωνικές και διαδικτυακές συνομιλίες</h4><p>Γλωσσική υποστήριξη σε τηλεφωνικές συνομιλίες, βιντεοκλήσεις, διαδικτυακές συναντήσεις και εξ αποστάσεως επικοινωνία. Είναι κατάλληλη όταν τα δύο μέρη χρειάζεται να συζητήσουν συγκεκριμένο θέμα, έγγραφο, υπηρεσία ή διοικητική διαδικασία χωρίς συνάντηση από κοντά.</p></div></div></article>
 </div>
-<div class="service-note"><div class="global-bg-text oral-note-block"><div class="oral-note-heading"><span aria-hidden="true" class="inline-note-icon">🎙️</span><strong>Устни преводи:</strong></div><p>за професионални, административни и лични ситуации, при които е необходимо точно и спокойно разбиране между български и гръцки език. Съдействието може да включва срещи, институции, нотариални и адвокатски процедури, както и други конкретни ситуации, при които езиковата точност е от съществено значение.</p></div><div class="global-gr-text oral-note-block"><div class="oral-note-heading"><span aria-hidden="true" class="inline-note-icon">🎙️</span><strong>Προφορική διερμηνεία:</strong></div><p>για επαγγελματικές, διοικητικές και προσωπικές περιστάσεις όπου απαιτείται ακριβής και άμεση κατανόηση μεταξύ της βουλγαρικής και της ελληνικής γλώσσας. Η υποστήριξη μπορεί να αφορά συναντήσεις, δημόσιες υπηρεσίες, συμβολαιογραφικές και δικηγορικές διαδικασίες, καθώς και κάθε άλλη περίπτωση όπου η γλωσσική ακρίβεια είναι ουσιαστική.</p></div></div>
+
 </div>
 </section>
 <section class="home-section real-estate reveal" id="real-estate">
