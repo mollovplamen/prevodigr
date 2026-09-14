@@ -2463,7 +2463,6 @@ html,body{
   }
 }
 </style>
-
 <style id="about-tight-mobile-spacing-v45">
 @media (max-width:700px){
 
@@ -2512,6 +2511,33 @@ html,body{
   }
 
   /* Exact small separation before the first experience card. */
+  #about .about-highlights{
+    margin-top:.7rem!important;
+    gap:.7rem!important;
+  }
+}
+</style>
+
+<style id="about-active-language-height-v46">
+@media(max-width:700px){
+  /* За „За мен“ височината на картата следва САМО текущо видимия език.
+     Така българският вариант няма да наследява по-високата гръцка страна. */
+  #about .about-flip-card{
+    margin:0!important;
+    padding:0!important;
+    overflow:visible!important;
+    min-height:0!important;
+    height:var(--about-active-height,auto)!important;
+  }
+  #about .about-flip-card .flip-card-inner{
+    height:var(--about-active-height,auto)!important;
+    min-height:0!important;
+  }
+  #about .about-flip-card .flip-card-face{
+    min-height:0!important;
+    box-sizing:border-box!important;
+    overflow:visible!important;
+  }
   #about .about-highlights{
     margin-top:.7rem!important;
     gap:.7rem!important;
@@ -3709,6 +3735,78 @@ document.addEventListener('DOMContentLoaded',function(){
 
   document.querySelectorAll('.global-language-btn').forEach(btn=>{
     btn.addEventListener('click',()=>setTimeout(fitCards,120));
+  });
+});
+</script>
+
+<script id="about-active-language-height-script-v46">
+document.addEventListener('DOMContentLoaded',function(){
+  const card=document.querySelector('#about .about-flip-card');
+  if(!card) return;
+  const inner=card.querySelector('.flip-card-inner');
+  const front=card.querySelector('.flip-card-front');
+  const back=card.querySelector('.flip-card-back');
+  if(!inner||!front||!back) return;
+
+  function readHeight(face){
+    const original={
+      position:face.style.position,
+      inset:face.style.inset,
+      width:face.style.width,
+      height:face.style.height,
+      minHeight:face.style.minHeight,
+      display:face.style.display,
+      transform:face.style.transform,
+      visibility:face.style.visibility,
+      margin:face.style.margin,
+      gridArea:face.style.gridArea
+    };
+    face.style.position='absolute';
+    face.style.inset='0 auto auto 0';
+    face.style.width='100%';
+    face.style.height='auto';
+    face.style.minHeight='0';
+    face.style.display='block';
+    face.style.transform='none';
+    face.style.visibility='hidden';
+    face.style.margin='0';
+    face.style.gridArea='auto';
+    const h=Math.ceil(face.scrollHeight);
+    face.style.position=original.position;
+    face.style.inset=original.inset;
+    face.style.width=original.width;
+    face.style.height=original.height;
+    face.style.minHeight=original.minHeight;
+    face.style.display=original.display;
+    face.style.transform=original.transform;
+    face.style.visibility=original.visibility;
+    face.style.margin=original.margin;
+    face.style.gridArea=original.gridArea;
+    return h;
+  }
+
+  function apply(){
+    if(!window.matchMedia('(max-width:700px)').matches){
+      card.style.removeProperty('--about-active-height');
+      return;
+    }
+    const fh=readHeight(front);
+    const bh=readHeight(back);
+    const activeGreek=document.body.classList.contains('global-greek');
+    const active=Math.max(1,activeGreek?bh:fh);
+    // Small bottom breathing room only, comparable to the gap between cards.
+    const total=active+12;
+    card.style.setProperty('--about-active-height',total+'px');
+  }
+
+  apply();
+  window.addEventListener('load',()=>setTimeout(apply,80),{passive:true});
+  window.addEventListener('resize',()=>setTimeout(apply,60),{passive:true});
+  if(document.fonts&&document.fonts.ready){
+    document.fonts.ready.then(()=>setTimeout(apply,80));
+  }
+  document.querySelectorAll('.global-language-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>setTimeout(apply,140));
   });
 });
 </script>
