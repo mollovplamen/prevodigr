@@ -2286,9 +2286,6 @@ html,body{
   }
 }
 </style>
-
-
-
 <style id="natural-content-cards-v42">
 /* === Карти: височината следва текста, без излишни празни полета === */
 #services .service-grid,
@@ -2397,6 +2394,60 @@ html,body{
   #about .experience-card{
     min-height:0!important;
     padding:.9rem!important;
+  }
+}
+</style>
+
+<style id="about-mobile-natural-height-v43">
+@media(max-width:700px){
+
+  /* „За мен“ се оразмерява по реалния текст и не позволява
+     гръцкият последен ред да влиза в първата карта отдолу. */
+  #about .about-flip-card{
+    min-height:0!important;
+    height:auto!important;
+    margin-bottom:.7rem!important;
+    overflow:visible!important;
+  }
+
+  #about .about-flip-card .flip-card-inner{
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr)!important;
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    transform-style:preserve-3d!important;
+  }
+
+  #about .about-flip-card .flip-card-face{
+    grid-area:1/1!important;
+    position:relative!important;
+    inset:auto!important;
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    box-sizing:border-box!important;
+    overflow:visible!important;
+  }
+
+  #about .about-flip-card .flip-card-front{
+    z-index:2!important;
+  }
+
+  #about .about-flip-card .flip-card-back{
+    position:relative!important;
+    transform:rotateY(180deg)!important;
+    z-index:1!important;
+  }
+
+  /* Малък, равен с останалите секции отстъп преди трите карти. */
+  #about .about-highlights{
+    margin-top:.7rem!important;
+  }
+
+  /* Финален ред текст да не докосва долния край. */
+  #about .about-flip-card .flip-card-face{
+    padding-bottom:.9rem!important;
   }
 }
 </style>
@@ -3518,7 +3569,6 @@ document.addEventListener('DOMContentLoaded', function(){
   setLanguage(initial);
 });
 </script>
-
 <script id="content-fit-script-v42">
 document.addEventListener('DOMContentLoaded',function(){
   const cards=[...document.querySelectorAll('#services .service-card')];
