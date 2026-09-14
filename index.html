@@ -2286,313 +2286,117 @@ html,body{
   }
 }
 </style>
-<style id="all-cards-responsive-typography-v37">
-/* Единен шрифт и предвидимо пренасяне за всички карти */
-.service-card,
-.service-card .flip-card-face,
-.service-card .flip-card-face h3,
-.service-card .flip-card-face h4,
-.service-card .flip-card-face p,
-.service-card .flip-card-face li,
-.service-card .flip-card-face strong,
-.how-step,
-.how-step h3,
-.how-step p,
-.experience-card,
-.experience-card b,
-.experience-card .experience-desc,
-.section-flip-card .flip-card-face,
-.section-flip-card .flip-card-face h3,
-.section-flip-card .flip-card-face p{
-  font-family:'Poppins','Segoe UI',Arial,sans-serif!important;
-  box-sizing:border-box;
-  overflow-wrap:anywhere;
-  word-break:normal;
-  hyphens:none;
+
+
+
+<style id="natural-content-cards-v42">
+/* === Карти: височината следва текста, без излишни празни полета === */
+#services .service-grid,
+#services .service-grid.three,
+#services .legal-grid{
+  align-items:start!important;
 }
 
-/* Заглавията да са отчетливи, но да не се раздуват на мобилен */
-.service-card .flip-card-face h3,
-.service-card .flip-card-face h4{
-  font-weight:800!important;
-  line-height:1.28!important;
-  letter-spacing:-0.01em!important;
-  margin-bottom:.7rem!important;
+#services .service-card{
+  min-height:0!important;
+  height:var(--content-card-height,auto)!important;
+  box-sizing:border-box!important;
+  overflow:visible!important;
 }
-.service-card .flip-card-face p{
+
+#services .service-card .flip-card-inner{
+  height:var(--content-card-height,auto)!important;
+  min-height:0!important;
+  box-sizing:border-box!important;
+}
+
+#services .service-card .flip-card-front,
+#services .service-card .flip-card-back{
+  box-sizing:border-box!important;
+  min-height:0!important;
+  height:var(--content-card-height,auto)!important;
+  overflow:visible!important;
+}
+
+#services .service-card .flip-card-face{
+  font-family:'Poppins','Segoe UI',Arial,sans-serif!important;
+  overflow-wrap:anywhere!important;
+  word-break:normal!important;
+  hyphens:none!important;
+}
+
+#services .service-card .flip-card-face h3,
+#services .service-card .flip-card-face h4{
+  font-family:'Poppins','Segoe UI',Arial,sans-serif!important;
+  font-size:1.02rem!important;
+  line-height:1.3!important;
+  font-weight:800!important;
+  margin:0 0 .62rem!important;
+}
+
+#services .service-card .flip-card-face p,
+#services .service-card .flip-card-face li{
+  font-family:'Poppins','Segoe UI',Arial,sans-serif!important;
+  font-size:.98rem!important;
+  line-height:1.62!important;
   font-weight:500!important;
-  line-height:1.68!important;
-  max-width:100%!important;
-  overflow:visible!important;
-}
-.service-card .flip-card-inner,
-.service-card .flip-card-face{
-  min-width:0!important;
-  max-width:100%!important;
-}
-.service-card .flip-card-back{
-  overflow:visible!important;
+  margin:0!important;
 }
 
-/* След обръщане картата не трябва да реже съдържанието */
-.service-card.flip-card .flip-card-inner{
-  min-height:0!important;
-}
-.service-card.flip-card .flip-card-face{
-  min-height:0!important;
+#services .service-card .title-icon{
+  flex:0 0 auto!important;
 }
 
-/* Заглавията на групите също да се държат добре */
-.service-group-title{
-  font-family:'Poppins','Segoe UI',Arial,sans-serif!important;
-  font-weight:800!important;
-  line-height:1.25!important;
-}
-
-/* На мобилен намаляваме само толкова, колкото е нужно за добро пренасяне */
 @media(max-width:700px){
-  .service-card .flip-card-face h3,
-  .service-card .flip-card-face h4{
-    font-size:clamp(.98rem,4.25vw,1.14rem)!important;
+  #services .service-card{
+    min-height:0!important;
+    height:var(--content-card-height,auto)!important;
+  }
+  #services .service-card .flip-card-inner,
+  #services .service-card .flip-card-front,
+  #services .service-card .flip-card-back{
+    height:var(--content-card-height,auto)!important;
+  }
+  #services .service-card .flip-card-face{
+    padding:1rem .95rem 1.05rem!important;
+  }
+  #services .service-card .flip-card-face h3,
+  #services .service-card .flip-card-face h4{
+    font-size:1rem!important;
     line-height:1.28!important;
-    margin-bottom:.58rem!important;
+    margin-bottom:.55rem!important;
   }
-  .service-card .flip-card-face p{
-    font-size:clamp(.88rem,3.65vw,1rem)!important;
-    line-height:1.62!important;
-  }
-  .service-group-title{
-    font-size:clamp(1.15rem,5.2vw,1.55rem)!important;
-  }
-  .service-card{
-    width:100%!important;
-    min-width:0!important;
-  }
-  .service-card .flip-card-face{
-    width:100%!important;
-    padding-left:1rem!important;
-    padding-right:1rem!important;
-  }
-}
-
-/* На много тесни телефони */
-@media(max-width:390px){
-  .service-card .flip-card-face h3,
-  .service-card .flip-card-face h4{
-    font-size:.96rem!important;
-  }
-  .service-card .flip-card-face p{
-    font-size:.86rem!important;
-    line-height:1.58!important;
-  }
-}
-
-/* Удобен размер и на "Как работи" */
-@media(max-width:700px){
-  #how-it-works .how-step h3{
-    font-size:1.02rem!important;
-    line-height:1.3!important;
-    font-weight:800!important;
-  }
-  #how-it-works .how-step p{
-    font-size:.9rem!important;
+  #services .service-card .flip-card-face p,
+  #services .service-card .flip-card-face li{
+    font-size:.88rem!important;
     line-height:1.55!important;
   }
 }
 
-/* Без хоризонтален overflow */
-#services,
-#services .service-group,
-#services .service-card,
-#how-it-works,
-#how-it-works .how-steps{
-  max-width:100%!important;
-  min-width:0!important;
-}
-</style>
-
-
-<style id="compact-mobile-cards-v40">
-/* =========================================================
-   MOBILEN ТЕЛЕФОН: компактни карти, височината следва
-   реалното съдържание, без огромни празни полета.
-   ========================================================= */
-@media (max-width:700px){
-
-  /* ----- Всички service карти ----- */
-  #services .service-card{
-    height:auto!important;
-    min-height:0!important;
-    overflow:visible!important;
-    margin-bottom:.9rem!important;
+@media(max-width:390px){
+  #services .service-card .flip-card-face h3,
+  #services .service-card .flip-card-face h4{
+    font-size:.94rem!important;
   }
-
-  #services .service-card .flip-card-inner{
-    height:auto!important;
-    min-height:0!important;
-  }
-
-  #services .service-card .flip-card-face{
-    box-sizing:border-box!important;
-    width:100%!important;
-    max-width:100%!important;
-    min-height:0!important;
-    padding:1rem .95rem 1.05rem!important;
-    overflow:visible!important;
-  }
-
-  #services .service-card .flip-card-front{
-    position:relative!important;
-  }
-
-  /*
-   * Когато картата е обърната, back е абсолютен за flip ефекта.
-   * Самият inner вече получава височина от JS според реалното
-   * съдържание на двете страни.
-   */
-  #services .service-card .flip-card-back{
-    position:absolute!important;
-    inset:0!important;
-    overflow:visible!important;
-  }
-
-  #services .service-card .flip-card-face h4,
-  #services .service-card .flip-card-face h3{
-    margin:0 0 .48rem!important;
-    padding:0!important;
-    font-family:'Poppins','Segoe UI',Arial,sans-serif!important;
-    font-size:clamp(.86rem,3.55vw,1rem)!important;
-    line-height:1.24!important;
-    font-weight:800!important;
-    letter-spacing:-.01em!important;
-    overflow-wrap:anywhere!important;
-    word-break:normal!important;
-  }
-
   #services .service-card .flip-card-face p,
   #services .service-card .flip-card-face li{
-    margin:0!important;
-    padding:0!important;
-    font-family:'Poppins','Segoe UI',Arial,sans-serif!important;
-    font-size:clamp(.74rem,2.95vw,.86rem)!important;
-    line-height:1.46!important;
-    font-weight:500!important;
-    overflow-wrap:anywhere!important;
-    word-break:normal!important;
-    hyphens:none!important;
+    font-size:.82rem!important;
+    line-height:1.5!important;
   }
+}
 
-  /* Иконката остава стегната до заглавието */
-  #services .service-card .title-icon,
-  #services .service-card .svc-icon,
-  #services .service-card .service-icon{
-    flex:0 0 auto!important;
-    margin-right:.18rem!important;
-  }
-
-  /* ----- Трите карти за опита ----- */
-  #about .about-highlights{
-    display:grid!important;
-    grid-template-columns:1fr!important;
-    gap:.75rem!important;
-    margin-top:1rem!important;
-  }
-
+/* Трите карти за опита: компактни и равномерни */
+#about .about-highlights{
+  align-items:stretch!important;
+}
+#about .experience-card{
+  min-height:0!important;
+  height:auto!important;
+}
+@media(max-width:700px){
   #about .experience-card{
     min-height:0!important;
-    height:auto!important;
-    padding:1rem .9rem!important;
-    border-radius:18px!important;
-    justify-content:center!important;
-  }
-
-  #about .experience-card .experience-icon{
-    width:42px!important;
-    height:42px!important;
-    margin-bottom:.45rem!important;
-  }
-
-  #about .experience-card b{
-    font-family:'Poppins','Segoe UI',Arial,sans-serif!important;
-    font-size:1rem!important;
-    line-height:1.22!important;
-    font-weight:800!important;
-    margin-bottom:.25rem!important;
-  }
-
-  #about .experience-card .experience-desc{
-    font-family:'Poppins','Segoe UI',Arial,sans-serif!important;
-    font-size:.82rem!important;
-    line-height:1.4!important;
-    font-weight:600!important;
-  }
-
-  #about .experience-flags{
-    width:70px!important;
-    height:40px!important;
-    gap:5px!important;
-  }
-
-  #about .experience-flags .final-flag{
-    width:25px!important;
-    height:17px!important;
-  }
-
-  /* ----- За мен: по-компактни абзаци, без огромни празни разстояния ----- */
-  #about .about-flip-card .flip-card-front,
-  #about .about-flip-card .flip-card-back{
-    padding:1rem .95rem 1.1rem!important;
-  }
-
-  #about .about-flip-card .flip-card-face p{
-    font-family:'Poppins','Segoe UI',Arial,sans-serif!important;
-    font-size:.87rem!important;
-    line-height:1.5!important;
-    margin:0 0 .65rem!important;
-  }
-
-  #about .about-flip-card .flip-card-face p:last-child{
-    margin-bottom:0!important;
-  }
-
-  /* ----- Академия: компактен, професионален CTA ----- */
-  #greek-academy .academy-cta{
-    min-height:58px!important;
-    width:auto!important;
-    max-width:100%!important;
-    padding:.72rem .9rem!important;
-    border-radius:16px!important;
-    font-family:'Poppins','Segoe UI',Arial,sans-serif!important;
-    font-size:1rem!important;
-    line-height:1.12!important;
-    font-weight:800!important;
-  }
-}
-
-@media(max-width:390px){
-  #services .service-card .flip-card-face{
-    padding:.9rem .82rem 1rem!important;
-  }
-  #services .service-card .flip-card-face h4,
-  #services .service-card .flip-card-face h3{
-    font-size:.84rem!important;
-    line-height:1.22!important;
-  }
-  #services .service-card .flip-card-face p,
-  #services .service-card .flip-card-face li{
-    font-size:.72rem!important;
-    line-height:1.43!important;
-  }
-  #about .experience-card b{font-size:.95rem!important}
-  #about .experience-card .experience-desc{font-size:.79rem!important}
-  #about .about-flip-card .flip-card-face p{
-    font-size:.84rem!important;
-    line-height:1.47!important;
-  }
-  #greek-academy .academy-cta{
-    min-height:54px!important;
-    padding:.65rem .8rem!important;
-    font-size:.95rem!important;
+    padding:.9rem!important;
   }
 }
 </style>
@@ -2905,7 +2709,7 @@ nav a{font-size:clamp(.9rem,1.05vw,1.08rem)!important;padding:.82rem 1.2rem!impo
 </svg></div>
 <h3 class="academy-bg-text">За българоговорящи</h3><span class="academy-gr-text">Για βουλγαρόφωνους</span>
 <p class="academy-bg-text">Безплатно интерактивно обучение по гръцки език с AI – за всички, които искат да научат гръцки и да започнат да говорят уверено и практично.</p><span class="academy-gr-text">Δωρεάν διαδραστική εκπαίδευση ελληνικής γλώσσας με AI για όλους όσοι θέλουν να μάθουν ελληνικά και να αρχίσουν να μιλούν με αυτοπεποίθηση και πρακτικό τρόπο.</span>
-<a class="academy-button academy-cta academy-bg-text" href="https://academy.prevodigr.eu/" rel="noopener noreferrer" target="_blank"><span class="academy-bg-text">Научи гръцки за 10 дни</span><span class="academy-gr-text">Μάθε ελληνικά σε 10 ημέρες</span><span>→</span></a>
+<a class="academy-button academy-cta academy-bg-text" href="https://academy.prevodigr.eu/" rel="noopener noreferrer" target="_blank">Научи гръцки за 10 дни</a>
 </div>
 </div>
 </section>
@@ -3715,22 +3519,21 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 </script>
 
-
-<script id="compact-mobile-cards-script-v40">
-document.addEventListener('DOMContentLoaded', function(){
-  const cards = Array.from(document.querySelectorAll('#services .service-card'));
+<script id="content-fit-script-v42">
+document.addEventListener('DOMContentLoaded',function(){
+  const cards=[...document.querySelectorAll('#services .service-card')];
 
   function measure(face, inner, card){
-    const old = {
-      transform: inner.style.transform,
-      height: inner.style.height,
-      position: face.style.position,
-      inset: face.style.inset,
-      heightFace: face.style.height,
-      minHeight: face.style.minHeight,
-      display: face.style.display,
-      visibility: face.style.visibility,
-      overflow: face.style.overflow
+    const old={
+      transform:inner.style.transform,
+      height:inner.style.height,
+      position:face.style.position,
+      inset:face.style.inset,
+      heightFace:face.style.height,
+      minHeight:face.style.minHeight,
+      display:face.style.display,
+      visibility:face.style.visibility,
+      overflow:face.style.overflow
     };
 
     inner.style.transform='none';
@@ -3749,7 +3552,6 @@ document.addEventListener('DOMContentLoaded', function(){
 
     inner.style.transform=old.transform;
     inner.style.height=old.height;
-    card.style.height='';
     face.style.position=old.position;
     face.style.inset=old.inset;
     face.style.height=old.heightFace;
@@ -3757,55 +3559,39 @@ document.addEventListener('DOMContentLoaded', function(){
     face.style.display=old.display;
     face.style.visibility=old.visibility;
     face.style.overflow=old.overflow;
+
     return h;
   }
 
-  function fit(){
-    if(!window.matchMedia('(max-width:700px)').matches){
-      cards.forEach(c=>c.style.removeProperty('--compact-card-height'));
-      return;
-    }
-
+  function fitCards(){
     cards.forEach(card=>{
       const inner=card.querySelector('.flip-card-inner');
       const front=card.querySelector('.flip-card-front');
       const back=card.querySelector('.flip-card-back');
-      if(!inner || !front || !back) return;
+      if(!inner||!front||!back)return;
 
-      const fh=measure(front,inner,card);
-      const bh=measure(back,inner,card);
+      // Remove prior height while measuring so no old large box affects the result.
+      card.style.removeProperty('--content-card-height');
 
-      // Only a small breathing margin; no artificial large extension.
-      const height=Math.max(fh,bh)+14;
-      card.style.setProperty('--compact-card-height', height+'px');
+      const frontH=measure(front,inner,card);
+      const backH=measure(back,inner,card);
+
+      // Only a modest breathing space below the text.
+      const finalH=Math.max(frontH,backH)+22;
+      card.style.setProperty('--content-card-height',finalH+'px');
     });
   }
 
-  // Apply the exact measured height after the CSS values are active.
-  function apply(){
-    fit();
-    cards.forEach(card=>{
-      const inner=card.querySelector('.flip-card-inner');
-      const front=card.querySelector('.flip-card-front');
-      const back=card.querySelector('.flip-card-back');
-      if(!inner || !front || !back) return;
-      const h=card.style.getPropertyValue('--compact-card-height');
-      if(!h) return;
-      card.style.height=h;
-      inner.style.height=h;
-      front.style.height=h;
-      back.style.height=h;
-    });
+  fitCards();
+  window.addEventListener('load',()=>setTimeout(fitCards,80),{passive:true});
+  window.addEventListener('resize',()=>setTimeout(fitCards,40),{passive:true});
+
+  if(document.fonts&&document.fonts.ready){
+    document.fonts.ready.then(()=>setTimeout(fitCards,80));
   }
 
-  apply();
-  window.addEventListener('load', apply, {passive:true});
-  window.addEventListener('resize', apply, {passive:true});
-  if(document.fonts && document.fonts.ready){
-    document.fonts.ready.then(()=>setTimeout(apply,60));
-  }
   document.querySelectorAll('.global-language-btn').forEach(btn=>{
-    btn.addEventListener('click',()=>setTimeout(apply,120));
+    btn.addEventListener('click',()=>setTimeout(fitCards,120));
   });
 });
 </script>
