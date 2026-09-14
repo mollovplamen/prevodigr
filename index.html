@@ -2399,68 +2399,83 @@ html,body{
 </style>
 
 
-<style id="about-perfect-mobile-v48">
+<style id="about-natural-mobile-v49">
 @media(max-width:700px){
 
-  /* Keep the About block compact and let only the active language determine its height. */
+  /* On mobile only the selected language participates in layout.
+     This prevents the hidden Greek/Bulgarian face from creating empty height. */
   #about .about-flip-card{
+    height:auto!important;
+    min-height:0!important;
     margin:0!important;
     padding:0!important;
-    min-height:0!important;
-    height:var(--about-height-v48,auto)!important;
     overflow:visible!important;
   }
+
   #about .about-flip-card .flip-card-inner{
-    position:relative!important;
-    width:100%!important;
+    height:auto!important;
     min-height:0!important;
-    height:var(--about-height-v48,auto)!important;
-    transform-style:preserve-3d!important;
+    display:block!important;
+    transform:none!important;
   }
+
   #about .about-flip-card .flip-card-face{
+    position:relative!important;
+    inset:auto!important;
+    width:100%!important;
+    height:auto!important;
     min-height:0!important;
+    display:flex!important;
     box-sizing:border-box!important;
     overflow:visible!important;
+    transform:none!important;
     padding-bottom:.72rem!important;
   }
 
-  /* Same gap as between the three cards below. */
-  #about .about-highlights{
-    margin-top:.7rem!important;
-    gap:.7rem!important;
+  /* BG: hide only the Greek face. */
+  body:not(.global-greek) #about .about-flip-card .flip-card-back{
+    display:none!important;
   }
 
-  /* More compact text rhythm in both language versions. */
+  /* GR: hide only the Bulgarian face. */
+  body.global-greek #about .about-flip-card .flip-card-front{
+    display:none!important;
+  }
+
+  /* Compact paragraph rhythm, identical logic in both languages. */
   #about .about-flip-card .flip-card-face p{
+    margin-top:0!important;
     margin-bottom:.58rem!important;
   }
   #about .about-flip-card .flip-card-face p:last-child{
     margin-bottom:0!important;
   }
+
+  /* Exactly the same small gap before the first experience card
+     as the gap between the experience cards. */
+  #about .about-highlights{
+    margin-top:.7rem!important;
+    gap:.7rem!important;
+  }
 }
 
-/* Subtle, different motion for BG and GR variants of the three experience cards. */
-@keyframes aboutBgFloatV48{
+/* Gentle card motion: different for BG and GR, without affecting layout. */
+@keyframes aboutBgCardsV49{
+  0%,100%{box-shadow:0 7px 18px rgba(0,43,92,.07)}
+  50%{box-shadow:0 11px 24px rgba(0,43,92,.12)}
+}
+@keyframes aboutGrCardsV49{
   0%,100%{transform:translateY(0)}
   50%{transform:translateY(-2px)}
 }
-@keyframes aboutGrPulseV48{
-  0%,100%{transform:translateY(0);box-shadow:0 7px 18px rgba(0,43,92,.07)}
-  50%{transform:translateY(-2px);box-shadow:0 12px 24px rgba(0,88,145,.12)}
-}
 body:not(.global-greek) #about .experience-card{
-  animation:aboutBgFloatV48 5.5s ease-in-out infinite;
+  animation:aboutBgCardsV49 4.8s ease-in-out infinite;
 }
 body.global-greek #about .experience-card{
-  animation:aboutGrPulseV48 4.8s ease-in-out infinite;
-}
-#about .experience-card:hover{
-  animation-play-state:paused!important;
+  animation:aboutGrCardsV49 4.2s ease-in-out infinite;
 }
 @media(prefers-reduced-motion:reduce){
-  #about .experience-card{
-    animation:none!important;
-  }
+  #about .experience-card{animation:none!important}
 }
 </style>
 </head>
@@ -3658,81 +3673,5 @@ document.addEventListener('DOMContentLoaded',function(){
 });
 </script>
 
-
-<script id="about-perfect-mobile-v48-script">
-document.addEventListener('DOMContentLoaded',function(){
-  const card=document.querySelector('#about .about-flip-card');
-  if(!card) return;
-
-  const inner=card.querySelector('.flip-card-inner');
-  const front=card.querySelector('.flip-card-front');
-  const back=card.querySelector('.flip-card-back');
-  if(!inner||!front||!back) return;
-
-  function textHeight(face){
-    const clone=face.cloneNode(true);
-
-    // Strip inherited flip/layout classes from the measurement clone.
-    clone.classList.remove('flip-card-face','flip-card-front','flip-card-back');
-    clone.className='about-measurement-face';
-
-    clone.style.cssText=[
-      'position:absolute',
-      'left:0',
-      'top:0',
-      'width:'+card.clientWidth+'px',
-      'height:auto',
-      'min-height:0',
-      'max-height:none',
-      'padding:1rem .95rem .72rem',
-      'margin:0',
-      'display:block',
-      'visibility:hidden',
-      'opacity:0',
-      'overflow:visible',
-      'transform:none',
-      'box-sizing:border-box',
-      'font-family:Poppins,Segoe UI,Arial,sans-serif'
-    ].join(';');
-
-    document.body.appendChild(clone);
-    const h=Math.ceil(clone.scrollHeight);
-    clone.remove();
-    return h;
-  }
-
-  function fit(){
-    if(!window.matchMedia('(max-width:700px)').matches){
-      card.style.removeProperty('--about-height-v48');
-      inner.style.removeProperty('height');
-      front.style.removeProperty('height');
-      back.style.removeProperty('height');
-      return;
-    }
-
-    const greek=document.body.classList.contains('global-greek');
-    const active=greek ? back : front;
-    const h=textHeight(active);
-
-    // Exactly a small internal bottom breathing space; no artificial extension.
-    const total=Math.max(1,h);
-    card.style.setProperty('--about-height-v48',total+'px');
-    inner.style.height=total+'px';
-    front.style.height=total+'px';
-    back.style.height=total+'px';
-  }
-
-  // Run after fonts/layout have settled.
-  fit();
-  window.addEventListener('load',()=>setTimeout(fit,100),{passive:true});
-  window.addEventListener('resize',()=>setTimeout(fit,70),{passive:true});
-  if(document.fonts&&document.fonts.ready){
-    document.fonts.ready.then(()=>setTimeout(fit,100));
-  }
-  document.querySelectorAll('.global-language-btn').forEach(btn=>{
-    btn.addEventListener('click',()=>setTimeout(fit,180));
-  });
-});
-</script>
 </body>
 </html>
