@@ -2450,7 +2450,6 @@ html,body{
   }
 }
 </style>
-
 <style id="bg-about-spacing-v44">
 @media(max-width:700px){
   /* Българският вариант: разстоянието от края на текста
@@ -2459,6 +2458,61 @@ html,body{
     margin-bottom:0!important;
   }
   body:not(.global-greek) #about .about-highlights{
+    margin-top:.7rem!important;
+    gap:.7rem!important;
+  }
+}
+</style>
+
+<style id="about-tight-mobile-spacing-v45">
+@media (max-width:700px){
+
+  /* The About card must end where its content ends. */
+  #about .about-flip-card{
+    height:auto!important;
+    min-height:0!important;
+    margin:0!important;
+    padding:0!important;
+    overflow:visible!important;
+    box-sizing:border-box!important;
+  }
+
+  #about .about-flip-card .flip-card-inner{
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr)!important;
+    position:relative!important;
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    box-sizing:border-box!important;
+    transform-style:preserve-3d!important;
+  }
+
+  #about .about-flip-card .flip-card-face{
+    grid-area:1/1!important;
+    position:relative!important;
+    inset:auto!important;
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    box-sizing:border-box!important;
+    overflow:visible!important;
+    padding:1rem .95rem .75rem!important;
+  }
+
+  #about .about-flip-card .flip-card-front{
+    z-index:2!important;
+  }
+
+  #about .about-flip-card .flip-card-back{
+    position:relative!important;
+    inset:auto!important;
+    transform:rotateY(180deg)!important;
+    z-index:1!important;
+  }
+
+  /* Exact small separation before the first experience card. */
+  #about .about-highlights{
     margin-top:.7rem!important;
     gap:.7rem!important;
   }
