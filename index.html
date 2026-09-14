@@ -1092,7 +1092,6 @@ a:active {
   }
 }
 </style>
-
 <style id="contact-mobile-alignment-v17">
 /* Контактните бутони са центрирани и на мобилен телефон */
 #contact .contact-actions,
@@ -1126,14 +1125,1280 @@ a:active {
   }
 }
 </style>
+<style id="card-language-switcher-v18">
+.card-language-switcher{
+  position:absolute!important;top:14px;right:14px;z-index:20;
+  display:inline-flex;align-items:center;gap:5px;padding:4px;
+  border-radius:999px;background:rgba(255,255,255,.94);
+  box-shadow:0 4px 12px rgba(0,43,92,.12);
+  border:1px solid rgba(207,224,237,.9);
+}
+.card-language-btn{
+  width:34px!important;height:25px!important;min-width:34px!important;min-height:25px!important;
+  padding:2px!important;margin:0!important;border:1px solid transparent!important;
+  border-radius:999px!important;background:transparent!important;color:inherit!important;
+  box-shadow:none!important;display:grid!important;place-items:center!important;
+  cursor:pointer;transform:none!important;position:static!important;
+}
+.card-language-btn:hover{background:#edf6fc!important}
+.card-language-btn.active{background:#e3f2fd!important;border-color:#b8d9ee!important}
+.card-lang-flag{
+  display:block;width:27px;height:18px;border-radius:3px;
+  box-shadow:0 1px 4px rgba(0,43,92,.18);pointer-events:none;
+}
+.flip-card .flip-card-button{display:none!important}
+.flip-card-face{padding-top:1rem}
+@media(max-width:700px){
+  .card-language-switcher{top:10px!important;right:10px!important;gap:4px;padding:3px}
+  .card-language-btn{width:31px!important;height:23px!important;min-width:31px!important;min-height:23px!important}
+  .card-lang-flag{width:25px;height:17px}
+}
+@media(prefers-reduced-motion:reduce){.flip-card-inner{transition:none!important}}
+</style>
+<style id="global-page-language-v19">
+/* Глобален превключвател на езика */
+.global-language-switcher{
+  display:flex;align-items:center;gap:5px;
+  position:absolute;right:1rem;top:50%;transform:translateY(-50%);
+  z-index:50;padding:4px;border-radius:999px;
+  background:rgba(255,255,255,.96);box-shadow:0 5px 16px rgba(0,35,75,.18);
+}
+.global-language-btn{
+  width:38px!important;height:28px!important;min-width:38px!important;
+  padding:2px!important;margin:0!important;border:1px solid transparent!important;
+  border-radius:999px!important;background:transparent!important;
+  display:grid!important;place-items:center!important;box-shadow:none!important;
+}
+.global-language-btn:hover{background:#edf6fc!important}
+.global-language-btn.active{background:#dceefb!important;border-color:#a9cde5!important}
+.global-lang-flag{width:30px;height:20px;display:block;border-radius:3px;pointer-events:none}
+.global-gr-text{display:none}
+body.global-greek .global-bg-text{display:none!important}
+body.global-greek .global-gr-text{display:inline!important}
+body.global-greek .global-bg-block{display:none!important}
+body:not(.global-greek) .global-gr-block{display:none!important}
+body:not(.global-greek) .global-greek-only{display:none!important}
+body.global-greek .global-greek-only{display:block!important}
+
+/* Cards: the global choice flips ALL bilingual cards together */
+body.global-greek .flip-card .flip-card-inner{transform:rotateY(180deg)}
+body:not(.global-greek) .flip-card .flip-card-inner{transform:rotateY(0deg)}
+body.global-greek .flip-card .bg-language{background:transparent!important}
+body.global-greek .flip-card .gr-language{background:transparent!important}
+
+/* Academy uses one page-wide language, not a second card. */
+.academy-gr-text{display:none}
+body.global-greek .academy-bg-text{display:none!important}
+body.global-greek .academy-gr-text{display:inline!important}
+body:not(.global-greek) .academy-gr-text{display:none!important}
+
+/* In the academy CTA the arrow remains visible. */
+.academy-cta .academy-bg-text,
+.academy-cta .academy-gr-text{display:inline}
+
+/* Mobile */
+@media(max-width:768px){
+  nav{position:relative!important;padding-right:4.7rem!important}
+  .global-language-switcher{
+    right:10px;top:12px;transform:none;
+  }
+  .global-language-btn{
+    width:34px!important;height:25px!important;min-width:34px!important;
+  }
+  .global-lang-flag{width:27px;height:18px}
+  .site-header h1,.site-header h2{padding-left:.2rem;padding-right:.2rem}
+}
+</style>
+<style id="global-language-polish-v20">
+/* Един глобален превключвател — по-голям, по-високо и с лека анимация */
+.global-language-switcher{
+  position:absolute!important;
+  right:18px!important;
+  top:8px!important;
+  transform:none!important;
+  display:flex!important;
+  align-items:center!important;
+  gap:7px!important;
+  padding:6px!important;
+  border-radius:999px!important;
+  background:rgba(255,255,255,.98)!important;
+  border:1px solid rgba(180,210,230,.8)!important;
+  box-shadow:0 7px 20px rgba(0,35,75,.20)!important;
+  z-index:100!important;
+}
+.global-language-btn{
+  width:48px!important;
+  height:36px!important;
+  min-width:48px!important;
+  min-height:36px!important;
+  padding:4px!important;
+  margin:0!important;
+  border:2px solid transparent!important;
+  border-radius:10px!important;
+  background:transparent!important;
+  display:grid!important;
+  place-items:center!important;
+  cursor:pointer!important;
+  box-shadow:none!important;
+  transition:transform .22s ease,background .22s ease,box-shadow .22s ease,border-color .22s ease!important;
+  -webkit-tap-highlight-color:transparent;
+}
+.global-language-btn:hover{
+  transform:translateY(-2px) scale(1.04)!important;
+  background:#eef7fd!important;
+  box-shadow:0 5px 12px rgba(0,62,110,.14)!important;
+}
+.global-language-btn:active{
+  transform:scale(.96)!important;
+}
+.global-language-btn.active{
+  background:#e4f3fc!important;
+  border-color:#9ccbe7!important;
+  box-shadow:0 4px 12px rgba(0,62,110,.12)!important;
+}
+.global-lang-flag{
+  width:40px!important;
+  height:27px!important;
+  display:block!important;
+  border-radius:4px!important;
+  box-shadow:0 2px 6px rgba(0,0,0,.20)!important;
+  pointer-events:none!important;
+}
+
+/* Само един език се вижда — без остатъчни "/" и без смесване. */
+.global-gr-text{display:none!important}
+body.global-greek .global-bg-text{display:none!important}
+body.global-greek .global-gr-text{display:inline!important}
+body:not(.global-greek) .global-bg-text{display:inline!important}
+body:not(.global-greek) .global-gr-text{display:none!important}
+
+/* Елементи, които са цели блокове */
+.global-bg-block{display:block!important}
+.global-gr-block{display:none!important}
+body.global-greek .global-bg-block{display:none!important}
+body.global-greek .global-gr-block{display:block!important}
+
+/* Гръцките companion header lines не се показват на BG */
+.global-greek-only{display:none!important}
+body.global-greek .global-greek-only{display:block!important}
+
+/* Academy — само избраният език */
+.academy-gr-text{display:none!important}
+body.global-greek .academy-bg-text{display:none!important}
+body.global-greek .academy-gr-text{display:inline!important}
+
+/* При превключване картите следват избрания език */
+body.global-greek .flip-card .flip-card-inner{transform:rotateY(180deg)}
+body:not(.global-greek) .flip-card .flip-card-inner{transform:rotateY(0deg)}
+
+@media (max-width:768px){
+  nav{
+    position:relative!important;
+    padding-top:54px!important;
+    padding-right:10px!important;
+  }
+  .global-language-switcher{
+    right:10px!important;
+    top:8px!important;
+    gap:5px!important;
+    padding:5px!important;
+  }
+  .global-language-btn{
+    width:44px!important;
+    height:34px!important;
+    min-width:44px!important;
+    min-height:34px!important;
+  }
+  .global-lang-flag{
+    width:36px!important;
+    height:24px!important;
+  }
+}
+@media (max-width:420px){
+  nav{padding-top:50px!important}
+  .global-language-btn{
+    width:41px!important;
+    height:32px!important;
+    min-width:41px!important;
+    min-height:32px!important;
+  }
+  .global-lang-flag{width:34px!important;height:23px!important}
+}
+@media (prefers-reduced-motion:reduce){
+  .global-language-btn{transition:none!important}
+}
+</style>
+<style id="academy-greek-hide-v21">
+body.global-greek #greek-academy{
+  display:none!important;
+}
+</style>
+<style id="global-language-clean-v21">
+.global-bg-text{display:inline!important}
+.global-gr-text{display:none!important}
+body.global-greek .global-bg-text{display:none!important}
+body.global-greek .global-gr-text{display:inline!important}
+body.global-greek .paired-icon.bg-only{display:none!important}
+.paired-icon{display:inline-block;margin-right:.35em;vertical-align:-.05em}
+body.global-greek .paired-icon.duplicate{display:none!important}
+
+/* Keep the top language control above the nav on desktop and mobile. */
+.global-language-switcher{
+  top:7px!important;
+}
+</style>
+<style id="language-only-clean-v22">
+/* One language on screen at a time */
+.global-gr-text{display:none!important}
+.global-bg-text{display:inline!important}
+body.global-greek .global-bg-text{display:none!important}
+body.global-greek .global-gr-text{display:inline!important}
+
+/* Highlight cards under "About": clear, bold, readable */
+#about .highlight .global-bg-text,
+#about .highlight .global-gr-text{
+  font-family:'Poppins','Segoe UI',sans-serif!important;
+  font-weight:700!important;
+  font-size:1.02rem!important;
+  line-height:1.55!important;
+}
+#about .highlight span.global-gr-text{
+  display:block!important;
+  font-weight:700!important;
+}
+body.global-greek #about .highlight .global-bg-text{display:none!important}
+body:not(.global-greek) #about .highlight .global-gr-text{display:none!important}
+body.global-greek #about .highlight .global-gr-text{display:block!important}
+
+#about .highlight b{
+  font-family:'Poppins','Segoe UI',sans-serif!important;
+  font-weight:800!important;
+  font-size:1.15rem!important;
+  line-height:1.35!important;
+}
+
+/* Oral service note: do not show Bulgarian and Greek together. */
+#services .service-note .global-bg-text,
+#services .service-note .global-gr-text{
+  font-family:'Poppins','Segoe UI',sans-serif!important;
+  font-weight:700!important;
+  font-size:1rem!important;
+  line-height:1.65!important;
+}
+body.global-greek #services .service-note .global-bg-text{display:none!important}
+body:not(.global-greek) #services .service-note .global-gr-text{display:none!important}
+
+/* Make sure the nav switcher sits visually in the blue navigation bar */
+nav{
+  position:relative!important;
+  padding-top:54px!important;
+}
+.global-language-switcher{
+  top:7px!important;
+  right:14px!important;
+  transform:none!important;
+}
+.global-language-btn{
+  width:48px!important;height:36px!important;min-width:48px!important;min-height:36px!important;
+}
+.global-lang-flag{width:40px!important;height:27px!important}
+
+@media(max-width:768px){
+  nav{padding-top:49px!important}
+  .global-language-switcher{top:7px!important;right:8px!important}
+  .global-language-btn{width:42px!important;height:33px!important;min-width:42px!important;min-height:33px!important}
+  .global-lang-flag{width:35px!important;height:24px!important}
+  #about .highlight .global-bg-text,
+  #about .highlight .global-gr-text{
+    font-size:.94rem!important;
+    line-height:1.5!important;
+  }
+  #about .highlight b{font-size:1.05rem!important}
+  #services .service-note .global-bg-text,
+  #services .service-note .global-gr-text{
+    font-size:.92rem!important;
+    line-height:1.55!important;
+  }
+}
+</style>
+<style id="global-language-polish-v23">
+/* Strict single-language rendering */
+.global-bg-text{display:inline!important}
+.global-gr-text{display:none!important}
+body.global-greek .global-bg-text{display:none!important}
+body.global-greek .global-gr-text{display:inline!important}
+
+/* Beautiful experience cards */
+#about .about-highlights{
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:1rem!important;
+  margin-top:1.25rem!important;
+}
+#about .experience-card{
+  position:relative;
+  min-height:170px;
+  padding:1.35rem 1.25rem!important;
+  border-radius:20px!important;
+  background:linear-gradient(145deg,#ffffff,#f2f8fc)!important;
+  border:1px solid #d6e6f1!important;
+  box-shadow:0 10px 24px rgba(0,43,92,.07)!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  text-align:center!important;
+  overflow:hidden;
+}
+#about .experience-card::after{
+  content:"";
+  position:absolute;
+  width:110px;height:110px;border-radius:50%;
+  right:-45px;bottom:-50px;background:#e6f3fb;opacity:.65;
+}
+#about .experience-icon{
+  width:46px;height:46px;
+  display:grid;place-items:center;
+  margin-bottom:.55rem;
+  border-radius:14px;
+  background:#e7f4fd;
+  color:#07558e;
+  border:1px solid #c9e1f0;
+  font-size:1.35rem;
+  font-weight:700;
+}
+#about .experience-card b{
+  position:relative;z-index:1;
+  display:block!important;
+  color:#003b70!important;
+  font-family:'Poppins','Segoe UI',sans-serif!important;
+  font-weight:800!important;
+  font-size:1.18rem!important;
+  line-height:1.25!important;
+  margin-bottom:.35rem!important;
+}
+#about .experience-desc{
+  position:relative;z-index:1;
+  display:block!important;
+  color:#557089!important;
+  font-family:'Poppins','Segoe UI',sans-serif!important;
+  font-size:.98rem!important;
+  font-weight:500!important;
+  line-height:1.55!important;
+}
+
+/* Real estate callouts: clean and balanced */
+#real-estate .re-bottom{
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:1rem!important;
+  margin-top:1rem!important;
+}
+#real-estate .re-callout{
+  position:relative!important;
+  display:grid!important;
+  grid-template-columns:auto 1fr!important;
+  column-gap:.8rem!important;
+  align-items:start!important;
+  padding:1.15rem 1.25rem!important;
+  border-radius:18px!important;
+  background:linear-gradient(145deg,#f4faff,#e9f4fc)!important;
+  border:1px solid #cfe2ef!important;
+  box-shadow:0 8px 20px rgba(0,43,92,.06)!important;
+  text-align:left!important;
+}
+#real-estate .re-callout-icon{
+  grid-row:1 / span 2;
+  width:38px;height:38px;
+  display:grid;place-items:center;
+  border-radius:12px;
+  background:#fff;
+  border:1px solid #d6e6f1;
+  font-size:1.15rem;
+}
+#real-estate .re-callout strong{
+  margin:0 0 .25rem!important;
+  font-family:'Poppins','Segoe UI',sans-serif!important;
+  font-size:1rem!important;
+  font-weight:800!important;
+  color:#003b70!important;
+}
+#real-estate .re-callout p{
+  margin:0!important;
+  font-family:'Poppins','Segoe UI',sans-serif!important;
+  font-size:.92rem!important;
+  font-weight:500!important;
+  line-height:1.55!important;
+  color:#557089!important;
+}
+
+/* Global language switcher: inside the blue navigation band */
+nav{
+  position:relative!important;
+  padding-right:118px!important;
+  padding-top:.65rem!important;
+  padding-bottom:.65rem!important;
+}
+.global-language-switcher{
+  position:absolute!important;
+  top:50%!important;
+  right:14px!important;
+  transform:translateY(-50%)!important;
+  display:flex!important;
+  align-items:center!important;
+  gap:7px!important;
+  padding:5px!important;
+  border-radius:999px!important;
+  background:rgba(255,255,255,.97)!important;
+  border:1px solid rgba(177,211,231,.95)!important;
+  box-shadow:0 6px 18px rgba(0,35,75,.2)!important;
+  z-index:100!important;
+}
+.global-language-btn{
+  width:46px!important;height:34px!important;
+  min-width:46px!important;min-height:34px!important;
+  padding:3px!important;margin:0!important;
+  border:2px solid transparent!important;
+  border-radius:9px!important;
+  background:transparent!important;
+  display:grid!important;place-items:center!important;
+  box-shadow:none!important;
+  transition:transform .22s ease,background .22s ease,box-shadow .22s ease,border-color .22s ease!important;
+}
+.global-language-btn:hover{
+  transform:translateY(-2px) scale(1.04)!important;
+  background:#edf7fd!important;
+  box-shadow:0 5px 12px rgba(0,62,110,.13)!important;
+}
+.global-language-btn.active{
+  background:#e4f3fc!important;
+  border-color:#8fc3e4!important;
+}
+.global-lang-flag{
+  width:38px!important;height:25px!important;
+  display:block!important;border-radius:3px!important;
+  box-shadow:0 1px 5px rgba(0,0,0,.2)!important;
+}
+@media(max-width:768px){
+  nav{
+    padding-right:9px!important;
+    padding-top:3.2rem!important;
+  }
+  .global-language-switcher{
+    top:7px!important;
+    right:8px!important;
+    transform:none!important;
+  }
+  .global-language-btn{
+    width:42px!important;height:32px!important;
+    min-width:42px!important;min-height:32px!important;
+  }
+  .global-lang-flag{width:35px!important;height:23px!important}
+  #about .about-highlights{
+    grid-template-columns:1fr!important;
+  }
+  #about .experience-card{
+    min-height:145px;
+  }
+  #real-estate .re-bottom{
+    grid-template-columns:1fr!important;
+  }
+}
+</style>
+<style id="about-polish-v24">
+/* ---- За мен: без вътрешен скрол, естествена височина ---- */
+#about .about-flip-card .flip-card-inner,
+#about .about-flip-card .flip-card-face {
+  height: auto !important;
+  min-height: 0 !important;
+}
+#about .about-flip-card .flip-card-face {
+  overflow: visible !important;
+}
+#about .about-flip-card .flip-card-back {
+  position: absolute !important;
+  inset: 0 !important;
+  overflow: visible !important;
+}
+#about .about-flip-card {
+  min-height: 0 !important;
+}
+#about .about-flip-card .flip-card-front,
+#about .about-flip-card .flip-card-back {
+  padding-bottom: 1.8rem !important;
+}
+#about .about-flip-card .about-panel,
+#about .about-flip-card p {
+  max-width: none !important;
+}
+
+/* По-добро пространство преди трите карти */
+#about .about-highlights {
+  margin-top: 1.05rem !important;
+}
+
+/* ---- BG ↔ GR в картата за опита: истински знаменца вместо "BG ↔ GR" ---- */
+#about .experience-card:nth-child(2) .experience-icon {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 4px !important;
+  width: 74px !important;
+}
+#about .experience-card:nth-child(2) .experience-icon::before,
+#about .experience-card:nth-child(2) .experience-icon::after {
+  content: "" !important;
+  display: block !important;
+  width: 27px !important;
+  height: 18px !important;
+  border-radius: 3px !important;
+  box-shadow: 0 1px 4px rgba(0,43,92,.18) !important;
+  flex: 0 0 auto !important;
+}
+#about .experience-card:nth-child(2) .experience-icon::before {
+  background:
+    linear-gradient(to bottom,#fff 0 33.33%,#00966E 33.33% 66.66%,#D62612 66.66% 100%) !important;
+}
+#about .experience-card:nth-child(2) .experience-icon::after {
+  background:
+    linear-gradient(to bottom,#0D5EAF 0 11.11%,#fff 11.11% 22.22%,#0D5EAF 22.22% 33.33%,#fff 33.33% 44.44%,#0D5EAF 44.44% 55.55%,#fff 55.55% 66.66%,#0D5EAF 66.66% 77.77%,#fff 77.77% 88.88%,#0D5EAF 88.88% 100%) !important;
+}
+/* hide the literal ↔ if still present */
+#about .experience-card:nth-child(2) .experience-icon {
+  font-size: 0 !important;
+}
+
+/* ---- Малко по-разчупено оформление на текста за опита ---- */
+#about .experience-card {
+  transform: translateY(0);
+  transition: transform .28s ease, box-shadow .28s ease;
+}
+#about .experience-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 0;
+  border-radius: 0 4px 4px 0;
+  background: linear-gradient(to bottom,#0b67a9,#6bc6f1);
+  transition: height .3s ease;
+}
+#about .experience-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgba(0,43,92,.10) !important;
+}
+#about .experience-card:hover::before {
+  height: 58%;
+}
+
+/* ---- Бележката под устните преводи: един език според режима, по-живо оформление ---- */
+#services .service-note {
+  position: relative !important;
+  padding: 1.2rem 1.35rem !important;
+}
+#services .service-note::before {
+  content: "🎙️";
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  font-size: 1.15rem;
+  opacity: .85;
+}
+#services .service-note p {
+  padding-left: 2rem !important;
+  font-family: 'Poppins','Segoe UI',sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 1.02rem !important;
+  line-height: 1.65 !important;
+  color: #315b7a !important;
+}
+
+/* ---- Mobil: About да няма огромна празнина/скрол ---- */
+@media (max-width:700px) {
+  #about .about-flip-card {
+    min-height: 0 !important;
+  }
+  #about .about-flip-card .flip-card-front,
+  #about .about-flip-card .flip-card-back {
+    padding-bottom: 1.25rem !important;
+  }
+  #about .experience-card:nth-child(2) .experience-icon {
+    width: 70px !important;
+  }
+  #about .experience-card:nth-child(2) .experience-icon::before,
+  #about .experience-card:nth-child(2) .experience-icon::after {
+    width: 25px !important;
+    height: 17px !important;
+  }
+  #services .service-note p {
+    font-size: .94rem !important;
+  }
+}
+
+/* Уважаваме намаленото движение */
+@media (prefers-reduced-motion: reduce) {
+  #about .experience-card {
+    transition: none !important;
+  }
+}
+</style>
+<style id="service-note-and-flags-v25">
+/* Истински, правилно изчертан гръцки флаг */
+.global-lang-flag.greek-flag,
+.global-lang-flag.bulgarian-flag{
+  display:block!important;
+  width:40px!important;
+  height:27px!important;
+  border-radius:4px!important;
+  overflow:hidden!important;
+  box-shadow:0 2px 6px rgba(0,0,0,.20)!important;
+}
+@media(max-width:768px){
+  .global-lang-flag.greek-flag,
+  .global-lang-flag.bulgarian-flag{
+    width:35px!important;
+    height:23px!important;
+  }
+}
+
+/* По-богата и професионална секция за устни преводи */
+#services .service-note{
+  min-height:170px!important;
+  display:flex!important;
+  align-items:center!important;
+}
+#services .service-note p{
+  max-width:1120px!important;
+  font-family:'Poppins','Segoe UI',sans-serif!important;
+  font-size:1.05rem!important;
+  font-weight:600!important;
+  line-height:1.78!important;
+  letter-spacing:.01em!important;
+  margin:0!important;
+}
+#services .service-note p strong{
+  font-weight:800!important;
+  color:#003b70!important;
+}
+@media(max-width:700px){
+  #services .service-note{
+    min-height:0!important;
+    padding:1.25rem 1rem!important;
+  }
+  #services .service-note p{
+    font-size:.93rem!important;
+    line-height:1.7!important;
+  }
+}
+</style>
+<style id="final-language-visual-fix-v26">
+.global-bg-text{display:inline!important}
+.global-gr-text{display:none!important}
+body.global-greek .global-bg-text{display:none!important}
+body.global-greek .global-gr-text{display:inline!important}
+
+/* Experience cards */
+#about .experience-card{
+  position:relative;
+  overflow:hidden;
+}
+#about .experience-card .experience-icon{
+  position:relative;
+  z-index:2;
+}
+#about .experience-flags{
+  display:flex!important;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  width:82px!important;
+  height:46px!important;
+  margin-bottom:.55rem;
+  border-radius:14px;
+  background:#e7f4fd;
+  border:1px solid #c9e1f0;
+}
+#about .experience-flags .final-flag{
+  width:29px!important;
+  height:19px!important;
+  border-radius:3px!important;
+  display:block!important;
+  box-shadow:0 1px 4px rgba(0,0,0,.16);
+}
+#about .experience-card b{
+  font-family:'Poppins','Segoe UI',sans-serif!important;
+  font-weight:800!important;
+  font-size:1.18rem!important;
+  line-height:1.3!important;
+}
+#about .experience-desc{
+  font-family:'Poppins','Segoe UI',sans-serif!important;
+  font-weight:600!important;
+  font-size:.98rem!important;
+  line-height:1.55!important;
+}
+
+/* Global flags: real flags, aligned in the blue navigation */
+.global-language-switcher{
+  z-index:999!important;
+}
+.global-lang-flag,
+.global-language-btn .global-lang-flag{
+  display:block!important;
+}
+.global-language-btn .final-flag{
+  width:38px!important;
+  height:25px!important;
+}
+@media (max-width:768px){
+  #about .experience-flags{
+    width:74px!important;
+    height:42px!important;
+  }
+  #about .experience-flags .final-flag{
+    width:26px!important;
+    height:18px!important;
+  }
+  .global-language-btn .final-flag{
+    width:34px!important;
+    height:23px!important;
+  }
+}
+
+/* Footer should remain clean and centered. */
+footer{
+  text-align:center!important;
+}
+footer p{
+  margin:.35rem 0!important;
+}
+</style>
+<style id="footer-and-language-cells-v27">
+/* Individual cards have no BG/GR language labels anymore. */
+#about .flip-language-label,
+#bilingual-intro .flip-card-front > h3 svg,
+#bilingual-intro .flip-card-back > h3 svg{
+  display:none!important;
+}
+#bilingual-intro .flip-card-front > h3,
+#bilingual-intro .flip-card-back > h3{
+  padding-left:0!important;
+}
+
+/* Footer: both flags + country names stay visible in BOTH language modes. */
+footer{
+  text-align:center!important;
+  background:#003b70!important;
+  color:#fff!important;
+  padding:1.35rem 1rem 1.5rem!important;
+}
+footer > p:first-child{
+  margin:0 0 .65rem!important;
+  font-family:'Poppins','Segoe UI',sans-serif!important;
+  font-size:1rem!important;
+  line-height:1.5!important;
+  font-weight:500!important;
+}
+.footer-language-row{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:.55rem!important;
+  margin:0!important;
+  font-family:'Poppins','Segoe UI',sans-serif!important;
+  font-size:.98rem!important;
+  font-weight:600!important;
+  line-height:1!important;
+}
+.footer-language-row .final-flag{
+  width:30px!important;
+  height:20px!important;
+  flex:0 0 auto!important;
+  display:block!important;
+  border-radius:3px!important;
+  box-shadow:0 1px 5px rgba(0,0,0,.2)!important;
+}
+.footer-separator{
+  opacity:.65;
+  margin:0 .05rem;
+}
+@media(max-width:700px){
+  footer{
+    padding:1.1rem .85rem 1.25rem!important;
+  }
+  footer > p:first-child{
+    font-size:.86rem!important;
+  }
+  .footer-language-row{
+    font-size:.9rem!important;
+    gap:.45rem!important;
+  }
+  .footer-language-row .final-flag{
+    width:27px!important;
+    height:18px!important;
+  }
+}
+
+/* Top global flags use exact flag artwork. */
+.global-language-btn .final-flag{
+  width:38px!important;
+  height:25px!important;
+  display:block!important;
+}
+@media(max-width:768px){
+  .global-language-btn .final-flag{
+    width:34px!important;
+    height:23px!important;
+  }
+}
+</style>
+<style id="final-polish-v28">
+/* Greek flag: clean, proportionally consistent SVG */
+.final-flag.gr-flag{
+  width:38px!important;
+  height:25px!important;
+  display:block!important;
+  border-radius:3px!important;
+  box-shadow:0 1px 5px rgba(0,0,0,.20)!important;
+}
+@media(max-width:768px){
+  .final-flag.gr-flag{
+    width:34px!important;
+    height:23px!important;
+  }
+}
+
+/* Oral section title: icon is part of the heading, not floating above it */
+.oral-translation-group .service-group-title{
+  display:flex!important;
+  align-items:center!important;
+  gap:.45rem!important;
+}
+.oral-translation-group .service-group-title .paired-icon{
+  position:static!important;
+  display:inline-flex!important;
+  flex:0 0 auto!important;
+  margin:0!important;
+  line-height:1!important;
+}
+
+/* Main intro: additional advertising copy with attractive hierarchy */
+#bilingual-intro .intro-extra{
+  margin-top:1rem!important;
+  max-width:1050px!important;
+  font-family:'Poppins','Segoe UI',sans-serif!important;
+  font-size:1.02rem!important;
+  line-height:1.75!important;
+  font-weight:600!important;
+  color:#4d6b83!important;
+}
+#bilingual-intro .intro-trust-row{
+  display:flex!important;
+  flex-wrap:wrap!important;
+  justify-content:center!important;
+  gap:.65rem!important;
+  margin-top:1.1rem!important;
+}
+#bilingual-intro .intro-trust-row span{
+  display:inline-flex!important;
+  align-items:center!important;
+  padding:.42rem .78rem!important;
+  border-radius:999px!important;
+  background:#eaf5fc!important;
+  border:1px solid #cde2ef!important;
+  color:#155987!important;
+  font-family:'Poppins','Segoe UI',sans-serif!important;
+  font-size:.82rem!important;
+  font-weight:700!important;
+  box-shadow:0 4px 10px rgba(0,43,92,.05)!important;
+}
+#bilingual-intro .flip-card-face h3{
+  margin-bottom:.8rem!important;
+}
+@media(max-width:700px){
+  #bilingual-intro .intro-extra{
+    font-size:.92rem!important;
+    line-height:1.65!important;
+  }
+  #bilingual-intro .intro-trust-row{
+    justify-content:flex-start!important;
+    gap:.45rem!important;
+  }
+  #bilingual-intro .intro-trust-row span{
+    font-size:.75rem!important;
+    padding:.38rem .62rem!important;
+  }
+}
+
+/* Global language switcher remains in the blue bar */
+.global-language-switcher{
+  z-index:1000!important;
+}
+</style>
+<style id="intro-no-scroll-v29">
+/* The bilingual intro card grows naturally; no internal scrollbar */
+#bilingual-intro .intro-flip-card{
+  min-height:0!important;
+  height:auto!important;
+  overflow:visible!important;
+}
+#bilingual-intro .intro-flip-card .flip-card-inner{
+  display:grid!important;
+  grid-template-columns:1fr!important;
+  height:auto!important;
+  min-height:0!important;
+  overflow:visible!important;
+}
+#bilingual-intro .intro-flip-card .flip-card-face{
+  grid-area:1 / 1!important;
+  position:relative!important;
+  inset:auto!important;
+  min-height:0!important;
+  height:auto!important;
+  overflow:visible!important;
+}
+#bilingual-intro .intro-flip-card .flip-card-front,
+#bilingual-intro .intro-flip-card .flip-card-back{
+  padding-bottom:1.75rem!important;
+}
+#bilingual-intro .intro-flip-card .intro-extra{
+  margin-top:1.2rem!important;
+}
+#bilingual-intro .intro-flip-card .flip-card-back{
+  transform:rotateY(180deg)!important;
+}
+
+/* The page-wide Greek/BG transform still works with the grid-based faces. */
+body.global-greek #bilingual-intro .intro-flip-card .flip-card-inner{
+  transform:rotateY(180deg)!important;
+}
+body:not(.global-greek) #bilingual-intro .intro-flip-card .flip-card-inner{
+  transform:rotateY(0deg)!important;
+}
+</style>
+<style id="how-readable-v29">
+#how-it-works .how-step p.global-gr-block{
+  color:#5f7890!important;
+  font-family:'Poppins','Segoe UI',sans-serif!important;
+  font-weight:600!important;
+  opacity:1!important;
+}
+@media(max-width:700px){
+  #how-it-works .how-step p.global-gr-block{
+    color:#557089!important;
+    font-weight:600!important;
+  }
+}
+</style>
+<style id="legal-text-v29">
+#services .legalization-group .service-card .flip-card-face{
+  overflow:visible!important;
+}
+#services .legalization-group .service-card .flip-card-face p{
+  line-height:1.72!important;
+}
+@media(max-width:700px){
+  #services .legalization-group .service-card .flip-card-face p{
+    line-height:1.65!important;
+  }
+}
+</style>
+<style id="final-layout-v30">
+/* Main bilingual intro: content determines height; never show an inner scrollbar */
+#bilingual-intro .intro-flip-card{
+  min-height:0!important;height:auto!important;overflow:visible!important;
+}
+#bilingual-intro .intro-flip-card .flip-card-inner{
+  display:grid!important;grid-template-columns:1fr!important;
+  height:auto!important;min-height:0!important;overflow:visible!important;
+}
+#bilingual-intro .intro-flip-card .flip-card-face{
+  grid-area:1/1!important;position:relative!important;
+  inset:auto!important;height:auto!important;min-height:0!important;
+  overflow:visible!important;
+}
+#bilingual-intro .intro-flip-card .flip-card-front,
+#bilingual-intro .intro-flip-card .flip-card-back{
+  padding-bottom:2rem!important;
+}
+body.global-greek #bilingual-intro .intro-flip-card .flip-card-inner{
+  transform:rotateY(180deg)!important;
+}
+body:not(.global-greek) #bilingual-intro .intro-flip-card .flip-card-inner{
+  transform:rotateY(0deg)!important;
+}
+
+/* Stronger Greek readability for the 4-step section */
+#how-it-works .how-step p.global-gr-block{
+  opacity:1!important;
+  color:#5a7389!important;
+  font-weight:600!important;
+}
+#how-it-works .how-step h3.global-bg-block{
+  font-weight:800!important;
+}
+
+/* Legal cards: more spacious text without any scroll */
+#services .service-group .service-card .flip-card-face{
+  overflow:visible!important;
+}
+#services .service-group .service-card .flip-card-face p{
+  font-weight:500!important;
+  line-height:1.72!important;
+}
+</style>
+<style id="precise-flag-and-text-v31">
+/* The global selector and all inline Greek flags use the same correct flag. */
+.global-language-btn .final-flag,
+.experience-flags .final-flag,
+.footer-language-row .final-flag,
+.gr-flag{
+  width:38px!important;
+  height:25px!important;
+  display:block!important;
+  border-radius:3px!important;
+  overflow:hidden!important;
+}
+@media(max-width:768px){
+  .global-language-btn .final-flag,
+  .experience-flags .final-flag,
+  .footer-language-row .final-flag,
+  .gr-flag{
+    width:34px!important;
+    height:23px!important;
+  }
+}
+
+/* Individual cards contain no language labels or flags. */
+#bilingual-intro .flip-card-face h3:empty{
+  display:none!important;
+}
+#about .flip-language-label{
+  display:none!important;
+}
+
+/* Slightly reduce only the Greek copy in the final legal/notarial card. */
+#services .service-group:not(.oral-translation-group) .service-card:nth-child(3) .flip-card-back p{
+  font-size:.92rem!important;
+  line-height:1.65!important;
+}
+@media(max-width:700px){
+  #services .service-group:not(.oral-translation-group) .service-card:nth-child(3) .flip-card-back p{
+    font-size:.84rem!important;
+    line-height:1.58!important;
+  }
+}
+
+/* Footer remains bilingual by design in both modes. */
+footer .footer-language-row{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:.55rem!important;
+}
+footer .footer-language-row .global-bg-text,
+footer .footer-language-row .global-gr-text{
+  display:inline!important;
+}
+
+/* Ensure the whole page remains responsive with no horizontal overflow. */
+html,body{
+  max-width:100%;
+  overflow-x:hidden;
+}
+</style>
+<style id="exact-flags-and-legal-v32">
+/* No flag in the real-estate card titles — language is already selected globally. */
+#real-estate .flip-card-front h3 svg,
+#real-estate .flip-card-back h3 svg{
+  display:none!important;
+}
+
+/* Experience-card flags use the exact same artwork and proportions. */
+#about .experience-card:nth-child(2) .experience-flags{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:6px!important;
+  width:82px!important;
+  height:46px!important;
+}
+#about .experience-card:nth-child(2) .experience-flags .final-flag{
+  width:30px!important;
+  height:20px!important;
+  display:block!important;
+  flex:0 0 auto!important;
+  border-radius:3px!important;
+  box-shadow:0 1px 4px rgba(0,0,0,.16)!important;
+}
+
+/* The final Greek legal/notarial card is slightly smaller only on the GR side. */
+#services .service-group .service-card:nth-child(3) .flip-card-back p{
+  font-size:.86rem!important;
+  line-height:1.52!important;
+}
+@media(max-width:700px){
+  #about .experience-card:nth-child(2) .experience-flags{
+    width:74px!important;
+    height:42px!important;
+    gap:5px!important;
+  }
+  #about .experience-card:nth-child(2) .experience-flags .final-flag{
+    width:27px!important;
+    height:18px!important;
+  }
+  #services .service-group .service-card:nth-child(3) .flip-card-back p{
+    font-size:.80rem!important;
+    line-height:1.48!important;
+  }
+}
+</style>
+<style id="remove-duplicate-experience-flags-v33">
+/* Remove the old pseudo-flag decorations that were left from an earlier version.
+   Keep only the two real SVG flags inside the light-blue box. */
+#about .experience-card:nth-child(2) .experience-icon::before,
+#about .experience-card:nth-child(2) .experience-icon::after{
+  content:none!important;
+  display:none!important;
+}
+</style>
+<style id="oral-heading-icon-v34">
+#services .oral-translation-group .service-group-title{
+  display:flex!important;
+  align-items:center!important;
+  gap:.48rem!important;
+  flex-wrap:wrap!important;
+}
+#services .oral-translation-group .service-group-title .paired-icon{
+  position:static!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  flex:0 0 auto!important;
+  margin:0!important;
+  line-height:1!important;
+  font-size:1.05em!important;
+}
+@media(max-width:700px){
+  #services .oral-translation-group .service-group-title{
+    gap:.38rem!important;
+  }
+}
+</style>
+<style id="oral-note-inline-icon-v35">
+#services .service-note::before{
+  content:none!important;
+  display:none!important;
+}
+#services .service-note p{
+  display:flex!important;
+  align-items:flex-start!important;
+  gap:.55rem!important;
+  padding-left:0!important;
+}
+#services .service-note p .inline-note-icon{
+  flex:0 0 auto!important;
+  display:inline-block!important;
+  font-size:1.12em!important;
+  line-height:1.45!important;
+  margin:0!important;
+}
+#services .service-note p strong{
+  display:inline!important;
+}
+@media(max-width:700px){
+  #services .service-note p{
+    gap:.45rem!important;
+  }
+  #services .service-note p .inline-note-icon{
+    font-size:1.02em!important;
+  }
+}
+</style>
+
+<style id="oral-note-like-service-cards-v36">
+/* Точно като останалите категории: иконка + заглавие, после чисто описание. */
+#services .service-note{
+  position:relative!important;
+  padding:1.25rem 1.4rem!important;
+  display:block!important;
+}
+#services .service-note::before{
+  content:none!important;
+  display:none!important;
+}
+#services .service-note .oral-note-block{
+  width:100%!important;
+  font-family:'Poppins','Segoe UI',sans-serif!important;
+}
+#services .service-note .oral-note-heading{
+  display:flex!important;
+  align-items:center!important;
+  gap:.5rem!important;
+  margin:0 0 .55rem!important;
+}
+#services .service-note .inline-note-icon{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  flex:0 0 auto!important;
+  width:30px!important;
+  height:30px!important;
+  border-radius:9px!important;
+  background:#e7f4fd!important;
+  border:1px solid #c9e1f0!important;
+  font-size:1.05rem!important;
+  line-height:1!important;
+}
+#services .service-note .oral-note-heading strong{
+  color:#003b70!important;
+  font-size:1.12rem!important;
+  line-height:1.3!important;
+  font-weight:800!important;
+}
+#services .service-note .oral-note-block > p{
+  margin:0 0 1.05rem!important;
+  padding:0!important;
+  color:#557089!important;
+  font-size:1rem!important;
+  line-height:1.72!important;
+  font-weight:500!important;
+}
+#services .service-note .oral-note-block:last-child > p{
+  margin-bottom:0!important;
+}
+
+/* Единствено избраният език се показва */
+#services .service-note .global-bg-text{display:block!important}
+#services .service-note .global-gr-text{display:none!important}
+body.global-greek #services .service-note .global-bg-text{display:none!important}
+body.global-greek #services .service-note .global-gr-text{display:block!important}
+
+@media(max-width:700px){
+  #services .service-note{
+    padding:1.05rem 1rem!important;
+  }
+  #services .service-note .oral-note-heading strong{
+    font-size:1rem!important;
+  }
+  #services .service-note .inline-note-icon{
+    width:28px!important;
+    height:28px!important;
+    font-size:.98rem!important;
+  }
+  #services .service-note .oral-note-block > p{
+    font-size:.92rem!important;
+    line-height:1.67!important;
+  }
+}
+</style>
 </head>
 <body>
 <header class="site-header">
 <img alt="Plamen Mollov Logo" fetchpriority="high" src="assets/images/logo.webp"/>
-<h1>Заклет преводач от и на гръцки език – Пламен Моллов</h1>
-<div class="header-greek-title">Επίσημος μεταφραστής από και προς την ελληνική γλώσσα – Πλάμεν Μόλλοβ</div>
-<h2><strong>17 години опит в устни и писмени преводи, заверки, легализации и консултации</strong></h2>
-<div class="header-greek-subtitle">17 χρόνια εμπειρίας σε γραπτές και προφορικές μεταφράσεις, επικυρώσεις, νομιμοποιήσεις και υποστήριξη</div>
+<h1><span class="global-bg-text">Заклет преводач от и на гръцки език – Пламен Моллов</span><span class="global-gr-text">Επίσημος μεταφραστής από και προς την ελληνική γλώσσα – Πλάμεν Μόλλοβ</span></h1>
+<h2><strong><span class="global-bg-text">17 години опит в устни и писмени преводи, заверки, легализации и консултации</span><span class="global-gr-text">17 χρόνια εμπειρίας σε γραπτές και προφορικές μεταφράσεις, επικυρώσεις, νομιμοποιήσεις και υποστήριξη</span></strong></h2>
 </header>
 <nav>
 <div class="menu-toggle">
@@ -1142,14 +2407,24 @@ a:active {
 <span></span>
 </div>
 <div class="nav-links">
-<a href="#about">За мен / Σχετικά με εμένα</a>
-<a href="#services">Услуги / Υπηρεσίες</a>
-<a href="prices.html">Цени / Τιμές</a>
-<a href="#real-estate">Имоти в Гърция / Ακίνητα στην Ελλάδα</a>
-<a href="testimonials.html">Мнения / Αξιολογήσεις</a>
-<a href="#contact">Контакти / Επικοινωνίες</a>
+<a href="#about"><span class="global-bg-text">За мен</span><span class="global-gr-text">Σχετικά με εμένα</span></a>
+<a href="#services"><span class="global-bg-text">Услуги</span><span class="global-gr-text">Υπηρεσίες</span></a>
+<a href="prices.html"><span class="global-bg-text">Цени</span><span class="global-gr-text">Τιμές</span></a>
+<a href="#real-estate"><span class="global-bg-text">Имоти в Гърция</span><span class="global-gr-text">Ακίνητα στην Ελλάδα</span></a>
+<a href="testimonials.html"><span class="global-bg-text">Мнения</span><span class="global-gr-text">Αξιολογήσεις</span></a>
+<a href="#contact"><span class="global-bg-text">Контакти</span><span class="global-gr-text">Επικοινωνίες</span></a>
 </div>
-</nav>
+<div aria-label="Избор на език" class="global-language-switcher" role="group"><button aria-label="Български език" class="global-language-btn global-bg active" data-language="bg" type="button"><svg aria-label="Български език" class="final-flag bg-flag" role="img" viewbox="0 0 36 24">
+<rect fill="#D62612" height="24" width="36"></rect>
+<rect fill="#00966E" height="16" width="36"></rect>
+<rect fill="#FFFFFF" height="8" width="36"></rect>
+</svg></button><button aria-label="Ελληνικά" class="global-language-btn global-gr" data-language="gr" type="button"><svg aria-label="Ελληνικά" class="final-flag gr-flag" role="img" viewbox="0 0 36 24" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#0D5EAF" height="24" width="36"></rect>
+<path d="M0 2.6667H36V5.3334H0ZM0 8H36V10.6667H0ZM0 13.3333H36V16H0ZM0 18.6666H36V21.3333H0Z" fill="#FFFFFF"></path>
+<rect fill="#0D5EAF" height="13.3333" width="13.3333"></rect>
+<rect fill="#FFFFFF" height="13.3333" width="4.4444" x="4.4444"></rect>
+<rect fill="#FFFFFF" height="4.4444" width="13.3333" y="4.4444"></rect>
+</svg></button></div></nav>
 <div aria-label="Фоново изображение с гръцка тематика" class="hero" role="img">
 <span class="hero-letter" style="top: 77%; left: 69%; animation-delay: 1.43s;">Χ</span>
 <span class="hero-letter" style="top: 9%; left: 47%; animation-delay: 2.79s;">Κ</span>
@@ -1320,112 +2595,130 @@ nav a{font-size:clamp(.9rem,1.05vw,1.08rem)!important;padding:.82rem 1.2rem!impo
 @media(prefers-reduced-motion:reduce){.academy-redesigned .academy-button,.how-step{transition:none!important;transform:none!important}}
 </style>
 <section class="home-section bilingual-intro reveal" id="bilingual-intro">
-<h2 class="section-heading">Преводи и езиково съдействие / Μεταφράσεις και γλωσσική υποστήριξη</h2>
-<article class="section-flip-card flip-card intro-flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><h3><svg aria-label="България" class="flag flag-inline" role="img" viewbox="0 0 5 3"><rect fill="#fff" height="1" width="5"></rect><rect fill="#00966E" height="1" width="5" y="1"></rect><rect fill="#D62612" height="1" width="5" y="2"></rect></svg> Български език</h3><p><strong>Професионални преводи от и на гръцки език</strong> – писмени и устни преводи, заверки, легализация на документи, Апостил и езиково съдействие при административни, правни, медицински, бизнес и имотни въпроси, свързани с Гърция.</p><button aria-label="Прочети на гръцки/Διαβάστε στα ελληνικά" class="flip-card-button" type="button">Прочети на гръцки/Διαβάστε στα ελληνικά <span>↗</span></button></div><div class="flip-card-face flip-card-back"><h3><svg aria-label="Ελλάδα" class="flag flag-inline" role="img" viewbox="0 0 27 18"><rect fill="#0D5EAF" height="18" width="27"></rect><path d="M5,0V11 M0,5H10 M10,3H27 M10,7H27 M0,11H27 M0,15H27" fill="none" stroke="#fff" stroke-width="2"></path></svg> Ελληνικά</h3><p><strong>Επαγγελματικές μεταφράσεις από και προς την ελληνική γλώσσα</strong> – γραπτές και προφορικές μεταφράσεις, επικυρώσεις, νομιμοποίηση εγγράφων, Apostille και γλωσσική υποστήριξη σε διοικητικά, νομικά, ιατρικά, επαγγελματικά και κτηματομεσιτικά θέματα που αφορούν την Ελλάδα.</p><button aria-label="Върни на български" class="flip-card-button flip-back-button" type="button">Български <span>↩</span></button></div></div></article>
+<h2 class="section-heading"><span class="global-bg-text">Преводи и езиково съдействие</span><span class="global-gr-text">Μεταφράσεις και γλωσσική υποστήριξη</span></h2>
+<article class="section-flip-card flip-card intro-flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><p><strong>Професионални преводи от и на гръцки език</strong> – писмени и устни преводи, заверки, легализация на документи, Апостил и езиково съдействие при административни, правни, медицински, бизнес и имотни въпроси, свързани с Гърция.</p><p class="intro-extra">Получавате лично отношение, ясна комуникация и прецизна работа, съобразена с целта на всеки документ или ситуация. От първия контакт до готовия резултат се стремим процесът да бъде лесен, предвидим и професионално организиран.</p></div><div class="flip-card-face flip-card-back"><p><strong>Επαγγελματικές μεταφράσεις από και προς την ελληνική γλώσσα</strong> – γραπτές και προφορικές μεταφράσεις, επικυρώσεις, νομιμοποίηση εγγράφων, Apostille και γλωσσική υποστήριξη σε διοικητικά, νομικά, ιατρικά, επαγγελματικά και κτηματομεσιτικά θέματα που αφορούν την Ελλάδα.</p><p class="intro-extra">Λαμβάνετε προσωπική αντιμετώπιση, σαφή επικοινωνία και προσεκτική εργασία, προσαρμοσμένη στον σκοπό κάθε εγγράφου ή περίστασης. Από την πρώτη επικοινωνία έως το τελικό αποτέλεσμα, στόχος είναι μια απλή, ξεκάθαρη και επαγγελματικά οργανωμένη διαδικασία.</p></div></div></article>
 </section>
 <section class="home-section reveal" id="about">
-<h2 class="section-heading"><span class="section-icon">👤</span>За мен / Σχετικά με εμένα</h2>
-<article class="section-flip-card flip-card about-flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><div class="flip-language-label"><svg aria-label="България" class="flag flag-inline language-label-flag" role="img" viewbox="0 0 5 3"><rect fill="#fff" height="1" width="5"></rect><rect fill="#00966E" height="1" width="5" y="1"></rect><rect fill="#D62612" height="1" width="5" y="2"></rect></svg>Български език</div><p>Казвам се <strong>Пламен Асенов Моллов</strong> и съм заклет преводач от и на гръцки език с над 17 години опит. Завършил съм специалност „Български език и новогръцки език“ в ПУ „Паисий Хилендарски“ – гр. Пловдив.</p><p>Участвал съм в престижната програма <strong>Сократ – Еразъм</strong> в Солунския университет „Аристотел“, където усъвършенствах знанията си по гръцки език и култура. Професионалната ми работа обхваща както писмени преводи на документи и текстове, така и устен превод при конкретни ситуации в България и Гърция.</p><p>Работя с внимание към точността на терминологията, смисъла и контекста, като се стремя всеки текст да бъде ясен, коректен и подходящ за конкретната му употреба. При необходимост съдействам и при заверки, легализация и административни процедури.</p><button aria-label="Прочети на гръцки/Διαβάστε στα ελληνικά" class="flip-card-button" type="button">Прочети на гръцки/Διαβάστε στα ελληνικά <span>↗</span></button></div><div class="flip-card-face flip-card-back"><div class="flip-language-label"><svg aria-label="Ελλάδα" class="flag flag-inline language-label-flag" role="img" viewbox="0 0 27 18"><rect fill="#0D5EAF" height="18" width="27"></rect><path d="M5,0V11 M0,5H10 M10,3H27 M10,7H27 M0,11H27 M0,15H27" fill="none" stroke="#fff" stroke-width="2"></path></svg>Ελληνικά</div><p>Ονομάζομαι <strong>Πλάμεν Ασένοβ Μόλλοβ</strong> και είμαι επίσημος μεταφραστής από και προς την ελληνική γλώσσα, με εμπειρία άνω των 17 ετών. Σπούδασα „Βουλγαρική και Νεοελληνική Φιλολογία“ στο Πανεπιστήμιο της Φιλιππούπολης «Παΐσιι Χιλεντάρσκι».</p><p>Συμμετείχα στο πρόγραμμα <strong>Socrates – Erasmus</strong> στο Αριστοτέλειο Πανεπιστήμιο Θεσσαλονίκης, όπου ενίσχυσα τις γλωσσικές και πολιτισμικές μου γνώσεις. Η επαγγελματική μου δραστηριότητα περιλαμβάνει τόσο γραπτές μεταφράσεις εγγράφων και κειμένων όσο και προφορική διερμηνεία σε συγκεκριμένες επαγγελματικές και διοικητικές περιστάσεις στη Βουλγαρία και στην Ελλάδα.</p><p>Δίνω ιδιαίτερη προσοχή στην ακρίβεια της ορολογίας, στο νόημα και στο πλαίσιο κάθε κειμένου, ώστε το τελικό αποτέλεσμα να είναι σαφές, σωστό και κατάλληλο για τον σκοπό για τον οποίο προορίζεται. Όπου απαιτείται, παρέχω επίσης υποστήριξη σχετικά με επικυρώσεις, νομιμοποίηση εγγράφων και διοικητικές διαδικασίες.</p><button aria-label="Върни на български" class="flip-card-button flip-back-button" type="button">Български <span>↩</span></button></div></div></article>
-<div class="about-highlights">
-<div class="highlight"><b>17+ години</b><span>професионален опит<br/>17+ χρόνια επαγγελματικής εμπειρίας</span></div>
-<div class="highlight"><b class="language-flags"><svg aria-label="България" class="flag flag-inline" role="img" viewbox="0 0 5 3"><rect fill="#fff" height="1" width="5"></rect><rect fill="#00966E" height="1" width="5" y="1"></rect><rect fill="#D62612" height="1" width="5" y="2"></rect></svg><span>↔</span><svg aria-label="Ελλάδα" class="flag flag-inline" role="img" viewbox="0 0 27 18"><rect fill="#0D5EAF" height="18" width="27"></rect><path d="M5,0V11 M0,5H10 M10,3H27 M10,7H27 M0,11H27 M0,15H27" fill="none" stroke="#fff" stroke-width="2"></path></svg></b><span>преводи в двете посоки<br/>μεταφράσεις και προς τις δύο κατευθύνσεις</span></div>
-<div class="highlight"><b>Точност / Ακρίβεια</b><span>ясен и прецизен подход<br/>σαφής και ακριβής προσέγγιση</span></div>
-</div>
+<h2 class="section-heading"><span class="section-icon">👤</span><span class="global-bg-text">За мен</span><span class="global-gr-text">Σχετικά με εμένα</span></h2>
+<article class="section-flip-card flip-card about-flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><p>Казвам се <strong>Пламен Асенов Моллов</strong> и съм заклет преводач от и на гръцки език с над 17 години опит. Завършил съм специалност „Български език и новогръцки език“ в ПУ „Паисий Хилендарски“ – гр. Пловдив.</p><p>Участвал съм в престижната програма <strong>Сократ – Еразъм</strong> в Солунския университет „Аристотел“, където усъвършенствах знанията си по гръцки език и култура. Професионалната ми работа обхваща както писмени преводи на документи и текстове, така и устен превод при конкретни ситуации в България и Гърция.</p><p>Работя с внимание към точността на терминологията, смисъла и контекста, като се стремя всеки текст да бъде ясен, коректен и подходящ за конкретната му употреба. При необходимост съдействам и при заверки, легализация и административни процедури.</p></div><div class="flip-card-face flip-card-back"><p>Ονομάζομαι <strong>Πλάμεν Ασένοβ Μόλλοβ</strong> και είμαι επίσημος μεταφραστής από και προς την ελληνική γλώσσα, με εμπειρία άνω των 17 ετών. Σπούδασα „Βουλγαρική και Νεοελληνική Φιλολογία“ στο Πανεπιστήμιο της Φιλιππούπολης «Παΐσιι Χιλεντάρσκι».</p><p>Συμμετείχα στο πρόγραμμα <strong>Socrates – Erasmus</strong> στο Αριστοτέλειο Πανεπιστήμιο Θεσσαλονίκης, όπου ενίσχυσα τις γλωσσικές και πολιτισμικές μου γνώσεις. Η επαγγελματική μου δραστηριότητα περιλαμβάνει τόσο γραπτές μεταφράσεις εγγράφων και κειμένων όσο και προφορική διερμηνεία σε συγκεκριμένες επαγγελματικές και διοικητικές περιστάσεις στη Βουλγαρία και στην Ελλάδα.</p><p>Δίνω ιδιαίτερη προσοχή στην ακρίβεια της ορολογίας, στο νόημα και στο πλαίσιο κάθε κειμένου, ώστε το τελικό αποτέλεσμα να είναι σαφές, σωστό και κατάλληλο για τον σκοπό για τον οποίο προορίζεται. Όπου απαιτείται, παρέχω επίσης υποστήριξη σχετικά με επικυρώσεις, νομιμοποίηση εγγράφων και διοικητικές διαδικασίες.</p></div></div></article>
+<div class="about-highlights"><div class="highlight experience-card"><div aria-hidden="true" class="experience-icon">⏳</div><b><span class="global-bg-text">17+ години</span><span class="global-gr-text">17+ χρόνια</span></b><span class="experience-desc"><span class="global-bg-text">професионален опит</span><span class="global-gr-text">επαγγελματικής εμπειρίας</span></span></div><div class="highlight experience-card"><div aria-hidden="true" class="experience-icon experience-flags"><svg aria-label="Български език" class="final-flag bg-flag" role="img" viewbox="0 0 36 24">
+<rect fill="#D62612" height="24" width="36"></rect><rect fill="#00966E" height="16" width="36"></rect><rect fill="#FFFFFF" height="8" width="36"></rect>
+</svg><svg aria-label="Ελληνικά" class="final-flag gr-flag" role="img" viewbox="0 0 36 24">
+<rect fill="#FFFFFF" height="24" width="36"></rect>
+<rect fill="#0D5EAF" height="2.6667" width="36" y="0"></rect>
+<rect fill="#0D5EAF" height="2.6667" width="36" y="5.3333"></rect>
+<rect fill="#0D5EAF" height="2.6667" width="36" y="10.6667"></rect>
+<rect fill="#0D5EAF" height="2.6667" width="36" y="16"></rect>
+<rect fill="#0D5EAF" height="2.6667" width="36" y="21.3333"></rect>
+<rect fill="#0D5EAF" height="13.3333" width="14.4"></rect>
+<rect fill="#FFFFFF" height="13.3333" width="3.7333" x="5.3333"></rect>
+<rect fill="#FFFFFF" height="3.7333" width="14.4" y="4.8"></rect>
+</svg></div><b><span class="global-bg-text">преводи в двете посоки</span><span class="global-gr-text">μεταφράσεις και προς τις δύο κατευθύνσεις</span></b><span class="experience-desc"><span class="global-bg-text">преводи на български и гръцки език</span><span class="global-gr-text">μεταφράσεις στα βουλγαρικά και στα ελληνικά</span></span></div><div class="highlight experience-card"><div aria-hidden="true" class="experience-icon">✦</div><b><span class="global-bg-text">Точност</span><span class="global-gr-text">Ακρίβεια</span></b><span class="experience-desc"><span class="global-bg-text">ясен и прецизен подход</span><span class="global-gr-text">σαφής και ακριβής προσέγγιση</span></span></div></div>
 </section>
 <section class="home-section reveal" id="services">
-<h2 class="section-heading"><span class="section-icon">✦</span>Услуги / Υπηρεσίες</h2>
+<h2 class="section-heading"><span class="section-icon">✦</span><span class="global-bg-text">Услуги</span><span class="global-gr-text">Υπηρεσίες</span></h2>
 <div class="service-group">
-<h3 class="service-group-title">✍️ Писмени преводи / Γραπτές μεταφράσεις</h3>
+<h3 class="service-group-title"><span aria-hidden="true" class="paired-icon">✍️</span><span class="global-bg-text">Писмени преводи</span><span class="global-gr-text">Γραπτές μεταφράσεις</span> </h3>
 <div class="service-grid">
-<article class="service-card flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><h4><span class="title-icon">📄</span> Общински и граждански документи</h4><p>Превод на актове за раждане, брак и смърт, удостоверения, декларации, пълномощни и други документи, издавани от общини и граждански служби. Подходящо за административни процедури, кандидатстване и представяне на документи пред институции в България и Гърция.</p><button aria-label="Прочети на гръцки/Διαβάστε στα ελληνικά" class="flip-card-button" type="button">Прочети на гръцки/Διαβάστε στα ελληνικά <span>↗</span></button></div><div class="flip-card-face flip-card-back"><h4><span class="title-icon">📄</span> Δημοτικά και ληξιαρχικά έγγραφα</h4><p>Μετάφραση ληξιαρχικών πράξεων γέννησης, γάμου και θανάτου, πιστοποιητικών, δηλώσεων, εξουσιοδοτήσεων και άλλων εγγράφων που εκδίδονται από δήμους και ληξιαρχικές υπηρεσίες. Κατάλληλο για διοικητικές διαδικασίες και υποβολή εγγράφων σε υπηρεσίες στη Βουλγαρία και στην Ελλάδα.</p><button aria-label="Върни на български" class="flip-card-button flip-back-button" type="button">Български <span>↩</span></button></div></div></article>
-<article class="service-card flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><h4><span class="title-icon">⚖️</span> Правни и съдебни документи</h4><p>Превод на договори, съдебни книжа, декларации, пълномощни, удостоверения и други правни документи. Работя с внимание към юридическата терминология, формулировките и смисъла на документа, за да бъде преводът ясен и подходящ за конкретното му предназначение.</p><button aria-label="Прочети на гръцки/Διαβάστε στα ελληνικά" class="flip-card-button" type="button">Прочети на гръцки/Διαβάστε στα ελληνικά <span>↗</span></button></div><div class="flip-card-face flip-card-back"><h4><span class="title-icon">⚖️</span> Νομικά και δικαστικά έγγραφα</h4><p>Μετάφραση συμβάσεων, δικαστικών εγγράφων, δηλώσεων, εξουσιοδοτήσεων, πιστοποιητικών και άλλων νομικών εγγράφων. Δίνεται ιδιαίτερη προσοχή στη νομική ορολογία, στη διατύπωση και στο νόημα του εγγράφου, ώστε η μετάφραση να είναι σαφής και κατάλληλη για τη συγκεκριμένη χρήση.</p><button aria-label="Върни на български" class="flip-card-button flip-back-button" type="button">Български <span>↩</span></button></div></div></article>
-<article class="service-card flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><h4><span class="title-icon">⚕️</span> Медицински документи</h4><p>Превод на медицински удостоверения, епикризи, резултати от изследвания, медицински становища и друга документация. Терминологията се предава прецизно и последователно, особено когато документите са предназначени за лекар, клиника, здравна институция или административна процедура.</p><button aria-label="Прочети на гръцки/Διαβάστε στα ελληνικά" class="flip-card-button" type="button">Прочети на гръцки/Διαβάστε στα ελληνικά <span>↗</span></button></div><div class="flip-card-face flip-card-back"><h4><span class="title-icon">⚕️</span> Ιατρικά έγγραφα</h4><p>Μετάφραση ιατρικών βεβαιώσεων, γνωματεύσεων, αποτελεσμάτων εξετάσεων και λοιπής ιατρικής τεκμηρίωσης. Η ιατρική ορολογία αποδίδεται με ακρίβεια και συνέπεια, ιδιαίτερα όταν τα έγγραφα προορίζονται για ιατρό, κλινική, υγειονομική υπηρεσία ή διοικητική διαδικασία.</p><button aria-label="Върни на български" class="flip-card-button flip-back-button" type="button">Български <span>↩</span></button></div></div></article>
-<article class="service-card flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><h4><span class="title-icon">▣</span> Специализирани и други текстове</h4><p>Превод на професионални, технически, бизнес и други специализирани материали, съобразен с конкретната област. При необходимост се отделя специално внимание на терминологията, контекста и предназначението на текста, за да се запази точният му смисъл.</p><button aria-label="Прочети на гръцки/Διαβάστε στα ελληνικά" class="flip-card-button" type="button">Прочети на гръцки/Διαβάστε στα ελληνικά <span>↗</span></button></div><div class="flip-card-face flip-card-back"><h4><span class="title-icon">▣</span> Εξειδικευμένα και λοιπά κείμενα</h4><p>Μετάφραση επαγγελματικών, τεχνικών, επιχειρηματικών και άλλων εξειδικευμένων κειμένων, ανάλογα με το αντικείμενο. Όπου απαιτείται, δίνεται ιδιαίτερη προσοχή στην ορολογία, στο πλαίσιο και στον σκοπό του κειμένου, ώστε να αποδίδεται με ακρίβεια το περιεχόμενό του.</p><button aria-label="Върни на български" class="flip-card-button flip-back-button" type="button">Български <span>↩</span></button></div></div></article>
-<article class="service-card flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><h4><span class="title-icon">🌐</span> Уебсайтове и онлайн магазини</h4><p>Превод и езикова адаптация на съдържание за уебсайтове, онлайн магазини, продуктови описания, представяния и дигитални материали. Освен буквалния превод се следи текстът да звучи естествено и убедително за гръцкоговорящата аудитория.</p><button aria-label="Прочети на гръцки/Διαβάστε στα ελληνικά" class="flip-card-button" type="button">Прочети на гръцки/Διαβάστε στα ελληνικά <span>↗</span></button></div><div class="flip-card-face flip-card-back"><h4><span class="title-icon">🌐</span> Ιστότοποι και ηλεκτρονικά καταστήματα</h4><p>Μετάφραση και γλωσσική προσαρμογή περιεχομένου για ιστοτόπους, ηλεκτρονικά καταστήματα, περιγραφές προϊόντων, παρουσιάσεις και ψηφιακό υλικό. Εκτός από την ακριβή μετάφραση, δίνεται προσοχή ώστε το κείμενο να ακούγεται φυσικό και κατανοητό στο ελληνόφωνο κοινό.</p><button aria-label="Върни на български" class="flip-card-button flip-back-button" type="button">Български <span>↩</span></button></div></div></article>
-<article class="service-card flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><h4><span class="title-icon">✎</span> Литературни текстове</h4><p>Превод на литературни и художествени текстове с внимание към смисъла, стила, изразните средства и естественото звучене. Целта е да се запази характерът на оригинала, като същевременно текстът звучи плавно и естествено на целевия език.</p><button aria-label="Прочети на гръцки/Διαβάστε στα ελληνικά" class="flip-card-button" type="button">Прочети на гръцки/Διαβάστε στα ελληνικά <span>↗</span></button></div><div class="flip-card-face flip-card-back"><h4><span class="title-icon">✎</span> Λογοτεχνικά κείμενα</h4><p>Μετάφραση λογοτεχνικών και καλλιτεχνικών κειμένων με έμφαση στο νόημα, το ύφος, τα εκφραστικά μέσα και τη φυσική απόδοση. Στόχος είναι να διατηρείται ο χαρακτήρας του πρωτοτύπου, ενώ το κείμενο να διαβάζεται ομαλά και φυσικά στη γλώσσα-στόχο.</p><button aria-label="Върни на български" class="flip-card-button flip-back-button" type="button">Български <span>↩</span></button></div></div></article>
+<article class="service-card flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><h4><span class="title-icon">📄</span> Общински и граждански документи</h4><p>Превод на актове за раждане, брак и смърт, удостоверения, декларации, пълномощни и други документи, издавани от общини и граждански служби. Подходящо за административни процедури, кандидатстване и представяне на документи пред институции в България и Гърция.</p></div><div class="flip-card-face flip-card-back"><h4><span class="title-icon">📄</span> Δημοτικά και ληξιαρχικά έγγραφα</h4><p>Μετάφραση ληξιαρχικών πράξεων γέννησης, γάμου και θανάτου, πιστοποιητικών, δηλώσεων, εξουσιοδοτήσεων και άλλων εγγράφων που εκδίδονται από δήμους και ληξιαρχικές υπηρεσίες. Κατάλληλο για διοικητικές διαδικασίες και υποβολή εγγράφων σε υπηρεσίες στη Βουλγαρία και στην Ελλάδα.</p></div></div></article>
+<article class="service-card flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><h4><span class="title-icon">⚖️</span> Правни и съдебни документи</h4><p>Превод на договори, съдебни книжа, декларации, пълномощни, удостоверения и други правни документи. Работя с внимание към юридическата терминология, формулировките и смисъла на документа, за да бъде преводът ясен и подходящ за конкретното му предназначение.</p></div><div class="flip-card-face flip-card-back"><h4><span class="title-icon">⚖️</span> Νομικά και δικαστικά έγγραφα</h4><p>Μετάφραση συμβάσεων, δικαστικών εγγράφων, δηλώσεων, εξουσιοδοτήσεων, πιστοποιητικών και άλλων νομικών εγγράφων. Δίνεται ιδιαίτερη προσοχή στη νομική ορολογία, στη διατύπωση και στο νόημα του εγγράφου, ώστε η μετάφραση να είναι σαφής και κατάλληλη για τη συγκεκριμένη χρήση.</p></div></div></article>
+<article class="service-card flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><h4><span class="title-icon">⚕️</span> Медицински документи</h4><p>Превод на медицински удостоверения, епикризи, резултати от изследвания, медицински становища и друга документация. Терминологията се предава прецизно и последователно, особено когато документите са предназначени за лекар, клиника, здравна институция или административна процедура.</p></div><div class="flip-card-face flip-card-back"><h4><span class="title-icon">⚕️</span> Ιατρικά έγγραφα</h4><p>Μετάφραση ιατρικών βεβαιώσεων, γνωματεύσεων, αποτελεσμάτων εξετάσεων και λοιπής ιατρικής τεκμηρίωσης. Η ιατρική ορολογία αποδίδεται με ακρίβεια και συνέπεια, ιδιαίτερα όταν τα έγγραφα προορίζονται για ιατρό, κλινική, υγειονομική υπηρεσία ή διοικητική διαδικασία.</p></div></div></article>
+<article class="service-card flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><h4><span class="title-icon">▣</span> Специализирани и други текстове</h4><p>Превод на професионални, технически, бизнес и други специализирани материали, съобразен с конкретната област. При необходимост се отделя специално внимание на терминологията, контекста и предназначението на текста, за да се запази точният му смисъл.</p></div><div class="flip-card-face flip-card-back"><h4><span class="title-icon">▣</span> Εξειδικευμένα και λοιπά κείμενα</h4><p>Μετάφραση επαγγελματικών, τεχνικών, επιχειρηματικών και άλλων εξειδικευμένων κειμένων, ανάλογα με το αντικείμενο. Όπου απαιτείται, δίνεται ιδιαίτερη προσοχή στην ορολογία, στο πλαίσιο και στον σκοπό του κειμένου, ώστε να αποδίδεται με ακρίβεια το περιεχόμενό του.</p></div></div></article>
+<article class="service-card flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><h4><span class="title-icon">🌐</span> Уебсайтове и онлайн магазини</h4><p>Превод и езикова адаптация на съдържание за уебсайтове, онлайн магазини, продуктови описания, представяния и дигитални материали. Освен буквалния превод се следи текстът да звучи естествено и убедително за гръцкоговорящата аудитория.</p></div><div class="flip-card-face flip-card-back"><h4><span class="title-icon">🌐</span> Ιστότοποι και ηλεκτρονικά καταστήματα</h4><p>Μετάφραση και γλωσσική προσαρμογή περιεχομένου για ιστοτόπους, ηλεκτρονικά καταστήματα, περιγραφές προϊόντων, παρουσιάσεις και ψηφιακό υλικό. Εκτός από την ακριβή μετάφραση, δίνεται προσοχή ώστε το κείμενο να ακούγεται φυσικό και κατανοητό στο ελληνόφωνο κοινό.</p></div></div></article>
+<article class="service-card flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><h4><span class="title-icon">✎</span> Литературни текстове</h4><p>Превод на литературни и художествени текстове с внимание към смисъла, стила, изразните средства и естественото звучене. Целта е да се запази характерът на оригинала, като същевременно текстът звучи плавно и естествено на целевия език.</p></div><div class="flip-card-face flip-card-back"><h4><span class="title-icon">✎</span> Λογοτεχνικά κείμενα</h4><p>Μετάφραση λογοτεχνικών και καλλιτεχνικών κειμένων με έμφαση στο νόημα, το ύφος, τα εκφραστικά μέσα και τη φυσική απόδοση. Στόχος είναι να διατηρείται ο χαρακτήρας του πρωτοτύπου, ενώ το κείμενο να διαβάζεται ομαλά και φυσικά στη γλώσσα-στόχο.</p></div></div></article>
 </div>
 </div>
 <section class="home-section how-it-works-section reveal" id="how-it-works">
 <div class="how-it-works-heading">
 <div class="how-it-works-icon">✨</div>
 <div>
-<h2 class="section-heading how-title">Как работи услугата / Πώς λειτουργεί η υπηρεσία</h2>
-<p class="how-subtitle">Четири ясни стъпки от изпращането на документа до получаването на крайния резултат / Τέσσερα σαφή βήματα από την αποστολή του εγγράφου έως την παραλαβή του τελικού αποτελέσματος</p>
+<h2 class="section-heading how-title"><span class="global-bg-text">Как работи услугата</span><span class="global-gr-text">Πώς λειτουργεί η υπηρεσία</span></h2>
+<p class="how-subtitle"><span class="global-bg-text">Четири ясни стъпки от изпращането на документа до получаването на крайния резултат</span><span class="global-gr-text">Τέσσερα σαφή βήματα από την αποστολή του εγγράφου έως την παραλαβή του τελικού αποτελέσματος</span></p>
 </div>
 </div>
 <div class="how-steps">
-<article class="how-step"><div class="how-number">1</div><h3>Изпращате документа</h3><p>Στέλνετε το έγγραφο</p></article>
-<article class="how-step"><div class="how-number">2</div><h3>Уточняваме услугата</h3><p>Καθορίζουμε την υπηρεσία</p></article>
-<article class="how-step"><div class="how-number">3</div><h3>Извършваме превода</h3><p>Πραγματοποιούμε τη μετάφραση</p></article>
-<article class="how-step"><div class="how-number">4</div><h3>Получавате готовия резултат</h3><p>Παραλαμβάνετε το τελικό αποτέλεσμα</p></article>
+<article class="how-step"><div class="how-number">1</div><h3 class="global-bg-block">Изпращате документа</h3><p class="global-gr-block">Στέλνετε το έγγραφο</p></article>
+<article class="how-step"><div class="how-number">2</div><h3 class="global-bg-block">Уточняваме услугата</h3><p class="global-gr-block">Καθορίζουμε την υπηρεσία</p></article>
+<article class="how-step"><div class="how-number">3</div><h3 class="global-bg-block">Извършваме превода</h3><p class="global-gr-block">Πραγματοποιούμε τη μετάφραση</p></article>
+<article class="how-step"><div class="how-number">4</div><h3 class="global-bg-block">Получавате готовия резултат</h3><p class="global-gr-block">Παραλαμβάνετε το τελικό αποτέλεσμα</p></article>
 </div>
 </section>
 <div class="service-group">
-<h3 class="service-group-title">📑 Апостил, легализация и нотариална заверка / Apostille, νομιμοποίηση και συμβολαιογραφική επικύρωση</h3>
+<h3 class="service-group-title"><span aria-hidden="true" class="paired-icon">📑</span><span class="global-bg-text">Апостил, легализация и нотариална заверка</span><span class="global-gr-text">Apostille, νομιμοποίηση και συμβολαιογραφική επικύρωση</span> </h3>
 <div class="service-grid legal-grid">
-<article class="service-card legal-card flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><h4><span class="title-icon">📜</span> Апостил</h4><p>Съдействие при подготовката и оформянето на документи за поставяне на Апостил според предназначението им.</p><button aria-label="Прочети на гръцки/Διαβάστε στα ελληνικά" class="flip-card-button" type="button">Прочети на гръцки/Διαβάστε στα ελληνικά <span>↗</span></button></div><div class="flip-card-face flip-card-back"><h4><span class="title-icon">📜</span> Apostille</h4><p>Υποστήριξη στην προετοιμασία και διεκπεραίωση εγγράφων για την επισημείωση Apostille, ανάλογα με τη χρήση τους.</p><button aria-label="Върни на български" class="flip-card-button flip-back-button" type="button">Български <span>↩</span></button></div></div></article>
-<article class="service-card legal-card flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><h4><span class="title-icon">🌍</span> Легализация на документи</h4><p>Съдействие при необходимите заверки и легализация на документи за използване пред съответните институции.</p><button aria-label="Прочети на гръцки/Διαβάστε στα ελληνικά" class="flip-card-button" type="button">Прочети на гръцки/Διαβάστε στα ελληνικά <span>↗</span></button></div><div class="flip-card-face flip-card-back"><h4><span class="title-icon">🌍</span> Νομιμοποίηση εγγράφων</h4><p>Υποστήριξη στις απαιτούμενες επικυρώσεις και στη νομιμοποίηση εγγράφων για χρήση ενώπιον των αρμόδιων αρχών.</p><button aria-label="Върни на български" class="flip-card-button flip-back-button" type="button">Български <span>↩</span></button></div></div></article>
-<article class="service-card legal-card flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><h4><span class="title-icon">🖋️</span> Заверка при нотариус</h4><p>Езиково съдействие и организация при нотариална заверка на документи, пълномощни и други необходими документи.</p><button aria-label="Прочети на гръцки/Διαβάστε στα ελληνικά" class="flip-card-button" type="button">Прочети на гръцки/Διαβάστε στα ελληνικά <span>↗</span></button></div><div class="flip-card-face flip-card-back"><h4><span class="title-icon">🖋️</span> Συμβολαιογραφική επικύρωση</h4><p>Γλωσσική υποστήριξη και συντονισμός για συμβολαιογραφική επικύρωση εγγράφων, εξουσιοδοτήσεων και λοιπών απαραίτητων εγγράφων.</p><button aria-label="Върни на български" class="flip-card-button flip-back-button" type="button">Български <span>↩</span></button></div></div></article>
+<article class="service-card legal-card flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><h4><span class="title-icon">📜</span> Апостил</h4><p>Съдействие при подготовката и оформянето на документи за поставяне на Апостил според предназначението им. При необходимост съдействам и с насоки относно последващите стъпки и предназначението на документа, така че подготовката му за използване в друга държава да бъде ясна и добре организирана.</p></div><div class="flip-card-face flip-card-back"><h4><span class="title-icon">📜</span> Apostille</h4><p>Υποστήριξη στην προετοιμασία και διεκπεραίωση εγγράφων για την επισημείωση Apostille, ανάλογα με τη χρήση τους. Όπου απαιτείται, παρέχω επίσης καθοδήγηση σχετικά με τα επόμενα βήματα και τον σκοπό του εγγράφου, ώστε η προετοιμασία του για χρήση σε άλλη χώρα να είναι σαφής και σωστά οργανωμένη.</p></div></div></article>
+<article class="service-card legal-card flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><h4><span class="title-icon">🌍</span> Легализация на документи</h4><p>Съдействие при необходимите заверки и легализация на документи за използване пред съответните институции. Съдействието включва уточняване на необходимите заверки според вида и предназначението на документа, както и насоки за правилното му представяне пред съответната институция.</p></div><div class="flip-card-face flip-card-back"><h4><span class="title-icon">🌍</span> Νομιμοποίηση εγγράφων</h4><p>Υποστήριξη στις απαιτούμενες επικυρώσεις και στη νομιμοποίηση εγγράφων για χρήση ενώπιον των αρμόδιων αρχών. Η υποστήριξη περιλαμβάνει διευκρίνιση των απαιτούμενων επικυρώσεων ανάλογα με το είδος και τον σκοπό του εγγράφου, καθώς και καθοδήγηση για την ορθή υποβολή του στην αρμόδια υπηρεσία.</p></div></div></article>
+<article class="service-card legal-card flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><h4><span class="title-icon">🖋️</span> Заверка при нотариус</h4><p>Езиково съдействие и организация при нотариална заверка на документи, пълномощни и други необходими документи. При нотариални процедури се обръща особено внимание на точната комуникация, разбирането на съдържанието и спокойното протичане на подписването и заверката на документите.</p></div><div class="flip-card-face flip-card-back"><h4><span class="title-icon">🖋️</span> Συμβολαιογραφική επικύρωση</h4><p style="font-size:0.86rem;line-height:1.52">Γλωσσική υποστήριξη και συντονισμός για συμβολαιογραφική επικύρωση εγγράφων, εξουσιοδοτήσεων και λοιπών απαραίτητων εγγράφων. Κατά τις συμβολαιογραφικές διαδικασίες δίνεται ιδιαίτερη προσοχή στην ακριβή επικοινωνία, στην κατανόηση του περιεχομένου και στην ομαλή διεξαγωγή της υπογραφής και της επικύρωσης των εγγράφων.</p></div></div></article>
 </div>
 </div>
 <div class="service-group oral-translation-group">
-<h3 class="service-group-title">🎙️ Устни преводи / Προφορική διερμηνεία</h3>
+<h3 class="service-group-title"><span aria-hidden="true" class="paired-icon">🎙️</span><span class="global-bg-text">Устни преводи</span><span class="global-gr-text">Προφορική διερμηνεία</span></h3>
 <div class="service-grid">
-<article class="service-card flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><h4><span class="title-icon">🤝</span> Бизнес срещи и преговори</h4><p>Устен превод при делови срещи, преговори, презентации и партньорски разговори между български и гръцки език. Съдействието е насочено към точна комуникация, правилно разбиране на договореностите и спокойно водене на професионален разговор.</p><button aria-label="Прочети на гръцки/Διαβάστε στα ελληνικά" class="flip-card-button" type="button">Прочети на гръцки/Διαβάστε στα ελληνικά <span>↗</span></button></div><div class="flip-card-face flip-card-back"><h4><span class="title-icon">🤝</span> Επαγγελματικές συναντήσεις και διαπραγματεύσεις</h4><p>Διερμηνεία σε επαγγελματικές συναντήσεις, διαπραγματεύσεις, παρουσιάσεις και συζητήσεις μεταξύ βουλγαρόφωνων και ελληνόφωνων πλευρών. Η υποστήριξη αποσκοπεί στην ακριβή επικοινωνία, στη σωστή κατανόηση των συμφωνηθέντων και στην ομαλή διεξαγωγή της επαγγελματικής συζήτησης.</p><button aria-label="Върни на български" class="flip-card-button flip-back-button" type="button">Български <span>↩</span></button></div></div></article>
-<article class="service-card flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><h4><span class="title-icon">🏛️</span> Институции, нотариуси и адвокати</h4><p>Езиково съдействие и устен превод при посещения в държавни и общински институции, нотариални кантори, адвокатски кантори и други официални места. Помагам при комуникацията и изясняването на необходимите документи и административни стъпки.</p><button aria-label="Прочети на гръцки/Διαβάστε στα ελληνικά" class="flip-card-button" type="button">Прочети на гръцки/Διαβάστε στα ελληνικά <span>↗</span></button></div><div class="flip-card-face flip-card-back"><h4><span class="title-icon">🏛️</span> Υπηρεσίες, συμβολαιογράφοι και δικηγόροι</h4><p>Γλωσσική υποστήριξη και διερμηνεία σε δημόσιες και δημοτικές υπηρεσίες, συμβολαιογραφεία, δικηγορικά γραφεία και άλλους επίσημους φορείς. Η υποστήριξη αφορά την επικοινωνία και την καλύτερη κατανόηση των απαιτούμενων εγγράφων και διοικητικών διαδικασιών.</p><button aria-label="Върни на български" class="flip-card-button flip-back-button" type="button">Български <span>↩</span></button></div></div></article>
-<article class="service-card flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><h4><span class="title-icon">🏠</span> Недвижими имоти и сделки</h4><p>Устен превод при огледи, срещи с брокери, нотариуси и адвокати, както и при подписване на договори и нотариални актове. Съдействието помага при обсъждане на условията по сделката и при комуникацията между български и гръцки страни.</p><button aria-label="Прочети на гръцки/Διαβάστε στα ελληνικά" class="flip-card-button" type="button">Прочети на гръцки/Διαβάστε στα ελληνικά <span>↗</span></button></div><div class="flip-card-face flip-card-back"><h4><span class="title-icon">🏠</span> Ακίνητα και συναλλαγές</h4><p>Διερμηνεία σε επισκέψεις ακινήτων, συναντήσεις με μεσίτες, συμβολαιογράφους και δικηγόρους, καθώς και κατά την υπογραφή συμβάσεων και συμβολαιογραφικών πράξεων. Η υποστήριξη διευκολύνει την κατανόηση των όρων της συναλλαγής και την επικοινωνία μεταξύ βουλγαρικής και ελληνικής πλευράς.</p><button aria-label="Върни на български" class="flip-card-button flip-back-button" type="button">Български <span>↩</span></button></div></div></article>
-<article class="service-card flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><h4><span class="title-icon">🚗</span> Автомобили и административни процедури</h4><p>Езиково съдействие при административни процедури, свързани с автомобили, регистрация, документи, институции и други действия в България и Гърция. Подходящо е когато е необходимо разбиране на документи и комуникация с местни служби.</p><button aria-label="Прочети на гръцки/Διαβάστε στα ελληνικά" class="flip-card-button" type="button">Прочети на гръцки/Διαβάστε στα ελληνικά <span>↗</span></button></div><div class="flip-card-face flip-card-back"><h4><span class="title-icon">🚗</span> Αυτοκίνητα και διοικητικές διαδικασίες</h4><p>Γλωσσική υποστήριξη σε διοικητικές διαδικασίες που αφορούν αυτοκίνητα, ταξινόμηση, έγγραφα, υπηρεσίες και άλλες διαδικασίες στη Βουλγαρία και στην Ελλάδα. Η υπηρεσία είναι χρήσιμη όταν απαιτείται κατανόηση εγγράφων και επικοινωνία με τοπικές υπηρεσίες.</p><button aria-label="Върни на български" class="flip-card-button flip-back-button" type="button">Български <span>↩</span></button></div></div></article>
-<article class="service-card flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><h4><span class="title-icon">🎓</span> Обучения, семинари и събития</h4><p>Устен превод при обучения, семинари, презентации, конференции и професионални събития. Подходът е съобразен с темпото и характера на събитието, така че информацията да бъде предадена ясно и последователно.</p><button aria-label="Прочети на гръцки/Διαβάστε στα ελληνικά" class="flip-card-button" type="button">Прочети на гръцки/Διαβάστε στα ελληνικά <span>↗</span></button></div><div class="flip-card-face flip-card-back"><h4><span class="title-icon">🎓</span> Εκπαιδεύσεις, σεμινάρια και εκδηλώσεις</h4><p>Διερμηνεία σε εκπαιδεύσεις, σεμινάρια, παρουσιάσεις, συνέδρια και επαγγελματικές εκδηλώσεις. Η διερμηνεία προσαρμόζεται στον ρυθμό και στον χαρακτήρα της εκδήλωσης, ώστε οι πληροφορίες να μεταδίδονται με σαφήνεια και συνέπεια.</p><button aria-label="Върни на български" class="flip-card-button flip-back-button" type="button">Български <span>↩</span></button></div></div></article>
-<article class="service-card flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><h4><span class="title-icon">💻</span> Телефонни и онлайн разговори</h4><p>Езиково посредничество при телефонни разговори, видеосрещи, онлайн консултации и дистанционна комуникация. Подходящо е когато двете страни трябва да обсъдят конкретен въпрос, документ, услуга или административна процедура без присъствена среща.</p><button aria-label="Прочети на гръцки/Διαβάστε στα ελληνικά" class="flip-card-button" type="button">Прочети на гръцки/Διαβάστε στα ελληνικά <span>↗</span></button></div><div class="flip-card-face flip-card-back"><h4><span class="title-icon">💻</span> Τηλεφωνικές και διαδικτυακές συνομιλίες</h4><p>Γλωσσική υποστήριξη σε τηλεφωνικές συνομιλίες, βιντεοκλήσεις, διαδικτυακές συναντήσεις και εξ αποστάσεως επικοινωνία. Είναι κατάλληλη όταν τα δύο μέρη χρειάζεται να συζητήσουν συγκεκριμένο θέμα, έγγραφο, υπηρεσία ή διοικητική διαδικασία χωρίς συνάντηση από κοντά.</p><button aria-label="Върни на български" class="flip-card-button flip-back-button" type="button">Български <span>↩</span></button></div></div></article>
+<article class="service-card flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><h4><span class="title-icon">🤝</span> Бизнес срещи и преговори</h4><p>Устен превод при делови срещи, преговори, презентации и партньорски разговори между български и гръцки език. Съдействието е насочено към точна комуникация, правилно разбиране на договореностите и спокойно водене на професионален разговор.</p></div><div class="flip-card-face flip-card-back"><h4><span class="title-icon">🤝</span> Επαγγελματικές συναντήσεις και διαπραγματεύσεις</h4><p>Διερμηνεία σε επαγγελματικές συναντήσεις, διαπραγματεύσεις, παρουσιάσεις και συζητήσεις μεταξύ βουλγαρόφωνων και ελληνόφωνων πλευρών. Η υποστήριξη αποσκοπεί στην ακριβή επικοινωνία, στη σωστή κατανόηση των συμφωνηθέντων και στην ομαλή διεξαγωγή της επαγγελματικής συζήτησης.</p></div></div></article>
+<article class="service-card flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><h4><span class="title-icon">🏛️</span> Институции, нотариуси и адвокати</h4><p>Езиково съдействие и устен превод при посещения в държавни и общински институции, нотариални кантори, адвокатски кантори и други официални места. Помагам при комуникацията и изясняването на необходимите документи и административни стъпки.</p></div><div class="flip-card-face flip-card-back"><h4><span class="title-icon">🏛️</span> Υπηρεσίες, συμβολαιογράφοι και δικηγόροι</h4><p>Γλωσσική υποστήριξη και διερμηνεία σε δημόσιες και δημοτικές υπηρεσίες, συμβολαιογραφεία, δικηγορικά γραφεία και άλλους επίσημους φορείς. Η υποστήριξη αφορά την επικοινωνία και την καλύτερη κατανόηση των απαιτούμενων εγγράφων και διοικητικών διαδικασιών.</p></div></div></article>
+<article class="service-card flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><h4><span class="title-icon">🏠</span> Недвижими имоти и сделки</h4><p>Устен превод при огледи, срещи с брокери, нотариуси и адвокати, както и при подписване на договори и нотариални актове. Съдействието помага при обсъждане на условията по сделката и при комуникацията между български и гръцки страни.</p></div><div class="flip-card-face flip-card-back"><h4><span class="title-icon">🏠</span> Ακίνητα και συναλλαγές</h4><p>Διερμηνεία σε επισκέψεις ακινήτων, συναντήσεις με μεσίτες, συμβολαιογράφους και δικηγόρους, καθώς και κατά την υπογραφή συμβάσεων και συμβολαιογραφικών πράξεων. Η υποστήριξη διευκολύνει την κατανόηση των όρων της συναλλαγής και την επικοινωνία μεταξύ βουλγαρικής και ελληνικής πλευράς.</p></div></div></article>
+<article class="service-card flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><h4><span class="title-icon">🚗</span> Автомобили и административни процедури</h4><p>Езиково съдействие при административни процедури, свързани с автомобили, регистрация, документи, институции и други действия в България и Гърция. Подходящо е когато е необходимо разбиране на документи и комуникация с местни служби.</p></div><div class="flip-card-face flip-card-back"><h4><span class="title-icon">🚗</span> Αυτοκίνητα και διοικητικές διαδικασίες</h4><p>Γλωσσική υποστήριξη σε διοικητικές διαδικασίες που αφορούν αυτοκίνητα, ταξινόμηση, έγγραφα, υπηρεσίες και άλλες διαδικασίες στη Βουλγαρία και στην Ελλάδα. Η υπηρεσία είναι χρήσιμη όταν απαιτείται κατανόηση εγγράφων και επικοινωνία με τοπικές υπηρεσίες.</p></div></div></article>
+<article class="service-card flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><h4><span class="title-icon">🎓</span> Обучения, семинари и събития</h4><p>Устен превод при обучения, семинари, презентации, конференции и професионални събития. Подходът е съобразен с темпото и характера на събитието, така че информацията да бъде предадена ясно и последователно.</p></div><div class="flip-card-face flip-card-back"><h4><span class="title-icon">🎓</span> Εκπαιδεύσεις, σεμινάρια και εκδηλώσεις</h4><p>Διερμηνεία σε εκπαιδεύσεις, σεμινάρια, παρουσιάσεις, συνέδρια και επαγγελματικές εκδηλώσεις. Η διερμηνεία προσαρμόζεται στον ρυθμό και στον χαρακτήρα της εκδήλωσης, ώστε οι πληροφορίες να μεταδίδονται με σαφήνεια και συνέπεια.</p></div></div></article>
+<article class="service-card flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><h4><span class="title-icon">💻</span> Телефонни и онлайн разговори</h4><p>Езиково посредничество при телефонни разговори, видеосрещи, онлайн консултации и дистанционна комуникация. Подходящо е когато двете страни трябва да обсъдят конкретен въпрос, документ, услуга или административна процедура без присъствена среща.</p></div><div class="flip-card-face flip-card-back"><h4><span class="title-icon">💻</span> Τηλεφωνικές και διαδικτυακές συνομιλίες</h4><p>Γλωσσική υποστήριξη σε τηλεφωνικές συνομιλίες, βιντεοκλήσεις, διαδικτυακές συναντήσεις και εξ αποστάσεως επικοινωνία. Είναι κατάλληλη όταν τα δύο μέρη χρειάζεται να συζητήσουν συγκεκριμένο θέμα, έγγραφο, υπηρεσία ή διοικητική διαδικασία χωρίς συνάντηση από κοντά.</p></div></div></article>
 </div>
-<div class="service-note"><p><strong>Устни преводи:</strong> при професионални, административни и лични ситуации, когато е необходимо точно разбиране между двете страни.</p><p><strong>Προφορική διερμηνεία:</strong> για επαγγελματικές, διοικητικές και προσωπικές περιστάσεις όπου απαιτείται ακριβής κατανόηση μεταξύ των δύο πλευρών.</p></div>
+<div class="service-note"><div class="global-bg-text oral-note-block"><div class="oral-note-heading"><span aria-hidden="true" class="inline-note-icon">🎙️</span><strong>Устни преводи:</strong></div><p>за професионални, административни и лични ситуации, при които е необходимо точно и спокойно разбиране между български и гръцки език. Съдействието може да включва срещи, институции, нотариални и адвокатски процедури, както и други конкретни ситуации, при които езиковата точност е от съществено значение.</p></div><div class="global-gr-text oral-note-block"><div class="oral-note-heading"><span aria-hidden="true" class="inline-note-icon">🎙️</span><strong>Προφορική διερμηνεία:</strong></div><p>για επαγγελματικές, διοικητικές και προσωπικές περιστάσεις όπου απαιτείται ακριβής και άμεση κατανόηση μεταξύ της βουλγαρικής και της ελληνικής γλώσσας. Η υποστήριξη μπορεί να αφορά συναντήσεις, δημόσιες υπηρεσίες, συμβολαιογραφικές και δικηγορικές διαδικασίες, καθώς και κάθε άλλη περίπτωση όπου η γλωσσική ακρίβεια είναι ουσιαστική.</p></div></div>
 </div>
 </section>
 <section class="home-section real-estate reveal" id="real-estate">
-<h2 class="section-heading"><span class="section-icon">🏠</span>Недвижими имоти в Гърция / Ακίνητα στην Ελλάδα</h2>
-<article class="section-flip-card flip-card real-estate-flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><h3><svg aria-label="България" class="flag flag-inline" role="img" viewbox="0 0 5 3"><rect fill="#fff" height="1" width="5"></rect><rect fill="#00966E" height="1" width="5" y="1"></rect><rect fill="#D62612" height="1" width="5" y="2"></rect></svg> Консултантски услуги и устен превод при имотни сделки в Гърция</h3><p>При покупка или продажба на недвижими имоти в Гърция е важно да имате доверен партньор, който да ви съдейства с езика, процедурите и културните особености. Предлагам пълно съдействие и устен превод на място, така че да разбирате какво се случва на всяка стъпка от процеса.</p><ul class="re-list">
+<h2 class="section-heading"><span class="section-icon">🏠</span><span class="global-bg-text">Недвижими имоти в Гърция</span><span class="global-gr-text">Ακίνητα στην Ελλάδα</span></h2>
+<article class="section-flip-card flip-card real-estate-flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><h3><svg aria-label="Български език" class="global-lang-flag bulgarian-flag" role="img" viewbox="0 0 36 24">
+<rect fill="#D62612" height="24" width="36"></rect>
+<rect fill="#00966E" height="16" width="36"></rect>
+<rect fill="#FFFFFF" height="8" width="36"></rect>
+</svg> Консултантски услуги и устен превод при имотни сделки в Гърция</h3><p>При покупка или продажба на недвижими имоти в Гърция е важно да имате доверен партньор, който да ви съдейства с езика, процедурите и културните особености. Предлагам пълно съдействие и устен превод на място, така че да разбирате какво се случва на всяка стъпка от процеса.</p><ul class="re-list">
 <li><span>🏘️</span>Устен превод при покупко-продажба на недвижими имоти</li>
 <li><span>📝</span>Консултации и превод при сключване на договори и нотариални актове</li>
 <li><span>💼</span>Издаване на данъчен номер (ΑΦΜ) в Гърция</li>
 <li><span>🤝</span>Придружаване до нотариус, адвокат, счетоводител и агенции за недвижими имоти</li>
 <li><span>📄</span>Превод и заверка на документи, изисквани от гръцки институции</li>
-</ul><button aria-label="Прочети на гръцки/Διαβάστε στα ελληνικά" class="flip-card-button" type="button">Прочети на гръцки/Διαβάστε στα ελληνικά <span>↗</span></button></div><div class="flip-card-face flip-card-back"><h3><svg aria-label="Ελλάδα" class="flag flag-inline" role="img" viewbox="0 0 27 18"><rect fill="#0D5EAF" height="18" width="27"></rect><path d="M5,0V11 M0,5H10 M10,3H27 M10,7H27 M0,11H27 M0,15H27" fill="none" stroke="#fff" stroke-width="2"></path></svg> Συμβουλευτικές υπηρεσίες και διερμηνεία για συναλλαγές ακινήτων στην Ελλάδα</h3><p>Κατά την αγορά ή πώληση ακινήτου στην Ελλάδα είναι σημαντικό να έχετε έναν αξιόπιστο συνεργάτη που γνωρίζει τόσο τη γλώσσα όσο και τη διαδικασία. Παρέχω υποστήριξη και διερμηνεία επιτόπου, ώστε να κατανοείτε με σαφήνεια κάθε στάδιο της διαδικασίας.</p><ul class="re-list">
+</ul></div><div class="flip-card-face flip-card-back"><h3> Συμβουλευτικές υπηρεσίες και διερμηνεία για συναλλαγές ακινήτων στην Ελλάδα</h3><p>Κατά την αγορά ή πώληση ακινήτου στην Ελλάδα είναι σημαντικό να έχετε έναν αξιόπιστο συνεργάτη που γνωρίζει τόσο τη γλώσσα όσο και τη διαδικασία. Παρέχω υποστήριξη και διερμηνεία επιτόπου, ώστε να κατανοείτε με σαφήνεια κάθε στάδιο της διαδικασίας.</p><ul class="re-list">
 <li><span>🏘️</span>Διερμηνεία κατά την αγορά ή πώληση ακινήτων</li>
 <li><span>📝</span>Υποστήριξη και μετάφραση κατά τη σύναψη συμβάσεων και συμβολαιογραφικών πράξεων</li>
 <li><span>💼</span>Έκδοση ΑΦΜ (φορολογικού αριθμού) στην Ελλάδα</li>
 <li><span>🤝</span>Συνοδεία σε συμβολαιογράφους, δικηγόρους, λογιστές και μεσιτικά γραφεία</li>
 <li><span>📄</span>Μετάφραση και επικύρωση εγγράφων που απαιτούνται από ελληνικές υπηρεσίες</li>
-</ul><button aria-label="Върни на български" class="flip-card-button flip-back-button" type="button">Български <span>↩</span></button></div></div></article>
-<div class="re-bottom"><div class="re-callout"><strong>Спокойствие при всяка стъпка</strong>Езиковото съдействие е насочено към ясна комуникация при срещи, документи и процедури.</div><div class="re-callout"><strong>Σαφής επικοινωνία σε κάθε στάδιο</strong>Η γλωσσική υποστήριξη διευκολύνει την επικοινωνία κατά τις συναντήσεις, τα έγγραφα και τις διαδικασίες.</div></div>
+</ul></div></div></article>
+<div class="re-bottom"><div class="re-callout"><div aria-hidden="true" class="re-callout-icon">🛡️</div><strong><span class="global-bg-text">Спокойствие при всяка стъпка</span><span class="global-gr-text">Ηρεμία σε κάθε στάδιο</span></strong><p><span class="global-bg-text">Езиковото съдействие е насочено към ясна комуникация при срещи, документи и процедури.</span><span class="global-gr-text">Η γλωσσική υποστήριξη είναι προσανατολισμένη στη σαφή επικοινωνία κατά τις συναντήσεις, στα έγγραφα και στις διαδικασίες.</span></p></div><div class="re-callout"><div aria-hidden="true" class="re-callout-icon">💬</div><strong><span class="global-bg-text">Ясна комуникация</span><span class="global-gr-text">Σαφής επικοινωνία</span></strong><p><span class="global-bg-text">Получавате подкрепа при обсъждане на условия, документи и действия, така че всяка стъпка да бъде разбираема.</span><span class="global-gr-text">Παρέχεται υποστήριξη για την κατανόηση όρων, εγγράφων και ενεργειών, ώστε κάθε στάδιο της διαδικασίας να είναι σαφές.</span></p></div></div>
 </section>
 <section class="academy-section academy-redesigned reveal" id="greek-academy">
 <div class="academy-content">
 <div class="academy-copy">
-<div class="academy-kicker">🎓 БЕЗПЛАТНО ИНТЕРАКТИВНО ОБУЧЕНИЕ</div>
-<h2 class="academy-title">Академия по гръцки език</h2>
-<p class="academy-subtitle">Специален подарък за българоговорящи</p>
-<p class="academy-lead">Научи гръцки по практичен и интерактивен начин с помощта на AI – с упражнения, реални ситуации и фокус върху увереното говорене.</p>
+<div class="academy-kicker academy-bg-text">🎓 БЕЗПЛАТНО ИНТЕРАКТИВНО ОБУЧЕНИЕ</div><span class="academy-gr-text">🎓 ΔΩΡΕΑΝ ΔΙΑΔΡΑΣΤΙΚΗ ΕΚΠΑΙΔΕΥΣΗ</span>
+<h2 class="academy-title academy-bg-text">Академия по гръцки език</h2><span class="academy-gr-text">Ακαδημία Ελληνικής Γλώσσας</span>
+<p class="academy-subtitle academy-bg-text">Специален подарък за българоговорящи</p><span class="academy-gr-text">Ειδικό δώρο για βουλγαρόφωνους</span>
+<p class="academy-lead academy-bg-text">Научи гръцки по практичен и интерактивен начин с помощта на AI – с упражнения, реални ситуации и фокус върху увереното говорене.</p><span class="academy-gr-text">Μάθετε ελληνικά με πρακτικό και διαδραστικό τρόπο με τη βοήθεια της AI, μέσα από ασκήσεις, πραγματικές καταστάσεις και έμφαση στην άνετη και уверμένη χρήση της γλώσσας.</span>
 </div>
 <div class="academy-offer">
-<div class="academy-offer-icon"><svg aria-label="Ελλάδα" class="flag flag-inline" role="img" viewbox="0 0 27 18"><rect fill="#0D5EAF" height="18" width="27"></rect><path d="M5,0V11 M0,5H10 M10,3H27 M10,7H27 M0,11H27 M0,15H27" fill="none" stroke="#fff" stroke-width="2"></path></svg></div>
-<h3>За българоговорящи</h3>
-<p>Безплатно интерактивно обучение по гръцки език с AI – за всички, които искат да научат гръцки и да започнат да говорят уверено и практично.</p>
-<a class="academy-button academy-cta" href="https://academy.prevodigr.eu/" rel="noopener noreferrer" target="_blank">Научи гръцки за 10 дни <span>→</span></a>
+<div class="academy-offer-icon"><svg aria-label="Ελληνικά" class="final-flag gr-flag" role="img" viewbox="0 0 36 24" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#0D5EAF" height="24" width="36"></rect>
+<path d="M0 2.6667H36V5.3334H0ZM0 8H36V10.6667H0ZM0 13.3333H36V16H0ZM0 18.6666H36V21.3333H0Z" fill="#FFFFFF"></path>
+<rect fill="#0D5EAF" height="13.3333" width="13.3333"></rect>
+<rect fill="#FFFFFF" height="13.3333" width="4.4444" x="4.4444"></rect>
+<rect fill="#FFFFFF" height="4.4444" width="13.3333" y="4.4444"></rect>
+</svg></div>
+<h3 class="academy-bg-text">За българоговорящи</h3><span class="academy-gr-text">Για βουλγαρόφωνους</span>
+<p class="academy-bg-text">Безплатно интерактивно обучение по гръцки език с AI – за всички, които искат да научат гръцки и да започнат да говорят уверено и практично.</p><span class="academy-gr-text">Δωρεάν διαδραστική εκπαίδευση ελληνικής γλώσσας με AI για όλους όσοι θέλουν να μάθουν ελληνικά και να αρχίσουν να μιλούν με αυτοπεποίθηση και πρακτικό τρόπο.</span>
+<a class="academy-button academy-cta academy-bg-text" href="https://academy.prevodigr.eu/" rel="noopener noreferrer" target="_blank"><span class="academy-bg-text">Научи гръцки за 10 дни</span><span class="academy-gr-text">Μάθε ελληνικά σε 10 ημέρες</span><span>→</span></a>
 </div>
 </div>
 </section>
 <section class="home-section home-contact reveal" id="contact">
-<h2 class="section-heading"><span class="section-icon">☎️</span>Контакти / Επικοινωνίες</h2>
+<h2 class="section-heading"><span class="section-icon">☎️</span><span class="global-bg-text">Контакти</span><span class="global-gr-text">Επικοινωνίες</span></h2>
 <div class="contact-grid">
 <div class="contact-main">
 <div class="contact-item"><span class="ci">✉️</span><div><strong>Email</strong><br/><a href="mailto:mollovplamen@gmail.com">mollovplamen@gmail.com</a></div></div>
 <div class="contact-item"><span class="ci">✉️</span><div><strong>Email</strong><br/><a href="mailto:info@prevodigr.eu">info@prevodigr.eu</a></div></div>
-<div class="contact-item"><span class="ci">📍</span><div><strong>Град / Πόλη</strong><br/>Пловдив, България / Πλόβντιβ, Βουλγαρία</div></div>
-<div class="contact-item"><span class="ci">📞</span><div><strong>Телефон / Τηλέφωνο</strong><br/>00359 897 09 89 59</div></div>
+<div class="contact-item"><span class="ci">📍</span><div><strong><span class="global-bg-text">Град</span><span class="global-gr-text">Πόλη</span></strong><br/><span class="global-bg-text">Пловдив, България</span><span class="global-gr-text">Πλόβντιβ, Βουλγαρία</span></div></div>
+<div class="contact-item"><span class="ci">📞</span><div><strong><span class="global-bg-text">Телефон</span><span class="global-gr-text">Τηλέφωνο</span></strong><br/>00359 897 09 89 59</div></div>
 <div class="contact-actions">
 <a href="viber://chat?number=+359897098959" style="background:#665CAC;color:#fff">Viber</a>
 <a href="https://wa.me/359897098959" style="background:#075E54;color:#fff">WhatsApp</a>
-<a href="tel:+359897098959" style="background:#003366;color:#fff">📞 Позвънете сега / Καλέστε τώρα</a>
+<a href="tel:+359897098959" style="background:#003366;color:#fff"><span aria-hidden="true" class="paired-icon">📞</span><span class="global-bg-text">Позвънете сега</span><span class="global-gr-text">Καλέστε τώρα</span> </a>
 </div>
 </div>
 <div aria-hidden="true" class="contact-landmark-box">
@@ -1457,8 +2750,18 @@ document.addEventListener('DOMContentLoaded',function(){
 <button aria-label="Затвори" class="ai-assistant-close" id="aiAssistantClose" type="button">×</button>
 </div>
 <div aria-label="Избор на език" class="ai-assistant-language">
-<button class="ai-lang-btn active" data-lang="bg" type="button"><svg aria-label="България" class="flag flag-inline" role="img" viewbox="0 0 5 3"><rect fill="#fff" height="1" width="5"></rect><rect fill="#00966E" height="1" width="5" y="1"></rect><rect fill="#D62612" height="1" width="5" y="2"></rect></svg> Български</button>
-<button class="ai-lang-btn" data-lang="el" type="button"><svg aria-label="Ελλάδα" class="flag flag-inline" role="img" viewbox="0 0 27 18"><rect fill="#0D5EAF" height="18" width="27"></rect><path d="M5,0V11 M0,5H10 M10,3H27 M10,7H27 M0,11H27 M0,15H27" fill="none" stroke="#fff" stroke-width="2"></path></svg> Ελληνικά</button>
+<button class="ai-lang-btn active" data-lang="bg" type="button"><svg aria-label="Български език" class="global-lang-flag bulgarian-flag" role="img" viewbox="0 0 36 24">
+<rect fill="#D62612" height="24" width="36"></rect>
+<rect fill="#00966E" height="16" width="36"></rect>
+<rect fill="#FFFFFF" height="8" width="36"></rect>
+</svg> Български</button>
+<button class="ai-lang-btn" data-lang="el" type="button"><svg aria-label="Ελληνικά" class="final-flag gr-flag" role="img" viewbox="0 0 36 24" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#0D5EAF" height="24" width="36"></rect>
+<path d="M0 2.6667H36V5.3334H0ZM0 8H36V10.6667H0ZM0 13.3333H36V16H0ZM0 18.6666H36V21.3333H0Z" fill="#FFFFFF"></path>
+<rect fill="#0D5EAF" height="13.3333" width="13.3333"></rect>
+<rect fill="#FFFFFF" height="13.3333" width="4.4444" x="4.4444"></rect>
+<rect fill="#FFFFFF" height="4.4444" width="13.3333" y="4.4444"></rect>
+</svg> Ελληνικά</button>
 </div>
 <div class="ai-assistant-messages" id="aiAssistantMessages">
 <div class="ai-msg bot" data-bg="👋 Здравейте! Аз съм виртуалният асистент на Пламен Моллов. Мога да Ви помогна с информация за преводи, заверки, легализация, устен превод и услуги, свързани с имоти в Гърция.&lt;br&gt;&lt;br&gt;Какво бихте искали да попитате?" data-el="👋 Γεια σας! Είμαι ο εικονικός βοηθός του Πλάμεν Μόλλοβ. Μπορώ να σας βοηθήσω με πληροφορίες σχετικά με μεταφράσεις, επικυρώσεις, νομιμοποιήσεις, διερμηνεία και υπηρεσίες που αφορούν ακίνητα στην Ελλάδα.&lt;br&gt;&lt;br&gt;Τι θα θέλατε να ρωτήσετε;">
@@ -1468,7 +2771,7 @@ document.addEventListener('DOMContentLoaded',function(){
 <div class="ai-assistant-quick" id="aiQuickActions">
 <button class="ai-quick-btn" data-bg="Цена за превод" data-el="Κόστος μετάφρασης" type="button">Цена за превод</button>
 <button class="ai-quick-btn" data-bg="Превод на документ" data-el="Μετάφραση εγγράφου" type="button">Превод на документ</button>
-<button class="ai-quick-btn" data-bg="Легализация / апостил" data-el="Νομιμοποίηση / Apostille" type="button">Легализация / апостил</button>
+<button class="ai-quick-btn" data-bg="Легализация / апостил" data-el="Νομιμοποίηση / Apostille" type="button"><span class="global-bg-text">Легализация и Апостил</span><span class="global-gr-text">Νομιμοποίηση και Apostille</span></button>
 <button class="ai-quick-btn" data-bg="Имоти в Гърция" data-el="Ακίνητα στην Ελλάδα" type="button">Имоти в Гърция</button>
 <button class="ai-quick-btn" data-action="lead" data-bg="Искам индивидуална оферта" data-el="Ζητώ ατομική προσφορά" type="button">Искам индивидуална оферта</button>
 </div>
@@ -1478,10 +2781,13 @@ document.addEventListener('DOMContentLoaded',function(){
 </form>
 <div class="ai-assistant-note" id="aiAssistantNote">Можете да пишете на български или гръцки.</div>
 </div>
-<footer>
-<p>© 2025 Пламен Моллов – Заклет преводач от и на гръцки език / Επίσημος μεταφραστής από και προς την ελληνική γλώσσα</p>
-<p><svg aria-label="България" class="flag flag-inline" role="img" viewbox="0 0 5 3"><rect fill="#fff" height="1" width="5"></rect><rect fill="#00966E" height="1" width="5" y="1"></rect><rect fill="#D62612" height="1" width="5" y="2"></rect></svg> България | Ελλάδα <svg aria-label="Ελλάδα" class="flag flag-inline" role="img" viewbox="0 0 27 18"><rect fill="#0D5EAF" height="18" width="27"></rect><path d="M5,0V11 M0,5H10 M10,3H27 M10,7H27 M0,11H27 M0,15H27" fill="none" stroke="#fff" stroke-width="2"></path></svg></p>
-</footer>
+<footer><p><span class="global-bg-text">© 2025 Пламен Моллов – Заклет преводач от и на гръцки език</span><span class="global-gr-text">© 2025 Πλάμεν Μόλλοβ – Επίσημος μεταφραστής από και προς την ελληνική γλώσσα</span></p><p class="footer-language-row"><svg aria-label="Български език" class="final-flag bg-flag" role="img" viewbox="0 0 36 24"><rect fill="#D62612" height="24" width="36"></rect><rect fill="#00966E" height="16" width="36"></rect><rect fill="#FFFFFF" height="8" width="36"></rect></svg><span>България</span><span class="footer-separator">|</span><span>Ελλάδα</span><svg aria-label="Ελληνικά" class="final-flag gr-flag" role="img" viewbox="0 0 36 24" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#0D5EAF" height="24" width="36"></rect>
+<path d="M0 2.6667H36V5.3334H0ZM0 8H36V10.6667H0ZM0 13.3333H36V16H0ZM0 18.6666H36V21.3333H0Z" fill="#FFFFFF"></path>
+<rect fill="#0D5EAF" height="13.3333" width="13.3333"></rect>
+<rect fill="#FFFFFF" height="13.3333" width="4.4444" x="4.4444"></rect>
+<rect fill="#FFFFFF" height="4.4444" width="13.3333" y="4.4444"></rect>
+</svg></p></footer>
 <script>
 window.addEventListener("message", function(event) {
   if (event.origin.includes("fillout.com")) {
@@ -2171,18 +3477,39 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 </script>
-<script id="unified-bilingual-flips-script-v15">
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('.flip-card-button').forEach(function (button) {
-    button.addEventListener('click', function (event) {
-      event.preventDefault();
-      event.stopPropagation();
-      const card = button.closest('.flip-card');
-      if (!card) return;
-      const flipped = card.classList.toggle('is-flipped');
-      card.setAttribute('aria-expanded', flipped ? 'true' : 'false');
+<script id="global-language-script-v21">
+document.addEventListener('DOMContentLoaded', function(){
+  const body=document.body;
+  const buttons=document.querySelectorAll('.global-language-btn');
+
+  function setLanguage(lang){
+    const greek = lang === 'gr';
+    body.classList.toggle('global-greek', greek);
+    document.documentElement.lang = greek ? 'el' : 'bg';
+
+    buttons.forEach(function(btn){
+      btn.classList.toggle('active', btn.getAttribute('data-language') === lang);
+    });
+
+    document.querySelectorAll('.flip-card').forEach(function(card){
+      card.classList.toggle('is-flipped', greek);
+      card.setAttribute('data-language', lang);
+    });
+
+    try { localStorage.setItem('siteLanguage', lang); } catch(e) {}
+  }
+
+  buttons.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      setLanguage(btn.getAttribute('data-language'));
     });
   });
+
+  let initial = 'bg';
+  try {
+    if(localStorage.getItem('siteLanguage') === 'gr') initial='gr';
+  } catch(e) {}
+  setLanguage(initial);
 });
 </script>
 </body>
