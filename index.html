@@ -2399,37 +2399,67 @@ html,body{
 </style>
 
 
-
-
-
-<style id="about-exact-gap-mobile-v47">
+<style id="about-perfect-mobile-v48">
 @media(max-width:700px){
-  /* The About card has no artificial bottom space. */
+
+  /* Keep the About block compact and let only the active language determine its height. */
   #about .about-flip-card{
     margin:0!important;
     padding:0!important;
     min-height:0!important;
-    height:var(--about-exact-height,auto)!important;
+    height:var(--about-height-v48,auto)!important;
     overflow:visible!important;
   }
-
   #about .about-flip-card .flip-card-inner{
-    height:var(--about-exact-height,auto)!important;
+    position:relative!important;
+    width:100%!important;
     min-height:0!important;
+    height:var(--about-height-v48,auto)!important;
+    transform-style:preserve-3d!important;
+  }
+  #about .about-flip-card .flip-card-face{
+    min-height:0!important;
+    box-sizing:border-box!important;
+    overflow:visible!important;
+    padding-bottom:.72rem!important;
   }
 
+  /* Same gap as between the three cards below. */
   #about .about-highlights{
     margin-top:.7rem!important;
     gap:.7rem!important;
   }
 
-  /* Keep the exact same small bottom breathing room used inside the
-     other cards, not a large empty area. */
-  #about .about-flip-card .flip-card-face{
-    min-height:0!important;
-    box-sizing:border-box!important;
-    overflow:visible!important;
-    padding-bottom:.75rem!important;
+  /* More compact text rhythm in both language versions. */
+  #about .about-flip-card .flip-card-face p{
+    margin-bottom:.58rem!important;
+  }
+  #about .about-flip-card .flip-card-face p:last-child{
+    margin-bottom:0!important;
+  }
+}
+
+/* Subtle, different motion for BG and GR variants of the three experience cards. */
+@keyframes aboutBgFloatV48{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-2px)}
+}
+@keyframes aboutGrPulseV48{
+  0%,100%{transform:translateY(0);box-shadow:0 7px 18px rgba(0,43,92,.07)}
+  50%{transform:translateY(-2px);box-shadow:0 12px 24px rgba(0,88,145,.12)}
+}
+body:not(.global-greek) #about .experience-card{
+  animation:aboutBgFloatV48 5.5s ease-in-out infinite;
+}
+body.global-greek #about .experience-card{
+  animation:aboutGrPulseV48 4.8s ease-in-out infinite;
+}
+#about .experience-card:hover{
+  animation-play-state:paused!important;
+}
+@media(prefers-reduced-motion:reduce){
+  #about .experience-card{
+    animation:none!important;
   }
 }
 </style>
@@ -3629,42 +3659,43 @@ document.addEventListener('DOMContentLoaded',function(){
 </script>
 
 
-<script id="about-exact-gap-mobile-script-v47">
-document.addEventListener('DOMContentLoaded', function(){
+<script id="about-perfect-mobile-v48-script">
+document.addEventListener('DOMContentLoaded',function(){
   const card=document.querySelector('#about .about-flip-card');
   if(!card) return;
 
   const inner=card.querySelector('.flip-card-inner');
   const front=card.querySelector('.flip-card-front');
   const back=card.querySelector('.flip-card-back');
-  const highlights=card.nextElementSibling;
-  if(!inner || !front || !back) return;
+  if(!inner||!front||!back) return;
 
-  function measuredHeight(face){
+  function textHeight(face){
     const clone=face.cloneNode(true);
 
-    // Make a completely independent measurement box.
-    clone.className = face.className;
-    clone.style.cssText = [
+    // Strip inherited flip/layout classes from the measurement clone.
+    clone.classList.remove('flip-card-face','flip-card-front','flip-card-back');
+    clone.className='about-measurement-face';
+
+    clone.style.cssText=[
       'position:absolute',
-      'inset:auto auto auto 0',
-      'top:0',
       'left:0',
+      'top:0',
       'width:'+card.clientWidth+'px',
       'height:auto',
       'min-height:0',
       'max-height:none',
-      'overflow:visible',
+      'padding:1rem .95rem .72rem',
+      'margin:0',
       'display:block',
       'visibility:hidden',
+      'opacity:0',
+      'overflow:visible',
       'transform:none',
-      'backface-visibility:visible',
-      '-webkit-backface-visibility:visible',
       'box-sizing:border-box',
-      'padding-bottom:.75rem'
+      'font-family:Poppins,Segoe UI,Arial,sans-serif'
     ].join(';');
 
-    card.appendChild(clone);
+    document.body.appendChild(clone);
     const h=Math.ceil(clone.scrollHeight);
     clone.remove();
     return h;
@@ -3672,35 +3703,34 @@ document.addEventListener('DOMContentLoaded', function(){
 
   function fit(){
     if(!window.matchMedia('(max-width:700px)').matches){
-      card.style.removeProperty('--about-exact-height');
+      card.style.removeProperty('--about-height-v48');
+      inner.style.removeProperty('height');
+      front.style.removeProperty('height');
+      back.style.removeProperty('height');
       return;
     }
 
-    const isGreek=document.body.classList.contains('global-greek');
-    const active=isGreek ? back : front;
+    const greek=document.body.classList.contains('global-greek');
+    const active=greek ? back : front;
+    const h=textHeight(active);
 
-    // The height is based on the currently visible language only.
-    const h=measuredHeight(active);
-    // Only a small breathing space before the next card.
+    // Exactly a small internal bottom breathing space; no artificial extension.
     const total=Math.max(1,h);
-    card.style.setProperty('--about-exact-height', total+'px');
-
-    // Make both faces occupy exactly the same card box.
+    card.style.setProperty('--about-height-v48',total+'px');
     inner.style.height=total+'px';
     front.style.height=total+'px';
     back.style.height=total+'px';
   }
 
+  // Run after fonts/layout have settled.
   fit();
-  window.addEventListener('load', function(){ setTimeout(fit,80); }, {passive:true});
-  window.addEventListener('resize', function(){ setTimeout(fit,50); }, {passive:true});
-
-  if(document.fonts && document.fonts.ready){
-    document.fonts.ready.then(function(){ setTimeout(fit,80); });
+  window.addEventListener('load',()=>setTimeout(fit,100),{passive:true});
+  window.addEventListener('resize',()=>setTimeout(fit,70),{passive:true});
+  if(document.fonts&&document.fonts.ready){
+    document.fonts.ready.then(()=>setTimeout(fit,100));
   }
-
-  document.querySelectorAll('.global-language-btn').forEach(function(btn){
-    btn.addEventListener('click', function(){ setTimeout(fit,140); });
+  document.querySelectorAll('.global-language-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>setTimeout(fit,180));
   });
 });
 </script>
