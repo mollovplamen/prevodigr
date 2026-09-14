@@ -2397,150 +2397,39 @@ html,body{
   }
 }
 </style>
-<style id="about-mobile-natural-height-v43">
+
+
+
+
+
+<style id="about-exact-gap-mobile-v47">
 @media(max-width:700px){
-
-  /* „За мен“ се оразмерява по реалния текст и не позволява
-     гръцкият последен ред да влиза в първата карта отдолу. */
-  #about .about-flip-card{
-    min-height:0!important;
-    height:auto!important;
-    margin-bottom:.7rem!important;
-    overflow:visible!important;
-  }
-
-  #about .about-flip-card .flip-card-inner{
-    display:grid!important;
-    grid-template-columns:minmax(0,1fr)!important;
-    width:100%!important;
-    height:auto!important;
-    min-height:0!important;
-    transform-style:preserve-3d!important;
-  }
-
-  #about .about-flip-card .flip-card-face{
-    grid-area:1/1!important;
-    position:relative!important;
-    inset:auto!important;
-    width:100%!important;
-    height:auto!important;
-    min-height:0!important;
-    box-sizing:border-box!important;
-    overflow:visible!important;
-  }
-
-  #about .about-flip-card .flip-card-front{
-    z-index:2!important;
-  }
-
-  #about .about-flip-card .flip-card-back{
-    position:relative!important;
-    transform:rotateY(180deg)!important;
-    z-index:1!important;
-  }
-
-  /* Малък, равен с останалите секции отстъп преди трите карти. */
-  #about .about-highlights{
-    margin-top:.7rem!important;
-  }
-
-  /* Финален ред текст да не докосва долния край. */
-  #about .about-flip-card .flip-card-face{
-    padding-bottom:.9rem!important;
-  }
-}
-</style>
-<style id="bg-about-spacing-v44">
-@media(max-width:700px){
-  /* Българският вариант: разстоянието от края на текста
-     до следващите три карти е същото като между самите карти. */
-  body:not(.global-greek) #about .about-flip-card{
-    margin-bottom:0!important;
-  }
-  body:not(.global-greek) #about .about-highlights{
-    margin-top:.7rem!important;
-    gap:.7rem!important;
-  }
-}
-</style>
-<style id="about-tight-mobile-spacing-v45">
-@media (max-width:700px){
-
-  /* The About card must end where its content ends. */
-  #about .about-flip-card{
-    height:auto!important;
-    min-height:0!important;
-    margin:0!important;
-    padding:0!important;
-    overflow:visible!important;
-    box-sizing:border-box!important;
-  }
-
-  #about .about-flip-card .flip-card-inner{
-    display:grid!important;
-    grid-template-columns:minmax(0,1fr)!important;
-    position:relative!important;
-    width:100%!important;
-    height:auto!important;
-    min-height:0!important;
-    box-sizing:border-box!important;
-    transform-style:preserve-3d!important;
-  }
-
-  #about .about-flip-card .flip-card-face{
-    grid-area:1/1!important;
-    position:relative!important;
-    inset:auto!important;
-    width:100%!important;
-    height:auto!important;
-    min-height:0!important;
-    box-sizing:border-box!important;
-    overflow:visible!important;
-    padding:1rem .95rem .75rem!important;
-  }
-
-  #about .about-flip-card .flip-card-front{
-    z-index:2!important;
-  }
-
-  #about .about-flip-card .flip-card-back{
-    position:relative!important;
-    inset:auto!important;
-    transform:rotateY(180deg)!important;
-    z-index:1!important;
-  }
-
-  /* Exact small separation before the first experience card. */
-  #about .about-highlights{
-    margin-top:.7rem!important;
-    gap:.7rem!important;
-  }
-}
-</style>
-
-<style id="about-active-language-height-v46">
-@media(max-width:700px){
-  /* За „За мен“ височината на картата следва САМО текущо видимия език.
-     Така българският вариант няма да наследява по-високата гръцка страна. */
+  /* The About card has no artificial bottom space. */
   #about .about-flip-card{
     margin:0!important;
     padding:0!important;
+    min-height:0!important;
+    height:var(--about-exact-height,auto)!important;
     overflow:visible!important;
-    min-height:0!important;
-    height:var(--about-active-height,auto)!important;
   }
+
   #about .about-flip-card .flip-card-inner{
-    height:var(--about-active-height,auto)!important;
+    height:var(--about-exact-height,auto)!important;
     min-height:0!important;
   }
+
+  #about .about-highlights{
+    margin-top:.7rem!important;
+    gap:.7rem!important;
+  }
+
+  /* Keep the exact same small bottom breathing room used inside the
+     other cards, not a large empty area. */
   #about .about-flip-card .flip-card-face{
     min-height:0!important;
     box-sizing:border-box!important;
     overflow:visible!important;
-  }
-  #about .about-highlights{
-    margin-top:.7rem!important;
-    gap:.7rem!important;
+    padding-bottom:.75rem!important;
   }
 }
 </style>
@@ -3739,74 +3628,79 @@ document.addEventListener('DOMContentLoaded',function(){
 });
 </script>
 
-<script id="about-active-language-height-script-v46">
-document.addEventListener('DOMContentLoaded',function(){
+
+<script id="about-exact-gap-mobile-script-v47">
+document.addEventListener('DOMContentLoaded', function(){
   const card=document.querySelector('#about .about-flip-card');
   if(!card) return;
+
   const inner=card.querySelector('.flip-card-inner');
   const front=card.querySelector('.flip-card-front');
   const back=card.querySelector('.flip-card-back');
-  if(!inner||!front||!back) return;
+  const highlights=card.nextElementSibling;
+  if(!inner || !front || !back) return;
 
-  function readHeight(face){
-    const original={
-      position:face.style.position,
-      inset:face.style.inset,
-      width:face.style.width,
-      height:face.style.height,
-      minHeight:face.style.minHeight,
-      display:face.style.display,
-      transform:face.style.transform,
-      visibility:face.style.visibility,
-      margin:face.style.margin,
-      gridArea:face.style.gridArea
-    };
-    face.style.position='absolute';
-    face.style.inset='0 auto auto 0';
-    face.style.width='100%';
-    face.style.height='auto';
-    face.style.minHeight='0';
-    face.style.display='block';
-    face.style.transform='none';
-    face.style.visibility='hidden';
-    face.style.margin='0';
-    face.style.gridArea='auto';
-    const h=Math.ceil(face.scrollHeight);
-    face.style.position=original.position;
-    face.style.inset=original.inset;
-    face.style.width=original.width;
-    face.style.height=original.height;
-    face.style.minHeight=original.minHeight;
-    face.style.display=original.display;
-    face.style.transform=original.transform;
-    face.style.visibility=original.visibility;
-    face.style.margin=original.margin;
-    face.style.gridArea=original.gridArea;
+  function measuredHeight(face){
+    const clone=face.cloneNode(true);
+
+    // Make a completely independent measurement box.
+    clone.className = face.className;
+    clone.style.cssText = [
+      'position:absolute',
+      'inset:auto auto auto 0',
+      'top:0',
+      'left:0',
+      'width:'+card.clientWidth+'px',
+      'height:auto',
+      'min-height:0',
+      'max-height:none',
+      'overflow:visible',
+      'display:block',
+      'visibility:hidden',
+      'transform:none',
+      'backface-visibility:visible',
+      '-webkit-backface-visibility:visible',
+      'box-sizing:border-box',
+      'padding-bottom:.75rem'
+    ].join(';');
+
+    card.appendChild(clone);
+    const h=Math.ceil(clone.scrollHeight);
+    clone.remove();
     return h;
   }
 
-  function apply(){
+  function fit(){
     if(!window.matchMedia('(max-width:700px)').matches){
-      card.style.removeProperty('--about-active-height');
+      card.style.removeProperty('--about-exact-height');
       return;
     }
-    const fh=readHeight(front);
-    const bh=readHeight(back);
-    const activeGreek=document.body.classList.contains('global-greek');
-    const active=Math.max(1,activeGreek?bh:fh);
-    // Small bottom breathing room only, comparable to the gap between cards.
-    const total=active+12;
-    card.style.setProperty('--about-active-height',total+'px');
+
+    const isGreek=document.body.classList.contains('global-greek');
+    const active=isGreek ? back : front;
+
+    // The height is based on the currently visible language only.
+    const h=measuredHeight(active);
+    // Only a small breathing space before the next card.
+    const total=Math.max(1,h);
+    card.style.setProperty('--about-exact-height', total+'px');
+
+    // Make both faces occupy exactly the same card box.
+    inner.style.height=total+'px';
+    front.style.height=total+'px';
+    back.style.height=total+'px';
   }
 
-  apply();
-  window.addEventListener('load',()=>setTimeout(apply,80),{passive:true});
-  window.addEventListener('resize',()=>setTimeout(apply,60),{passive:true});
-  if(document.fonts&&document.fonts.ready){
-    document.fonts.ready.then(()=>setTimeout(apply,80));
+  fit();
+  window.addEventListener('load', function(){ setTimeout(fit,80); }, {passive:true});
+  window.addEventListener('resize', function(){ setTimeout(fit,50); }, {passive:true});
+
+  if(document.fonts && document.fonts.ready){
+    document.fonts.ready.then(function(){ setTimeout(fit,80); });
   }
-  document.querySelectorAll('.global-language-btn').forEach(btn=>{
-    btn.addEventListener('click',()=>setTimeout(apply,140));
+
+  document.querySelectorAll('.global-language-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){ setTimeout(fit,140); });
   });
 });
 </script>
