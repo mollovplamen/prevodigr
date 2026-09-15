@@ -2478,6 +2478,105 @@ body.global-greek #about .experience-card{
   #about .experience-card{animation:none!important}
 }
 </style>
+
+<style id="real-estate-enhanced-v51">
+/* По-изразително представяне на секцията „Недвижими имоти“ — без промяна на съдържанието */
+#real-estate .real-estate-flip-card{
+  border-radius:24px!important;
+  overflow:visible!important;
+  box-shadow:0 14px 34px rgba(0,43,92,.10)!important;
+}
+#real-estate .real-estate-flip-card .flip-card-front,
+#real-estate .real-estate-flip-card .flip-card-back{
+  padding:clamp(1.35rem,3vw,2rem)!important;
+  background:linear-gradient(145deg,#ffffff 0%,#f7fbfe 100%)!important;
+}
+#real-estate .real-estate-flip-card h3{
+  display:flex!important;
+  align-items:flex-start!important;
+  gap:.65rem!important;
+  margin:0 0 1rem!important;
+  padding-bottom:.85rem!important;
+  border-bottom:1px solid #d8e7f1!important;
+  color:#003b70!important;
+  font-size:clamp(1.08rem,2vw,1.35rem)!important;
+  line-height:1.42!important;
+}
+#real-estate .real-estate-flip-card h3::before{
+  content:'🏠';
+  width:38px;height:38px;flex:0 0 38px;
+  display:grid;place-items:center;
+  border-radius:12px;
+  background:#e8f4fc;
+  border:1px solid #cfe3f0;
+  font-size:1.15rem;
+  box-shadow:0 5px 14px rgba(0,70,120,.08);
+  animation:reHouseFloat 3.8s ease-in-out infinite;
+}
+#real-estate .real-estate-flip-card h3 svg{margin-top:.35rem!important}
+#real-estate .real-estate-flip-card p{
+  margin:0 0 1rem!important;
+  padding:1rem 1.05rem!important;
+  border-left:4px solid #2f91c8!important;
+  border-radius:0 15px 15px 0!important;
+  background:linear-gradient(100deg,#eef7fd 0%,#f8fbfe 100%)!important;
+  color:#46677f!important;
+  font-size:clamp(.94rem,1.35vw,1.03rem)!important;
+  line-height:1.72!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.9)!important;
+}
+#real-estate .real-estate-flip-card .re-list{
+  gap:.55rem!important;
+}
+#real-estate .real-estate-flip-card .re-list li{
+  position:relative!important;
+  padding:.68rem .72rem!important;
+  background:#fff!important;
+  border:1px solid #e0ecf3!important;
+  box-shadow:0 5px 13px rgba(0,43,92,.045)!important;
+  transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease!important;
+}
+#real-estate .real-estate-flip-card .re-list li:hover{
+  transform:translateX(4px);
+  border-color:#c4ddea!important;
+  box-shadow:0 8px 18px rgba(0,43,92,.08)!important;
+}
+@keyframes reHouseFloat{
+  0%,100%{transform:translateY(0) rotate(0deg)}
+  50%{transform:translateY(-3px) rotate(-1deg)}
+}
+@media(max-width:700px){
+  #real-estate .real-estate-flip-card .flip-card-front,
+  #real-estate .real-estate-flip-card .flip-card-back{
+    padding:1.05rem!important;
+  }
+  #real-estate .real-estate-flip-card h3{
+    gap:.55rem!important;
+    margin-bottom:.75rem!important;
+    padding-bottom:.7rem!important;
+    font-size:.99rem!important;
+  }
+  #real-estate .real-estate-flip-card h3::before{
+    width:34px;height:34px;flex-basis:34px;font-size:1rem;
+  }
+  #real-estate .real-estate-flip-card p{
+    margin-bottom:.8rem!important;
+    padding:.82rem .85rem!important;
+    font-size:.88rem!important;
+    line-height:1.62!important;
+  }
+  #real-estate .real-estate-flip-card .re-list li{
+    padding:.58rem .6rem!important;
+    font-size:.86rem!important;
+    line-height:1.5!important;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  #real-estate .real-estate-flip-card h3::before{animation:none!important}
+  #real-estate .real-estate-flip-card .re-list li{transition:none!important}
+}
+</style>
+
 </head>
 <body>
 <header class="site-header">
@@ -3675,3 +3774,27 @@ document.addEventListener('DOMContentLoaded',function(){
 
 </body>
 </html>
+<style id="ai-language-buttons-single-line-v50">
+/* AI assistant language buttons: keep both labels on one line on every screen. */
+.ai-assistant-language .ai-lang-btn{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  flex-wrap:nowrap!important;
+  white-space:nowrap!important;
+  gap:8px!important;
+  min-width:0!important;
+}
+.ai-assistant-language .ai-lang-btn svg{
+  flex:0 0 auto!important;
+  display:block!important;
+}
+@media (max-width:420px){
+  .ai-assistant-language .ai-lang-btn{
+    padding-left:6px!important;
+    padding-right:6px!important;
+    gap:7px!important;
+    font-size:.72rem!important;
+  }
+}
+</style>
