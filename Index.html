@@ -1,0 +1,3804 @@
+
+<!DOCTYPE html>
+
+<html lang="bg">
+<head>
+<link as="font" crossorigin="" href="assets/fonts/poppins-v23-latin-regular.woff2" importance="low" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="assets/fonts/poppins-v23-latin-500.woff2" importance="low" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="assets/fonts/poppins-v23-latin-600.woff2" importance="low" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="assets/fonts/poppins-v23-latin-700.woff2" importance="low" rel="preload" type="font/woff2"/>
+<link as="image" fetchpriority="high" href="assets/images/bg-greece.webp" rel="preload"/>
+<!-- Favicon икони за всички устройства -->
+<link href="/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/site.webmanifest" rel="manifest"/>
+<link href="/web-app-manifest-192x192.png" rel="icon" sizes="192x192" type="image/png"/>
+<link href="/web-app-manifest-512x512.png" rel="icon" sizes="512x512" type="image/png"/>
+<meta content="#ffffff" name="theme-color"/>
+<meta content="#003366" name="msapplication-TileColor"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Пламен Моллов – Преводачески услуги с гръцки език в Пловдив – устни, писмени преводи, заверка и легализация на документи</title>
+<style>
+
+/* Оптимизация за рендериране */
+section:not(#services) {
+  content-visibility: auto;
+  contain-intrinsic-size: 1000px;
+}
+.hero-letter {
+  will-change: transform, opacity;
+}
+
+    
+/* GDPR checkbox styling */
+.gdpr-label {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+.gdpr-label input[type="checkbox"] {
+  margin: 0;
+  transform: scale(1.1);
+}
+
+body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #fff, #f0f8ff);
+      color: #333;
+    }
+    header {
+      background-color: #002b5c;
+      color: white;
+      padding: 0.5rem 1rem;
+      text-align: center;
+    }
+    header h1, header h2 {
+      margin-top: -0.8rem;
+    }
+    header img {
+      height: 220px;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      background-color: #0055a5;
+      padding: 0.5rem;
+    }
+    
+    
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.1rem;
+      padding: 0.9rem 1.5rem;
+      margin: 0.4rem;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    nav a:hover {
+      background-color: rgba(255, 255, 255, 0.25);
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    .hero {
+  position: relative;
+  background-image: url('assets/images/bg-greece.webp');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: white;
+  width: 100%;
+  aspect-ratio: 16 / 4;
+  overflow: hidden;
+}
+    
+    .hero h1, .hero p {
+      position: relative;
+      z-index: 1;
+    }
+    section {
+      padding: 2rem;
+      background-color: white;
+      margin: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #003366;
+    }
+    .testimonial {
+      background-color: #f0f8ff;
+      padding: 1rem;
+      border-left: 4px solid #003366;
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+    .testimonial strong {
+      display: block;
+      margin-top: 0.5rem;
+      text-align: right;
+      color: #003366;
+    }
+    form {
+      background-color: #e6f2ff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input, textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+  background-color: #003366;
+  color: white;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+  position: relative;
+}
+button:hover {
+  background-color: #0055a5;
+}
+button:active {
+  transform: scale(0.96);
+}
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(20deg); }
+  50% { transform: rotate(-10deg); }
+  75% { transform: rotate(10deg); }
+  100% { transform: rotate(0deg); }
+}
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #003366;
+      color: white;
+    }
+
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+  header img {
+    height: 120px;
+  }
+  header h1 {
+    font-size: 1.4rem;
+  }
+  header h2 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  header img {
+    height: 160px !important;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+  }
+  nav.active .nav-links {
+    max-height: 500px;
+  }
+}
+
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  .menu-toggle span {
+    height: 4px;
+    background: white;
+    margin: 5px 0;
+    width: 25px;
+    border-radius: 2px;
+  }
+  @media (max-width: 768px) {
+    nav {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background-color: #0055a5;
+    }
+    .nav-links a {
+      padding: 1rem;
+      border-top: 1px solid rgba(255,255,255,0.2);
+    }
+    .menu-toggle {
+      display: flex;
+      margin-left: 1rem;
+    }
+    nav.active .nav-links {
+      display: flex;
+    }
+  }
+
+.hero-letter {
+  position: absolute;
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #002b5c;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  animation: fade-float 4s ease-in-out infinite;
+  opacity: 0;
+}
+@keyframes fade-float {
+  0%   { transform: translateY(0px); opacity: 0; }
+  50%  { transform: translateY(-5px); opacity: 1; }
+  100% { transform: translateY(-10px); opacity: 0; }
+}
+
+
+a:active {
+  transform: scale(0.96);
+}
+</style>
+<meta content="Заклет преводач с гръцки език, устни и писмени преводи, имоти в Гърция, легализация на документи, консултации при покупка на имот." name="description"/><meta content="заклет преводач гръцки език, устни преводи гръцки, писмени преводи, имоти в Гърция, покупко-продажба на имоти, легализация, Ακίνητα στην Ελλάδα, μεταφράσεις ελληνικά, заверки на документи, апостил, апостил на документи, устни и писмени преводи с гръцки език, легализация на документи" name="keywords"/><meta content="Пламен Моллов" name="author"/><link href="https://www.prevodigr.eu" rel="canonical"/>
+<meta content="Пламен Моллов - Заклет преводач с гръцки език" property="og:title"/>
+<meta content="Заклет преводач с 17 г. опит, устни и писмени преводи от и на гръцки език, заверки и легализация на документи, консултации, имоти в Гърция." property="og:description"/>
+<meta content="https://www.prevodigr.eu/assets/images/social-preview-logo.png" property="og:image"/>
+<meta content="image/png" property="og:image:type"/>
+<meta content="1312" property="og:image:width"/>
+<meta content="1199" property="og:image:height"/>
+<meta content="https://www.prevodigr.eu" property="og:url"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://www.prevodigr.eu/assets/images/social-preview-logo.png" name="twitter:image"/>
+<style>
+@font-face {
+  font-family: 'Poppins';
+  src: url('assets/fonts/poppins-v23-latin-regular.woff2') format('woff2');
+  font-weight: 400;
+
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('assets/fonts/poppins-v23-latin-500.woff2') format('woff2');
+  font-weight: 500;
+
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('assets/fonts/poppins-v23-latin-600.woff2') format('woff2');
+  font-weight: 600;
+
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('assets/fonts/poppins-v23-latin-700.woff2') format('woff2');
+  font-weight: 700;
+
+  font-display: swap;
+}
+</style>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Преводи от и на гръцки език – Пламен Моллов",
+  "image": "https://www.prevodigr.eu/assets/images/logo.webp",
+  "url": "https://www.prevodigr.eu",
+  "telephone": "+359897098959",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "ул. Димитър Талев 132",
+    "addressLocality": "Пловдив",
+    "postalCode": "4000",
+    "addressCountry": "BG",
+    "addressRegion": "Област Пловдив"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": 4
+  },
+  "@id": "https://www.prevodigr.eu/#business",
+  "sameAs": [
+    "https://www.facebook.com/PlamenMollov",
+    "https://www.linkedin.com/in/plamenmollov",
+    "https://goo.gl/maps/yourgooglemaplink"
+  ]
+}</script>
+<style id="academy-button-effect">
+/* Академия: ефект само върху бутона за вход */
+.academy-cta {
+  position: relative !important;
+  overflow: hidden !important;
+  animation: academy-cta-pulse 2.2s ease-in-out infinite !important;
+}
+.academy-cta::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 45%;
+  height: 100%;
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    rgba(255,255,255,0.15) 35%,
+    rgba(255,255,255,0.9) 50%,
+    rgba(255,255,255,0.15) 65%,
+    transparent 100%
+  );
+  transform: skewX(-18deg);
+  animation: academy-cta-shine 2.8s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes academy-cta-pulse {
+  0%, 70%, 100% { transform: scale(1); }
+  80% { transform: scale(1.025); }
+  88% { transform: scale(1); }
+}
+@keyframes academy-cta-shine {
+  0%, 45% { left: -75%; }
+  70%, 100% { left: 135%; }
+}
+@media (max-width: 768px) {
+  .academy-cta {
+    animation-duration: 2.4s !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .academy-cta,
+  .academy-cta::after
+}
+</style>
+<style id="mobile-wide-layout">
+@media (max-width: 768px) {
+  section {
+    width: calc(100% - 0.5rem);
+    box-sizing: border-box;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+  }
+}
+</style>
+<style id="mobile-uniform-cards">
+@media (max-width: 768px) {
+  html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  section {
+    width: calc(100% - 2rem) !important;
+    max-width: none !important;
+    box-sizing: border-box !important;
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+  }
+
+  #real-estate,
+  #greek-academy,
+  #contact {
+    width: calc(100% - 2rem) !important;
+    max-width: none !important;
+    box-sizing: border-box !important;
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+  }
+
+  #greek-academy {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+</style>
+<style id="mobile-contact-one-line">
+@media (max-width: 768px) {
+  #contact > p:nth-of-type(1),
+  #contact > p:nth-of-type(2),
+  #contact > p:nth-of-type(4) {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap !important;
+    white-space: nowrap !important;
+    gap: .35rem;
+    font-size: .92rem !important;
+    line-height: 1.45 !important;
+  }
+
+  #contact > p:nth-of-type(1) a,
+  #contact > p:nth-of-type(2) a {
+    white-space: nowrap !important;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+  }
+
+  #contact > p:nth-of-type(4) {
+    gap: .25rem;
+  }
+}
+</style>
+<style id="mobile-contact-city-line">
+@media (max-width: 768px) {
+  #contact > p:nth-of-type(3) {
+    line-height: 1.55 !important;
+  }
+
+  #contact .contact-city-greek {
+    white-space: nowrap !important;
+  }
+}
+</style>
+<style id="contact-city-alignment">
+#contact .contact-city {
+  display: flex !important;
+  align-items: flex-start;
+  justify-content: center;
+  gap: .35rem;
+  text-align: left;
+}
+
+#contact .contact-city-icon {
+  flex: 0 0 auto;
+  line-height: 1.55;
+}
+
+#contact .contact-city-text {
+  display: inline-block;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  #contact .contact-city {
+    justify-content: center !important;
+    text-align: left !important;
+    flex-wrap: nowrap !important;
+  }
+
+  #contact .contact-city-text {
+    white-space: nowrap !important;
+  }
+}
+</style>
+<style id="contact-phone-one-line">
+#contact .contact-phone {
+  white-space: nowrap !important;
+}
+
+#contact .contact-phone strong {
+  font-weight: 700 !important;
+}
+
+@media (max-width: 768px) {
+  #contact .contact-phone {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap !important;
+    font-size: .95rem !important;
+    line-height: 1.45 !important;
+  }
+}
+</style>
+<style id="ai-assistant-widget">
+
+/* AI асистент — форма за индивидуална оферта */
+.ai-lead-card{
+  width:100%;
+  box-sizing:border-box;
+  margin:0 0 10px;
+  padding:13px;
+  border-radius:15px;
+  background:#fff;
+  border:1px solid #cfe0ee;
+  box-shadow:0 4px 14px rgba(0,43,92,.08);
+}
+.ai-lead-title{
+  margin:0 0 5px;
+  color:#003366;
+  font:700 .92rem/1.35 'Poppins','Segoe UI',sans-serif;
+}
+.ai-lead-subtitle{
+  margin:0 0 10px;
+  color:#526b80;
+  font:400 .72rem/1.45 'Poppins','Segoe UI',sans-serif;
+}
+.ai-lead-form{
+  display:flex;
+  flex-direction:column;
+  gap:7px;
+}
+.ai-lead-form input,
+.ai-lead-form textarea{
+  width:100%!important;
+  box-sizing:border-box!important;
+  margin:0!important;
+  padding:9px 10px!important;
+  border:1px solid #bfd1df!important;
+  border-radius:9px!important;
+  background:#fff!important;
+  color:#17324d!important;
+  font:400 .75rem/1.35 'Poppins','Segoe UI',sans-serif!important;
+  outline:none;
+}
+.ai-lead-form input:focus,
+.ai-lead-form textarea:focus{
+  border-color:#0055a5!important;
+  box-shadow:0 0 0 3px rgba(0,85,165,.10);
+}
+.ai-lead-form textarea{
+  min-height:72px;
+  resize:vertical;
+}
+.ai-lead-submit{
+  width:100%!important;
+  min-height:40px;
+  margin:2px 0 0!important;
+  padding:8px 12px!important;
+  border:0!important;
+  border-radius:9px!important;
+  background:#003366!important;
+  color:#fff!important;
+  font:700 .75rem 'Poppins','Segoe UI',sans-serif!important;
+  cursor:pointer;
+}
+.ai-lead-submit:hover{background:#0055a5!important}
+.ai-lead-submit:disabled{opacity:.65;cursor:wait}
+.ai-lead-cancel{
+  width:100%!important;
+  margin:0!important;
+  padding:6px 8px!important;
+  border:0!important;
+  background:transparent!important;
+  color:#5c7184!important;
+  font:600 .68rem 'Poppins','Segoe UI',sans-serif!important;
+  cursor:pointer;
+}
+.ai-lead-cancel:hover{color:#003366!important}
+.ai-lead-error{
+  margin:2px 0 0;
+  color:#a52a2a;
+  font:600 .68rem/1.35 'Poppins','Segoe UI',sans-serif;
+}
+.ai-lead-success{
+  padding:4px 1px;
+  color:#17663a;
+  font:600 .76rem/1.5 'Poppins','Segoe UI',sans-serif;
+}
+
+/* Професионален AI асистент — самостоятелен плаващ компонент */
+.ai-assistant-launcher{
+  position:fixed;right:22px;bottom:22px;width:70px;height:70px;border:0;border-radius:50%;
+  padding:0;z-index:9998;cursor:pointer;background:linear-gradient(145deg,#0068c9,#002b5c);
+  box-shadow:0 10px 28px rgba(0,43,92,.30),0 0 0 4px rgba(255,255,255,.9);
+  display:flex;align-items:center;justify-content:center;transition:transform .25s ease,box-shadow .25s ease
+}
+.ai-assistant-launcher:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 14px 34px rgba(0,43,92,.38),0 0 0 4px #fff}
+.ai-assistant-launcher:focus-visible{outline:3px solid #7ec8ff;outline-offset:3px}
+.ai-bot{position:relative;width:42px;height:40px;border-radius:50% 50% 46% 46%;background:linear-gradient(145deg,#fff,#eaf5ff);box-shadow:0 3px 9px rgba(0,0,0,.18)}
+.ai-bot:before{content:"";position:absolute;width:6px;height:8px;border-radius:50%;background:#0055a5;left:10px;top:13px;box-shadow:16px 0 0 #0055a5}
+.ai-bot:after{content:"";position:absolute;width:15px;height:7px;left:13px;top:24px;border-radius:0 0 12px 12px;border:2px solid #0055a5;border-top:0;background:#dff0ff;box-sizing:border-box}
+.ai-bot-antenna{position:absolute;width:4px;height:9px;border-radius:4px;background:#fff;left:19px;top:-8px}
+.ai-bot-antenna:after{content:"";position:absolute;width:7px;height:7px;border-radius:50%;background:#ffd54a;left:-1.5px;top:-5px;box-shadow:0 0 9px rgba(255,213,74,.8)}
+.ai-assistant-badge{position:absolute;right:-3px;top:-3px;min-width:20px;height:20px;border-radius:50%;background:#20a464;border:2px solid #fff;font:700 10px/16px Arial,sans-serif;color:#fff;text-align:center}
+.ai-character-label{position:absolute;left:50%;bottom:-18px;transform:translateX(-50%);font:700 8px/1 Arial,sans-serif;color:#fff;white-space:nowrap}
+.ai-assistant-window{
+  position:fixed;right:22px;bottom:104px;width:410px;height:600px;max-width:calc(100vw - 32px);
+  max-height:calc(100vh - 125px);z-index:9999;display:none;flex-direction:column;overflow:hidden;
+  border-radius:22px;background:#fff;box-shadow:0 20px 60px rgba(0,30,70,.30),0 0 0 1px rgba(0,43,92,.10);
+  font-family:'Poppins','Segoe UI',sans-serif
+}
+.ai-assistant-window.open{display:flex;animation:ai-window-in .22s ease-out}
+@keyframes ai-window-in{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:none}}
+.ai-assistant-header{
+  flex:0 0 auto;padding:16px 17px;background:linear-gradient(135deg,#002b5c,#0055a5);
+  color:#fff;display:flex;align-items:center;gap:11px
+}
+.ai-assistant-avatar{
+  width:45px;height:45px;flex:0 0 45px;border-radius:50%;background:#fff;
+  display:flex;align-items:center;justify-content:center;box-shadow:0 3px 10px rgba(0,0,0,.16)
+}
+.ai-assistant-avatar .ai-bot{transform:scale(.62)}
+.ai-assistant-head-text{min-width:0;flex:1}
+.ai-assistant-head-text strong{display:block;font-size:1rem;line-height:1.3}
+.ai-assistant-status{display:flex;align-items:center;gap:5px;margin-top:4px;font-size:.72rem;opacity:.94}
+.ai-status-dot{width:7px;height:7px;border-radius:50%;background:#4ade80;box-shadow:0 0 7px rgba(74,222,128,.8)}
+.ai-assistant-close{
+  border:0!important;background:rgba(255,255,255,.14)!important;color:#fff!important;width:34px!important;height:34px!important;
+  padding:0!important;border-radius:50%!important;font-size:1.35rem!important;line-height:1!important;flex:0 0 34px
+}
+.ai-assistant-close:hover{background:rgba(255,255,255,.25)!important}
+.ai-assistant-language{
+  flex:0 0 auto;display:flex;gap:5px;padding:8px 12px 7px;background:#fff;border-bottom:1px solid #e8eef4
+}
+.ai-lang-btn{
+  flex:1;border:1px solid #c8dceb!important;background:#fff!important;color:#17486e!important;
+  border-radius:9px!important;padding:7px 8px!important;font:600 .73rem 'Poppins','Segoe UI',sans-serif!important
+}
+.ai-lang-btn.active{background:#0055a5!important;color:#fff!important;border-color:#0055a5!important}
+.ai-assistant-messages{
+  flex:1 1 auto;min-height:0;overflow-y:auto;padding:15px 14px;
+  background:linear-gradient(to bottom,#f5faff,#fff);overscroll-behavior:contain
+}
+.ai-msg{
+  max-width:84%;margin:0 0 10px;padding:10px 12px;border-radius:15px;
+  font-size:.86rem;line-height:1.5;word-wrap:break-word;overflow-wrap:anywhere
+}
+.ai-msg.bot{margin-right:auto;color:#17324d;background:#e9f4ff;border-bottom-left-radius:5px}
+.ai-msg.user{margin-left:auto;color:#fff;background:#0055a5;border-bottom-right-radius:5px}
+.ai-assistant-quick{
+  flex:0 0 auto;display:grid;grid-template-columns:1fr 1fr;gap:6px;
+  padding:8px 11px;background:#fff;border-top:1px solid #e8eef4
+}
+.ai-quick-btn{
+  min-height:38px;border:1px solid #b9d5eb!important;background:#f5faff!important;color:#003f73!important;
+  border-radius:9px!important;padding:7px 8px!important;font:600 .73rem/1.2 'Poppins','Segoe UI',sans-serif!important;
+  white-space:normal
+}
+.ai-quick-btn:hover{background:#e6f3ff!important;border-color:#7fb6df!important}
+.ai-assistant-input{
+  flex:0 0 auto;display:flex;align-items:flex-end;gap:8px;padding:10px 11px;
+  background:#fff;border-top:1px solid #e5edf4
+}
+.ai-assistant-input textarea{
+  flex:1;min-width:0;width:auto!important;height:44px;max-height:100px;resize:none;box-sizing:border-box;
+  margin:0!important;padding:10px 12px!important;border:1px solid #bfd1df!important;border-radius:12px!important;
+  font:400 .84rem 'Poppins','Segoe UI',sans-serif!important;line-height:1.35!important;outline:none
+}
+.ai-assistant-input textarea:focus{border-color:#0055a5!important;box-shadow:0 0 0 3px rgba(0,85,165,.10)}
+.ai-send-btn{
+  width:48px!important;height:44px!important;flex:0 0 48px;padding:0!important;border-radius:12px!important;
+  background:#003366!important;font-size:1.08rem!important
+}
+.ai-assistant-note{
+  flex:0 0 auto;padding:5px 11px 9px;text-align:center;color:#71869a;background:#fff;
+  font:400 .61rem/1.35 'Poppins','Segoe UI',sans-serif
+}
+@media(max-width:768px){
+  .ai-assistant-launcher{right:14px;bottom:14px;width:61px;height:61px}
+  .ai-assistant-window{
+    left:9px;right:9px;bottom:83px;width:auto;max-width:none;height:min(650px,calc(100vh - 105px));
+    max-height:calc(100vh - 105px);border-radius:18px
+  }
+  .ai-assistant-header{padding:13px 14px}
+  .ai-assistant-messages{padding:12px 10px}
+  .ai-msg{font-size:.83rem;max-width:89%}
+  .ai-assistant-quick{grid-template-columns:1fr 1fr;padding:7px 9px}
+  .ai-quick-btn{min-height:40px;font-size:.69rem}
+  .ai-assistant-input{padding:9px}
+  .ai-assistant-note{font-size:.57rem}
+}
+@media(max-width:360px){
+  .ai-assistant-window{left:5px;right:5px;bottom:78px}
+  .ai-assistant-quick{gap:5px;padding:6px}
+  .ai-quick-btn{font-size:.64rem}
+}
+@media(prefers-reduced-motion:reduce){.ai-assistant-window{animation:none!important}}
+</style>
+<style id="gentle-card-motion">
+/* Леко "подскачане" на избрани карти — без тежки ефекти и без влияние върху видимостта */
+.service-card,
+.oral-card,
+.legal-card,
+.how-step,
+.real-estate-card {
+  transition: transform .28s ease, box-shadow .28s ease;
+  will-change: transform;
+}
+
+@keyframes gentleCardBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* Деликатно движение само когато картата е видима */
+.gentle-bounce {
+  animation: gentleCardBounce 3.8s ease-in-out infinite;
+}
+
+/* На телефон движението е още по-малко */
+@media (max-width: 700px) {
+  .gentle-bounce {
+    animation-duration: 4.6s;
+  }
+  .service-card,
+  .oral-card,
+  .legal-card,
+  .how-step,
+  .real-estate-card {
+    will-change: auto;
+  }
+}
+
+/* При докосване няма конфликт с естествения скрол */
+@media (hover: hover) and (pointer: fine) {
+  .service-card:hover,
+  .oral-card:hover,
+  .legal-card:hover,
+  .how-step:hover,
+  .real-estate-card:hover {
+    transform: translateY(-7px);
+  }
+}
+
+/* Уважаваме настройката за намалено движение */
+@media (prefers-reduced-motion: reduce) {
+  .gentle-bounce {
+    animation: none !important;
+  }
+  .service-card,
+  .oral-card,
+  .legal-card,
+  .how-step,
+  .real-estate-card {
+    transition: none !important;
+  }
+}
+</style>
+<style id="bilingual-flip-cards-v13">
+/* Леко BG → GR обръщане на картите */
+.flip-card {
+  perspective: 1000px;
+  overflow: visible !important;
+}
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  transform-style: preserve-3d;
+  transition: transform .62s cubic-bezier(.2,.75,.25,1);
+}
+.flip-card.is-flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+.flip-card-face {
+  width: 100%;
+  min-height: 100%;
+  box-sizing: border-box;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.flip-card-front {
+  position: relative;
+  transform: rotateY(0deg);
+}
+.flip-card-back {
+  position: absolute;
+  inset: 0;
+  transform: rotateY(180deg);
+  overflow-y: auto;
+}
+.flip-card-face > h4 {
+  margin-top: .2rem;
+}
+.flip-card-button {
+  appearance: none;
+  border: 0;
+  margin-top: auto;
+  align-self: center;
+  padding: 10px 17px;
+  border-radius: 999px;
+  font: inherit;
+  font-weight: 700;
+  font-size: .86rem;
+  line-height: 1.2;
+  cursor: pointer;
+  background: linear-gradient(135deg,#f4fbff,#ffffff);
+  color: #07558e;
+  box-shadow: 0 7px 18px rgba(0,43,92,.13);
+  transition: transform .22s ease, box-shadow .22s ease, background .22s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.flip-card-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 23px rgba(0,43,92,.18);
+  background: #fff;
+}
+.flip-card-button:active {
+  transform: translateY(0);
+}
+.flip-back-button {
+  margin-top: 16px;
+}
+.service-card.flip-card {
+  min-height: 250px;
+}
+@media (max-width:700px) {
+  .flip-card-inner { transition-duration:.52s; }
+  .service-card.flip-card { min-height:265px; }
+  .flip-card-button {
+    max-width:94%;
+    padding:10px 13px;
+    font-size:.80rem;
+  }
+}
+@media (prefers-reduced-motion:reduce) {
+  .flip-card-inner { transition:none !important; }
+}
+</style>
+<style id="all-section-flip-cards-v14">
+/* Единен стил за BG → GR картите */
+.flip-card {
+  perspective: 1000px;
+  overflow: visible !important;
+}
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  transform-style: preserve-3d;
+  transition: transform .62s cubic-bezier(.2,.75,.25,1);
+}
+.flip-card.is-flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+.flip-card-face {
+  width: 100%;
+  min-height: 100%;
+  box-sizing: border-box;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.flip-card-front { position: relative; }
+.flip-card-back {
+  position: absolute;
+  inset: 0;
+  transform: rotateY(180deg);
+  overflow-y: auto;
+}
+.flip-card-button {
+  appearance: none;
+  border: 0;
+  margin-top: auto;
+  align-self: center;
+  padding: 10px 17px;
+  border-radius: 999px;
+  font: inherit;
+  font-weight: 700;
+  font-size: .86rem;
+  line-height: 1.2;
+  cursor: pointer;
+  background: linear-gradient(135deg,#f4fbff,#ffffff);
+  color: #07558e;
+  box-shadow: 0 7px 18px rgba(0,43,92,.13);
+  transition: transform .22s ease, box-shadow .22s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.flip-card-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 23px rgba(0,43,92,.18);
+}
+.flip-back-button { margin-top: 16px; }
+.flip-card-face .svc-icon,
+.flip-card-face .service-icon {
+  align-self: center;
+}
+@media (max-width:700px) {
+  .flip-card-inner { transition-duration:.52s; }
+  .flip-card-button { max-width:94%; padding:10px 13px; font-size:.80rem; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .flip-card-inner { transition:none !important; }
+}
+</style>
+<style id="unified-bilingual-flips-v15">
+/* Единен модел: български отпред → гръцки отзад */
+.section-flip-card,
+.service-card.flip-card,
+.how-step.flip-card {
+  perspective: 1100px;
+  overflow: visible !important;
+}
+.section-flip-card .flip-card-inner,
+.service-card.flip-card .flip-card-inner,
+.how-step.flip-card .flip-card-inner {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  transform-style: preserve-3d;
+  transition: transform .62s cubic-bezier(.2,.75,.25,1);
+}
+.section-flip-card.is-flipped .flip-card-inner,
+.service-card.flip-card.is-flipped .flip-card-inner,
+.how-step.flip-card.is-flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+.section-flip-card .flip-card-face,
+.service-card.flip-card .flip-card-face,
+.how-step.flip-card .flip-card-face {
+  width: 100%;
+  min-height: 100%;
+  box-sizing: border-box;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.section-flip-card .flip-card-front,
+.service-card.flip-card .flip-card-front,
+.how-step.flip-card .flip-card-front {
+  position: relative;
+}
+.section-flip-card .flip-card-back,
+.service-card.flip-card .flip-card-back,
+.how-step.flip-card .flip-card-back {
+  position: absolute;
+  inset: 0;
+  transform: rotateY(180deg);
+  overflow-y: auto;
+}
+.title-icon {
+  display: inline-block;
+  margin-right: .35em;
+  vertical-align: -.08em;
+}
+.service-card.flip-card .flip-card-front h4,
+.service-card.flip-card .flip-card-back h4 {
+  display: flex;
+  align-items: flex-start;
+  gap: .12em;
+}
+.service-card.flip-card .flip-card-front .title-icon,
+.service-card.flip-card .flip-card-back .title-icon {
+  flex: 0 0 auto;
+}
+.flip-language-label {
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  font-weight: 800;
+  letter-spacing: .04em;
+  margin-bottom: 14px;
+}
+.about-card-icon {
+  font-size: 1.2em;
+}
+.section-flip-card .flip-card-button,
+.service-card.flip-card .flip-card-button,
+.how-step.flip-card .flip-card-button {
+  appearance: none;
+  border: 0;
+  margin-top: auto;
+  align-self: center;
+  padding: 10px 17px;
+  border-radius: 999px;
+  font: inherit;
+  font-weight: 700;
+  font-size: .86rem;
+  line-height: 1.2;
+  cursor: pointer;
+  background: linear-gradient(135deg,#f4fbff,#ffffff);
+  color: #07558e;
+  box-shadow: 0 7px 18px rgba(0,43,92,.13);
+  transition: transform .22s ease, box-shadow .22s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.section-flip-card .flip-card-button:hover,
+.service-card.flip-card .flip-card-button:hover,
+.how-step.flip-card .flip-card-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 23px rgba(0,43,92,.18);
+}
+.flip-back-button { margin-top: 16px !important; }
+
+/* Размери за flip секциите */
+.intro-flip-card { min-height: 245px; }
+.about-flip-card { min-height: 430px; }
+.real-estate-flip-card { min-height: 500px; }
+.how-step-flip { min-height: 230px; }
+
+@media (max-width:700px) {
+  .section-flip-card .flip-card-inner,
+  .service-card.flip-card .flip-card-inner,
+  .how-step.flip-card .flip-card-inner {
+    transition-duration: .52s;
+  }
+  .intro-flip-card { min-height: 315px; }
+  .about-flip-card { min-height: 560px; }
+  .real-estate-flip-card { min-height: 650px; }
+  .how-step-flip { min-height: 255px; }
+  .section-flip-card .flip-card-button,
+  .service-card.flip-card .flip-card-button,
+  .how-step.flip-card .flip-card-button {
+    max-width: 94%;
+    padding: 10px 13px;
+    font-size: .80rem;
+  }
+}
+@media (prefers-reduced-motion:reduce) {
+  .section-flip-card .flip-card-inner,
+  .service-card.flip-card .flip-card-inner,
+  .how-step.flip-card .flip-card-inner {
+    transition: none !important;
+  }
+}
+</style>
+<style id="how-it-works-static-v16">
+/* "Как работи услугата" остава статична двуезична секция */
+#how-it-works .how-step {
+  perspective: none !important;
+  transform: none !important;
+  min-height: 0 !important;
+}
+#how-it-works .how-step .flip-card-inner,
+#how-it-works .how-step .flip-card-face,
+#how-it-works .how-step .flip-card-front,
+#how-it-works .how-step .flip-card-back {
+  position: static !important;
+  transform: none !important;
+  min-height: 0 !important;
+  width: auto !important;
+  backface-visibility: visible !important;
+  -webkit-backface-visibility: visible !important;
+  display: block !important;
+  overflow: visible !important;
+}
+#how-it-works .how-step p {
+  margin-top: .5rem;
+}
+#about .flip-language-label {
+  display: flex;
+  align-items: center;
+  gap: .65rem;
+}
+#about .language-label-flag {
+  width: 30px;
+  height: 20px;
+  flex: 0 0 auto;
+  border-radius: 3px;
+  box-shadow: 0 1px 5px rgba(0,0,0,.12);
+}
+@media (max-width:700px) {
+  #about .language-label-flag {
+    width: 27px;
+    height: 18px;
+  }
+}
+</style>
+<style id="contact-mobile-alignment-v17">
+/* Контактните бутони са центрирани и на мобилен телефон */
+#contact .contact-actions,
+#contact .contact-buttons,
+#contact .contact-cta-group {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#contact .contact-actions a,
+#contact .contact-buttons a,
+#contact .contact-cta-group a {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 700px) {
+  #contact .contact-actions a,
+  #contact .contact-buttons a,
+  #contact .contact-cta-group a {
+    width: 100%;
+    max-width: 100%;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+  }
+}
+</style>
+<style id="card-language-switcher-v18">
+.card-language-switcher{
+  position:absolute!important;top:14px;right:14px;z-index:20;
+  display:inline-flex;align-items:center;gap:5px;padding:4px;
+  border-radius:999px;background:rgba(255,255,255,.94);
+  box-shadow:0 4px 12px rgba(0,43,92,.12);
+  border:1px solid rgba(207,224,237,.9);
+}
+.card-language-btn{
+  width:34px!important;height:25px!important;min-width:34px!important;min-height:25px!important;
+  padding:2px!important;margin:0!important;border:1px solid transparent!important;
+  border-radius:999px!important;background:transparent!important;color:inherit!important;
+  box-shadow:none!important;display:grid!important;place-items:center!important;
+  cursor:pointer;transform:none!important;position:static!important;
+}
+.card-language-btn:hover{background:#edf6fc!important}
+.card-language-btn.active{background:#e3f2fd!important;border-color:#b8d9ee!important}
+.card-lang-flag{
+  display:block;width:27px;height:18px;border-radius:3px;
+  box-shadow:0 1px 4px rgba(0,43,92,.18);pointer-events:none;
+}
+.flip-card .flip-card-button{display:none!important}
+.flip-card-face{padding-top:1rem}
+@media(max-width:700px){
+  .card-language-switcher{top:10px!important;right:10px!important;gap:4px;padding:3px}
+  .card-language-btn{width:31px!important;height:23px!important;min-width:31px!important;min-height:23px!important}
+  .card-lang-flag{width:25px;height:17px}
+}
+@media(prefers-reduced-motion:reduce){.flip-card-inner{transition:none!important}}
+</style>
+<style id="global-page-language-v19">
+/* Глобален превключвател на езика */
+.global-language-switcher{
+  display:flex;align-items:center;gap:5px;
+  position:absolute;right:1rem;top:50%;transform:translateY(-50%);
+  z-index:50;padding:4px;border-radius:999px;
+  background:rgba(255,255,255,.96);box-shadow:0 5px 16px rgba(0,35,75,.18);
+}
+.global-language-btn{
+  width:38px!important;height:28px!important;min-width:38px!important;
+  padding:2px!important;margin:0!important;border:1px solid transparent!important;
+  border-radius:999px!important;background:transparent!important;
+  display:grid!important;place-items:center!important;box-shadow:none!important;
+}
+.global-language-btn:hover{background:#edf6fc!important}
+.global-language-btn.active{background:#dceefb!important;border-color:#a9cde5!important}
+.global-lang-flag{width:30px;height:20px;display:block;border-radius:3px;pointer-events:none}
+.global-gr-text{display:none}
+body.global-greek .global-bg-text{display:none!important}
+body.global-greek .global-gr-text{display:inline!important}
+body.global-greek .global-bg-block{display:none!important}
+body:not(.global-greek) .global-gr-block{display:none!important}
+body:not(.global-greek) .global-greek-only{display:none!important}
+body.global-greek .global-greek-only{display:block!important}
+
+/* Cards: the global choice flips ALL bilingual cards together */
+body.global-greek .flip-card .flip-card-inner{transform:rotateY(180deg)}
+body:not(.global-greek) .flip-card .flip-card-inner{transform:rotateY(0deg)}
+body.global-greek .flip-card .bg-language{background:transparent!important}
+body.global-greek .flip-card .gr-language{background:transparent!important}
+
+/* Academy uses one page-wide language, not a second card. */
+.academy-gr-text{display:none}
+body.global-greek .academy-bg-text{display:none!important}
+body.global-greek .academy-gr-text{display:inline!important}
+body:not(.global-greek) .academy-gr-text{display:none!important}
+
+/* In the academy CTA the arrow remains visible. */
+.academy-cta .academy-bg-text,
+.academy-cta .academy-gr-text{display:inline}
+
+/* Mobile */
+@media(max-width:768px){
+  nav{position:relative!important;padding-right:4.7rem!important}
+  .global-language-switcher{
+    right:10px;top:12px;transform:none;
+  }
+  .global-language-btn{
+    width:34px!important;height:25px!important;min-width:34px!important;
+  }
+  .global-lang-flag{width:27px;height:18px}
+  .site-header h1,.site-header h2{padding-left:.2rem;padding-right:.2rem}
+}
+</style>
+<style id="global-language-polish-v20">
+/* Един глобален превключвател — по-голям, по-високо и с лека анимация */
+.global-language-switcher{
+  position:absolute!important;
+  right:18px!important;
+  top:8px!important;
+  transform:none!important;
+  display:flex!important;
+  align-items:center!important;
+  gap:7px!important;
+  padding:6px!important;
+  border-radius:999px!important;
+  background:rgba(255,255,255,.98)!important;
+  border:1px solid rgba(180,210,230,.8)!important;
+  box-shadow:0 7px 20px rgba(0,35,75,.20)!important;
+  z-index:100!important;
+}
+.global-language-btn{
+  width:48px!important;
+  height:36px!important;
+  min-width:48px!important;
+  min-height:36px!important;
+  padding:4px!important;
+  margin:0!important;
+  border:2px solid transparent!important;
+  border-radius:10px!important;
+  background:transparent!important;
+  display:grid!important;
+  place-items:center!important;
+  cursor:pointer!important;
+  box-shadow:none!important;
+  transition:transform .22s ease,background .22s ease,box-shadow .22s ease,border-color .22s ease!important;
+  -webkit-tap-highlight-color:transparent;
+}
+.global-language-btn:hover{
+  transform:translateY(-2px) scale(1.04)!important;
+  background:#eef7fd!important;
+  box-shadow:0 5px 12px rgba(0,62,110,.14)!important;
+}
+.global-language-btn:active{
+  transform:scale(.96)!important;
+}
+.global-language-btn.active{
+  background:#e4f3fc!important;
+  border-color:#9ccbe7!important;
+  box-shadow:0 4px 12px rgba(0,62,110,.12)!important;
+}
+.global-lang-flag{
+  width:40px!important;
+  height:27px!important;
+  display:block!important;
+  border-radius:4px!important;
+  box-shadow:0 2px 6px rgba(0,0,0,.20)!important;
+  pointer-events:none!important;
+}
+
+/* Само един език се вижда — без остатъчни "/" и без смесване. */
+.global-gr-text{display:none!important}
+body.global-greek .global-bg-text{display:none!important}
+body.global-greek .global-gr-text{display:inline!important}
+body:not(.global-greek) .global-bg-text{display:inline!important}
+body:not(.global-greek) .global-gr-text{display:none!important}
+
+/* Елементи, които са цели блокове */
+.global-bg-block{display:block!important}
+.global-gr-block{display:none!important}
+body.global-greek .global-bg-block{display:none!important}
+body.global-greek .global-gr-block{display:block!important}
+
+/* Гръцките companion header lines не се показват на BG */
+.global-greek-only{display:none!important}
+body.global-greek .global-greek-only{display:block!important}
+
+/* Academy — само избраният език */
+.academy-gr-text{display:none!important}
+body.global-greek .academy-bg-text{display:none!important}
+body.global-greek .academy-gr-text{display:inline!important}
+
+/* При превключване картите следват избрания език */
+body.global-greek .flip-card .flip-card-inner{transform:rotateY(180deg)}
+body:not(.global-greek) .flip-card .flip-card-inner{transform:rotateY(0deg)}
+
+@media (max-width:768px){
+  nav{
+    position:relative!important;
+    padding-top:54px!important;
+    padding-right:10px!important;
+  }
+  .global-language-switcher{
+    right:10px!important;
+    top:8px!important;
+    gap:5px!important;
+    padding:5px!important;
+  }
+  .global-language-btn{
+    width:44px!important;
+    height:34px!important;
+    min-width:44px!important;
+    min-height:34px!important;
+  }
+  .global-lang-flag{
+    width:36px!important;
+    height:24px!important;
+  }
+}
+@media (max-width:420px){
+  nav{padding-top:50px!important}
+  .global-language-btn{
+    width:41px!important;
+    height:32px!important;
+    min-width:41px!important;
+    min-height:32px!important;
+  }
+  .global-lang-flag{width:34px!important;height:23px!important}
+}
+@media (prefers-reduced-motion:reduce){
+  .global-language-btn{transition:none!important}
+}
+</style>
+<style id="academy-greek-hide-v21">
+body.global-greek #greek-academy{
+  display:none!important;
+}
+</style>
+<style id="global-language-clean-v21">
+.global-bg-text{display:inline!important}
+.global-gr-text{display:none!important}
+body.global-greek .global-bg-text{display:none!important}
+body.global-greek .global-gr-text{display:inline!important}
+body.global-greek .paired-icon.bg-only{display:none!important}
+.paired-icon{display:inline-block;margin-right:.35em;vertical-align:-.05em}
+body.global-greek .paired-icon.duplicate{display:none!important}
+
+/* Keep the top language control above the nav on desktop and mobile. */
+.global-language-switcher{
+  top:7px!important;
+}
+</style>
+<style id="language-only-clean-v22">
+/* One language on screen at a time */
+.global-gr-text{display:none!important}
+.global-bg-text{display:inline!important}
+body.global-greek .global-bg-text{display:none!important}
+body.global-greek .global-gr-text{display:inline!important}
+
+/* Highlight cards under "About": clear, bold, readable */
+#about .highlight .global-bg-text,
+#about .highlight .global-gr-text{
+  font-family:'Poppins','Segoe UI',sans-serif!important;
+  font-weight:700!important;
+  font-size:1.02rem!important;
+  line-height:1.55!important;
+}
+#about .highlight span.global-gr-text{
+  display:block!important;
+  font-weight:700!important;
+}
+body.global-greek #about .highlight .global-bg-text{display:none!important}
+body:not(.global-greek) #about .highlight .global-gr-text{display:none!important}
+body.global-greek #about .highlight .global-gr-text{display:block!important}
+
+#about .highlight b{
+  font-family:'Poppins','Segoe UI',sans-serif!important;
+  font-weight:800!important;
+  font-size:1.15rem!important;
+  line-height:1.35!important;
+}
+
+/* Oral service note: do not show Bulgarian and Greek together. */
+#services .service-note .global-bg-text,
+#services .service-note .global-gr-text{
+  font-family:'Poppins','Segoe UI',sans-serif!important;
+  font-weight:700!important;
+  font-size:1rem!important;
+  line-height:1.65!important;
+}
+body.global-greek #services .service-note .global-bg-text{display:none!important}
+body:not(.global-greek) #services .service-note .global-gr-text{display:none!important}
+
+/* Make sure the nav switcher sits visually in the blue navigation bar */
+nav{
+  position:relative!important;
+  padding-top:54px!important;
+}
+.global-language-switcher{
+  top:7px!important;
+  right:14px!important;
+  transform:none!important;
+}
+.global-language-btn{
+  width:48px!important;height:36px!important;min-width:48px!important;min-height:36px!important;
+}
+.global-lang-flag{width:40px!important;height:27px!important}
+
+@media(max-width:768px){
+  nav{padding-top:49px!important}
+  .global-language-switcher{top:7px!important;right:8px!important}
+  .global-language-btn{width:42px!important;height:33px!important;min-width:42px!important;min-height:33px!important}
+  .global-lang-flag{width:35px!important;height:24px!important}
+  #about .highlight .global-bg-text,
+  #about .highlight .global-gr-text{
+    font-size:.94rem!important;
+    line-height:1.5!important;
+  }
+  #about .highlight b{font-size:1.05rem!important}
+  #services .service-note .global-bg-text,
+  #services .service-note .global-gr-text{
+    font-size:.92rem!important;
+    line-height:1.55!important;
+  }
+}
+</style>
+<style id="global-language-polish-v23">
+/* Strict single-language rendering */
+.global-bg-text{display:inline!important}
+.global-gr-text{display:none!important}
+body.global-greek .global-bg-text{display:none!important}
+body.global-greek .global-gr-text{display:inline!important}
+
+/* Beautiful experience cards */
+#about .about-highlights{
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:1rem!important;
+  margin-top:1.25rem!important;
+}
+#about .experience-card{
+  position:relative;
+  min-height:170px;
+  padding:1.35rem 1.25rem!important;
+  border-radius:20px!important;
+  background:linear-gradient(145deg,#ffffff,#f2f8fc)!important;
+  border:1px solid #d6e6f1!important;
+  box-shadow:0 10px 24px rgba(0,43,92,.07)!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  text-align:center!important;
+  overflow:hidden;
+}
+#about .experience-card::after{
+  content:"";
+  position:absolute;
+  width:110px;height:110px;border-radius:50%;
+  right:-45px;bottom:-50px;background:#e6f3fb;opacity:.65;
+}
+#about .experience-icon{
+  width:46px;height:46px;
+  display:grid;place-items:center;
+  margin-bottom:.55rem;
+  border-radius:14px;
+  background:#e7f4fd;
+  color:#07558e;
+  border:1px solid #c9e1f0;
+  font-size:1.35rem;
+  font-weight:700;
+}
+#about .experience-card b{
+  position:relative;z-index:1;
+  display:block!important;
+  color:#003b70!important;
+  font-family:'Poppins','Segoe UI',sans-serif!important;
+  font-weight:800!important;
+  font-size:1.18rem!important;
+  line-height:1.25!important;
+  margin-bottom:.35rem!important;
+}
+#about .experience-desc{
+  position:relative;z-index:1;
+  display:block!important;
+  color:#557089!important;
+  font-family:'Poppins','Segoe UI',sans-serif!important;
+  font-size:.98rem!important;
+  font-weight:500!important;
+  line-height:1.55!important;
+}
+
+/* Real estate callouts: clean and balanced */
+#real-estate .re-bottom{
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:1rem!important;
+  margin-top:1rem!important;
+}
+#real-estate .re-callout{
+  position:relative!important;
+  display:grid!important;
+  grid-template-columns:auto 1fr!important;
+  column-gap:.8rem!important;
+  align-items:start!important;
+  padding:1.15rem 1.25rem!important;
+  border-radius:18px!important;
+  background:linear-gradient(145deg,#f4faff,#e9f4fc)!important;
+  border:1px solid #cfe2ef!important;
+  box-shadow:0 8px 20px rgba(0,43,92,.06)!important;
+  text-align:left!important;
+}
+#real-estate .re-callout-icon{
+  grid-row:1 / span 2;
+  width:38px;height:38px;
+  display:grid;place-items:center;
+  border-radius:12px;
+  background:#fff;
+  border:1px solid #d6e6f1;
+  font-size:1.15rem;
+}
+#real-estate .re-callout strong{
+  margin:0 0 .25rem!important;
+  font-family:'Poppins','Segoe UI',sans-serif!important;
+  font-size:1rem!important;
+  font-weight:800!important;
+  color:#003b70!important;
+}
+#real-estate .re-callout p{
+  margin:0!important;
+  font-family:'Poppins','Segoe UI',sans-serif!important;
+  font-size:.92rem!important;
+  font-weight:500!important;
+  line-height:1.55!important;
+  color:#557089!important;
+}
+
+/* Global language switcher: inside the blue navigation band */
+nav{
+  position:relative!important;
+  padding-right:118px!important;
+  padding-top:.65rem!important;
+  padding-bottom:.65rem!important;
+}
+.global-language-switcher{
+  position:absolute!important;
+  top:50%!important;
+  right:14px!important;
+  transform:translateY(-50%)!important;
+  display:flex!important;
+  align-items:center!important;
+  gap:7px!important;
+  padding:5px!important;
+  border-radius:999px!important;
+  background:rgba(255,255,255,.97)!important;
+  border:1px solid rgba(177,211,231,.95)!important;
+  box-shadow:0 6px 18px rgba(0,35,75,.2)!important;
+  z-index:100!important;
+}
+.global-language-btn{
+  width:46px!important;height:34px!important;
+  min-width:46px!important;min-height:34px!important;
+  padding:3px!important;margin:0!important;
+  border:2px solid transparent!important;
+  border-radius:9px!important;
+  background:transparent!important;
+  display:grid!important;place-items:center!important;
+  box-shadow:none!important;
+  transition:transform .22s ease,background .22s ease,box-shadow .22s ease,border-color .22s ease!important;
+}
+.global-language-btn:hover{
+  transform:translateY(-2px) scale(1.04)!important;
+  background:#edf7fd!important;
+  box-shadow:0 5px 12px rgba(0,62,110,.13)!important;
+}
+.global-language-btn.active{
+  background:#e4f3fc!important;
+  border-color:#8fc3e4!important;
+}
+.global-lang-flag{
+  width:38px!important;height:25px!important;
+  display:block!important;border-radius:3px!important;
+  box-shadow:0 1px 5px rgba(0,0,0,.2)!important;
+}
+@media(max-width:768px){
+  nav{
+    padding-right:9px!important;
+    padding-top:3.2rem!important;
+  }
+  .global-language-switcher{
+    top:7px!important;
+    right:8px!important;
+    transform:none!important;
+  }
+  .global-language-btn{
+    width:42px!important;height:32px!important;
+    min-width:42px!important;min-height:32px!important;
+  }
+  .global-lang-flag{width:35px!important;height:23px!important}
+  #about .about-highlights{
+    grid-template-columns:1fr!important;
+  }
+  #about .experience-card{
+    min-height:145px;
+  }
+  #real-estate .re-bottom{
+    grid-template-columns:1fr!important;
+  }
+}
+</style>
+<style id="about-polish-v24">
+/* ---- За мен: без вътрешен скрол, естествена височина ---- */
+#about .about-flip-card .flip-card-inner,
+#about .about-flip-card .flip-card-face {
+  height: auto !important;
+  min-height: 0 !important;
+}
+#about .about-flip-card .flip-card-face {
+  overflow: visible !important;
+}
+#about .about-flip-card .flip-card-back {
+  position: absolute !important;
+  inset: 0 !important;
+  overflow: visible !important;
+}
+#about .about-flip-card {
+  min-height: 0 !important;
+}
+#about .about-flip-card .flip-card-front,
+#about .about-flip-card .flip-card-back {
+  padding-bottom: 1.8rem !important;
+}
+#about .about-flip-card .about-panel,
+#about .about-flip-card p {
+  max-width: none !important;
+}
+
+/* По-добро пространство преди трите карти */
+#about .about-highlights {
+  margin-top: 1.05rem !important;
+}
+
+/* ---- BG ↔ GR в картата за опита: истински знаменца вместо "BG ↔ GR" ---- */
+#about .experience-card:nth-child(2) .experience-icon {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 4px !important;
+  width: 74px !important;
+}
+#about .experience-card:nth-child(2) .experience-icon::before,
+#about .experience-card:nth-child(2) .experience-icon::after {
+  content: "" !important;
+  display: block !important;
+  width: 27px !important;
+  height: 18px !important;
+  border-radius: 3px !important;
+  box-shadow: 0 1px 4px rgba(0,43,92,.18) !important;
+  flex: 0 0 auto !important;
+}
+#about .experience-card:nth-child(2) .experience-icon::before {
+  background:
+    linear-gradient(to bottom,#fff 0 33.33%,#00966E 33.33% 66.66%,#D62612 66.66% 100%) !important;
+}
+#about .experience-card:nth-child(2) .experience-icon::after {
+  background:
+    linear-gradient(to bottom,#0D5EAF 0 11.11%,#fff 11.11% 22.22%,#0D5EAF 22.22% 33.33%,#fff 33.33% 44.44%,#0D5EAF 44.44% 55.55%,#fff 55.55% 66.66%,#0D5EAF 66.66% 77.77%,#fff 77.77% 88.88%,#0D5EAF 88.88% 100%) !important;
+}
+/* hide the literal ↔ if still present */
+#about .experience-card:nth-child(2) .experience-icon {
+  font-size: 0 !important;
+}
+
+/* ---- Малко по-разчупено оформление на текста за опита ---- */
+#about .experience-card {
+  transform: translateY(0);
+  transition: transform .28s ease, box-shadow .28s ease;
+}
+#about .experience-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 0;
+  border-radius: 0 4px 4px 0;
+  background: linear-gradient(to bottom,#0b67a9,#6bc6f1);
+  transition: height .3s ease;
+}
+#about .experience-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgba(0,43,92,.10) !important;
+}
+#about .experience-card:hover::before {
+  height: 58%;
+}
+
+/* ---- Бележката под устните преводи: един език според режима, по-живо оформление ---- */
+#services .service-note {
+  position: relative !important;
+  padding: 1.2rem 1.35rem !important;
+}
+#services .service-note::before {
+  content: "🎙️";
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  font-size: 1.15rem;
+  opacity: .85;
+}
+#services .service-note p {
+  padding-left: 2rem !important;
+  font-family: 'Poppins','Segoe UI',sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 1.02rem !important;
+  line-height: 1.65 !important;
+  color: #315b7a !important;
+}
+
+/* ---- Mobil: About да няма огромна празнина/скрол ---- */
+@media (max-width:700px) {
+  #about .about-flip-card {
+    min-height: 0 !important;
+  }
+  #about .about-flip-card .flip-card-front,
+  #about .about-flip-card .flip-card-back {
+    padding-bottom: 1.25rem !important;
+  }
+  #about .experience-card:nth-child(2) .experience-icon {
+    width: 70px !important;
+  }
+  #about .experience-card:nth-child(2) .experience-icon::before,
+  #about .experience-card:nth-child(2) .experience-icon::after {
+    width: 25px !important;
+    height: 17px !important;
+  }
+  #services .service-note p {
+    font-size: .94rem !important;
+  }
+}
+
+/* Уважаваме намаленото движение */
+@media (prefers-reduced-motion: reduce) {
+  #about .experience-card {
+    transition: none !important;
+  }
+}
+</style>
+<style id="service-note-and-flags-v25">
+/* Истински, правилно изчертан гръцки флаг */
+.global-lang-flag.greek-flag,
+.global-lang-flag.bulgarian-flag{
+  display:block!important;
+  width:40px!important;
+  height:27px!important;
+  border-radius:4px!important;
+  overflow:hidden!important;
+  box-shadow:0 2px 6px rgba(0,0,0,.20)!important;
+}
+@media(max-width:768px){
+  .global-lang-flag.greek-flag,
+  .global-lang-flag.bulgarian-flag{
+    width:35px!important;
+    height:23px!important;
+  }
+}
+
+/* По-богата и професионална секция за устни преводи */
+#services .service-note{
+  min-height:170px!important;
+  display:flex!important;
+  align-items:center!important;
+}
+#services .service-note p{
+  max-width:1120px!important;
+  font-family:'Poppins','Segoe UI',sans-serif!important;
+  font-size:1.05rem!important;
+  font-weight:600!important;
+  line-height:1.78!important;
+  letter-spacing:.01em!important;
+  margin:0!important;
+}
+#services .service-note p strong{
+  font-weight:800!important;
+  color:#003b70!important;
+}
+@media(max-width:700px){
+  #services .service-note{
+    min-height:0!important;
+    padding:1.25rem 1rem!important;
+  }
+  #services .service-note p{
+    font-size:.93rem!important;
+    line-height:1.7!important;
+  }
+}
+</style>
+<style id="final-language-visual-fix-v26">
+.global-bg-text{display:inline!important}
+.global-gr-text{display:none!important}
+body.global-greek .global-bg-text{display:none!important}
+body.global-greek .global-gr-text{display:inline!important}
+
+/* Experience cards */
+#about .experience-card{
+  position:relative;
+  overflow:hidden;
+}
+#about .experience-card .experience-icon{
+  position:relative;
+  z-index:2;
+}
+#about .experience-flags{
+  display:flex!important;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  width:82px!important;
+  height:46px!important;
+  margin-bottom:.55rem;
+  border-radius:14px;
+  background:#e7f4fd;
+  border:1px solid #c9e1f0;
+}
+#about .experience-flags .final-flag{
+  width:29px!important;
+  height:19px!important;
+  border-radius:3px!important;
+  display:block!important;
+  box-shadow:0 1px 4px rgba(0,0,0,.16);
+}
+#about .experience-card b{
+  font-family:'Poppins','Segoe UI',sans-serif!important;
+  font-weight:800!important;
+  font-size:1.18rem!important;
+  line-height:1.3!important;
+}
+#about .experience-desc{
+  font-family:'Poppins','Segoe UI',sans-serif!important;
+  font-weight:600!important;
+  font-size:.98rem!important;
+  line-height:1.55!important;
+}
+
+/* Global flags: real flags, aligned in the blue navigation */
+.global-language-switcher{
+  z-index:999!important;
+}
+.global-lang-flag,
+.global-language-btn .global-lang-flag{
+  display:block!important;
+}
+.global-language-btn .final-flag{
+  width:38px!important;
+  height:25px!important;
+}
+@media (max-width:768px){
+  #about .experience-flags{
+    width:74px!important;
+    height:42px!important;
+  }
+  #about .experience-flags .final-flag{
+    width:26px!important;
+    height:18px!important;
+  }
+  .global-language-btn .final-flag{
+    width:34px!important;
+    height:23px!important;
+  }
+}
+
+/* Footer should remain clean and centered. */
+footer{
+  text-align:center!important;
+}
+footer p{
+  margin:.35rem 0!important;
+}
+</style>
+<style id="footer-and-language-cells-v27">
+/* Individual cards have no BG/GR language labels anymore. */
+#about .flip-language-label,
+#bilingual-intro .flip-card-front > h3 svg,
+#bilingual-intro .flip-card-back > h3 svg{
+  display:none!important;
+}
+#bilingual-intro .flip-card-front > h3,
+#bilingual-intro .flip-card-back > h3{
+  padding-left:0!important;
+}
+
+/* Footer: both flags + country names stay visible in BOTH language modes. */
+footer{
+  text-align:center!important;
+  background:#003b70!important;
+  color:#fff!important;
+  padding:1.35rem 1rem 1.5rem!important;
+}
+footer > p:first-child{
+  margin:0 0 .65rem!important;
+  font-family:'Poppins','Segoe UI',sans-serif!important;
+  font-size:1rem!important;
+  line-height:1.5!important;
+  font-weight:500!important;
+}
+.footer-language-row{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:.55rem!important;
+  margin:0!important;
+  font-family:'Poppins','Segoe UI',sans-serif!important;
+  font-size:.98rem!important;
+  font-weight:600!important;
+  line-height:1!important;
+}
+.footer-language-row .final-flag{
+  width:30px!important;
+  height:20px!important;
+  flex:0 0 auto!important;
+  display:block!important;
+  border-radius:3px!important;
+  box-shadow:0 1px 5px rgba(0,0,0,.2)!important;
+}
+.footer-separator{
+  opacity:.65;
+  margin:0 .05rem;
+}
+@media(max-width:700px){
+  footer{
+    padding:1.1rem .85rem 1.25rem!important;
+  }
+  footer > p:first-child{
+    font-size:.86rem!important;
+  }
+  .footer-language-row{
+    font-size:.9rem!important;
+    gap:.45rem!important;
+  }
+  .footer-language-row .final-flag{
+    width:27px!important;
+    height:18px!important;
+  }
+}
+
+/* Top global flags use exact flag artwork. */
+.global-language-btn .final-flag{
+  width:38px!important;
+  height:25px!important;
+  display:block!important;
+}
+@media(max-width:768px){
+  .global-language-btn .final-flag{
+    width:34px!important;
+    height:23px!important;
+  }
+}
+</style>
+<style id="final-polish-v28">
+/* Greek flag: clean, proportionally consistent SVG */
+.final-flag.gr-flag{
+  width:38px!important;
+  height:25px!important;
+  display:block!important;
+  border-radius:3px!important;
+  box-shadow:0 1px 5px rgba(0,0,0,.20)!important;
+}
+@media(max-width:768px){
+  .final-flag.gr-flag{
+    width:34px!important;
+    height:23px!important;
+  }
+}
+
+/* Oral section title: icon is part of the heading, not floating above it */
+.oral-translation-group .service-group-title{
+  display:flex!important;
+  align-items:center!important;
+  gap:.45rem!important;
+}
+.oral-translation-group .service-group-title .paired-icon{
+  position:static!important;
+  display:inline-flex!important;
+  flex:0 0 auto!important;
+  margin:0!important;
+  line-height:1!important;
+}
+
+/* Main intro: additional advertising copy with attractive hierarchy */
+#bilingual-intro .intro-extra{
+  margin-top:1rem!important;
+  max-width:1050px!important;
+  font-family:'Poppins','Segoe UI',sans-serif!important;
+  font-size:1.02rem!important;
+  line-height:1.75!important;
+  font-weight:600!important;
+  color:#4d6b83!important;
+}
+#bilingual-intro .intro-trust-row{
+  display:flex!important;
+  flex-wrap:wrap!important;
+  justify-content:center!important;
+  gap:.65rem!important;
+  margin-top:1.1rem!important;
+}
+#bilingual-intro .intro-trust-row span{
+  display:inline-flex!important;
+  align-items:center!important;
+  padding:.42rem .78rem!important;
+  border-radius:999px!important;
+  background:#eaf5fc!important;
+  border:1px solid #cde2ef!important;
+  color:#155987!important;
+  font-family:'Poppins','Segoe UI',sans-serif!important;
+  font-size:.82rem!important;
+  font-weight:700!important;
+  box-shadow:0 4px 10px rgba(0,43,92,.05)!important;
+}
+#bilingual-intro .flip-card-face h3{
+  margin-bottom:.8rem!important;
+}
+@media(max-width:700px){
+  #bilingual-intro .intro-extra{
+    font-size:.92rem!important;
+    line-height:1.65!important;
+  }
+  #bilingual-intro .intro-trust-row{
+    justify-content:flex-start!important;
+    gap:.45rem!important;
+  }
+  #bilingual-intro .intro-trust-row span{
+    font-size:.75rem!important;
+    padding:.38rem .62rem!important;
+  }
+}
+
+/* Global language switcher remains in the blue bar */
+.global-language-switcher{
+  z-index:1000!important;
+}
+</style>
+<style id="intro-no-scroll-v29">
+/* The bilingual intro card grows naturally; no internal scrollbar */
+#bilingual-intro .intro-flip-card{
+  min-height:0!important;
+  height:auto!important;
+  overflow:visible!important;
+}
+#bilingual-intro .intro-flip-card .flip-card-inner{
+  display:grid!important;
+  grid-template-columns:1fr!important;
+  height:auto!important;
+  min-height:0!important;
+  overflow:visible!important;
+}
+#bilingual-intro .intro-flip-card .flip-card-face{
+  grid-area:1 / 1!important;
+  position:relative!important;
+  inset:auto!important;
+  min-height:0!important;
+  height:auto!important;
+  overflow:visible!important;
+}
+#bilingual-intro .intro-flip-card .flip-card-front,
+#bilingual-intro .intro-flip-card .flip-card-back{
+  padding-bottom:1.75rem!important;
+}
+#bilingual-intro .intro-flip-card .intro-extra{
+  margin-top:1.2rem!important;
+}
+#bilingual-intro .intro-flip-card .flip-card-back{
+  transform:rotateY(180deg)!important;
+}
+
+/* The page-wide Greek/BG transform still works with the grid-based faces. */
+body.global-greek #bilingual-intro .intro-flip-card .flip-card-inner{
+  transform:rotateY(180deg)!important;
+}
+body:not(.global-greek) #bilingual-intro .intro-flip-card .flip-card-inner{
+  transform:rotateY(0deg)!important;
+}
+</style>
+<style id="how-readable-v29">
+#how-it-works .how-step p.global-gr-block{
+  color:#5f7890!important;
+  font-family:'Poppins','Segoe UI',sans-serif!important;
+  font-weight:600!important;
+  opacity:1!important;
+}
+@media(max-width:700px){
+  #how-it-works .how-step p.global-gr-block{
+    color:#557089!important;
+    font-weight:600!important;
+  }
+}
+</style>
+<style id="legal-text-v29">
+#services .legalization-group .service-card .flip-card-face{
+  overflow:visible!important;
+}
+#services .legalization-group .service-card .flip-card-face p{
+  line-height:1.72!important;
+}
+@media(max-width:700px){
+  #services .legalization-group .service-card .flip-card-face p{
+    line-height:1.65!important;
+  }
+}
+</style>
+<style id="final-layout-v30">
+/* Main bilingual intro: content determines height; never show an inner scrollbar */
+#bilingual-intro .intro-flip-card{
+  min-height:0!important;height:auto!important;overflow:visible!important;
+}
+#bilingual-intro .intro-flip-card .flip-card-inner{
+  display:grid!important;grid-template-columns:1fr!important;
+  height:auto!important;min-height:0!important;overflow:visible!important;
+}
+#bilingual-intro .intro-flip-card .flip-card-face{
+  grid-area:1/1!important;position:relative!important;
+  inset:auto!important;height:auto!important;min-height:0!important;
+  overflow:visible!important;
+}
+#bilingual-intro .intro-flip-card .flip-card-front,
+#bilingual-intro .intro-flip-card .flip-card-back{
+  padding-bottom:2rem!important;
+}
+body.global-greek #bilingual-intro .intro-flip-card .flip-card-inner{
+  transform:rotateY(180deg)!important;
+}
+body:not(.global-greek) #bilingual-intro .intro-flip-card .flip-card-inner{
+  transform:rotateY(0deg)!important;
+}
+
+/* Stronger Greek readability for the 4-step section */
+#how-it-works .how-step p.global-gr-block{
+  opacity:1!important;
+  color:#5a7389!important;
+  font-weight:600!important;
+}
+#how-it-works .how-step h3.global-bg-block{
+  font-weight:800!important;
+}
+
+/* Legal cards: more spacious text without any scroll */
+#services .service-group .service-card .flip-card-face{
+  overflow:visible!important;
+}
+#services .service-group .service-card .flip-card-face p{
+  font-weight:500!important;
+  line-height:1.72!important;
+}
+</style>
+<style id="precise-flag-and-text-v31">
+/* The global selector and all inline Greek flags use the same correct flag. */
+.global-language-btn .final-flag,
+.experience-flags .final-flag,
+.footer-language-row .final-flag,
+.gr-flag{
+  width:38px!important;
+  height:25px!important;
+  display:block!important;
+  border-radius:3px!important;
+  overflow:hidden!important;
+}
+@media(max-width:768px){
+  .global-language-btn .final-flag,
+  .experience-flags .final-flag,
+  .footer-language-row .final-flag,
+  .gr-flag{
+    width:34px!important;
+    height:23px!important;
+  }
+}
+
+/* Individual cards contain no language labels or flags. */
+#bilingual-intro .flip-card-face h3:empty{
+  display:none!important;
+}
+#about .flip-language-label{
+  display:none!important;
+}
+
+/* Slightly reduce only the Greek copy in the final legal/notarial card. */
+#services .service-group:not(.oral-translation-group) .service-card:nth-child(3) .flip-card-back p{
+  font-size:.92rem!important;
+  line-height:1.65!important;
+}
+@media(max-width:700px){
+  #services .service-group:not(.oral-translation-group) .service-card:nth-child(3) .flip-card-back p{
+    font-size:.84rem!important;
+    line-height:1.58!important;
+  }
+}
+
+/* Footer remains bilingual by design in both modes. */
+footer .footer-language-row{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:.55rem!important;
+}
+footer .footer-language-row .global-bg-text,
+footer .footer-language-row .global-gr-text{
+  display:inline!important;
+}
+
+/* Ensure the whole page remains responsive with no horizontal overflow. */
+html,body{
+  max-width:100%;
+  overflow-x:hidden;
+}
+</style>
+<style id="exact-flags-and-legal-v32">
+/* No flag in the real-estate card titles — language is already selected globally. */
+#real-estate .flip-card-front h3 svg,
+#real-estate .flip-card-back h3 svg{
+  display:none!important;
+}
+
+/* Experience-card flags use the exact same artwork and proportions. */
+#about .experience-card:nth-child(2) .experience-flags{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:6px!important;
+  width:82px!important;
+  height:46px!important;
+}
+#about .experience-card:nth-child(2) .experience-flags .final-flag{
+  width:30px!important;
+  height:20px!important;
+  display:block!important;
+  flex:0 0 auto!important;
+  border-radius:3px!important;
+  box-shadow:0 1px 4px rgba(0,0,0,.16)!important;
+}
+
+/* The final Greek legal/notarial card is slightly smaller only on the GR side. */
+#services .service-group .service-card:nth-child(3) .flip-card-back p{
+  font-size:.86rem!important;
+  line-height:1.52!important;
+}
+@media(max-width:700px){
+  #about .experience-card:nth-child(2) .experience-flags{
+    width:74px!important;
+    height:42px!important;
+    gap:5px!important;
+  }
+  #about .experience-card:nth-child(2) .experience-flags .final-flag{
+    width:27px!important;
+    height:18px!important;
+  }
+  #services .service-group .service-card:nth-child(3) .flip-card-back p{
+    font-size:.80rem!important;
+    line-height:1.48!important;
+  }
+}
+</style>
+<style id="remove-duplicate-experience-flags-v33">
+/* Remove the old pseudo-flag decorations that were left from an earlier version.
+   Keep only the two real SVG flags inside the light-blue box. */
+#about .experience-card:nth-child(2) .experience-icon::before,
+#about .experience-card:nth-child(2) .experience-icon::after{
+  content:none!important;
+  display:none!important;
+}
+</style>
+<style id="oral-heading-icon-v34">
+#services .oral-translation-group .service-group-title{
+  display:flex!important;
+  align-items:center!important;
+  gap:.48rem!important;
+  flex-wrap:wrap!important;
+}
+#services .oral-translation-group .service-group-title .paired-icon{
+  position:static!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  flex:0 0 auto!important;
+  margin:0!important;
+  line-height:1!important;
+  font-size:1.05em!important;
+}
+@media(max-width:700px){
+  #services .oral-translation-group .service-group-title{
+    gap:.38rem!important;
+  }
+}
+</style>
+<style id="natural-content-cards-v42">
+/* === Карти: височината следва текста, без излишни празни полета === */
+#services .service-grid,
+#services .service-grid.three,
+#services .legal-grid{
+  align-items:start!important;
+}
+
+#services .service-card{
+  min-height:0!important;
+  height:var(--content-card-height,auto)!important;
+  box-sizing:border-box!important;
+  overflow:visible!important;
+}
+
+#services .service-card .flip-card-inner{
+  height:var(--content-card-height,auto)!important;
+  min-height:0!important;
+  box-sizing:border-box!important;
+}
+
+#services .service-card .flip-card-front,
+#services .service-card .flip-card-back{
+  box-sizing:border-box!important;
+  min-height:0!important;
+  height:var(--content-card-height,auto)!important;
+  overflow:visible!important;
+}
+
+#services .service-card .flip-card-face{
+  font-family:'Poppins','Segoe UI',Arial,sans-serif!important;
+  overflow-wrap:anywhere!important;
+  word-break:normal!important;
+  hyphens:none!important;
+}
+
+#services .service-card .flip-card-face h3,
+#services .service-card .flip-card-face h4{
+  font-family:'Poppins','Segoe UI',Arial,sans-serif!important;
+  font-size:1.02rem!important;
+  line-height:1.3!important;
+  font-weight:800!important;
+  margin:0 0 .62rem!important;
+}
+
+#services .service-card .flip-card-face p,
+#services .service-card .flip-card-face li{
+  font-family:'Poppins','Segoe UI',Arial,sans-serif!important;
+  font-size:.98rem!important;
+  line-height:1.62!important;
+  font-weight:500!important;
+  margin:0!important;
+}
+
+#services .service-card .title-icon{
+  flex:0 0 auto!important;
+}
+
+@media(max-width:700px){
+  #services .service-card{
+    min-height:0!important;
+    height:var(--content-card-height,auto)!important;
+  }
+  #services .service-card .flip-card-inner,
+  #services .service-card .flip-card-front,
+  #services .service-card .flip-card-back{
+    height:var(--content-card-height,auto)!important;
+  }
+  #services .service-card .flip-card-face{
+    padding:1rem .95rem 1.05rem!important;
+  }
+  #services .service-card .flip-card-face h3,
+  #services .service-card .flip-card-face h4{
+    font-size:1rem!important;
+    line-height:1.28!important;
+    margin-bottom:.55rem!important;
+  }
+  #services .service-card .flip-card-face p,
+  #services .service-card .flip-card-face li{
+    font-size:.88rem!important;
+    line-height:1.55!important;
+  }
+}
+
+@media(max-width:390px){
+  #services .service-card .flip-card-face h3,
+  #services .service-card .flip-card-face h4{
+    font-size:.94rem!important;
+  }
+  #services .service-card .flip-card-face p,
+  #services .service-card .flip-card-face li{
+    font-size:.82rem!important;
+    line-height:1.5!important;
+  }
+}
+
+/* Трите карти за опита: компактни и равномерни */
+#about .about-highlights{
+  align-items:stretch!important;
+}
+#about .experience-card{
+  min-height:0!important;
+  height:auto!important;
+}
+@media(max-width:700px){
+  #about .experience-card{
+    min-height:0!important;
+    padding:.9rem!important;
+  }
+}
+</style>
+
+
+<style id="about-natural-mobile-v49">
+@media(max-width:700px){
+
+  /* On mobile only the selected language participates in layout.
+     This prevents the hidden Greek/Bulgarian face from creating empty height. */
+  #about .about-flip-card{
+    height:auto!important;
+    min-height:0!important;
+    margin:0!important;
+    padding:0!important;
+    overflow:visible!important;
+  }
+
+  #about .about-flip-card .flip-card-inner{
+    height:auto!important;
+    min-height:0!important;
+    display:block!important;
+    transform:none!important;
+  }
+
+  #about .about-flip-card .flip-card-face{
+    position:relative!important;
+    inset:auto!important;
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    display:flex!important;
+    box-sizing:border-box!important;
+    overflow:visible!important;
+    transform:none!important;
+    padding-bottom:.72rem!important;
+  }
+
+  /* BG: hide only the Greek face. */
+  body:not(.global-greek) #about .about-flip-card .flip-card-back{
+    display:none!important;
+  }
+
+  /* GR: hide only the Bulgarian face. */
+  body.global-greek #about .about-flip-card .flip-card-front{
+    display:none!important;
+  }
+
+  /* Compact paragraph rhythm, identical logic in both languages. */
+  #about .about-flip-card .flip-card-face p{
+    margin-top:0!important;
+    margin-bottom:.58rem!important;
+  }
+  #about .about-flip-card .flip-card-face p:last-child{
+    margin-bottom:0!important;
+  }
+
+  /* Exactly the same small gap before the first experience card
+     as the gap between the experience cards. */
+  #about .about-highlights{
+    margin-top:.7rem!important;
+    gap:.7rem!important;
+  }
+}
+
+/* Gentle card motion: different for BG and GR, without affecting layout. */
+@keyframes aboutBgCardsV49{
+  0%,100%{box-shadow:0 7px 18px rgba(0,43,92,.07)}
+  50%{box-shadow:0 11px 24px rgba(0,43,92,.12)}
+}
+@keyframes aboutGrCardsV49{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-2px)}
+}
+body:not(.global-greek) #about .experience-card{
+  animation:aboutBgCardsV49 4.8s ease-in-out infinite;
+}
+body.global-greek #about .experience-card{
+  animation:aboutGrCardsV49 4.2s ease-in-out infinite;
+}
+@media(prefers-reduced-motion:reduce){
+  #about .experience-card{animation:none!important}
+}
+</style>
+
+<style id="real-estate-enhanced-v51">
+/* По-изразително представяне на секцията „Недвижими имоти“ — без промяна на съдържанието */
+#real-estate .real-estate-flip-card{
+  border-radius:24px!important;
+  overflow:visible!important;
+  box-shadow:0 14px 34px rgba(0,43,92,.10)!important;
+}
+#real-estate .real-estate-flip-card .flip-card-front,
+#real-estate .real-estate-flip-card .flip-card-back{
+  padding:clamp(1.35rem,3vw,2rem)!important;
+  background:linear-gradient(145deg,#ffffff 0%,#f7fbfe 100%)!important;
+}
+#real-estate .real-estate-flip-card h3{
+  display:flex!important;
+  align-items:flex-start!important;
+  gap:.65rem!important;
+  margin:0 0 1rem!important;
+  padding-bottom:.85rem!important;
+  border-bottom:1px solid #d8e7f1!important;
+  color:#003b70!important;
+  font-size:clamp(1.08rem,2vw,1.35rem)!important;
+  line-height:1.42!important;
+}
+#real-estate .real-estate-flip-card h3::before{
+  content:'🏠';
+  width:38px;height:38px;flex:0 0 38px;
+  display:grid;place-items:center;
+  border-radius:12px;
+  background:#e8f4fc;
+  border:1px solid #cfe3f0;
+  font-size:1.15rem;
+  box-shadow:0 5px 14px rgba(0,70,120,.08);
+  animation:reHouseFloat 3.8s ease-in-out infinite;
+}
+#real-estate .real-estate-flip-card h3 svg{margin-top:.35rem!important}
+#real-estate .real-estate-flip-card p{
+  margin:0 0 1rem!important;
+  padding:1rem 1.05rem!important;
+  border-left:4px solid #2f91c8!important;
+  border-radius:0 15px 15px 0!important;
+  background:linear-gradient(100deg,#eef7fd 0%,#f8fbfe 100%)!important;
+  color:#46677f!important;
+  font-size:clamp(.94rem,1.35vw,1.03rem)!important;
+  line-height:1.72!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.9)!important;
+}
+#real-estate .real-estate-flip-card .re-list{
+  gap:.55rem!important;
+}
+#real-estate .real-estate-flip-card .re-list li{
+  position:relative!important;
+  padding:.68rem .72rem!important;
+  background:#fff!important;
+  border:1px solid #e0ecf3!important;
+  box-shadow:0 5px 13px rgba(0,43,92,.045)!important;
+  transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease!important;
+}
+#real-estate .real-estate-flip-card .re-list li:hover{
+  transform:translateX(4px);
+  border-color:#c4ddea!important;
+  box-shadow:0 8px 18px rgba(0,43,92,.08)!important;
+}
+@keyframes reHouseFloat{
+  0%,100%{transform:translateY(0) rotate(0deg)}
+  50%{transform:translateY(-3px) rotate(-1deg)}
+}
+@media(max-width:700px){
+  #real-estate .real-estate-flip-card .flip-card-front,
+  #real-estate .real-estate-flip-card .flip-card-back{
+    padding:1.05rem!important;
+  }
+  #real-estate .real-estate-flip-card h3{
+    gap:.55rem!important;
+    margin-bottom:.75rem!important;
+    padding-bottom:.7rem!important;
+    font-size:.99rem!important;
+  }
+  #real-estate .real-estate-flip-card h3::before{
+    width:34px;height:34px;flex-basis:34px;font-size:1rem;
+  }
+  #real-estate .real-estate-flip-card p{
+    margin-bottom:.8rem!important;
+    padding:.82rem .85rem!important;
+    font-size:.88rem!important;
+    line-height:1.62!important;
+  }
+  #real-estate .real-estate-flip-card .re-list li{
+    padding:.58rem .6rem!important;
+    font-size:.86rem!important;
+    line-height:1.5!important;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  #real-estate .real-estate-flip-card h3::before{animation:none!important}
+  #real-estate .real-estate-flip-card .re-list li{transition:none!important}
+}
+</style>
+
+</head>
+<body>
+<header class="site-header">
+<img alt="Plamen Mollov Logo" fetchpriority="high" src="assets/images/logo.webp"/>
+<h1><span class="global-bg-text">Заклет преводач от и на гръцки език – Пламен Моллов</span><span class="global-gr-text">Επίσημος μεταφραστής από και προς την ελληνική γλώσσα – Πλάμεν Μόλλοβ</span></h1>
+<h2><strong><span class="global-bg-text">17 години опит в устни и писмени преводи, заверки, легализации и консултации</span><span class="global-gr-text">17 χρόνια εμπειρίας σε γραπτές και προφορικές μεταφράσεις, επικυρώσεις, νομιμοποιήσεις και υποστήριξη</span></strong></h2>
+</header>
+<nav>
+<div class="menu-toggle">
+<span></span>
+<span></span>
+<span></span>
+</div>
+<div class="nav-links">
+<a href="#about"><span class="global-bg-text">За мен</span><span class="global-gr-text">Σχετικά με εμένα</span></a>
+<a href="#services"><span class="global-bg-text">Услуги</span><span class="global-gr-text">Υπηρεσίες</span></a>
+<a href="prices.html"><span class="global-bg-text">Цени</span><span class="global-gr-text">Τιμές</span></a>
+<a href="#real-estate"><span class="global-bg-text">Имоти в Гърция</span><span class="global-gr-text">Ακίνητα στην Ελλάδα</span></a>
+<a href="testimonials.html"><span class="global-bg-text">Мнения</span><span class="global-gr-text">Αξιολογήσεις</span></a>
+<a href="#contact"><span class="global-bg-text">Контакти</span><span class="global-gr-text">Επικοινωνίες</span></a>
+</div>
+<div aria-label="Избор на език" class="global-language-switcher" role="group"><button aria-label="Български език" class="global-language-btn global-bg active" data-language="bg" type="button"><svg aria-label="Български език" class="final-flag bg-flag" role="img" viewbox="0 0 36 24">
+<rect fill="#D62612" height="24" width="36"></rect>
+<rect fill="#00966E" height="16" width="36"></rect>
+<rect fill="#FFFFFF" height="8" width="36"></rect>
+</svg></button><button aria-label="Ελληνικά" class="global-language-btn global-gr" data-language="gr" type="button"><svg aria-label="Ελληνικά" class="final-flag gr-flag" role="img" viewbox="0 0 36 24" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#0D5EAF" height="24" width="36"></rect>
+<path d="M0 2.6667H36V5.3334H0ZM0 8H36V10.6667H0ZM0 13.3333H36V16H0ZM0 18.6666H36V21.3333H0Z" fill="#FFFFFF"></path>
+<rect fill="#0D5EAF" height="13.3333" width="13.3333"></rect>
+<rect fill="#FFFFFF" height="13.3333" width="4.4444" x="4.4444"></rect>
+<rect fill="#FFFFFF" height="4.4444" width="13.3333" y="4.4444"></rect>
+</svg></button></div></nav>
+<div aria-label="Фоново изображение с гръцка тематика" class="hero" role="img">
+<span class="hero-letter" style="top: 77%; left: 69%; animation-delay: 1.43s;">Χ</span>
+<span class="hero-letter" style="top: 9%; left: 47%; animation-delay: 2.79s;">Κ</span>
+<span class="hero-letter" style="top: 19%; left: 63%; animation-delay: 4.21s;">Υ</span>
+<span class="hero-letter" style="top: 81%; left: 49%; animation-delay: 1.94s;">π</span>
+<span class="hero-letter" style="top: 83%; left: 82%; animation-delay: 4.26s;">φ</span>
+<span class="hero-letter" style="top: 74%; left: 30%; animation-delay: 1.89s;">Α</span>
+<span class="hero-letter" style="top: 12%; left: 12%; animation-delay: 6.02s;">Ι</span>
+<span class="hero-letter" style="top: 66%; left: 14%; animation-delay: 5.97s;">λ</span>
+<span class="hero-letter" style="top: 30%; left: 73%; animation-delay: 0.33s;">Β</span>
+<span class="hero-letter" style="top: 37%; left: 6%; animation-delay: 1.8s;">Η</span>
+<span class="hero-letter" style="top: 44%; left: 25%; animation-delay: 5.53s;">ρ</span>
+<span class="hero-letter" style="top: 36%; left: 85%; animation-delay: 0.46s;">Σ</span>
+<span class="hero-letter" style="top: 61%; left: 40%; animation-delay: 3.07s;">Ζ</span>
+<span class="hero-letter" style="top: 16%; left: 37%; animation-delay: 2.6s;">ξ</span>
+<span class="hero-letter" style="top: 36%; left: 60%; animation-delay: 1.07s;">Ε</span>
+<span class="hero-letter" style="top: 56%; left: 88%; animation-delay: 5.84s;">ς</span>
+<span class="hero-letter" style="top: 88%; left: 63%; animation-delay: 0.57s;">Ο</span>
+<span class="hero-letter" style="top: 83%; left: 4%; animation-delay: 5.01s;">Ν</span>
+<span class="hero-letter" style="top: 13%; left: 5%; animation-delay: 4.62s;">Τ</span>
+<span class="hero-letter" style="top: 40%; left: 50%; animation-delay: 0.12s;">Γ</span>
+<span class="hero-letter" style="top: 7%; left: 71%; animation-delay: 3.58s;">Π</span>
+<span class="hero-letter" style="top: 44%; left: 16%; animation-delay: 5.36s;">Μ</span>
+<span class="hero-letter" style="top: 20%; left: 27%; animation-delay: 0.94s;">ψ</span>
+<span class="hero-letter" style="top: 27%; left: 96%; animation-delay: 3.84s;">Ξ</span>
+<span class="hero-letter" style="top: 90%; left: 26%; animation-delay: 5.92s;">Λ</span>
+<span class="hero-letter" style="top: 5%; left: 20%; animation-delay: 5.43s;">Φ</span>
+<span class="hero-letter" style="top: 70%; left: 46%; animation-delay: 4.13s;">Ρ</span>
+<span class="hero-letter" style="top: 72%; left: 55%; animation-delay: 2.13s;">β</span>
+<span class="hero-letter" style="top: 6%; left: 77%; animation-delay: 2.04s;">Ψ</span>
+<span class="hero-letter" style="top: 76%; left: 98%; animation-delay: 2.04s;">Θ</span>
+<span class="hero-letter" style="top: 30%; left: 42%; animation-delay: 5.04s;">η</span>
+<span class="hero-letter" style="top: 5%; left: 89%; animation-delay: 0.94s;">Ω</span></div>
+<style id="homepage-redesign-v2">
+/* ===== HOME PAGE VISUAL REDESIGN — content/functionality preserved ===== */
+.site-header{padding:1rem 1.25rem 1.15rem!important}
+.site-header h1{margin:.15rem auto .35rem!important;font-family:'Poppins',sans-serif!important;font-size:clamp(1.65rem,3vw,2.45rem)!important;line-height:1.2!important}
+.site-header h2{margin:.35rem auto .15rem!important;font-family:'Poppins',sans-serif!important;font-size:clamp(.92rem,1.5vw,1.15rem)!important;line-height:1.5!important}
+.header-greek-title,.header-greek-subtitle{font-family:'Poppins','Segoe UI',sans-serif;color:#dceeff;font-weight:600;line-height:1.45}
+.header-greek-title{font-size:clamp(.95rem,1.55vw,1.2rem);margin-bottom:.15rem}
+.header-greek-subtitle{font-size:clamp(.78rem,1.15vw,.98rem);font-weight:500}
+nav{gap:.45rem!important;padding:.65rem .75rem!important;flex-wrap:wrap}
+nav .nav-links{display:flex;justify-content:center;gap:.35rem;flex-wrap:wrap;width:100%}
+nav a{font-size:clamp(.9rem,1.05vw,1.08rem)!important;padding:.82rem 1.2rem!important;margin:.15rem!important;border-radius:12px!important;min-height:48px;box-sizing:border-box;white-space:nowrap}
+.hero{aspect-ratio:16/4.35!important;background-size:cover!important;background-position:center!important;min-height:250px}
+
+.home-section{max-width:1200px;margin:1.35rem auto!important;padding:clamp(1.2rem,2.5vw,2.3rem)!important;border:1px solid #d9e7f2!important;border-radius:24px!important;box-shadow:0 12px 35px rgba(0,43,92,.08)!important;position:relative;overflow:hidden}
+.home-section::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#003f73,#59b8ee,#003f73);opacity:.85}
+.section-heading{display:flex;align-items:center;gap:.85rem;margin:0 0 1.25rem;color:#003366;font-family:'Poppins',sans-serif;font-size:clamp(1.45rem,2.6vw,2rem);line-height:1.25}
+.section-heading::after{content:"";height:1px;background:#cfe0ed;flex:1;margin-left:.35rem}
+.section-icon{width:44px;height:44px;flex:0 0 44px;display:grid;place-items:center;border-radius:14px;background:linear-gradient(145deg,#e5f3ff,#fff);border:1px solid #cfe3f2;box-shadow:0 5px 15px rgba(0,61,105,.08);font-size:1.35rem}
+.bilingual-intro{background:linear-gradient(135deg,#f8fcff,#eef7fd)!important}
+.language-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.language-card{background:#fff;border:1px solid #d6e6f1;border-radius:20px;padding:1.35rem 1.45rem;box-shadow:0 8px 22px rgba(0,43,92,.06);position:relative;overflow:hidden}
+.language-card::after{content:"";position:absolute;right:-35px;bottom:-45px;width:120px;height:120px;border-radius:50%;background:#eaf5fd;opacity:.7}
+.language-card h3{position:relative;z-index:1;display:flex;align-items:center;gap:.55rem;margin:0 0 .7rem;color:#003366;font-family:'Poppins',sans-serif;font-size:clamp(1.05rem,1.6vw,1.3rem);line-height:1.35}
+.language-card p{position:relative;z-index:1;margin:0;color:#526d84;font-size:1rem;line-height:1.75}
+.language-card strong{color:#003f73}
+.flag-inline{width:28px;height:19px;display:inline-block;vertical-align:-4px;border-radius:3px;box-shadow:0 2px 6px rgba(0,43,92,.14);flex:0 0 28px}.panel-label .flag-inline{width:25px;height:17px;vertical-align:-3px;margin-right:.35rem}.language-flags .flag-inline{width:28px;height:19px;vertical-align:middle;flex:0 0 28px}.ai-lang-btn .flag-inline{width:22px;height:15px;vertical-align:-3px;flex:0 0 22px}.flag{font-size:1.55rem}.flag-img{width:28px;height:19px;object-fit:cover;border-radius:3px;box-shadow:0 2px 6px rgba(0,43,92,.14);display:block;flex:0 0 28px}.ai-flag-img{width:22px;height:15px;object-fit:cover;border-radius:2px;display:inline-block;vertical-align:-2px;box-shadow:0 1px 4px rgba(0,43,92,.15)}
+
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;align-items:stretch}
+.about-panel{background:#f8fbfe;border:1px solid #dceaf3;border-radius:18px;padding:1.4rem 1.5rem;display:flex;flex-direction:column}
+.about-panel p{margin:0 0 .9rem;color:#536e84;line-height:1.78;font-size:1rem}
+.about-panel p:last-child{margin-bottom:0}
+.panel-label{display:inline-flex;align-items:center;gap:.45rem;align-self:flex-start;margin-bottom:1rem;padding:.42rem .7rem;border-radius:999px;background:#e8f4fd;color:#003f73;font:700 .8rem/1 'Poppins',sans-serif}
+.about-highlights{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-top:1rem}
+.highlight{padding:1rem;border-radius:16px;background:linear-gradient(145deg,#fff,#f2f8fc);border:1px solid #dbe9f2;text-align:center;color:#36556f}
+.highlight b{display:block;color:#003366;font-size:1.05rem;margin-bottom:.25rem}.language-flags{display:flex!important;align-items:center;justify-content:center;gap:.55rem}.language-flags img{width:28px;height:19px;object-fit:cover;border-radius:3px;box-shadow:0 2px 6px rgba(0,43,92,.14)}.language-flags span{font-size:1.15rem;color:#4f6a80;line-height:1}
+.highlight span{font-size:.82rem;line-height:1.45}
+
+.service-group{margin-top:1.7rem}
+.oral-translation-group{margin-top:2.15rem;padding:1.35rem 1.35rem 1.25rem;border-radius:22px;background:linear-gradient(145deg,#eef7ff 0%,#e5f1fb 100%);border:1px solid #c9dfef;box-shadow:inset 0 1px 0 rgba(255,255,255,.85)}
+.oral-translation-group .service-group-title{color:#004b80}
+.oral-translation-group .service-group-title::after{background:#c2dbe9}
+.oral-translation-group .service-card{background:rgba(255,255,255,.88);border-color:#c9deeb}
+.oral-translation-group .service-card h4 .svc-icon{background:#dff0fb;color:#005c96}
+.oral-translation-group .service-note{background:rgba(255,255,255,.62);border-color:#c4dce9}
+@media(max-width:700px){.oral-translation-group{padding:.9rem;border-radius:19px}}
+.service-group:first-of-type{margin-top:0}
+.service-group-title{display:flex;align-items:center;gap:.65rem;color:#003366;font-family:'Poppins',sans-serif;font-size:clamp(1.15rem,1.8vw,1.4rem);line-height:1.35;margin:0 0 .9rem}
+.service-group-title::after{content:"";height:1px;background:#d7e5ef;flex:1}
+.service-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.9rem}
+.service-grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.service-card{background:#fff;border:1px solid #d8e7f1;border-radius:17px;padding:1.15rem 1.2rem;box-shadow:0 7px 20px rgba(0,43,92,.055);transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;min-height:150px;box-sizing:border-box}
+.service-card:hover{transform:translateY(-4px);box-shadow:0 13px 28px rgba(0,43,92,.11);border-color:#b9d6e9}
+.service-card h4{display:flex;align-items:flex-start;gap:.6rem;margin:0 0 .55rem;color:#003366;font-family:'Poppins',sans-serif;font-size:1rem;line-height:1.42}
+.service-card h4 .svc-icon{width:32px;height:32px;flex:0 0 32px;display:grid;place-items:center;border-radius:10px;background:#eaf5fd;color:#0060a8;font-size:1rem}
+.service-card p{margin:0;color:#5d768b;font-size:.92rem;line-height:1.7}
+.service-card p + p{margin-top:.5rem}
+.service-note{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:.9rem;padding:1rem 1.1rem;border:1px solid #d3e5f1;border-radius:16px;background:#f5faff;color:#526f86}
+.service-note p{margin:0;font-size:.9rem;line-height:1.65}
+.service-note strong{color:#003f73}
+.legal-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.legal-card{background:linear-gradient(145deg,#003b72,#005b9f);color:#fff;border:0;box-shadow:0 12px 26px rgba(0,55,105,.16)}
+.legal-card h4{color:#fff}.legal-card h4 .svc-icon{background:rgba(255,255,255,.14);color:#fff}.legal-card p{color:#e8f4ff}
+
+.real-estate{background:linear-gradient(135deg,#f8fcff 0%,#eef8ff 100%)!important}
+.real-estate-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.re-panel{background:#fff;border:1px solid #d7e7f1;border-radius:19px;padding:1.35rem 1.45rem}
+.re-panel h3{margin:0 0 .7rem;color:#003366;font-family:'Poppins',sans-serif;font-size:1.15rem;line-height:1.4}
+.re-panel p{margin:0 0 1rem;color:#5a7489;line-height:1.72;font-size:.95rem}
+.re-list{list-style:none;padding:0;margin:0;display:grid;gap:.65rem}
+.re-list li{display:grid;grid-template-columns:30px 1fr;gap:.55rem;align-items:start;color:#4f6a80;font-size:.9rem;line-height:1.55;padding:.6rem .65rem;border-radius:12px;background:#f8fbfd}
+.re-list li span{display:grid;place-items:center;width:28px;height:28px;border-radius:9px;background:#e7f4fd;color:#0060a8}
+.re-bottom{margin-top:1rem;display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+.re-callout{padding:1rem 1.1rem;border-radius:15px;background:#003f73;color:#fff;font-size:.9rem;line-height:1.6}.re-callout strong{display:block;margin-bottom:.25rem}
+
+.academy-section{margin:1.35rem auto!important;max-width:1200px!important;border-radius:24px!important;padding:clamp(2rem,4vw,3.2rem)!important;background:linear-gradient(135deg,#002b5c 0%,#0055a5 55%,#003366 100%)!important;box-shadow:0 14px 35px rgba(0,43,92,.2)!important}
+.academy-single-language{max-width:820px;margin:0 auto 1.45rem;padding:1.1rem 1.35rem;border:1px solid rgba(255,255,255,.2);border-radius:18px;background:rgba(255,255,255,.09);text-align:center}
+.academy-single-language h3{margin:0 0 .45rem;color:#fff;font-size:1.08rem;font-family:'Poppins',sans-serif}.academy-single-language p{margin:0;color:#e9f6ff;font-size:.95rem;line-height:1.7}
+.academy-title{font-size:clamp(1.8rem,4vw,2.7rem)!important}.academy-subtitle{font-size:1.05rem!important}.academy-description{max-width:850px!important}
+.academy-button{border-radius:14px!important;padding:1.05rem 2rem!important;font-size:clamp(1rem,1.8vw,1.15rem)!important;font-weight:800!important;letter-spacing:.01em!important;box-shadow:0 10px 24px rgba(0,0,0,.18)!important}
+
+#contact.home-contact{background:#fff!important;max-width:1200px!important;color:#333!important}
+.contact-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;align-items:stretch}
+.contact-main{display:flex;flex-direction:column;gap:.65rem;justify-content:center;padding:1.1rem 1.2rem;background:#f8fbfd;border:1px solid #dceaf2;border-radius:19px}
+.contact-item{display:flex;align-items:flex-start;gap:.7rem;padding:.72rem .8rem;border-radius:13px;background:#fff;border:1px solid #e3edf3;color:#506b80;font-size:.92rem;line-height:1.5}
+.contact-item .ci{width:31px;height:31px;flex:0 0 31px;display:grid;place-items:center;border-radius:9px;background:#e9f5fd;color:#0060a8}
+.contact-item a{color:#0055a5;font-weight:600;overflow-wrap:anywhere}
+.contact-actions{display:flex;flex-wrap:wrap;gap:.65rem;margin-top:.3rem}
+.contact-actions a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:.7rem 1rem;border-radius:11px;text-decoration:none;font-weight:700;font-family:'Poppins',sans-serif;transition:transform .2s ease,filter .2s ease}.contact-actions a:hover{transform:translateY(-2px);filter:brightness(1.06)}
+.contact-landmark-box{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;min-height:100%}.contact-landmark-box .contact-landmark{display:block!important;position:relative!important;inset:auto!important;width:auto!important;height:100%!important;min-height:210px!important;transform:none!important;opacity:1!important;animation:none!important}.contact-landmark-box .contact-landmark img{width:100%;height:100%;object-fit:cover;border-radius:19px;box-shadow:0 10px 25px rgba(0,43,92,.11)}
+
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}.reveal.visible{opacity:1;transform:none}
+@media(max-width:900px){
+  nav .nav-links{gap:.25rem}.service-grid.three,.legal-grid{grid-template-columns:1fr 1fr}.contact-grid{grid-template-columns:1fr}.contact-landmark-box{min-height:220px}.about-highlights{grid-template-columns:1fr 1fr}
+}
+@media(max-width:700px){
+  .site-header{padding:.7rem .75rem 1rem!important}.site-header h1{font-size:1.35rem!important}.header-greek-title{font-size:.9rem}.header-greek-subtitle{font-size:.76rem}
+  nav{padding:.5rem!important}.nav-links a{white-space:normal!important;width:100%;min-height:46px!important;font-size:.88rem!important;padding:.72rem .8rem!important;margin:0!important}
+  .hero{aspect-ratio:16/7!important;min-height:185px;background-size:cover!important}
+  .home-section{margin:1rem .7rem!important;padding:1.05rem!important;border-radius:19px!important}.section-heading{font-size:1.35rem;gap:.6rem}.section-icon{width:38px;height:38px;flex-basis:38px;font-size:1.15rem}
+  .language-grid,.about-grid,.service-grid,.service-grid.three,.legal-grid,.real-estate-grid,.service-note,.re-bottom{grid-template-columns:1fr}.language-card,.about-panel,.service-card,.re-panel{padding:1.05rem}.service-card{min-height:0}.service-card h4{font-size:.97rem}.service-card p{font-size:.9rem}.service-note{gap:.65rem}.about-highlights{grid-template-columns:1fr}.academy-section{margin:1rem .7rem!important;padding:1.8rem 1rem!important}.contact-landmark-box{grid-template-columns:1fr;min-height:0}.contact-landmark-box .contact-landmark{min-height:170px!important}.contact-actions{flex-direction:column}.contact-actions a{width:100%}
+}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.service-card,.contact-actions a{transition:none}}
+</style>
+<style id="academy-how-it-works-v4">
+/* Only the academy presentation and the new service-process section are changed in v4. */
+.academy-redesigned{position:relative;overflow:hidden;padding:clamp(2rem,4vw,3.4rem)!important;background:linear-gradient(135deg,#002a59 0%,#005da9 52%,#003b72 100%)!important;border:0!important;box-shadow:0 18px 42px rgba(0,43,92,.22)!important}
+.academy-redesigned::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 85% 15%,rgba(255,255,255,.14),transparent 28%),radial-gradient(circle at 10% 90%,rgba(89,184,238,.12),transparent 30%);pointer-events:none}
+.academy-redesigned .academy-content{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(360px,.9fr);gap:clamp(1.5rem,4vw,3.5rem);align-items:center}
+.academy-copy{padding:.4rem 0}
+.academy-kicker{display:inline-flex;align-items:center;gap:.45rem;margin-bottom:.8rem;padding:.45rem .8rem;border-radius:999px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.22);color:#dff3ff;font:800 .78rem/1.2 'Poppins',sans-serif;letter-spacing:.05em}
+.academy-redesigned .academy-title{margin:0 0 .45rem!important;color:#fff!important;font-family:'Poppins',sans-serif!important;font-size:clamp(2rem,4.4vw,3.15rem)!important;line-height:1.12!important;text-shadow:0 2px 14px rgba(0,0,0,.16)}
+.academy-redesigned .academy-subtitle{margin:0 0 1rem!important;color:#d9efff!important;font:700 clamp(1rem,1.6vw,1.2rem)/1.5 'Poppins',sans-serif!important}
+.academy-lead{max-width:690px;margin:0;color:#eef8ff;font-size:clamp(.98rem,1.35vw,1.08rem);line-height:1.8}
+.academy-offer{padding:clamp(1.3rem,2.5vw,2rem);border-radius:24px;background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.25);box-shadow:0 12px 30px rgba(0,0,0,.12);backdrop-filter:blur(4px);text-align:center}
+.academy-offer-icon{width:58px;height:58px;margin:0 auto .7rem;display:grid;place-items:center;border-radius:18px;background:#fff;font-size:1.8rem;box-shadow:0 8px 22px rgba(0,0,0,.16)}
+.academy-redesigned .academy-offer h3{margin:0 0 .55rem;color:#fff;font:800 clamp(1.1rem,1.8vw,1.35rem)/1.35 'Poppins',sans-serif}
+.academy-redesigned .academy-offer p{margin:0 auto 1.25rem;color:#edf8ff;font-size:.96rem;line-height:1.7;max-width:620px}
+.academy-redesigned .academy-button{display:inline-flex!important;align-items:center;justify-content:center;gap:.7rem;min-width:min(100%,330px);box-sizing:border-box;background:#fff!important;color:#004b86!important;border:2px solid rgba(255,255,255,.95)!important;text-decoration:none!important;border-radius:15px!important;padding:1rem 1.45rem!important;font-family:'Poppins',sans-serif!important;font-size:clamp(1rem,1.5vw,1.12rem)!important;font-weight:900!important;letter-spacing:.01em!important;box-shadow:0 12px 28px rgba(0,0,0,.2)!important}
+.academy-redesigned .academy-button span{font-size:1.35em;line-height:1}
+.academy-redesigned .academy-button:hover{background:#eaf7ff!important;transform:translateY(-2px) scale(1.01)!important}
+
+.how-it-works-section{background:linear-gradient(145deg,#f8fcff 0%,#eef7fc 100%)!important}
+.how-it-works-heading{display:grid;grid-template-columns:64px 1fr;gap:1rem;align-items:start;margin-bottom:1.25rem}
+.how-it-works-icon{width:64px;height:64px;display:grid;place-items:center;border-radius:20px;background:#fff;border:1px solid #d4e6f1;box-shadow:0 8px 22px rgba(0,61,105,.09);font-size:1.7rem}
+.how-title{margin:0 0 .45rem!important}
+.how-subtitle{margin:0;color:#70879a;font-size:.96rem;line-height:1.65}
+.how-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.9rem}
+.how-step{min-width:0;padding:1.25rem 1rem 1.35rem;text-align:center;background:#fff;border:1px solid #d7e7f1;border-radius:20px;box-shadow:0 8px 22px rgba(0,43,92,.055);transition:transform .28s ease,box-shadow .28s ease}
+.how-step:hover{transform:translateY(-5px);box-shadow:0 15px 30px rgba(0,43,92,.11)}
+.how-number{width:70px;height:70px;margin:0 auto 1rem;display:grid;place-items:center;border-radius:50%;background:linear-gradient(145deg,#0874c5,#0060a8);color:#fff;font:900 1.35rem/1 'Poppins',sans-serif;box-shadow:0 9px 20px rgba(0,91,159,.2)}
+.how-step h3{margin:0 0 .4rem;color:#003b72;font:800 clamp(.95rem,1.25vw,1.12rem)/1.4 'Poppins',sans-serif}
+.how-step p{margin:0;color:#8aa0b1;font-size:.92rem;line-height:1.5}
+@media(max-width:900px){.academy-redesigned .academy-content{grid-template-columns:1fr}.academy-copy{text-align:center}.academy-kicker{margin-left:auto;margin-right:auto}.academy-lead{margin-left:auto;margin-right:auto}.how-steps{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.academy-redesigned{padding:1.5rem 1rem!important}.academy-redesigned .academy-content{gap:1.15rem}.academy-redesigned .academy-title{font-size:clamp(1.8rem,8vw,2.4rem)!important}.academy-redesigned .academy-subtitle{font-size:.98rem!important}.academy-lead{font-size:.93rem;line-height:1.65}.academy-offer{padding:1.15rem;border-radius:20px}.academy-redesigned .academy-button{width:100%;min-width:0}.how-it-works-heading{grid-template-columns:48px 1fr;gap:.7rem}.how-it-works-icon{width:48px;height:48px;border-radius:15px;font-size:1.35rem}.how-title{font-size:1.25rem!important}.how-title::after{display:none}.how-subtitle{font-size:.86rem}.how-steps{grid-template-columns:1fr;gap:.7rem}.how-step{padding:1rem}.how-number{width:58px;height:58px;margin-bottom:.75rem}}
+@media(prefers-reduced-motion:reduce){.academy-redesigned .academy-button,.how-step{transition:none!important;transform:none!important}}
+</style>
+<section class="home-section bilingual-intro reveal" id="bilingual-intro">
+<h2 class="section-heading"><span class="global-bg-text">Преводи и езиково съдействие</span><span class="global-gr-text">Μεταφράσεις και γλωσσική υποστήριξη</span></h2>
+<article class="section-flip-card flip-card intro-flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><p><strong>Професионални преводи от и на гръцки език</strong> – писмени и устни преводи, заверки, легализация на документи, Апостил и езиково съдействие при административни, правни, медицински, бизнес и имотни въпроси, свързани с Гърция.</p><p class="intro-extra">Получавате лично отношение, ясна комуникация и прецизна работа, съобразена с целта на всеки документ или ситуация. От първия контакт до готовия резултат се стремим процесът да бъде лесен, предвидим и професионално организиран.</p></div><div class="flip-card-face flip-card-back"><p><strong>Επαγγελματικές μεταφράσεις από και προς την ελληνική γλώσσα</strong> – γραπτές και προφορικές μεταφράσεις, επικυρώσεις, νομιμοποίηση εγγράφων, Apostille και γλωσσική υποστήριξη σε διοικητικά, νομικά, ιατρικά, επαγγελματικά και κτηματομεσιτικά θέματα που αφορούν την Ελλάδα.</p><p class="intro-extra">Λαμβάνετε προσωπική αντιμετώπιση, σαφή επικοινωνία και προσεκτική εργασία, προσαρμοσμένη στον σκοπό κάθε εγγράφου ή περίστασης. Από την πρώτη επικοινωνία έως το τελικό αποτέλεσμα, στόχος είναι μια απλή, ξεκάθαρη και επαγγελματικά οργανωμένη διαδικασία.</p></div></div></article>
+</section>
+<section class="home-section reveal" id="about">
+<h2 class="section-heading"><span class="section-icon">👤</span><span class="global-bg-text">За мен</span><span class="global-gr-text">Σχετικά με εμένα</span></h2>
+<article class="section-flip-card flip-card about-flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><p>Казвам се <strong>Пламен Асенов Моллов</strong> и съм заклет преводач от и на гръцки език с над 17 години опит. Завършил съм специалност „Български език и новогръцки език“ в ПУ „Паисий Хилендарски“ – гр. Пловдив.</p><p>Участвал съм в престижната програма <strong>Сократ – Еразъм</strong> в Солунския университет „Аристотел“, където усъвършенствах знанията си по гръцки език и култура. Професионалната ми работа обхваща както писмени преводи на документи и текстове, така и устен превод при конкретни ситуации в България и Гърция.</p><p>Работя с внимание към точността на терминологията, смисъла и контекста, като се стремя всеки текст да бъде ясен, коректен и подходящ за конкретната му употреба. При необходимост съдействам и при заверки, легализация и административни процедури.</p></div><div class="flip-card-face flip-card-back"><p>Ονομάζομαι <strong>Πλάμεν Ασένοβ Μόλλοβ</strong> και είμαι επίσημος μεταφραστής από και προς την ελληνική γλώσσα, με εμπειρία άνω των 17 ετών. Σπούδασα „Βουλγαρική και Νεοελληνική Φιλολογία“ στο Πανεπιστήμιο της Φιλιππούπολης «Παΐσιι Χιλεντάρσκι».</p><p>Συμμετείχα στο πρόγραμμα <strong>Socrates – Erasmus</strong> στο Αριστοτέλειο Πανεπιστήμιο Θεσσαλονίκης, όπου ενίσχυσα τις γλωσσικές και πολιτισμικές μου γνώσεις. Η επαγγελματική μου δραστηριότητα περιλαμβάνει τόσο γραπτές μεταφράσεις εγγράφων και κειμένων όσο και προφορική διερμηνεία σε συγκεκριμένες επαγγελματικές και διοικητικές περιστάσεις στη Βουλγαρία και στην Ελλάδα.</p><p>Δίνω ιδιαίτερη προσοχή στην ακρίβεια της ορολογίας, στο νόημα και στο πλαίσιο κάθε κειμένου, ώστε το τελικό αποτέλεσμα να είναι σαφές, σωστό και κατάλληλο για τον σκοπό για τον οποίο προορίζεται. Όπου απαιτείται, παρέχω επίσης υποστήριξη σχετικά με επικυρώσεις, νομιμοποίηση εγγράφων και διοικητικές διαδικασίες.</p></div></div></article>
+<div class="about-highlights"><div class="highlight experience-card"><div aria-hidden="true" class="experience-icon">⏳</div><b><span class="global-bg-text">17+ години</span><span class="global-gr-text">17+ χρόνια</span></b><span class="experience-desc"><span class="global-bg-text">професионален опит</span><span class="global-gr-text">επαγγελματικής εμπειρίας</span></span></div><div class="highlight experience-card"><div aria-hidden="true" class="experience-icon experience-flags"><svg aria-label="Български език" class="final-flag bg-flag" role="img" viewbox="0 0 36 24">
+<rect fill="#D62612" height="24" width="36"></rect><rect fill="#00966E" height="16" width="36"></rect><rect fill="#FFFFFF" height="8" width="36"></rect>
+</svg><svg aria-label="Ελληνικά" class="final-flag gr-flag" role="img" viewbox="0 0 36 24">
+<rect fill="#FFFFFF" height="24" width="36"></rect>
+<rect fill="#0D5EAF" height="2.6667" width="36" y="0"></rect>
+<rect fill="#0D5EAF" height="2.6667" width="36" y="5.3333"></rect>
+<rect fill="#0D5EAF" height="2.6667" width="36" y="10.6667"></rect>
+<rect fill="#0D5EAF" height="2.6667" width="36" y="16"></rect>
+<rect fill="#0D5EAF" height="2.6667" width="36" y="21.3333"></rect>
+<rect fill="#0D5EAF" height="13.3333" width="14.4"></rect>
+<rect fill="#FFFFFF" height="13.3333" width="3.7333" x="5.3333"></rect>
+<rect fill="#FFFFFF" height="3.7333" width="14.4" y="4.8"></rect>
+</svg></div><b><span class="global-bg-text">преводи в двете посоки</span><span class="global-gr-text">μεταφράσεις και προς τις δύο κατευθύνσεις</span></b><span class="experience-desc"><span class="global-bg-text">преводи на български и гръцки език</span><span class="global-gr-text">μεταφράσεις στα βουλγαρικά και στα ελληνικά</span></span></div><div class="highlight experience-card"><div aria-hidden="true" class="experience-icon">✦</div><b><span class="global-bg-text">Точност</span><span class="global-gr-text">Ακρίβεια</span></b><span class="experience-desc"><span class="global-bg-text">ясен и прецизен подход</span><span class="global-gr-text">σαφής και ακριβής προσέγγιση</span></span></div></div>
+</section>
+<section class="home-section reveal" id="services">
+<h2 class="section-heading"><span class="section-icon">✦</span><span class="global-bg-text">Услуги</span><span class="global-gr-text">Υπηρεσίες</span></h2>
+<div class="service-group">
+<h3 class="service-group-title"><span aria-hidden="true" class="paired-icon">✍️</span><span class="global-bg-text">Писмени преводи</span><span class="global-gr-text">Γραπτές μεταφράσεις</span> </h3>
+<div class="service-grid">
+<article class="service-card flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><h4><span class="title-icon">📄</span> Общински и граждански документи</h4><p>Превод на актове за раждане, брак и смърт, удостоверения, декларации, пълномощни и други документи, издавани от общини и граждански служби. Подходящо за административни процедури, кандидатстване и представяне на документи пред институции в България и Гърция.</p></div><div class="flip-card-face flip-card-back"><h4><span class="title-icon">📄</span> Δημοτικά και ληξιαρχικά έγγραφα</h4><p>Μετάφραση ληξιαρχικών πράξεων γέννησης, γάμου και θανάτου, πιστοποιητικών, δηλώσεων, εξουσιοδοτήσεων και άλλων εγγράφων που εκδίδονται από δήμους και ληξιαρχικές υπηρεσίες. Κατάλληλο για διοικητικές διαδικασίες και υποβολή εγγράφων σε υπηρεσίες στη Βουλγαρία και στην Ελλάδα.</p></div></div></article>
+<article class="service-card flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><h4><span class="title-icon">⚖️</span> Правни и съдебни документи</h4><p>Превод на договори, съдебни книжа, декларации, пълномощни, удостоверения и други правни документи. Работя с внимание към юридическата терминология, формулировките и смисъла на документа, за да бъде преводът ясен и подходящ за конкретното му предназначение.</p></div><div class="flip-card-face flip-card-back"><h4><span class="title-icon">⚖️</span> Νομικά και δικαστικά έγγραφα</h4><p>Μετάφραση συμβάσεων, δικαστικών εγγράφων, δηλώσεων, εξουσιοδοτήσεων, πιστοποιητικών και άλλων νομικών εγγράφων. Δίνεται ιδιαίτερη προσοχή στη νομική ορολογία, στη διατύπωση και στο νόημα του εγγράφου, ώστε η μετάφραση να είναι σαφής και κατάλληλη για τη συγκεκριμένη χρήση.</p></div></div></article>
+<article class="service-card flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><h4><span class="title-icon">⚕️</span> Медицински документи</h4><p>Превод на медицински удостоверения, епикризи, резултати от изследвания, медицински становища и друга документация. Терминологията се предава прецизно и последователно, особено когато документите са предназначени за лекар, клиника, здравна институция или административна процедура.</p></div><div class="flip-card-face flip-card-back"><h4><span class="title-icon">⚕️</span> Ιατρικά έγγραφα</h4><p>Μετάφραση ιατρικών βεβαιώσεων, γνωματεύσεων, αποτελεσμάτων εξετάσεων και λοιπής ιατρικής τεκμηρίωσης. Η ιατρική ορολογία αποδίδεται με ακρίβεια και συνέπεια, ιδιαίτερα όταν τα έγγραφα προορίζονται για ιατρό, κλινική, υγειονομική υπηρεσία ή διοικητική διαδικασία.</p></div></div></article>
+<article class="service-card flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><h4><span class="title-icon">▣</span> Специализирани и други текстове</h4><p>Превод на професионални, технически, бизнес и други специализирани материали, съобразен с конкретната област. При необходимост се отделя специално внимание на терминологията, контекста и предназначението на текста, за да се запази точният му смисъл.</p></div><div class="flip-card-face flip-card-back"><h4><span class="title-icon">▣</span> Εξειδικευμένα και λοιπά κείμενα</h4><p>Μετάφραση επαγγελματικών, τεχνικών, επιχειρηματικών και άλλων εξειδικευμένων κειμένων, ανάλογα με το αντικείμενο. Όπου απαιτείται, δίνεται ιδιαίτερη προσοχή στην ορολογία, στο πλαίσιο και στον σκοπό του κειμένου, ώστε να αποδίδεται με ακρίβεια το περιεχόμενό του.</p></div></div></article>
+<article class="service-card flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><h4><span class="title-icon">🌐</span> Уебсайтове и онлайн магазини</h4><p>Превод и езикова адаптация на съдържание за уебсайтове, онлайн магазини, продуктови описания, представяния и дигитални материали. Освен буквалния превод се следи текстът да звучи естествено и убедително за гръцкоговорящата аудитория.</p></div><div class="flip-card-face flip-card-back"><h4><span class="title-icon">🌐</span> Ιστότοποι και ηλεκτρονικά καταστήματα</h4><p>Μετάφραση και γλωσσική προσαρμογή περιεχομένου για ιστοτόπους, ηλεκτρονικά καταστήματα, περιγραφές προϊόντων, παρουσιάσεις και ψηφιακό υλικό. Εκτός από την ακριβή μετάφραση, δίνεται προσοχή ώστε το κείμενο να ακούγεται φυσικό και κατανοητό στο ελληνόφωνο κοινό.</p></div></div></article>
+<article class="service-card flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><h4><span class="title-icon">✎</span> Литературни текстове</h4><p>Превод на литературни и художествени текстове с внимание към смисъла, стила, изразните средства и естественото звучене. Целта е да се запази характерът на оригинала, като същевременно текстът звучи плавно и естествено на целевия език.</p></div><div class="flip-card-face flip-card-back"><h4><span class="title-icon">✎</span> Λογοτεχνικά κείμενα</h4><p>Μετάφραση λογοτεχνικών και καλλιτεχνικών κειμένων με έμφαση στο νόημα, το ύφος, τα εκφραστικά μέσα και τη φυσική απόδοση. Στόχος είναι να διατηρείται ο χαρακτήρας του πρωτοτύπου, ενώ το κείμενο να διαβάζεται ομαλά και φυσικά στη γλώσσα-στόχο.</p></div></div></article>
+</div>
+</div>
+<section class="home-section how-it-works-section reveal" id="how-it-works">
+<div class="how-it-works-heading">
+<div class="how-it-works-icon">✨</div>
+<div>
+<h2 class="section-heading how-title"><span class="global-bg-text">Как работи услугата</span><span class="global-gr-text">Πώς λειτουργεί η υπηρεσία</span></h2>
+<p class="how-subtitle"><span class="global-bg-text">Четири ясни стъпки от изпращането на документа до получаването на крайния резултат</span><span class="global-gr-text">Τέσσερα σαφή βήματα από την αποστολή του εγγράφου έως την παραλαβή του τελικού αποτελέσματος</span></p>
+</div>
+</div>
+<div class="how-steps">
+<article class="how-step"><div class="how-number">1</div><h3 class="global-bg-block">Изпращате документа</h3><p class="global-gr-block">Στέλνετε το έγγραφο</p></article>
+<article class="how-step"><div class="how-number">2</div><h3 class="global-bg-block">Уточняваме услугата</h3><p class="global-gr-block">Καθορίζουμε την υπηρεσία</p></article>
+<article class="how-step"><div class="how-number">3</div><h3 class="global-bg-block">Извършваме превода</h3><p class="global-gr-block">Πραγματοποιούμε τη μετάφραση</p></article>
+<article class="how-step"><div class="how-number">4</div><h3 class="global-bg-block">Получавате готовия резултат</h3><p class="global-gr-block">Παραλαμβάνετε το τελικό αποτέλεσμα</p></article>
+</div>
+</section>
+<div class="service-group">
+<h3 class="service-group-title"><span aria-hidden="true" class="paired-icon">📑</span><span class="global-bg-text">Апостил, легализация и нотариална заверка</span><span class="global-gr-text">Apostille, νομιμοποίηση και συμβολαιογραφική επικύρωση</span> </h3>
+<div class="service-grid legal-grid">
+<article class="service-card legal-card flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><h4><span class="title-icon">📜</span> Апостил</h4><p>Съдействие при подготовката и оформянето на документи за поставяне на Апостил според предназначението им. При необходимост съдействам и с насоки относно последващите стъпки и предназначението на документа, така че подготовката му за използване в друга държава да бъде ясна и добре организирана.</p></div><div class="flip-card-face flip-card-back"><h4><span class="title-icon">📜</span> Apostille</h4><p>Υποστήριξη στην προετοιμασία και διεκπεραίωση εγγράφων για την επισημείωση Apostille, ανάλογα με τη χρήση τους. Όπου απαιτείται, παρέχω επίσης καθοδήγηση σχετικά με τα επόμενα βήματα και τον σκοπό του εγγράφου, ώστε η προετοιμασία του για χρήση σε άλλη χώρα να είναι σαφής και σωστά οργανωμένη.</p></div></div></article>
+<article class="service-card legal-card flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><h4><span class="title-icon">🌍</span> Легализация на документи</h4><p>Съдействие при необходимите заверки и легализация на документи за използване пред съответните институции. Съдействието включва уточняване на необходимите заверки според вида и предназначението на документа, както и насоки за правилното му представяне пред съответната институция.</p></div><div class="flip-card-face flip-card-back"><h4><span class="title-icon">🌍</span> Νομιμοποίηση εγγράφων</h4><p>Υποστήριξη στις απαιτούμενες επικυρώσεις και στη νομιμοποίηση εγγράφων για χρήση ενώπιον των αρμόδιων αρχών. Η υποστήριξη περιλαμβάνει διευκρίνιση των απαιτούμενων επικυρώσεων ανάλογα με το είδος και τον σκοπό του εγγράφου, καθώς και καθοδήγηση για την ορθή υποβολή του στην αρμόδια υπηρεσία.</p></div></div></article>
+<article class="service-card legal-card flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><h4><span class="title-icon">🖋️</span> Заверка при нотариус</h4><p>Езиково съдействие и организация при нотариална заверка на документи, пълномощни и други необходими документи. При нотариални процедури се обръща особено внимание на точната комуникация, разбирането на съдържанието и спокойното протичане на подписването и заверката на документите.</p></div><div class="flip-card-face flip-card-back"><h4><span class="title-icon">🖋️</span> Συμβολαιογραφική επικύρωση</h4><p style="font-size:0.86rem;line-height:1.52">Γλωσσική υποστήριξη και συντονισμός για συμβολαιογραφική επικύρωση εγγράφων, εξουσιοδοτήσεων και λοιπών απαραίτητων εγγράφων. Κατά τις συμβολαιογραφικές διαδικασίες δίνεται ιδιαίτερη προσοχή στην ακριβή επικοινωνία, στην κατανόηση του περιεχομένου και στην ομαλή διεξαγωγή της υπογραφής και της επικύρωσης των εγγράφων.</p></div></div></article>
+</div>
+</div>
+<div class="service-group oral-translation-group">
+<h3 class="service-group-title"><span aria-hidden="true" class="paired-icon">🎙️</span><span class="global-bg-text">Устни преводи</span><span class="global-gr-text">Προφορική διερμηνεία</span></h3>
+<div class="service-grid">
+<article class="service-card flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><h4><span class="title-icon">🤝</span> Бизнес срещи и преговори</h4><p>Устен превод при делови срещи, преговори, презентации и партньорски разговори между български и гръцки език. Съдействието е насочено към точна комуникация, правилно разбиране на договореностите и спокойно водене на професионален разговор.</p></div><div class="flip-card-face flip-card-back"><h4><span class="title-icon">🤝</span> Επαγγελματικές συναντήσεις και διαπραγματεύσεις</h4><p>Διερμηνεία σε επαγγελματικές συναντήσεις, διαπραγματεύσεις, παρουσιάσεις και συζητήσεις μεταξύ βουλγαρόφωνων και ελληνόφωνων πλευρών. Η υποστήριξη αποσκοπεί στην ακριβή επικοινωνία, στη σωστή κατανόηση των συμφωνηθέντων και στην ομαλή διεξαγωγή της επαγγελματικής συζήτησης.</p></div></div></article>
+<article class="service-card flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><h4><span class="title-icon">🏛️</span> Институции, нотариуси и адвокати</h4><p>Езиково съдействие и устен превод при посещения в държавни и общински институции, нотариални кантори, адвокатски кантори и други официални места. Помагам при комуникацията и изясняването на необходимите документи и административни стъпки.</p></div><div class="flip-card-face flip-card-back"><h4><span class="title-icon">🏛️</span> Υπηρεσίες, συμβολαιογράφοι και δικηγόροι</h4><p>Γλωσσική υποστήριξη και διερμηνεία σε δημόσιες και δημοτικές υπηρεσίες, συμβολαιογραφεία, δικηγορικά γραφεία και άλλους επίσημους φορείς. Η υποστήριξη αφορά την επικοινωνία και την καλύτερη κατανόηση των απαιτούμενων εγγράφων και διοικητικών διαδικασιών.</p></div></div></article>
+<article class="service-card flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><h4><span class="title-icon">🏠</span> Недвижими имоти и сделки</h4><p>Устен превод при огледи, срещи с брокери, нотариуси и адвокати, както и при подписване на договори и нотариални актове. Съдействието помага при обсъждане на условията по сделката и при комуникацията между български и гръцки страни.</p></div><div class="flip-card-face flip-card-back"><h4><span class="title-icon">🏠</span> Ακίνητα και συναλλαγές</h4><p>Διερμηνεία σε επισκέψεις ακινήτων, συναντήσεις με μεσίτες, συμβολαιογράφους και δικηγόρους, καθώς και κατά την υπογραφή συμβάσεων και συμβολαιογραφικών πράξεων. Η υποστήριξη διευκολύνει την κατανόηση των όρων της συναλλαγής και την επικοινωνία μεταξύ βουλγαρικής και ελληνικής πλευράς.</p></div></div></article>
+<article class="service-card flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><h4><span class="title-icon">🚗</span> Автомобили и административни процедури</h4><p>Езиково съдействие при административни процедури, свързани с автомобили, регистрация, документи, институции и други действия в България и Гърция. Подходящо е когато е необходимо разбиране на документи и комуникация с местни служби.</p></div><div class="flip-card-face flip-card-back"><h4><span class="title-icon">🚗</span> Αυτοκίνητα και διοικητικές διαδικασίες</h4><p>Γλωσσική υποστήριξη σε διοικητικές διαδικασίες που αφορούν αυτοκίνητα, ταξινόμηση, έγγραφα, υπηρεσίες και άλλες διαδικασίες στη Βουλγαρία και στην Ελλάδα. Η υπηρεσία είναι χρήσιμη όταν απαιτείται κατανόηση εγγράφων και επικοινωνία με τοπικές υπηρεσίες.</p></div></div></article>
+<article class="service-card flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><h4><span class="title-icon">🎓</span> Обучения, семинари и събития</h4><p>Устен превод при обучения, семинари, презентации, конференции и професионални събития. Подходът е съобразен с темпото и характера на събитието, така че информацията да бъде предадена ясно и последователно.</p></div><div class="flip-card-face flip-card-back"><h4><span class="title-icon">🎓</span> Εκπαιδεύσεις, σεμινάρια και εκδηλώσεις</h4><p>Διερμηνεία σε εκπαιδεύσεις, σεμινάρια, παρουσιάσεις, συνέδρια και επαγγελματικές εκδηλώσεις. Η διερμηνεία προσαρμόζεται στον ρυθμό και στον χαρακτήρα της εκδήλωσης, ώστε οι πληροφορίες να μεταδίδονται με σαφήνεια και συνέπεια.</p></div></div></article>
+<article class="service-card flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><h4><span class="title-icon">💻</span> Телефонни и онлайн разговори</h4><p>Езиково посредничество при телефонни разговори, видеосрещи, онлайн консултации и дистанционна комуникация. Подходящо е когато двете страни трябва да обсъдят конкретен въпрос, документ, услуга или административна процедура без присъствена среща.</p></div><div class="flip-card-face flip-card-back"><h4><span class="title-icon">💻</span> Τηλεφωνικές και διαδικτυακές συνομιλίες</h4><p>Γλωσσική υποστήριξη σε τηλεφωνικές συνομιλίες, βιντεοκλήσεις, διαδικτυακές συναντήσεις και εξ αποστάσεως επικοινωνία. Είναι κατάλληλη όταν τα δύο μέρη χρειάζεται να συζητήσουν συγκεκριμένο θέμα, έγγραφο, υπηρεσία ή διοικητική διαδικασία χωρίς συνάντηση από κοντά.</p></div></div></article>
+</div>
+</div>
+</section>
+<section class="home-section real-estate reveal" id="real-estate">
+<h2 class="section-heading"><span class="section-icon">🏠</span><span class="global-bg-text">Недвижими имоти в Гърция</span><span class="global-gr-text">Ακίνητα στην Ελλάδα</span></h2>
+<article class="section-flip-card flip-card real-estate-flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><h3><svg aria-label="Български език" class="global-lang-flag bulgarian-flag" role="img" viewbox="0 0 36 24">
+<rect fill="#D62612" height="24" width="36"></rect>
+<rect fill="#00966E" height="16" width="36"></rect>
+<rect fill="#FFFFFF" height="8" width="36"></rect>
+</svg> Консултантски услуги и устен превод при имотни сделки в Гърция</h3><p>При покупка или продажба на недвижими имоти в Гърция е важно да имате доверен партньор, който да ви съдейства с езика, процедурите и културните особености. Предлагам пълно съдействие и устен превод на място, така че да разбирате какво се случва на всяка стъпка от процеса.</p><ul class="re-list">
+<li><span>🏘️</span>Устен превод при покупко-продажба на недвижими имоти</li>
+<li><span>📝</span>Консултации и превод при сключване на договори и нотариални актове</li>
+<li><span>💼</span>Издаване на данъчен номер (ΑΦΜ) в Гърция</li>
+<li><span>🤝</span>Придружаване до нотариус, адвокат, счетоводител и агенции за недвижими имоти</li>
+<li><span>📄</span>Превод и заверка на документи, изисквани от гръцки институции</li>
+</ul></div><div class="flip-card-face flip-card-back"><h3> Συμβουλευτικές υπηρεσίες και διερμηνεία για συναλλαγές ακινήτων στην Ελλάδα</h3><p>Κατά την αγορά ή πώληση ακινήτου στην Ελλάδα είναι σημαντικό να έχετε έναν αξιόπιστο συνεργάτη που γνωρίζει τόσο τη γλώσσα όσο και τη διαδικασία. Παρέχω υποστήριξη και διερμηνεία επιτόπου, ώστε να κατανοείτε με σαφήνεια κάθε στάδιο της διαδικασίας.</p><ul class="re-list">
+<li><span>🏘️</span>Διερμηνεία κατά την αγορά ή πώληση ακινήτων</li>
+<li><span>📝</span>Υποστήριξη και μετάφραση κατά τη σύναψη συμβάσεων και συμβολαιογραφικών πράξεων</li>
+<li><span>💼</span>Έκδοση ΑΦΜ (φορολογικού αριθμού) στην Ελλάδα</li>
+<li><span>🤝</span>Συνοδεία σε συμβολαιογράφους, δικηγόρους, λογιστές και μεσιτικά γραφεία</li>
+<li><span>📄</span>Μετάφραση και επικύρωση εγγράφων που απαιτούνται από ελληνικές υπηρεσίες</li>
+</ul></div></div></article>
+<div class="re-bottom"><div class="re-callout"><div aria-hidden="true" class="re-callout-icon">🛡️</div><strong><span class="global-bg-text">Спокойствие при всяка стъпка</span><span class="global-gr-text">Ηρεμία σε κάθε στάδιο</span></strong><p><span class="global-bg-text">Езиковото съдействие е насочено към ясна комуникация при срещи, документи и процедури.</span><span class="global-gr-text">Η γλωσσική υποστήριξη είναι προσανατολισμένη στη σαφή επικοινωνία κατά τις συναντήσεις, στα έγγραφα και στις διαδικασίες.</span></p></div><div class="re-callout"><div aria-hidden="true" class="re-callout-icon">💬</div><strong><span class="global-bg-text">Ясна комуникация</span><span class="global-gr-text">Σαφής επικοινωνία</span></strong><p><span class="global-bg-text">Получавате подкрепа при обсъждане на условия, документи и действия, така че всяка стъпка да бъде разбираема.</span><span class="global-gr-text">Παρέχεται υποστήριξη για την κατανόηση όρων, εγγράφων και ενεργειών, ώστε κάθε στάδιο της διαδικασίας να είναι σαφές.</span></p></div></div>
+</section>
+<section class="academy-section academy-redesigned reveal" id="greek-academy">
+<div class="academy-content">
+<div class="academy-copy">
+<div class="academy-kicker academy-bg-text">🎓 БЕЗПЛАТНО ИНТЕРАКТИВНО ОБУЧЕНИЕ</div><span class="academy-gr-text">🎓 ΔΩΡΕΑΝ ΔΙΑΔΡΑΣΤΙΚΗ ΕΚΠΑΙΔΕΥΣΗ</span>
+<h2 class="academy-title academy-bg-text">Академия по гръцки език</h2><span class="academy-gr-text">Ακαδημία Ελληνικής Γλώσσας</span>
+<p class="academy-subtitle academy-bg-text">Специален подарък за българоговорящи</p><span class="academy-gr-text">Ειδικό δώρο για βουλγαρόφωνους</span>
+<p class="academy-lead academy-bg-text">Научи гръцки по практичен и интерактивен начин с помощта на AI – с упражнения, реални ситуации и фокус върху увереното говорене.</p><span class="academy-gr-text">Μάθετε ελληνικά με πρακτικό και διαδραστικό τρόπο με τη βοήθεια της AI, μέσα από ασκήσεις, πραγματικές καταστάσεις και έμφαση στην άνετη και уверμένη χρήση της γλώσσας.</span>
+</div>
+<div class="academy-offer">
+<div class="academy-offer-icon"><svg aria-label="Ελληνικά" class="final-flag gr-flag" role="img" viewbox="0 0 36 24" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#0D5EAF" height="24" width="36"></rect>
+<path d="M0 2.6667H36V5.3334H0ZM0 8H36V10.6667H0ZM0 13.3333H36V16H0ZM0 18.6666H36V21.3333H0Z" fill="#FFFFFF"></path>
+<rect fill="#0D5EAF" height="13.3333" width="13.3333"></rect>
+<rect fill="#FFFFFF" height="13.3333" width="4.4444" x="4.4444"></rect>
+<rect fill="#FFFFFF" height="4.4444" width="13.3333" y="4.4444"></rect>
+</svg></div>
+<h3 class="academy-bg-text">За българоговорящи</h3><span class="academy-gr-text">Για βουλγαρόφωνους</span>
+<p class="academy-bg-text">Безплатно интерактивно обучение по гръцки език с AI – за всички, които искат да научат гръцки и да започнат да говорят уверено и практично.</p><span class="academy-gr-text">Δωρεάν διαδραστική εκπαίδευση ελληνικής γλώσσας με AI για όλους όσοι θέλουν να μάθουν ελληνικά και να αρχίσουν να μιλούν με αυτοπεποίθηση και πρακτικό τρόπο.</span>
+<a class="academy-button academy-cta academy-bg-text" href="https://academy.prevodigr.eu/" rel="noopener noreferrer" target="_blank">Научи гръцки за 10 дни</a>
+</div>
+</div>
+</section>
+<section class="home-section home-contact reveal" id="contact">
+<h2 class="section-heading"><span class="section-icon">☎️</span><span class="global-bg-text">Контакти</span><span class="global-gr-text">Επικοινωνίες</span></h2>
+<div class="contact-grid">
+<div class="contact-main">
+<div class="contact-item"><span class="ci">✉️</span><div><strong>Email</strong><br/><a href="mailto:mollovplamen@gmail.com">mollovplamen@gmail.com</a></div></div>
+<div class="contact-item"><span class="ci">✉️</span><div><strong>Email</strong><br/><a href="mailto:info@prevodigr.eu">info@prevodigr.eu</a></div></div>
+<div class="contact-item"><span class="ci">📍</span><div><strong><span class="global-bg-text">Град</span><span class="global-gr-text">Πόλη</span></strong><br/><span class="global-bg-text">Пловдив, България</span><span class="global-gr-text">Πλόβντιβ, Βουλγαρία</span></div></div>
+<div class="contact-item"><span class="ci">📞</span><div><strong><span class="global-bg-text">Телефон</span><span class="global-gr-text">Τηλέφωνο</span></strong><br/>00359 897 09 89 59</div></div>
+<div class="contact-actions">
+<a href="viber://chat?number=+359897098959" style="background:#665CAC;color:#fff">Viber</a>
+<a href="https://wa.me/359897098959" style="background:#075E54;color:#fff">WhatsApp</a>
+<a href="tel:+359897098959" style="background:#003366;color:#fff"><span aria-hidden="true" class="paired-icon">📞</span><span class="global-bg-text">Позвънете сега</span><span class="global-gr-text">Καλέστε τώρα</span> </a>
+</div>
+</div>
+<div aria-hidden="true" class="contact-landmark-box">
+<div class="contact-landmark"><img alt="Акрополът в Атина / Ακρόπολη της Αθήνας" loading="lazy" src="acropolis-athens-clear.jpg"/></div>
+<div class="contact-landmark"><img alt="Античен театър в Пловдив / Αρχαίο Θέατρο Φιλιππούπολης" loading="lazy" src="ancient-theatre-plovdiv-clear.jpg"/></div>
+</div>
+</div>
+</section>
+<script id="homepage-redesign-animation">
+document.addEventListener('DOMContentLoaded',function(){
+  const items=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){items.forEach(x=>x.classList.add('visible'));return;}
+  const observer=new IntersectionObserver((entries,obs)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');obs.unobserve(entry.target);}})},{threshold:.12});
+  items.forEach(item=>observer.observe(item));
+});
+</script>
+<!-- AI асистент — визуален интерфейс -->
+<button aria-expanded="false" aria-label="Отвори AI асистента" class="ai-assistant-launcher" id="aiAssistantLauncher" type="button">
+<span class="ai-bot"><span class="ai-bot-antenna"></span></span>
+<span class="ai-assistant-badge">AI</span>
+</button>
+<div aria-label="AI асистент" aria-modal="false" class="ai-assistant-window" id="aiAssistantWindow" role="dialog">
+<div class="ai-assistant-header">
+<div aria-hidden="true" class="ai-assistant-avatar"><span class="ai-bot"><span class="ai-bot-antenna"></span></span></div>
+<div class="ai-assistant-head-text">
+<strong>AI асистент • PrevodiGR</strong>
+<div class="ai-assistant-status"><span class="ai-status-dot"></span><span id="aiStatusText">На линия</span></div>
+</div>
+<button aria-label="Затвори" class="ai-assistant-close" id="aiAssistantClose" type="button">×</button>
+</div>
+<div aria-label="Избор на език" class="ai-assistant-language">
+<button class="ai-lang-btn active" data-lang="bg" type="button"><svg aria-label="Български език" class="global-lang-flag bulgarian-flag" role="img" viewbox="0 0 36 24">
+<rect fill="#D62612" height="24" width="36"></rect>
+<rect fill="#00966E" height="16" width="36"></rect>
+<rect fill="#FFFFFF" height="8" width="36"></rect>
+</svg> Български</button>
+<button class="ai-lang-btn" data-lang="el" type="button"><svg aria-label="Ελληνικά" class="final-flag gr-flag" role="img" viewbox="0 0 36 24" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#0D5EAF" height="24" width="36"></rect>
+<path d="M0 2.6667H36V5.3334H0ZM0 8H36V10.6667H0ZM0 13.3333H36V16H0ZM0 18.6666H36V21.3333H0Z" fill="#FFFFFF"></path>
+<rect fill="#0D5EAF" height="13.3333" width="13.3333"></rect>
+<rect fill="#FFFFFF" height="13.3333" width="4.4444" x="4.4444"></rect>
+<rect fill="#FFFFFF" height="4.4444" width="13.3333" y="4.4444"></rect>
+</svg> Ελληνικά</button>
+</div>
+<div class="ai-assistant-messages" id="aiAssistantMessages">
+<div class="ai-msg bot" data-bg="👋 Здравейте! Аз съм виртуалният асистент на Пламен Моллов. Мога да Ви помогна с информация за преводи, заверки, легализация, устен превод и услуги, свързани с имоти в Гърция.&lt;br&gt;&lt;br&gt;Какво бихте искали да попитате?" data-el="👋 Γεια σας! Είμαι ο εικονικός βοηθός του Πλάμεν Μόλλοβ. Μπορώ να σας βοηθήσω με πληροφορίες σχετικά με μεταφράσεις, επικυρώσεις, νομιμοποιήσεις, διερμηνεία και υπηρεσίες που αφορούν ακίνητα στην Ελλάδα.&lt;br&gt;&lt;br&gt;Τι θα θέλατε να ρωτήσετε;">
+      👋 Здравейте! Аз съм виртуалният асистент на Пламен Моллов. Мога да Ви помогна с информация за преводи, заверки, легализация, устен превод и услуги, свързани с имоти в Гърция.<br/><br/>Какво бихте искали да попитате?
+    </div>
+</div>
+<div class="ai-assistant-quick" id="aiQuickActions">
+<button class="ai-quick-btn" data-bg="Цена за превод" data-el="Κόστος μετάφρασης" type="button">Цена за превод</button>
+<button class="ai-quick-btn" data-bg="Превод на документ" data-el="Μετάφραση εγγράφου" type="button">Превод на документ</button>
+<button class="ai-quick-btn" data-bg="Легализация / апостил" data-el="Νομιμοποίηση / Apostille" type="button"><span class="global-bg-text">Легализация и Апостил</span><span class="global-gr-text">Νομιμοποίηση και Apostille</span></button>
+<button class="ai-quick-btn" data-bg="Имоти в Гърция" data-el="Ακίνητα στην Ελλάδα" type="button">Имоти в Гърция</button>
+<button class="ai-quick-btn" data-action="lead" data-bg="Искам индивидуална оферта" data-el="Ζητώ ατομική προσφορά" type="button">Искам индивидуална оферта</button>
+</div>
+<form class="ai-assistant-input" id="aiAssistantForm">
+<textarea aria-label="Вашият въпрос" id="aiAssistantInput" placeholder="Напишете въпроса си..." rows="1"></textarea>
+<button aria-label="Изпрати" class="ai-send-btn" type="submit">➤</button>
+</form>
+<div class="ai-assistant-note" id="aiAssistantNote">Можете да пишете на български или гръцки.</div>
+</div>
+<footer><p><span class="global-bg-text">© 2025 Пламен Моллов – Заклет преводач от и на гръцки език</span><span class="global-gr-text">© 2025 Πλάμεν Μόλλοβ – Επίσημος μεταφραστής από και προς την ελληνική γλώσσα</span></p><p class="footer-language-row"><svg aria-label="Български език" class="final-flag bg-flag" role="img" viewbox="0 0 36 24"><rect fill="#D62612" height="24" width="36"></rect><rect fill="#00966E" height="16" width="36"></rect><rect fill="#FFFFFF" height="8" width="36"></rect></svg><span>България</span><span class="footer-separator">|</span><span>Ελλάδα</span><svg aria-label="Ελληνικά" class="final-flag gr-flag" role="img" viewbox="0 0 36 24" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#0D5EAF" height="24" width="36"></rect>
+<path d="M0 2.6667H36V5.3334H0ZM0 8H36V10.6667H0ZM0 13.3333H36V16H0ZM0 18.6666H36V21.3333H0Z" fill="#FFFFFF"></path>
+<rect fill="#0D5EAF" height="13.3333" width="13.3333"></rect>
+<rect fill="#FFFFFF" height="13.3333" width="4.4444" x="4.4444"></rect>
+<rect fill="#FFFFFF" height="4.4444" width="13.3333" y="4.4444"></rect>
+</svg></p></footer>
+<script>
+window.addEventListener("message", function(event) {
+  if (event.origin.includes("fillout.com")) {
+    if (event.data?.type === "submissionComplete") {
+      window.location.href = "thanks.html";
+    }
+  }
+});
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const nav = document.querySelector("nav");
+    const toggle = document.querySelector(".menu-toggle");
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("active");
+    });
+  });
+</script>
+<script id="ai-assistant-ui-script">
+document.addEventListener("DOMContentLoaded", function () {
+
+  const AI_ENDPOINT =
+    "https://prevodigr-ai-assistant.mollovplamen.workers.dev/";
+
+  const launcher = document.getElementById("aiAssistantLauncher");
+  const panel = document.getElementById("aiAssistantWindow");
+  const closeBtn = document.getElementById("aiAssistantClose");
+  const form = document.getElementById("aiAssistantForm");
+  const input = document.getElementById("aiAssistantInput");
+  const messages = document.getElementById("aiAssistantMessages");
+  const status = document.getElementById("aiStatusText");
+  const note = document.getElementById("aiAssistantNote");
+  const langBtns = document.querySelectorAll(".ai-lang-btn");
+  const quickBtns = document.querySelectorAll(".ai-quick-btn");
+
+  let lang = "bg";
+  let isSending = false;
+  let conversationHistory = [];
+
+  const texts = {
+    bg: {
+      title: "AI асистент • PrevodiGR",
+      dialogLabel: "AI асистент",
+      closeLabel: "Затвори",
+      placeholder: "Напишете въпроса си...",
+      status: "На линия",
+      note: "Можете да пишете на български или гръцки.",
+      thinking: "Пиша отговор...",
+      error: "В момента AI асистентът не успя да получи отговор. Моля, опитайте отново след малко.",
+      timeout: "Отговорът се забави повече от очакваното. Моля, опитайте отново.",
+      leadTitle: "Заявка за индивидуална оферта",
+      leadSubtitle: "Оставете данните си и кратко описание на необходимата услуга.",
+      leadName: "Име",
+      leadPhone: "Телефон",
+      leadEmail: "Имейл",
+      leadDescription: "Какво Ви е необходимо?",
+      leadSubmit: "Изпрати запитването",
+      leadCancel: "Отказ",
+      leadSending: "Изпращане...",
+      leadSuccess: "Запитването е изпратено успешно. Ще се свържем с Вас възможно най-скоро.",
+      leadError: "Не успяхме да изпратим запитването. Моля, опитайте отново.",
+      leadRequired: "Моля, попълнете всички полета."
+    },
+    el: {
+      title: "AI βοηθός • PrevodiGR",
+      dialogLabel: "AI βοηθός",
+      closeLabel: "Κλείσιμο",
+      placeholder: "Γράψτε την ερώτησή σας...",
+      status: "Σε σύνδεση",
+      note: "Μπορείτε να γράψετε στα ελληνικά ή στα βουλγαρικά.",
+      thinking: "Γράφω απάντηση...",
+      error: "Αυτή τη στιγμή ο AI βοηθός δεν μπόρεσε να λάβει απάντηση. Παρακαλώ δοκιμάστε ξανά σε λίγο.",
+      timeout: "Η απάντηση καθυστερεί περισσότερο από το αναμενόμενο. Παρακαλώ δοκιμάστε ξανά.",
+      leadTitle: "Αίτημα για ατομική προσφορά",
+      leadSubtitle: "Αφήστε τα στοιχεία σας και μια σύντομη περιγραφή της υπηρεσίας που χρειάζεστε.",
+      leadName: "Όνομα",
+      leadPhone: "Τηλέφωνο",
+      leadEmail: "Email",
+      leadDescription: "Τι χρειάζεστε;",
+      leadSubmit: "Αποστολή αιτήματος",
+      leadCancel: "Ακύρωση",
+      leadSending: "Αποστολή...",
+      leadSuccess: "Το αίτημά σας στάλθηκε επιτυχώς. Θα επικοινωνήσουμε μαζί σας το συντομότερο δυνατό.",
+      leadError: "Δεν ήταν δυνατή η αποστολή του αιτήματος. Παρακαλώ δοκιμάστε ξανά.",
+      leadRequired: "Παρακαλώ συμπληρώστε όλα τα πεδία."
+    }
+  };
+
+  function setInterfaceText() {
+    const t = texts[lang];
+
+    const title = panel.querySelector(".ai-assistant-head-text strong");
+    if (title) title.textContent = t.title;
+
+    panel.setAttribute("aria-label", t.dialogLabel);
+    closeBtn.setAttribute("aria-label", t.closeLabel);
+    input.placeholder = t.placeholder;
+    input.setAttribute("aria-label", t.placeholder);
+    status.textContent = t.status;
+    note.textContent = t.note;
+
+    quickBtns.forEach(function (button) {
+      button.textContent = button.dataset[lang] || "";
+    });
+  }
+
+  function resetConversationForLanguage() {
+    conversationHistory = [];
+    messages.innerHTML = "";
+
+    const welcome = document.createElement("div");
+    welcome.className = "ai-msg bot";
+
+    if (lang === "el") {
+      welcome.innerHTML =
+        "👋 Γεια σας! Είμαι ο εικονικός βοηθός του Πλάμεν Μόλλοβ. " +
+        "Μπορώ να σας βοηθήσω με πληροφορίες σχετικά με μεταφράσεις, " +
+        "επικυρώσεις, νομιμοποιήσεις, διερμηνεία και υπηρεσίες που αφορούν " +
+        "ακίνητα στην Ελλάδα.<br><br>Τι θα θέλατε να ρωτήσετε;";
+    } else {
+      welcome.innerHTML =
+        "👋 Здравейте! Аз съм виртуалният асистент на Пламен Моллов. " +
+        "Мога да Ви помогна с информация за преводи, заверки, легализация, " +
+        "устен превод и услуги, свързани с имоти в Гърция." +
+        "<br><br>Какво бихте искали да попитате?";
+    }
+
+    messages.appendChild(welcome);
+    messages.scrollTop = messages.scrollHeight;
+  }
+
+  function setLanguage(newLang) {
+    lang = newLang === "el" ? "el" : "bg";
+
+    // При смяна на езика започваме напълно нов разговор.
+    // Това предотвратява стара история на български да влияе
+    // върху отговора, когато е избран гръцки език, и обратно.
+    conversationHistory = [];
+
+    langBtns.forEach(function (button) {
+      button.classList.toggle("active", button.dataset.lang === lang);
+    });
+
+    setInterfaceText();
+    resetConversationForLanguage();
+  }
+
+  function openAssistant() {
+    panel.classList.add("open");
+    launcher.setAttribute("aria-expanded", "true");
+    setTimeout(function () {
+      input.focus();
+    }, 100);
+  }
+
+  function closeAssistant() {
+    panel.classList.remove("open");
+    launcher.setAttribute("aria-expanded", "false");
+  }
+
+  function sanitizeAssistantReply(text) {
+    return String(text || "").trim();
+  }
+
+  function addMessage(text, type) {
+    const element = document.createElement("div");
+    element.className = "ai-msg " + type;
+    element.textContent = type === "bot"
+      ? sanitizeAssistantReply(text)
+      : String(text || "");
+    messages.appendChild(element);
+    messages.scrollTop = messages.scrollHeight;
+    return element;
+  }
+
+  async function requestAI(payload) {
+    let lastResponse = null;
+    let lastData = null;
+
+    for (let attempt = 1; attempt <= 2; attempt++) {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(function () {
+        controller.abort();
+      }, 35000);
+
+      try {
+        const response = await fetch(AI_ENDPOINT, {
+          method: "POST",
+          cache: "no-store",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify(payload),
+          signal: controller.signal
+        });
+
+        const rawText = await response.text();
+        let data = null;
+
+        try {
+          data = rawText ? JSON.parse(rawText) : null;
+        } catch (parseError) {
+          console.error("AI JSON parse error:", parseError, rawText);
+        }
+
+        lastResponse = response;
+        lastData = data;
+
+        if (response.ok && data && typeof data.reply === "string" && data.reply.trim()) {
+          return data.reply.trim();
+        }
+
+        // 502 е нормалният код, който Worker-ът връща при временен проблем.
+        // Правим още един опит от браузъра, за да не показваме грешка при единичен 503.
+        if (attempt === 1 && (response.status === 502 || response.status === 503 || response.status === 504)) {
+          await new Promise(function (resolve) {
+            setTimeout(resolve, 1200);
+          });
+          continue;
+        }
+
+        const serverError = data && typeof data.error === "string" ? data.error : "";
+        throw new Error(serverError || "AI response error");
+
+      } finally {
+        clearTimeout(timeoutId);
+      }
+    }
+
+    console.error("AI final response:", lastResponse, lastData);
+    throw new Error("AI response error");
+  }
+
+
+  function isLeadIntent(text) {
+    const value = String(text || "").toLowerCase().trim();
+
+    if (lang === "el") {
+      return [
+        "ζητώ προσφορά",
+        "ζητάω προσφορά",
+        "θέλω προσφορά",
+        "θέλω να παραγγείλω",
+        "θέλω να κάνω παραγγελία",
+        "θέλω να προχωρήσω",
+        "να προχωρήσουμε",
+        "πώς μπορώ να παραγγείλω",
+        "πως μπορώ να παραγγείλω",
+        "θέλω να ξεκινήσουμε",
+        "θέλω να στείλω το έγγραφο",
+        "θέλω να στείλω τα έγγραφα"
+      ].some(function (phrase) {
+        return value.includes(phrase);
+      });
+    }
+
+    return [
+      "искам оферта",
+      "искам да поръчам",
+      "искам да заявя",
+      "искам да поръчам превод",
+      "искам да направя поръчка",
+      "искам да започнем",
+      "искам да започна",
+      "как да поръчам",
+      "как да заявя",
+      "може да започнем",
+      "можем да започнем",
+      "искам да изпратя документа",
+      "искам да изпратя документите"
+    ].some(function (phrase) {
+      return value.includes(phrase);
+    });
+  }
+
+  function showLeadForm() {
+    const existing = messages.querySelector(".ai-lead-card");
+    if (existing) {
+      messages.scrollTop = messages.scrollHeight;
+      return;
+    }
+
+    const t = texts[lang];
+    const wrapper = document.createElement("div");
+    wrapper.className = "ai-lead-card";
+    wrapper.innerHTML =
+      '<div class="ai-lead-title">' + t.leadTitle + '</div>' +
+      '<div class="ai-lead-subtitle">' + t.leadSubtitle + '</div>' +
+      '<form class="ai-lead-form" novalidate>' +
+        '<input type="text" name="name" autocomplete="name" placeholder="' + t.leadName + '" required>' +
+        '<input type="tel" name="phone" autocomplete="tel" placeholder="' + t.leadPhone + '" required>' +
+        '<input type="email" name="email" autocomplete="email" placeholder="' + t.leadEmail + '" required>' +
+        '<textarea name="description" placeholder="' + t.leadDescription + '" required></textarea>' +
+        '<div class="ai-lead-error" hidden></div>' +
+        '<button class="ai-lead-submit" type="submit">' + t.leadSubmit + '</button>' +
+        '<button class="ai-lead-cancel" type="button">' + t.leadCancel + '</button>' +
+      '</form>';
+
+    messages.appendChild(wrapper);
+    messages.scrollTop = messages.scrollHeight;
+
+    const leadForm = wrapper.querySelector(".ai-lead-form");
+    const submitBtn = wrapper.querySelector(".ai-lead-submit");
+    const cancelBtn = wrapper.querySelector(".ai-lead-cancel");
+    const errorBox = wrapper.querySelector(".ai-lead-error");
+
+    cancelBtn.addEventListener("click", function () {
+      wrapper.remove();
+    });
+
+    leadForm.addEventListener("submit", async function (event) {
+      event.preventDefault();
+
+      if (submitBtn.disabled) return;
+
+      const name = leadForm.elements.name.value.trim();
+      const phone = leadForm.elements.phone.value.trim();
+      const email = leadForm.elements.email.value.trim();
+      const description = leadForm.elements.description.value.trim();
+
+      errorBox.hidden = true;
+      errorBox.textContent = "";
+
+      if (!name || !phone || !email || !description) {
+        errorBox.textContent = t.leadRequired;
+        errorBox.hidden = false;
+        return;
+      }
+
+      if (!leadForm.elements.email.checkValidity()) {
+        errorBox.textContent = t.leadRequired;
+        errorBox.hidden = false;
+        return;
+      }
+
+      submitBtn.disabled = true;
+      cancelBtn.disabled = true;
+      submitBtn.textContent = t.leadSending;
+
+      try {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(function () {
+          controller.abort();
+        }, 60000);
+
+        let response;
+        let data;
+
+        try {
+          response = await fetch(AI_ENDPOINT, {
+            method: "POST",
+            cache: "no-store",
+            headers: {
+              "Content-Type": "application/json",
+              "Accept": "application/json"
+            },
+            body: JSON.stringify({
+              action: "lead",
+              name: name,
+              phone: phone,
+              email: email,
+              description: description,
+              language: lang === "el" ? "el" : "bg"
+            }),
+            signal: controller.signal
+          });
+
+          const rawText = await response.text();
+
+          try {
+            data = rawText ? JSON.parse(rawText) : null;
+          } catch (parseError) {
+            data = null;
+            console.error("Lead JSON parse error:", parseError, rawText);
+          }
+        } finally {
+          clearTimeout(timeoutId);
+        }
+
+        if (!response || !response.ok || !data || data.success !== true) {
+          throw new Error("Lead request failed");
+        }
+
+        wrapper.innerHTML =
+          '<div class="ai-lead-success">✓ ' + t.leadSuccess + '</div>';
+        messages.scrollTop = messages.scrollHeight;
+
+      } catch (error) {
+        console.error("Lead form error:", error);
+        errorBox.textContent =
+          error && error.name === "AbortError"
+            ? t.timeout
+            : t.leadError;
+        errorBox.hidden = false;
+        submitBtn.disabled = false;
+        cancelBtn.disabled = false;
+        submitBtn.textContent = t.leadSubmit;
+      }
+    });
+  }
+
+  async function sendMessage(text) {
+    text = String(text || "").trim();
+
+    if (!text || isSending) return;
+
+    isSending = true;
+    input.disabled = true;
+
+    // Фиксираме езика точно в момента на изпращане.
+    const selectedLanguage = lang === "el" ? "el" : "bg";
+
+    addMessage(text, "user");
+
+    // Използваме само история от текущия разговор.
+    const previousHistory = conversationHistory.slice(-12);
+
+    conversationHistory.push({
+      role: "user",
+      text: text
+    });
+
+    const thinkingMessage = addMessage(
+      texts[selectedLanguage].thinking,
+      "bot"
+    );
+
+    try {
+      const reply = await requestAI({
+        message: text,
+        language: selectedLanguage,
+        history: previousHistory
+      });
+
+      thinkingMessage.remove();
+      addMessage(reply, "bot");
+
+      const hasContactDetails =
+        /mollovplamen\s*@\s*gmail\s*\.\s*com/i.test(reply) ||
+        /info\s*@\s*prevodigr\s*\.\s*eu/i.test(reply) ||
+        /00359\s*897\s*09\s*89\s*59/i.test(reply) ||
+        /\+359\s*897\s*09\s*89\s*59/i.test(reply);
+
+      if (hasContactDetails) {
+        addMessage(
+          selectedLanguage === "el"
+            ? "Για ατομική προσφορά, πατήστε το κουμπί «Ζητώ ατομική προσφορά» παρακάτω."
+            : "За индивидуална оферта натиснете бутона „Искам индивидуална оферта“ по-долу.",
+          "bot"
+        );
+      }
+
+      conversationHistory.push({
+        role: "model",
+        text: reply
+      });
+
+      // При ясно заявено намерение за поръчка/оферта показваме
+      // формата за контакт автоматично. При обикновени въпроси
+      // формата не се натрапва.
+      if (isLeadIntent(text)) {
+        showLeadForm();
+      }
+
+    } catch (error) {
+      console.error("AI Assistant error:", error);
+      thinkingMessage.remove();
+
+      addMessage(
+        error && error.name === "AbortError"
+          ? texts[selectedLanguage].timeout
+          : texts[selectedLanguage].error,
+        "bot"
+      );
+    } finally {
+      isSending = false;
+      input.disabled = false;
+      input.focus();
+      messages.scrollTop = messages.scrollHeight;
+    }
+  }
+
+  launcher.addEventListener("click", function () {
+    if (panel.classList.contains("open")) {
+      closeAssistant();
+    } else {
+      openAssistant();
+    }
+  });
+
+  closeBtn.addEventListener("click", closeAssistant);
+
+  langBtns.forEach(function (button) {
+    button.addEventListener("click", function () {
+      setLanguage(button.dataset.lang);
+    });
+  });
+
+  quickBtns.forEach(function (button) {
+    button.addEventListener("click", function () {
+      openAssistant();
+
+      if (button.dataset.action === "lead") {
+        showLeadForm();
+        return;
+      }
+
+      const quickText = button.dataset[lang];
+      if (quickText) sendMessage(quickText);
+    });
+  });
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const text = input.value.trim();
+    if (!text || isSending) return;
+
+    input.value = "";
+    sendMessage(text);
+  });
+
+  input.addEventListener("keydown", function (event) {
+    if (event.key === "Enter" && !event.shiftKey) {
+      event.preventDefault();
+      form.requestSubmit();
+    }
+  });
+
+  setLanguage("bg");
+
+});
+</script>
+<style id="mobile-services-fix-v10">
+/* Mobile reliability + faster first render.
+   The service content must never depend on the reveal observer to become visible. */
+section{
+  content-visibility:visible !important;
+  contain-intrinsic-size:auto !important;
+}
+
+/* Keep the existing section animation, but guarantee the complete Services
+   block and its document/legal/oral subsections are visible on every device. */
+#services.reveal,
+#services .reveal,
+#services #how-it-works{
+  opacity:1 !important;
+  transform:none !important;
+}
+
+/* Animate the service cards themselves without hiding their parent section. */
+#services .service-card,
+#services .how-step{
+  animation:service-card-in-v10 .45s ease both;
+}
+#services .service-card:nth-child(2),#services .how-step:nth-child(2){animation-delay:.04s}
+#services .service-card:nth-child(3),#services .how-step:nth-child(3){animation-delay:.08s}
+#services .service-card:nth-child(4),#services .how-step:nth-child(4){animation-delay:.12s}
+#services .service-card:nth-child(5){animation-delay:.16s}
+#services .service-card:nth-child(6){animation-delay:.20s}
+
+@keyframes service-card-in-v10{
+  from{opacity:1;transform:translateY(10px)}
+  to{opacity:1;transform:none}
+}
+
+@media(max-width:700px){
+  /* Prevent any horizontal clipping of the service title/cards. */
+  #services{
+    overflow:visible !important;
+  }
+  #services .service-group,
+  #services .oral-translation-group{
+    width:100%;
+    max-width:100%;
+    box-sizing:border-box;
+  }
+  #services .service-group-title{
+    width:100%;
+    box-sizing:border-box;
+    flex-wrap:wrap;
+  }
+  #services .service-group-title::after{
+    flex:1 1 100%;
+    margin:.25rem 0 0;
+  }
+  #services .service-grid,
+  #services .service-grid.three,
+  #services .legal-grid{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    width:100%;
+  }
+  #services .service-card{
+    width:100%;
+    min-width:0;
+    box-sizing:border-box;
+  }
+  #services .how-it-works-section{
+    display:block !important;
+    width:100% !important;
+    margin:1rem 0 !important;
+    box-sizing:border-box !important;
+  }
+  #services .how-it-works-heading{
+    grid-template-columns:44px minmax(0,1fr);
+    gap:.7rem;
+  }
+  #services .how-it-works-icon{
+    width:44px;
+    height:44px;
+    border-radius:14px;
+    font-size:1.25rem;
+  }
+  #services .how-title{
+    font-size:1.15rem !important;
+  }
+  #services .how-subtitle{
+    font-size:.86rem;
+  }
+  #services .how-steps{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  #services .service-card,#services .how-step{
+    animation:none !important;
+  }
+}
+</style>
+<style id="mobile-fast-render-v11">
+/* Fast, reliable mobile rendering: content is always present; animation is decorative only. */
+#services, #services * {
+  content-visibility: visible !important;
+}
+#services .service-card, #services .how-step {
+  opacity: 1 !important;
+  will-change: transform;
+}
+@media (max-width:700px) {
+  /* Keep all service blocks in normal document flow and avoid horizontal overflow. */
+  #services .service-group,
+  #services .oral-translation-group,
+  #services .service-grid,
+  #services .legal-grid,
+  #services .how-it-works-section {
+    overflow: visible !important;
+  }
+  #services .service-card, #services .how-step {
+    animation-duration: .32s !important;
+    animation-fill-mode: both;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #services .service-card, #services .how-step {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+</style>
+<script id="gentle-card-motion-script">
+document.addEventListener('DOMContentLoaded', function () {
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const groups = [
+    '.service-card',
+    '.oral-card',
+    '.legal-card',
+    '.how-step',
+    '.real-estate-card'
+  ];
+
+  let cards = [];
+  groups.forEach(selector => {
+    document.querySelectorAll(selector).forEach(card => cards.push(card));
+  });
+
+  // Keep the effect restrained: one card at a time, with a small delay.
+  cards.slice(0, 24).forEach((card, index) => {
+    setTimeout(() => {
+      card.classList.add('gentle-bounce');
+      setTimeout(() => card.classList.remove('gentle-bounce'), 1900);
+    }, 900 + index * 1150);
+  });
+});
+</script>
+<script id="global-language-script-v21">
+document.addEventListener('DOMContentLoaded', function(){
+  const body=document.body;
+  const buttons=document.querySelectorAll('.global-language-btn');
+
+  function setLanguage(lang){
+    const greek = lang === 'gr';
+    body.classList.toggle('global-greek', greek);
+    document.documentElement.lang = greek ? 'el' : 'bg';
+
+    buttons.forEach(function(btn){
+      btn.classList.toggle('active', btn.getAttribute('data-language') === lang);
+    });
+
+    document.querySelectorAll('.flip-card').forEach(function(card){
+      card.classList.toggle('is-flipped', greek);
+      card.setAttribute('data-language', lang);
+    });
+
+    try { localStorage.setItem('siteLanguage', lang); } catch(e) {}
+  }
+
+  buttons.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      setLanguage(btn.getAttribute('data-language'));
+    });
+  });
+
+  let initial = 'bg';
+  try {
+    if(localStorage.getItem('siteLanguage') === 'gr') initial='gr';
+  } catch(e) {}
+  setLanguage(initial);
+});
+</script>
+<script id="content-fit-script-v42">
+document.addEventListener('DOMContentLoaded',function(){
+  const cards=[...document.querySelectorAll('#services .service-card')];
+
+  function measure(face, inner, card){
+    const old={
+      transform:inner.style.transform,
+      height:inner.style.height,
+      position:face.style.position,
+      inset:face.style.inset,
+      heightFace:face.style.height,
+      minHeight:face.style.minHeight,
+      display:face.style.display,
+      visibility:face.style.visibility,
+      overflow:face.style.overflow
+    };
+
+    inner.style.transform='none';
+    inner.style.height='auto';
+    card.style.height='auto';
+
+    face.style.position='relative';
+    face.style.inset='auto';
+    face.style.height='auto';
+    face.style.minHeight='0';
+    face.style.display='flex';
+    face.style.visibility='hidden';
+    face.style.overflow='visible';
+
+    const h=Math.ceil(face.scrollHeight);
+
+    inner.style.transform=old.transform;
+    inner.style.height=old.height;
+    face.style.position=old.position;
+    face.style.inset=old.inset;
+    face.style.height=old.heightFace;
+    face.style.minHeight=old.minHeight;
+    face.style.display=old.display;
+    face.style.visibility=old.visibility;
+    face.style.overflow=old.overflow;
+
+    return h;
+  }
+
+  function fitCards(){
+    cards.forEach(card=>{
+      const inner=card.querySelector('.flip-card-inner');
+      const front=card.querySelector('.flip-card-front');
+      const back=card.querySelector('.flip-card-back');
+      if(!inner||!front||!back)return;
+
+      // Remove prior height while measuring so no old large box affects the result.
+      card.style.removeProperty('--content-card-height');
+
+      const frontH=measure(front,inner,card);
+      const backH=measure(back,inner,card);
+
+      // Only a modest breathing space below the text.
+      const finalH=Math.max(frontH,backH)+22;
+      card.style.setProperty('--content-card-height',finalH+'px');
+    });
+  }
+
+  fitCards();
+  window.addEventListener('load',()=>setTimeout(fitCards,80),{passive:true});
+  window.addEventListener('resize',()=>setTimeout(fitCards,40),{passive:true});
+
+  if(document.fonts&&document.fonts.ready){
+    document.fonts.ready.then(()=>setTimeout(fitCards,80));
+  }
+
+  document.querySelectorAll('.global-language-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>setTimeout(fitCards,120));
+  });
+});
+</script>
+
+</body>
+</html>
+<style id="ai-language-buttons-single-line-v50">
+/* AI assistant language buttons: keep both labels on one line on every screen. */
+.ai-assistant-language .ai-lang-btn{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  flex-wrap:nowrap!important;
+  white-space:nowrap!important;
+  gap:8px!important;
+  min-width:0!important;
+}
+.ai-assistant-language .ai-lang-btn svg{
+  flex:0 0 auto!important;
+  display:block!important;
+}
+@media (max-width:420px){
+  .ai-assistant-language .ai-lang-btn{
+    padding-left:6px!important;
+    padding-right:6px!important;
+    gap:7px!important;
+    font-size:.72rem!important;
+  }
+}
+</style>
