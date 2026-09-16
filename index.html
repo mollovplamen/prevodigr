@@ -2769,28 +2769,44 @@ body.global-greek #about .experience-card{
 @media (max-width:700px){
   .section-heading{animation-duration:.55s}
   .section-heading::after{animation-duration:5s}
-  .language-card,
-  .about-panel,
-  .service-card,
-  .legal-card,
-  .re-panel,
-  .how-step,
-  .contact-main,
-  .contact-landmark,
-  .academy-offer{
-    transition:box-shadow .3s ease!important;
+
+  /* На телефон няма hover: всяка група кутийки има собствен, лек ефект. */
+  .language-card,.about-panel,.service-card,.legal-card,.re-panel,.how-step,.contact-main,.contact-landmark,.academy-offer{
+    transition:transform .35s ease,box-shadow .35s ease!important;
   }
-  .language-card::before,
-  .academy-offer::before{
-    display:none;
-  }
+  .language-card{animation:mobileFloat 4.8s ease-in-out infinite}
+  .about-panel{animation:mobileFromLeft .7s cubic-bezier(.2,.8,.2,1) both}
+  .service-card{animation:mobileFromBottom .75s cubic-bezier(.2,.8,.2,1) both}
+  .legal-card{animation:mobileScale .8s cubic-bezier(.2,.8,.2,1) both}
+  .re-panel{animation:mobileFromRight .8s cubic-bezier(.2,.8,.2,1) both}
+  .how-step{animation:mobileStep .7s cubic-bezier(.2,.8,.2,1) both}
+  .contact-main{animation:mobileFromBottom .8s cubic-bezier(.2,.8,.2,1) both}
+  .contact-landmark{animation:mobileScale .75s cubic-bezier(.2,.8,.2,1) both}
+  .academy-offer{animation:mobileApostille 4.6s ease-in-out infinite}
+
+  /* Последователно движение на кутийките */
+  .academy-offer:nth-child(2),.service-card:nth-child(2),.legal-card:nth-child(2),.how-step:nth-child(2){animation-delay:.35s}
+  .academy-offer:nth-child(3),.service-card:nth-child(3),.legal-card:nth-child(3),.how-step:nth-child(3){animation-delay:.7s}
+
+  .language-card::before,.academy-offer::before{display:none}
 }
+
+@keyframes mobileFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@keyframes mobileFromLeft{from{opacity:0;transform:translateX(-10px)}to{opacity:1;transform:translateX(0)}}
+@keyframes mobileFromBottom{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes mobileScale{from{opacity:0;transform:scale(.97)}to{opacity:1;transform:scale(1)}}
+@keyframes mobileFromRight{from{opacity:0;transform:translateX(10px)}to{opacity:1;transform:translateX(0)}}
+@keyframes mobileStep{from{opacity:0;transform:translateY(10px) rotateX(3deg)}to{opacity:1;transform:translateY(0) rotateX(0)}}
+@keyframes mobileApostille{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
 
 /* Достъпност */
 @media (prefers-reduced-motion:reduce){
   .section-heading,
   .reveal.visible .section-heading,
   .section-heading::after{
+    animation:none!important;
+  }
+  .language-card,.about-panel,.service-card,.legal-card,.re-panel,.how-step,.contact-main,.contact-landmark,.academy-offer{
     animation:none!important;
   }
   .language-card,
