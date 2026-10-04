@@ -3044,6 +3044,241 @@ nav a{font-size:clamp(.9rem,1.05vw,1.08rem)!important;padding:.82rem 1.2rem!impo
 <h2 class="section-heading"><span class="global-bg-text">Преводи и езиково съдействие</span><span class="global-gr-text">Μεταφράσεις και γλωσσική υποστήριξη</span></h2>
 <article class="section-flip-card flip-card intro-flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><p><strong>Професионални преводи от и на гръцки език</strong> – писмени и устни преводи, заверки, легализация на документи, Апостил и езиково съдействие при административни, правни, медицински, бизнес и имотни въпроси, свързани с Гърция.</p><p class="intro-extra">Получавате лично отношение, ясна комуникация и прецизна работа, съобразена с целта на всеки документ или ситуация. От първия контакт до готовия резултат се стремим процесът да бъде лесен, предвидим и професионално организиран.</p></div><div class="flip-card-face flip-card-back"><p><strong>Επαγγελματικές μεταφράσεις από και προς την ελληνική γλώσσα</strong> – γραπτές και προφορικές μεταφράσεις, επικυρώσεις, νομιμοποίηση εγγράφων, Apostille και γλωσσική υποστήριξη σε διοικητικά, νομικά, ιατρικά, επαγγελματικά και κτηματομεσιτικά θέματα που αφορούν την Ελλάδα.</p><p class="intro-extra">Λαμβάνετε προσωπική αντιμετώπιση, σαφή επικοινωνία και προσεκτική εργασία, προσαρμοσμένη στον σκοπό κάθε εγγράφου ή περίστασης. Από την πρώτη επικοινωνία έως το τελικό αποτέλεσμα, στόχος είναι μια απλή, ξεκάθαρη και επαγγελματικά οργανωμένη διαδικασία.</p></div></div></article>
 </section>
+
+<style id="promo-video-v1">
+/* Ненатрапчив видео блок – част от самата начална страница */
+.promo-video-section{
+  margin:1rem auto 1.15rem;
+  width:calc(100% - 2rem);
+  max-width:1180px;
+  box-sizing:border-box;
+  padding:clamp(1.15rem,2.5vw,1.7rem);
+  border-radius:20px;
+  background:linear-gradient(135deg,#f7fbff 0%,#eef7fc 100%);
+  border:1px solid #d6e7f2;
+  box-shadow:0 8px 24px rgba(0,43,92,.07);
+}
+.promo-video-inner{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:1.1rem 1.5rem;
+  align-items:center;
+}
+.promo-video-copy{min-width:0}
+.promo-video-kicker{
+  display:inline-flex;
+  align-items:center;
+  gap:.45rem;
+  margin:0 0 .45rem;
+  color:#17699f;
+  font:800 .75rem/1.2 'Poppins','Segoe UI',sans-serif;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+}
+.promo-video-title{
+  margin:0 0 .35rem;
+  color:#003366;
+  font:800 clamp(1.15rem,2vw,1.5rem)/1.25 'Poppins','Segoe UI',sans-serif;
+}
+.promo-video-text{
+  margin:0;
+  color:#637c8f;
+  font:400 .9rem/1.55 'Poppins','Segoe UI',sans-serif;
+}
+.promo-video-cta{
+  appearance:none;
+  border:0;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:.55rem;
+  min-width:210px;
+  padding:.85rem 1.15rem;
+  border-radius:12px;
+  background:#003f73;
+  color:#fff;
+  font:700 .88rem/1.2 'Poppins','Segoe UI',sans-serif;
+  cursor:pointer;
+  box-shadow:0 7px 18px rgba(0,63,115,.18);
+  transition:transform .2s ease,background .2s ease,box-shadow .2s ease;
+}
+.promo-video-cta:hover{
+  background:#005da9;
+  transform:translateY(-2px);
+  box-shadow:0 10px 23px rgba(0,63,115,.23);
+}
+.promo-video-cta:active{transform:scale(.98)}
+.promo-video-play{
+  width:27px;height:27px;border-radius:50%;
+  display:grid;place-items:center;
+  background:rgba(255,255,255,.16);
+  font-size:.85rem;
+}
+.promo-video-modal{
+  position:fixed;
+  inset:0;
+  z-index:10001;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:1rem;
+  background:rgba(0,20,40,.78);
+  backdrop-filter:blur(5px);
+}
+.promo-video-modal.open{display:flex}
+.promo-video-dialog{
+  position:relative;
+  width:min(900px,96vw);
+  max-height:92vh;
+  padding:.65rem;
+  border-radius:18px;
+  background:#071d31;
+  box-shadow:0 25px 80px rgba(0,0,0,.4);
+}
+.promo-video-player{
+  display:block;
+  width:100%;
+  max-height:calc(92vh - 1.3rem);
+  border-radius:13px;
+  background:#000;
+}
+.promo-video-close{
+  position:absolute;
+  top:-13px;
+  right:-13px;
+  z-index:2;
+  width:38px!important;
+  height:38px!important;
+  min-width:38px!important;
+  padding:0!important;
+  margin:0!important;
+  border:2px solid #fff!important;
+  border-radius:50%!important;
+  background:#003f73!important;
+  color:#fff!important;
+  font:700 1.3rem/1 Arial,sans-serif!important;
+  cursor:pointer;
+  box-shadow:0 5px 16px rgba(0,0,0,.3);
+}
+.promo-video-close:hover{background:#005da9!important}
+body.promo-video-lock{overflow:hidden}
+@media(max-width:700px){
+  .promo-video-section{
+    width:calc(100% - 1.4rem);
+    margin:.9rem .7rem 1rem;
+    padding:1rem;
+    border-radius:17px;
+  }
+  .promo-video-inner{
+    grid-template-columns:1fr;
+    gap:.85rem;
+    text-align:center;
+  }
+  .promo-video-kicker{justify-content:center;font-size:.68rem}
+  .promo-video-title{font-size:1.1rem}
+  .promo-video-text{font-size:.82rem}
+  .promo-video-cta{
+    width:100%;
+    min-width:0;
+    padding:.82rem 1rem;
+  }
+  .promo-video-modal{padding:.55rem}
+  .promo-video-dialog{
+    width:100%;
+    padding:.4rem;
+    border-radius:14px;
+  }
+  .promo-video-player{border-radius:10px;max-height:80vh}
+  .promo-video-close{
+    top:-9px;
+    right:-5px;
+    width:36px!important;
+    height:36px!important;
+    min-width:36px!important;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .promo-video-cta{transition:none}
+}
+</style>
+
+
+<section class="promo-video-section" aria-label="Кратко представяне на услугите">
+  <div class="promo-video-inner">
+    <div class="promo-video-copy">
+      <div class="promo-video-kicker">
+        <span aria-hidden="true">▶</span>
+        <span class="global-bg-text">Кратко видео</span>
+        <span class="global-gr-text">Σύντομο βίντεο</span>
+      </div>
+      <h2 class="promo-video-title">
+        <span class="global-bg-text">Научете повече за услугите ми</span>
+        <span class="global-gr-text">Μάθετε περισσότερα για τις υπηρεσίες μου</span>
+      </h2>
+      <p class="promo-video-text">
+        <span class="global-bg-text">Кратко представяне на услугите и начина на работа.</span>
+        <span class="global-gr-text">Σύντομη παρουσίαση των υπηρεσιών και του τρόπου εργασίας.</span>
+      </p>
+    </div>
+    <button type="button" class="promo-video-cta" id="promoVideoOpen" aria-haspopup="dialog" aria-controls="promoVideoModal">
+      <span class="promo-video-play" aria-hidden="true">▶</span>
+      <span class="global-bg-text">Гледайте краткото видео</span>
+      <span class="global-gr-text">Παρακολουθήστε το βίντεο</span>
+    </button>
+  </div>
+</section>
+
+<div class="promo-video-modal" id="promoVideoModal" role="dialog" aria-modal="true" aria-label="Видео представяне" aria-hidden="true">
+  <div class="promo-video-dialog">
+    <button type="button" class="promo-video-close" id="promoVideoClose" aria-label="Затвори видеото">×</button>
+    <video class="promo-video-player" id="promoVideoPlayer" controls playsinline preload="metadata" poster="reklama-poster.jpg">
+      <source src="reklama.mp4" type="video/mp4">
+      Вашият браузър не поддържа HTML5 видео.
+    </video>
+  </div>
+</div>
+
+<script id="promo-video-script">
+document.addEventListener('DOMContentLoaded', function () {
+  const openBtn = document.getElementById('promoVideoOpen');
+  const modal = document.getElementById('promoVideoModal');
+  const closeBtn = document.getElementById('promoVideoClose');
+  const video = document.getElementById('promoVideoPlayer');
+
+  if (!openBtn || !modal || !closeBtn || !video) return;
+
+  function openVideo() {
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('promo-video-lock');
+    video.currentTime = 0;
+    video.play().catch(function(){});
+  }
+
+  function closeVideo() {
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('promo-video-lock');
+    video.pause();
+    video.currentTime = 0;
+    openBtn.focus();
+  }
+
+  openBtn.addEventListener('click', openVideo);
+  closeBtn.addEventListener('click', closeVideo);
+
+  modal.addEventListener('click', function (event) {
+    if (event.target === modal) closeVideo();
+  });
+
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape' && modal.classList.contains('open')) {
+      closeVideo();
+    }
+  });
+});
+</script>
+
 <section class="home-section reveal" id="about">
 <h2 class="section-heading"><span class="section-icon">👤</span><span class="global-bg-text">За мен</span><span class="global-gr-text">Σχετικά με εμένα</span></h2>
 <article class="section-flip-card flip-card about-flip-card"><div class="flip-card-inner"><div class="flip-card-face flip-card-front"><p>Казвам се <strong>Пламен Асенов Моллов</strong> и съм заклет преводач от и на гръцки език с над 17 години опит. Завършил съм специалност „Български език и новогръцки език“ в ПУ „Паисий Хилендарски“ – гр. Пловдив.</p><p>Участвал съм в престижната програма <strong>Сократ – Еразъм</strong> в Солунския университет „Аристотел“, където усъвършенствах знанията си по гръцки език и култура. Професионалната ми работа обхваща както писмени преводи на документи и текстове, така и устен превод при конкретни ситуации в България и Гърция.</p><p>Работя с внимание към точността на терминологията, смисъла и контекста, като се стремя всеки текст да бъде ясен, коректен и подходящ за конкретната му употреба. При необходимост съдействам и при заверки, легализация и административни процедури.</p></div><div class="flip-card-face flip-card-back"><p>Ονομάζομαι <strong>Πλάμεν Ασένοβ Μόλλοβ</strong> και είμαι επίσημος μεταφραστής από και προς την ελληνική γλώσσα, με εμπειρία άνω των 17 ετών. Σπούδασα „Βουλγαρική και Νεοελληνική Φιλολογία“ στο Πανεπιστήμιο της Φιλιππούπολης «Παΐσιι Χιλεντάρσκι».</p><p>Συμμετείχα στο πρόγραμμα <strong>Socrates – Erasmus</strong> στο Αριστοτέλειο Πανεπιστήμιο Θεσσαλονίκης, όπου ενίσχυσα τις γλωσσικές και πολιτισμικές μου γνώσεις. Η επαγγελματική μου δραστηριότητα περιλαμβάνει τόσο γραπτές μεταφράσεις εγγράφων και κειμένων όσο και προφορική διερμηνεία σε συγκεκριμένες επαγγελματικές και διοικητικές περιστάσεις στη Βουλγαρία και στην Ελλάδα.</p><p>Δίνω ιδιαίτερη προσοχή στην ακρίβεια της ορολογίας, στο νόημα και στο πλαίσιο κάθε κειμένου, ώστε το τελικό αποτέλεσμα να είναι σαφές, σωστό και κατάλληλο για τον σκοπό για τον οποίο προορίζεται. Όπου απαιτείται, παρέχω επίσης υποστήριξη σχετικά με επικυρώσεις, νομιμοποίηση εγγράφων και διοικητικές διαδικασίες.</p></div></div></article>
