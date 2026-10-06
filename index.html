@@ -9,12 +9,12 @@
 <link as="font" crossorigin="" href="assets/fonts/poppins-v23-latin-700.woff2" importance="low" rel="preload" type="font/woff2"/>
 <link as="image" fetchpriority="high" href="assets/images/bg-greece.webp" rel="preload"/>
 <!-- Favicon икони за всички устройства -->
-<link href="/favicon.ico" rel="icon" type="image/x-icon"/>
-<link href="/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
-<link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/brand-logo-square-96.png" type="image/png" sizes="96x96">
+<link rel="icon" href="/brand-logo-square-192.png" type="image/png" sizes="192x192">
+<link rel="icon" href="/brand-logo-square-512.png" type="image/png" sizes="512x512">
+<link rel="apple-touch-icon" href="/brand-logo-square-180.png" sizes="180x180">
 <link href="/site.webmanifest" rel="manifest"/>
-<link href="/web-app-manifest-192x192.png" rel="icon" sizes="192x192" type="image/png"/>
-<link href="/web-app-manifest-512x512.png" rel="icon" sizes="512x512" type="image/png"/>
 <meta content="#ffffff" name="theme-color"/>
 <meta content="#003366" name="msapplication-TileColor"/>
 <meta charset="utf-8"/>
@@ -313,6 +313,15 @@ a:active {
   font-display: swap;
 }
 </style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Organization",
+  "name":"Пламен Моллов",
+  "url":"https://www.prevodigr.eu",
+  "logo":"https://www.prevodigr.eu/assets/images/brand-logo-square.png"
+}
+</script>
 <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
@@ -3221,7 +3230,7 @@ body.promo-video-lock{overflow:hidden}
   </div>
   <div class="promo-video-inline" id="promoVideoInline">
   <button class="promo-video-poster" id="promoVideoPoster" type="button" aria-label="Пусни рекламното видео">
-    <img src="reklama-poster.jpg?v=3" loading="eager" fetchpriority="high" alt="Промоционално видео – Пламен Моллов, преводи от и на гръцки език">
+    <img src="reklama-poster.jpg" alt="Промоционално видео – Пламен Моллов, преводи от и на гръцки език">
   </button>
 </div>
 <script>
