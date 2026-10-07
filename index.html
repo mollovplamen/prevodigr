@@ -9,12 +9,12 @@
 <link as="font" crossorigin="" href="assets/fonts/poppins-v23-latin-700.woff2" importance="low" rel="preload" type="font/woff2"/>
 <link as="image" fetchpriority="high" href="assets/images/bg-greece.webp" rel="preload"/>
 <!-- Favicon икони за всички устройства -->
-<link rel="icon" href="/favicon.ico" type="image/x-icon">
-<link rel="icon" href="/brand-logo-square-96.png" type="image/png" sizes="96x96">
-<link rel="icon" href="/brand-logo-square-192.png" type="image/png" sizes="192x192">
-<link rel="icon" href="/brand-logo-square-512.png" type="image/png" sizes="512x512">
-<link rel="apple-touch-icon" href="/brand-logo-square-180.png" sizes="180x180">
+<link href="/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
 <link href="/site.webmanifest" rel="manifest"/>
+<link href="/web-app-manifest-192x192.png" rel="icon" sizes="192x192" type="image/png"/>
+<link href="/web-app-manifest-512x512.png" rel="icon" sizes="512x512" type="image/png"/>
 <meta content="#ffffff" name="theme-color"/>
 <meta content="#003366" name="msapplication-TileColor"/>
 <meta charset="utf-8"/>
@@ -313,15 +313,6 @@ a:active {
   font-display: swap;
 }
 </style>
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"Organization",
-  "name":"Пламен Моллов",
-  "url":"https://www.prevodigr.eu",
-  "logo":"https://www.prevodigr.eu/assets/images/brand-logo-square.png"
-}
-</script>
 <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
@@ -2848,6 +2839,146 @@ body.global-greek #about .experience-card{
   50%{background-position:0 0}
 }
 </style>
+
+<style id="google-reviews-polished-v2">
+/* ===== GOOGLE REVIEWS — clean, bilingual, responsive ===== */
+#google-reviews{
+  position:relative;
+  overflow:hidden;
+  max-width:1180px;
+  margin:1.15rem auto!important;
+  padding:clamp(1.7rem,4vw,3rem) clamp(1rem,3.5vw,2.4rem)!important;
+  background:linear-gradient(145deg,#ffffff 0%,#f7fbff 58%,#eef7fc 100%)!important;
+  border:1px solid #d9e9f3!important;
+  border-radius:24px!important;
+  box-shadow:0 12px 34px rgba(0,43,92,.09)!important;
+}
+#google-reviews::before{
+  content:"";
+  position:absolute;top:-95px;right:-80px;width:240px;height:240px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(66,133,244,.12),rgba(66,133,244,0) 68%);
+  pointer-events:none;
+}
+#google-reviews .google-reviews-title{
+  position:relative;
+  margin:0 auto .45rem!important;
+  text-align:center;
+  color:#202124!important;
+  font-family:'Poppins','Segoe UI',sans-serif!important;
+  font-size:clamp(1.85rem,4vw,2.65rem)!important;
+  font-weight:800!important;
+  line-height:1.15!important;
+  letter-spacing:-.02em;
+}
+#google-reviews .google-title-google{
+  display:inline-block;
+  background:linear-gradient(90deg,#4285F4 0 24%,#34A853 24% 48%,#FBBC05 48% 72%,#EA4335 72% 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+#google-reviews .google-title-line{
+  width:min(180px,48%);height:4px;margin:.7rem auto 1.1rem;
+  border-radius:99px;
+  background:linear-gradient(90deg,#4285F4,#34A853,#FBBC05,#EA4335);
+}
+#google-reviews .google-reviews-subtitle{
+  position:relative;
+  margin:0 auto 1.55rem!important;
+  max-width:720px;
+  text-align:center;
+  color:#5f6368!important;
+  font:500 clamp(.98rem,1.5vw,1.08rem)/1.6 'Poppins','Segoe UI',sans-serif!important;
+}
+#google-reviews .google-review-card{
+  position:relative;max-width:720px;margin:0 auto;
+  padding:clamp(1.25rem,3vw,2rem);
+  border-radius:20px;
+  background:#fff;
+  border:1px solid #e1e8ee;
+  box-shadow:0 9px 28px rgba(32,33,36,.08);
+  text-align:center;
+}
+#google-reviews .google-brand{
+  display:inline-flex;align-items:center;gap:.7rem;margin-bottom:.8rem;
+  color:#202124;font:800 1.05rem/1.2 'Poppins','Segoe UI',sans-serif;
+}
+#google-reviews .google-g{
+  width:42px;height:42px;display:grid;place-items:center;border-radius:50%;
+  background:conic-gradient(from -35deg,#4285F4 0 25%,#34A853 25% 48%,#FBBC05 48% 70%,#EA4335 70% 88%,#4285F4 88% 100%);
+  color:#fff;font:900 1.5rem/1 Arial,sans-serif;
+  box-shadow:0 5px 14px rgba(66,133,244,.2);
+}
+#google-reviews .google-g::after{content:"G";display:grid;place-items:center;width:31px;height:31px;border-radius:50%;background:#fff;color:#4285F4}
+#google-reviews .google-rating{
+  display:flex;align-items:center;justify-content:center;gap:.55rem;flex-wrap:wrap;
+  margin:.15rem 0 1rem;
+}
+#google-reviews .google-rating-number{color:#202124;font:800 clamp(1.55rem,3vw,2rem)/1 'Poppins','Segoe UI',sans-serif}
+#google-reviews .google-rating-stars{letter-spacing:.08em;font-size:clamp(1.35rem,3vw,1.8rem);line-height:1;color:#FBBC05;text-shadow:0 2px 5px rgba(251,188,5,.18)}
+#google-reviews .google-prompt{
+  margin:0 0 1rem;color:#4f5b66;font:500 clamp(.95rem,1.4vw,1.04rem)/1.55 'Poppins','Segoe UI',sans-serif;
+}
+#google-reviews .rating-stars{
+  display:flex;justify-content:center;gap:.28rem;margin:.15rem 0 .55rem;
+}
+#google-reviews .rating-star{
+  appearance:none;border:0!important;background:transparent!important;
+  width:clamp(45px,7vw,58px)!important;height:clamp(45px,7vw,58px)!important;
+  min-width:0!important;padding:0!important;margin:0!important;
+  color:#d8dde3!important;font-size:clamp(2.15rem,5vw,2.8rem)!important;line-height:1!important;
+  cursor:pointer!important;box-shadow:none!important;transform:none!important;
+  transition:transform .18s ease,color .18s ease,filter .18s ease!important;
+}
+#google-reviews .rating-star:hover,
+#google-reviews .rating-star:focus-visible,
+#google-reviews .rating-star.is-active{color:#FBBC05!important;transform:translateY(-3px) scale(1.08)!important;filter:drop-shadow(0 4px 7px rgba(251,188,5,.22));outline:none!important}
+#google-reviews .rating-star:focus-visible{outline:3px solid rgba(66,133,244,.28)!important;outline-offset:3px!important;border-radius:8px!important}
+#google-reviews .selected-rating{
+  min-height:26px;margin:.15rem 0 .95rem;color:#5f6368;
+  font:600 .9rem/1.4 'Poppins','Segoe UI',sans-serif;
+}
+#google-reviews .google-review-cta{
+  display:inline-flex!important;align-items:center;justify-content:center;gap:.65rem;
+  width:min(100%,390px);box-sizing:border-box;
+  padding:1rem 1.25rem!important;border-radius:14px!important;
+  background:linear-gradient(135deg,#4285F4,#1a73e8)!important;
+  color:#fff!important;text-decoration:none!important;
+  font:800 clamp(.98rem,1.5vw,1.08rem)/1.2 'Poppins','Segoe UI',sans-serif!important;
+  box-shadow:0 10px 24px rgba(66,133,244,.24)!important;
+  transition:transform .2s ease,box-shadow .2s ease,filter .2s ease!important;
+}
+#google-reviews .google-review-cta:hover{transform:translateY(-2px)!important;box-shadow:0 14px 28px rgba(66,133,244,.3)!important;filter:saturate(1.06)}
+#google-reviews .google-review-cta:active{transform:scale(.98)!important}
+#google-reviews .google-review-cta .cta-icon{font-size:1.25em;line-height:1}
+#google-reviews .google-review-note{
+  margin:.8rem auto 0;max-width:590px;color:#7a858e;
+  font:400 .78rem/1.5 'Poppins','Segoe UI',sans-serif;
+}
+@media(max-width:700px){
+  #google-reviews{margin:.9rem .7rem!important;padding:1.45rem .8rem 1.55rem!important;border-radius:20px!important}
+  #google-reviews .google-reviews-title{font-size:clamp(1.65rem,8vw,2.05rem)!important}
+  #google-reviews .google-title-line{margin:.6rem auto .9rem;height:3px}
+  #google-reviews .google-reviews-subtitle{font-size:.91rem!important;margin-bottom:1.15rem!important}
+  #google-reviews .google-review-card{padding:1.15rem .75rem 1.3rem;border-radius:17px}
+  #google-reviews .google-brand{font-size:.98rem}
+  #google-reviews .google-g{width:38px;height:38px;font-size:1.35rem}
+  #google-reviews .google-g::after{width:28px;height:28px}
+  #google-reviews .google-rating-number{font-size:1.45rem}
+  #google-reviews .google-rating-stars{font-size:1.35rem}
+  #google-reviews .google-prompt{font-size:.9rem}
+  #google-reviews .rating-stars{gap:.05rem}
+  #google-reviews .rating-star{width:48px!important;height:48px!important;font-size:2.35rem!important}
+  #google-reviews .google-review-cta{width:100%;padding:.9rem 1rem!important;font-size:.93rem!important}
+  #google-reviews .google-review-note{font-size:.72rem}
+}
+@media(max-width:360px){
+  #google-reviews .rating-star{width:42px!important;height:42px!important;font-size:2.05rem!important}
+  #google-reviews .google-brand{gap:.5rem}
+}
+@media(prefers-reduced-motion:reduce){
+  #google-reviews .rating-star,#google-reviews .google-review-cta{transition:none!important}
+}
+</style>
 </head>
 <body>
 <header class="site-header">
@@ -2866,7 +2997,7 @@ body.global-greek #about .experience-card{
 <a href="#services"><span class="global-bg-text">Услуги</span><span class="global-gr-text">Υπηρεσίες</span></a>
 <a href="prices.html"><span class="global-bg-text">Цени</span><span class="global-gr-text">Τιμές</span></a>
 <a href="#real-estate"><span class="global-bg-text">Имоти в Гърция</span><span class="global-gr-text">Ακίνητα στην Ελλάδα</span></a>
-<a href="testimonials.html"><span class="global-bg-text">Мнения</span><span class="global-gr-text">Αξιολογήσεις</span></a>
+<a href="#google-reviews"><span class="global-bg-text">Google отзиви</span><span class="global-gr-text">Αξιολογήσεις Google</span></a>
 <a href="#contact"><span class="global-bg-text">Контакти</span><span class="global-gr-text">Επικοινωνίες</span></a>
 </div>
 <div aria-label="Избор на език" class="global-language-switcher" role="group"><button aria-label="Български език" class="global-language-btn global-bg active" data-language="bg" type="button"><svg aria-label="Български език" class="final-flag bg-flag" role="img" viewbox="0 0 36 24">
@@ -3230,7 +3361,7 @@ body.promo-video-lock{overflow:hidden}
   </div>
   <div class="promo-video-inline" id="promoVideoInline">
   <button class="promo-video-poster" id="promoVideoPoster" type="button" aria-label="Пусни рекламното видео">
-    <img src="reklama-poster.jpg" alt="Промоционално видео – Пламен Моллов, преводи от и на гръцки език">
+    <img src="reklama-poster.jpg?v=3" loading="eager" fetchpriority="high" alt="Промоционално видео – Пламен Моллов, преводи от и на гръцки език">
   </button>
 </div>
 <script>
@@ -3389,6 +3520,87 @@ body.promo-video-lock{overflow:hidden}
 </div>
 </div>
 </section>
+
+<section class="home-section reveal" id="google-reviews">
+  <h2 class="google-reviews-title"><span class="global-bg-text">Google отзиви</span><span class="global-gr-text">Αξιολογήσεις Google</span></h2>
+  <div class="google-title-line" aria-hidden="true"></div>
+  <p class="google-reviews-subtitle">
+    <span class="global-bg-text">Вашата оценка е важна. Споделете впечатлението си директно в Google.</span>
+    <span class="global-gr-text">Η αξιολόγησή σας είναι σημαντική. Μοιραστείτε την εμπειρία σας απευθείας στο Google.</span>
+  </p>
+  <div class="google-review-card">
+    <div class="google-brand"><span class="google-g" aria-hidden="true"></span><span>Google</span></div>
+    <div class="google-rating" aria-label="Google rating 5 out of 5">
+      <span class="google-rating-number">5.0</span>
+      <span class="google-rating-stars" aria-hidden="true">★★★★★</span>
+    </div>
+    <p class="google-prompt">
+      <span class="global-bg-text">Изберете оценка:</span>
+      <span class="global-gr-text">Επιλέξτε αξιολόγηση:</span>
+    </p>
+    <div class="rating-stars" role="radiogroup" aria-label="Επιλέξτε αξιολόγηση από 1 έως 5 αστέρια">
+      <button class="rating-star" type="button" data-rating="1" role="radio" aria-label="1 αστέρι">★</button>
+      <button class="rating-star" type="button" data-rating="2" role="radio" aria-label="2 αστέρια">★</button>
+      <button class="rating-star" type="button" data-rating="3" role="radio" aria-label="3 αστέρια">★</button>
+      <button class="rating-star" type="button" data-rating="4" role="radio" aria-label="4 αστέρια">★</button>
+      <button class="rating-star" type="button" data-rating="5" role="radio" aria-label="5 αστέρια">★</button>
+    </div>
+    <div class="selected-rating" id="google-selected-rating" aria-live="polite"></div>
+    <a class="google-review-cta" id="google-review-cta" href="https://g.page/r/CXs4LglwIpQcEBM/review" target="_blank" rel="noopener noreferrer">
+      <span class="cta-icon" aria-hidden="true">★</span>
+      <span class="global-bg-text">Оставете отзив в Google</span>
+      <span class="global-gr-text">Αφήστε αξιολόγηση στο Google</span>
+    </a>
+    <p class="google-review-note">
+      <span class="global-bg-text">След избора натиснете бутона и публикувайте отзива си в Google.</span>
+      <span class="global-gr-text">Μετά την επιλογή σας, πατήστε το κουμπί και δημοσιεύστε την αξιολόγησή σας στο Google.</span>
+    </p>
+  </div>
+</section>
+<script id="google-reviews-polished-script">
+document.addEventListener('DOMContentLoaded',function(){
+  const box=document.getElementById('google-reviews');
+  if(!box)return;
+  const stars=[...box.querySelectorAll('.rating-star')];
+  const selected=document.getElementById('google-selected-rating');
+  function setStars(value){
+    stars.forEach((star,i)=>{
+      const active=i<value;
+      star.classList.toggle('is-active',active);
+      star.setAttribute('aria-checked',active && i===value-1 ? 'true':'false');
+    });
+  }
+  function label(value){
+    const greek=document.body.classList.contains('global-greek');
+    selected.innerHTML=greek
+      ? '<strong>Επιλεγμένη αξιολόγηση: '+value+'/5</strong> — πατήστε το κουμπί για να τη δημοσιεύσετε στο Google.'
+      : '<strong>Избрана оценка: '+value+'/5</strong> — натиснете бутона, за да я публикувате в Google.';
+  }
+  function refreshLanguage(){
+    const checked=stars.find(s=>s.getAttribute('aria-checked')==='true');
+    if(checked) label(Number(checked.dataset.rating));
+  }
+  stars.forEach(star=>{
+    star.addEventListener('mouseenter',()=>setStars(Number(star.dataset.rating)));
+    star.addEventListener('focus',()=>setStars(Number(star.dataset.rating)));
+    star.addEventListener('click',()=>{
+      const v=Number(star.dataset.rating);
+      setStars(v);
+      stars.forEach(s=>s.setAttribute('aria-checked','false'));
+      star.setAttribute('aria-checked','true');
+      label(v);
+    });
+  });
+  box.querySelector('.rating-stars').addEventListener('mouseleave',()=>{
+    const checked=stars.find(s=>s.getAttribute('aria-checked')==='true');
+    if(checked)setStars(Number(checked.dataset.rating));
+  });
+  document.querySelectorAll('.global-language-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>setTimeout(refreshLanguage,30));
+  });
+});
+</script>
+
 <section class="home-section home-contact reveal" id="contact">
 <h2 class="section-heading"><span class="section-icon">☎️</span><span class="global-bg-text">Контакти</span><span class="global-gr-text">Επικοινωνίες</span></h2>
 <div class="contact-grid">
