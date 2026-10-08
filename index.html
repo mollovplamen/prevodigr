@@ -2980,10 +2980,14 @@ body.global-greek #about .experience-card{
 }
 </style>
 
-<style id="uniform-layout-v23">
-/* ===== ЕДНАКВО СТРАНИЧНО РАЗСТОЯНИЕ + ЕДНАКВИ КАРТИ ===== */
+<style id="cards-spacing-only-v25">
+/* =========================================================
+   САМО ПОДРАВНЯВАНЕ НА КУТИЙКИТЕ
+   Не променя font-size, font-family, line-height или текста.
+   На телефон височината остава според съдържанието.
+   ========================================================= */
 
-/* Всички основни секции са подредени по една и съща ос */
+/* Еднаква лява/дясна граница на основните блокове */
 .home-section,
 .academy-section,
 .promo-video-section {
@@ -3001,71 +3005,24 @@ body.global-greek #about .experience-card{
 #real-estate .real-estate-grid,
 #contact .contact-landmark-box {
   gap: 1rem !important;
-  align-items: stretch !important;
 }
 
-/* Всички service кутийки в една група заемат еднаква височина */
-#services .service-grid {
-  grid-auto-rows: 1fr !important;
-}
-
-#services .service-card {
-  width: 100% !important;
-  min-width: 0 !important;
-  box-sizing: border-box !important;
-  height: 100% !important;
-}
-
-/* Flip картите също запълват цялата кутийка */
-#services .service-card .flip-card-inner,
-#services .service-card .flip-card-face {
-  box-sizing: border-box !important;
-}
-
-/* 4-те стъпки — абсолютно еднакви */
-#services .how-steps {
-  grid-auto-rows: 1fr !important;
-}
-
-#services .how-step {
-  width: 100% !important;
-  min-width: 0 !important;
-  min-height: 210px !important;
-  height: 100% !important;
-  box-sizing: border-box !important;
-}
-
-/* Трите информационни кутийки „За мен“ — еднакви */
-#about .about-highlights {
-  grid-auto-rows: 1fr !important;
-}
-
-#about .highlight {
-  width: 100% !important;
-  min-width: 0 !important;
-  height: 100% !important;
-  box-sizing: border-box !important;
-}
-
-/* Панелите в секцията за имоти — еднакъв размер */
+/* Еднаква ширина на кутийките в реда */
+#services .service-card,
+#services .how-step,
+#about .highlight,
 #real-estate .re-panel,
-#real-estate .real-estate-card {
+#real-estate .real-estate-card,
+#contact .contact-landmark {
   box-sizing: border-box !important;
-  width: 100% !important;
   min-width: 0 !important;
-}
-
-/* Контактните кутийки */
-#contact .contact-landmark-box {
-  align-items: stretch !important;
-}
-
-#contact .contact-landmark-box .contact-landmark {
-  box-sizing: border-box !important;
   width: 100% !important;
 }
 
-/* Телефон — същото странично отстояние като на компютър */
+/* ВАЖНО:
+   На телефон НЕ изравняваме височината.
+   Всяка кутийка е точно толкова висока, колкото е нужно
+   за нейния текст — без празни пространства. */
 @media (max-width: 768px) {
   .home-section,
   .academy-section,
@@ -3084,35 +3041,31 @@ body.global-greek #about .experience-card{
     gap: .9rem !important;
   }
 
-  /* На телефон всяка група запазва еднакъв размер */
-  #services .service-card {
-    height: var(--uniform-service-height, auto) !important;
-  }
-
-  #services .how-step {
-    height: var(--uniform-how-height, auto) !important;
-    min-height: 205px !important;
-  }
-
-  #about .highlight {
-    height: var(--uniform-highlight-height, auto) !important;
-  }
-
+  #services .service-card,
+  #services .how-step,
+  #about .highlight,
   #real-estate .re-panel,
   #real-estate .real-estate-card,
   #contact .contact-landmark {
-    height: var(--uniform-panel-height, auto) !important;
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  #services .service-grid,
+  #services .how-steps,
+  #about .about-highlights {
+    grid-auto-rows: auto !important;
   }
 }
 
-/* Много тесни телефони — запазваме еднакво чисто отстояние */
+/* На много тесни телефони: равно ляво/дясно отстояние 12px */
 @media (max-width: 420px) {
   .home-section,
   .academy-section,
   .promo-video-section {
-    width: calc(100% - 1.5rem) !important;
-    margin-left: .75rem !important;
-    margin-right: .75rem !important;
+    width: calc(100% - 24px) !important;
+    margin-left: 12px !important;
+    margin-right: 12px !important;
   }
 }
 </style>
@@ -4617,63 +4570,6 @@ document.addEventListener('DOMContentLoaded',function(){
 
   document.querySelectorAll('.global-language-btn').forEach(btn=>{
     btn.addEventListener('click',()=>setTimeout(fitCards,120));
-  });
-});
-</script>
-
-
-<script id="uniform-card-heights-v23">
-/* Изравнява височината на кутийките във всяка отделна група.
-   Така и на телефон няма една малка и една голяма кутийка. */
-document.addEventListener('DOMContentLoaded', function () {
-  function equalize(selector, variableName) {
-    document.querySelectorAll(selector).forEach(function (grid) {
-      const items = Array.from(grid.children).filter(function (el) {
-        return el.matches('.service-card, .how-step, .highlight, .re-panel, .real-estate-card, .contact-landmark');
-      });
-      if (!items.length) return;
-
-      items.forEach(function (el) {
-        el.style.removeProperty(variableName);
-        el.style.height = '';
-      });
-
-      const max = Math.max.apply(null, items.map(function (el) {
-        return Math.ceil(el.getBoundingClientRect().height);
-      }));
-
-      items.forEach(function (el) {
-        el.style.setProperty(variableName, max + 'px');
-      });
-    });
-  }
-
-  function equalizeAll() {
-    equalize('#services .service-grid', '--uniform-service-height');
-    equalize('#services .how-steps', '--uniform-how-height');
-    equalize('#about .about-highlights', '--uniform-highlight-height');
-    equalize('#real-estate .real-estate-grid', '--uniform-panel-height');
-    equalize('#contact .contact-landmark-box', '--uniform-panel-height');
-  }
-
-  function run() {
-    requestAnimationFrame(function () {
-      requestAnimationFrame(equalizeAll);
-    });
-  }
-
-  run();
-  window.addEventListener('load', run, { passive: true });
-  window.addEventListener('resize', run, { passive: true });
-
-  if (document.fonts && document.fonts.ready) {
-    document.fonts.ready.then(run);
-  }
-
-  document.querySelectorAll('.global-language-btn').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      setTimeout(run, 180);
-    });
   });
 });
 </script>
