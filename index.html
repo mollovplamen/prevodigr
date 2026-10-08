@@ -2979,6 +2979,144 @@ body.global-greek #about .experience-card{
   #google-reviews .rating-star,#google-reviews .google-review-cta{transition:none!important}
 }
 </style>
+
+<style id="uniform-layout-v23">
+/* ===== ЕДНАКВО СТРАНИЧНО РАЗСТОЯНИЕ + ЕДНАКВИ КАРТИ ===== */
+
+/* Всички основни секции са подредени по една и съща ос */
+.home-section,
+.academy-section,
+.promo-video-section {
+  width: calc(100% - 2rem) !important;
+  max-width: 1180px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box !important;
+}
+
+/* Еднакво разстояние между кутийките */
+#services .service-grid,
+#services .how-steps,
+#about .about-highlights,
+#real-estate .real-estate-grid,
+#contact .contact-landmark-box {
+  gap: 1rem !important;
+  align-items: stretch !important;
+}
+
+/* Всички service кутийки в една група заемат еднаква височина */
+#services .service-grid {
+  grid-auto-rows: 1fr !important;
+}
+
+#services .service-card {
+  width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+  height: 100% !important;
+}
+
+/* Flip картите също запълват цялата кутийка */
+#services .service-card .flip-card-inner,
+#services .service-card .flip-card-face {
+  box-sizing: border-box !important;
+}
+
+/* 4-те стъпки — абсолютно еднакви */
+#services .how-steps {
+  grid-auto-rows: 1fr !important;
+}
+
+#services .how-step {
+  width: 100% !important;
+  min-width: 0 !important;
+  min-height: 210px !important;
+  height: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Трите информационни кутийки „За мен“ — еднакви */
+#about .about-highlights {
+  grid-auto-rows: 1fr !important;
+}
+
+#about .highlight {
+  width: 100% !important;
+  min-width: 0 !important;
+  height: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Панелите в секцията за имоти — еднакъв размер */
+#real-estate .re-panel,
+#real-estate .real-estate-card {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+/* Контактните кутийки */
+#contact .contact-landmark-box {
+  align-items: stretch !important;
+}
+
+#contact .contact-landmark-box .contact-landmark {
+  box-sizing: border-box !important;
+  width: 100% !important;
+}
+
+/* Телефон — същото странично отстояние като на компютър */
+@media (max-width: 768px) {
+  .home-section,
+  .academy-section,
+  .promo-video-section {
+    width: calc(100% - 2rem) !important;
+    max-width: none !important;
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+  }
+
+  #services .service-grid,
+  #services .how-steps,
+  #about .about-highlights,
+  #real-estate .real-estate-grid,
+  #contact .contact-landmark-box {
+    gap: .9rem !important;
+  }
+
+  /* На телефон всяка група запазва еднакъв размер */
+  #services .service-card {
+    height: var(--uniform-service-height, auto) !important;
+  }
+
+  #services .how-step {
+    height: var(--uniform-how-height, auto) !important;
+    min-height: 205px !important;
+  }
+
+  #about .highlight {
+    height: var(--uniform-highlight-height, auto) !important;
+  }
+
+  #real-estate .re-panel,
+  #real-estate .real-estate-card,
+  #contact .contact-landmark {
+    height: var(--uniform-panel-height, auto) !important;
+  }
+}
+
+/* Много тесни телефони — запазваме еднакво чисто отстояние */
+@media (max-width: 420px) {
+  .home-section,
+  .academy-section,
+  .promo-video-section {
+    width: calc(100% - 1.5rem) !important;
+    margin-left: .75rem !important;
+    margin-right: .75rem !important;
+  }
+}
+</style>
+
 </head>
 <body>
 <header class="site-header">
@@ -4479,6 +4617,63 @@ document.addEventListener('DOMContentLoaded',function(){
 
   document.querySelectorAll('.global-language-btn').forEach(btn=>{
     btn.addEventListener('click',()=>setTimeout(fitCards,120));
+  });
+});
+</script>
+
+
+<script id="uniform-card-heights-v23">
+/* Изравнява височината на кутийките във всяка отделна група.
+   Така и на телефон няма една малка и една голяма кутийка. */
+document.addEventListener('DOMContentLoaded', function () {
+  function equalize(selector, variableName) {
+    document.querySelectorAll(selector).forEach(function (grid) {
+      const items = Array.from(grid.children).filter(function (el) {
+        return el.matches('.service-card, .how-step, .highlight, .re-panel, .real-estate-card, .contact-landmark');
+      });
+      if (!items.length) return;
+
+      items.forEach(function (el) {
+        el.style.removeProperty(variableName);
+        el.style.height = '';
+      });
+
+      const max = Math.max.apply(null, items.map(function (el) {
+        return Math.ceil(el.getBoundingClientRect().height);
+      }));
+
+      items.forEach(function (el) {
+        el.style.setProperty(variableName, max + 'px');
+      });
+    });
+  }
+
+  function equalizeAll() {
+    equalize('#services .service-grid', '--uniform-service-height');
+    equalize('#services .how-steps', '--uniform-how-height');
+    equalize('#about .about-highlights', '--uniform-highlight-height');
+    equalize('#real-estate .real-estate-grid', '--uniform-panel-height');
+    equalize('#contact .contact-landmark-box', '--uniform-panel-height');
+  }
+
+  function run() {
+    requestAnimationFrame(function () {
+      requestAnimationFrame(equalizeAll);
+    });
+  }
+
+  run();
+  window.addEventListener('load', run, { passive: true });
+  window.addEventListener('resize', run, { passive: true });
+
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(run);
+  }
+
+  document.querySelectorAll('.global-language-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      setTimeout(run, 180);
+    });
   });
 });
 </script>
