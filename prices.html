@@ -50,14 +50,14 @@ select:focus,input:focus{outline:3px solid #b9dcf7;border-color:var(--blue)}
 iframe{border:0;width:100%;height:700px;border-radius:10px}
 .center{text-align:center}
 [hidden]{display:none!important}
-@media(max-width:700px){.topbar{align-items:flex-start}.lang-switch{margin-left:auto}.lang-switch button{padding:7px 9px}.lang-switch button span:last-child{display:none}main{padding:12px 10px 28px}.grid{grid-template-columns:1fr}.options{grid-template-columns:1fr}.full{grid-column:auto}.breakdown{font-size:.95rem}.btn,.back-home{width:100%}iframe{height:760px}}
+@media(max-width:700px){.topbar{align-items:flex-start}.lang-switch{margin-left:auto}.lang-switch button{padding:7px 9px}.lang-switch button span:last-child{display:none}.lang-switch .flag{display:inline-block!important;font-size:1.3rem;line-height:1}main{padding:12px 10px 28px}.grid{grid-template-columns:1fr}.options{grid-template-columns:1fr}.full{grid-column:auto}.breakdown{font-size:.95rem}.btn,.back-home{width:100%}iframe{height:760px}}
 </style>
 </head>
 <body>
 <main>
   <div class="topbar">
     <h1 id="page-title">Τιμές και υπολογιστής μετάφρασης</h1>
-    <div class="lang-switch" aria-label="Επιλογή γλώσσας"><button type="button" id="lang-bg" aria-label="Български"><span class="flag">🇧🇬</span><span>Български</span></button><button type="button" id="lang-el" aria-label="Ελληνικά"><span class="flag">🇬🇷</span><span>Ελληνικά</span></button></div>
+    <div class="lang-switch" aria-label="Επιλογή γλώσσας"><button type="button" id="lang-bg" aria-label="Български език" title="Български"><span class="flag" aria-hidden="true">🇧🇬</span><span>Български</span></button><button type="button" id="lang-el" aria-label="Ελληνική γλώσσα" title="Ελληνικά"><span class="flag" aria-hidden="true">🇬🇷</span><span>Ελληνικά</span></button></div>
 </div>
 
   <section aria-labelledby="calc-heading">
@@ -222,8 +222,10 @@ iframe{border:0;width:100%;height:700px;border-radius:10px}
   });
   $('lang-bg').addEventListener('click',()=>setLanguage('bg'));
   $('lang-el').addEventListener('click',()=>setLanguage('gr'));
+  // Prefer an explicit language in the URL; otherwise use the same-origin choice saved by the main page.
   let initial=new URLSearchParams(location.search).get('lang');
   if(initial!=='bg'&&initial!=='el'){try{initial=localStorage.getItem('prevodigrSiteLanguage')}catch(e){initial=null}}
+  if(initial==='el') initial='gr';
   setLanguage(initial==='bg'?'bg':'gr',false);
 })();
 </script>
