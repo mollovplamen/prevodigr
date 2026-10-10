@@ -1,195 +1,231 @@
 <!DOCTYPE html>
-<html lang="bg">
+<html lang="el">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Цени / Τιμές</title>
-<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Калкулатор за ориентировъчна цена на превод от гръцки на български и от български на гръцки. Υπολογισμός ενδεικτικού κόστους μετάφρασης από τα ελληνικά στα βουλγαρικά και αντίστροφα.">
+<title>Τιμές και υπολογιστής μετάφρασης</title>
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
 <style>
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(to bottom, #fff, #f0f8ff);
-  color: #333;
-}
-
-/* Унифициран стил на секциите като при testimonials */
-section {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 2rem 1rem;
-  background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  margin: 0 auto;
-}
-
-.section-title {
-  font-size: 2rem;
-  text-align: center;
-  color: #003366;
-}
-
-/* Банер с движещ се текст */
-#loadingBanner {
-  background: linear-gradient(90deg, #003366, #0055a5);
-  color: white;
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.15rem;
-  font-weight: 700;
-  text-align: center;
-  padding: 1rem 0;
-  border-radius: 12px;
-  margin-bottom: 1.5rem;
-  overflow: hidden;
-  position: relative;
-}
-
-/* Анимация на текста от дясно наляво — тръгва веднага */
-#scrollingText {
-  display: inline-block;
-  white-space: nowrap;
-  animation: scrollBanner 25s linear infinite;
-  padding-left: 100%; /* Започва извън екрана */
-}
-
-@keyframes scrollBanner {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-/* Мобилна версия */
-@media (max-width: 768px) {
-  #scrollingText {
-    animation: scrollBanner 15s linear infinite;
-  }
-}
-
-/* Банер с форма */
-#formBanner {
-  background: linear-gradient(135deg, #e0f0ff, #ffffff);
-  border: 2px solid #0055a5;
-  border-radius: 12px;
-  padding: 1.5rem;
-  text-align: center;
-  margin-bottom: 2rem;
-  box-shadow: 0 8px 20px rgba(0, 85, 165, 0.15);
-}
-
-#formBanner h3 {
-  font-size: 1.8rem;
-  font-family: 'Poppins', sans-serif;
-  color: #003366;
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
-
-#formBanner p {
-  font-size: 1.1rem;
-  color: #222;
-}
-
-iframe {
-  border: none;
-  width: 100%;
-  height: 700px;
-  border-radius: 10px;
-}
-
-/* Бутон "Обратно към начална" */
-a.back-home {
-  background-color: #003366;
-  color: white;
-  padding: 1rem 2rem;
-  border-radius: 10px;
-  text-decoration: none;
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.1rem;
-  font-weight: 600;
-  display: inline-block;
-  transition: background-color 0.3s ease;
-  margin-top: 1rem;
-}
-a.back-home:hover {
-  background-color: #0055a5;
-}
-
-/* Мобилна версия като при testimonials */
-@media (max-width: 768px) {
-  body {
-    padding: 0;
-    font-size: 1.1rem;
-    line-height: 1.6;
-  }
-  section {
-    padding: 1.5rem 15px;
-    width: 100%;
-    margin: 0;
-    border-radius: 0;
-  }
-  #loadingBanner, #formBanner, iframe, .back-home {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-  }
-  #loadingBanner {
-    font-size: 1rem;
-    padding: 0.9rem 0;
-  }
-  #formBanner h3 {
-    font-size: 1.4rem;
-    line-height: 1.4;
-  }
-  #formBanner p {
-    font-size: 1rem;
-  }
-  .section-title {
-    font-size: 1.6rem;
-  }
-  a.back-home {
-    font-size: 1rem;
-    padding: 0.8rem 1.5rem;
-  }
-}
+:root{--navy:#003366;--blue:#0055a5;--pale:#eaf4fc;--line:#c9dbea;--text:#243746}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:linear-gradient(180deg,#fff,#f0f8ff);color:var(--text);line-height:1.55}
+main{max-width:1050px;margin:0 auto;padding:22px 16px 40px}
+section,.panel{background:#fff;border-radius:16px;box-shadow:0 5px 22px rgba(0,43,92,.09);padding:clamp(18px,3vw,32px);margin:0 0 22px}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:18px}
+h1,h2,h3{color:var(--navy);line-height:1.25}
+h1{font-size:clamp(1.55rem,4vw,2.2rem);margin:0}
+h2{font-size:clamp(1.3rem,3vw,1.7rem);text-align:center;margin:0 0 14px}
+p{margin:.55rem 0 1rem}
+.lang-switch{display:flex;gap:6px;padding:4px;background:#edf5fb;border:1px solid var(--line);border-radius:999px;flex-shrink:0}.lang-switch button{display:inline-flex;align-items:center;gap:6px}.flag{font-size:1.25rem;line-height:1}
+.lang-switch button{border:0;border-radius:999px;padding:8px 13px;font-weight:700;cursor:pointer;background:transparent;color:var(--navy)}
+.lang-switch button.active{background:var(--navy);color:white}
+.intro{text-align:center;max-width:780px;margin:0 auto 22px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.field{display:flex;flex-direction:column;gap:7px}
+.numeric-field label{display:flex;align-items:flex-end;min-height:3.2em}
+label,.field-title{font-weight:700;color:#173e60}
+select,input[type=number]{width:100%;min-height:46px;padding:10px 12px;border:1px solid #b9ccdc;border-radius:9px;background:#fff;color:#1e3345;font:inherit}
+select:focus,input:focus{outline:3px solid #b9dcf7;border-color:var(--blue)}
+.full{grid-column:1/-1}
+.options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.option{border:1px solid var(--line);border-radius:11px;padding:12px;background:#f8fbfe}
+.option input{accent-color:var(--blue)}
+.option label{display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+.option small{display:block;color:#5c7184;font-weight:400;margin-top:4px}
+.checkline{display:flex;align-items:flex-start;gap:10px;padding:13px;border:1px solid var(--line);border-radius:10px;background:#f8fbfe}
+.checkline input{margin-top:5px;accent-color:var(--blue);transform:scale(1.15)}
+.result{margin-top:20px;padding:20px;border-radius:13px;background:linear-gradient(135deg,#e8f4ff,#f8fcff);border:1px solid #b8d8f0}
+.result-label{font-weight:700;color:#31536f}
+.total{font-size:clamp(2rem,6vw,2.8rem);font-weight:800;color:var(--navy);line-height:1.2;margin:5px 0 12px}
+.breakdown{display:flex;justify-content:space-between;gap:16px;padding:7px 0;border-bottom:1px solid #d5e5f1}
+.breakdown:last-child{border-bottom:0}
+.note{font-size:.92rem;color:#53697b}
+.cta{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:18px}
+.btn,.back-home{display:inline-block;text-decoration:none;text-align:center;border:0;border-radius:9px;padding:12px 18px;background:var(--navy);color:#fff;font-weight:700;cursor:pointer;font-size:1rem}
+.btn:hover,.back-home:hover{background:var(--blue)}
+.secondary{background:#eaf4fc;color:var(--navy);border:1px solid var(--line)}
+.secondary:hover{background:#d9ecfa}
+.banner{background:linear-gradient(135deg,#e0f0ff,#fff);border:2px solid var(--blue);border-radius:12px;padding:20px;text-align:center;margin-bottom:18px}
+iframe{border:0;width:100%;height:700px;border-radius:10px}
+.center{text-align:center}
+[hidden]{display:none!important}
+@media(max-width:700px){.topbar{align-items:flex-start}.lang-switch{margin-left:auto}.lang-switch button{padding:7px 9px}.lang-switch button span:last-child{display:none}main{padding:12px 10px 28px}.grid{grid-template-columns:1fr}.options{grid-template-columns:1fr}.full{grid-column:auto}.breakdown{font-size:.95rem}.btn,.back-home{width:100%}iframe{height:760px}}
 </style>
 </head>
 <body>
-<section id="prices">
-  <h2 class="section-title">Цени / Τιμές</h2>
-  <p style="text-align: justify;">
-    <em>Цените се договарят индивидуално според сложността, обема и сроковете.</em><br/>
-    <em>Οι τιμές καθορίζονται μεμονωμένα, ανάλογα με τη δυσκολία του κειμένου, τον όγκο και τα χρονικά περιθώρια παράδοσης.</em>
-  </p>
+<main>
+  <div class="topbar">
+    <h1 id="page-title">Τιμές και υπολογιστής μετάφρασης</h1>
+    <div class="lang-switch" aria-label="Επιλογή γλώσσας"><button type="button" id="lang-bg" aria-label="Български"><span class="flag">🇧🇬</span><span>Български</span></button><button type="button" id="lang-el" aria-label="Ελληνικά"><span class="flag">🇬🇷</span><span>Ελληνικά</span></button></div>
+</div>
 
-  <div id="loadingBanner">
-    <div id="scrollingText">
-      Гарантирано, най-добрите цени! — Εγγυημένα, οι καλύτερες τιμές! — Доверете се на опита! — Εμπιστευτείτε την εμπειρία μας!
+  <section aria-labelledby="calc-heading">
+    <h2 id="calc-heading">Υπολογιστής ενδεικτικού κόστους</h2>
+    <p class="intro">Επιλέξτε κατεύθυνση μετάφρασης, κατηγορία κειμένου, χρόνο παράδοσης και αριθμό μεταφραστικών σελίδων για να δείτε το ενδεικτικό κόστος.</p>
+
+    <p class="note page-definition">Μία μεταφραστική σελίδα αντιστοιχεί σε 1.800 χαρακτήρες του τελικού μεταφρασμένου κειμένου, συμπεριλαμβανομένων των διαστημάτων και των σημείων στίξης, σύμφωνα με το Βουλγαρικό Κρατικό Πρότυπο (BDS). Ο αριθμός σελίδων είναι ενδεικτικός. Η τελική τιμή υπολογίζεται μετά την ολοκλήρωση της μετάφρασης, με βάση τον πραγματικό όγκο του τελικού κειμένου.</p>
+
+    <div class="grid">
+      <div class="field">
+        <label for="direction">Κατεύθυνση μετάφρασης</label>
+        <select id="direction">
+          <option value="el-bg">Από τα ελληνικά στα βουλγαρικά</option>
+          <option value="bg-el">Από τα βουλγαρικά στα ελληνικά</option>
+          
+          
+        </select>
+      </div>
+      <div class="field">
+        <label for="category">Κατηγορία κειμένου</label>
+        <select id="category">
+          <option value="1">Κατηγορία I</option>
+          <option value="2">Κατηγορία II</option>
+          <option value="3">Κατηγορία III</option>
+        </select>
+      </div>
+      <div class="field full">
+        <span class="field-title">Χρόνος παράδοσης</span>
+        <div class="options">
+          <div class="option"><label><input type="radio" name="speed" value="standard" checked><span>Κανονική υπηρεσία<small>Έως 2 εργάσιμες ημέρες</small></span></label></div>
+          <div class="option"><label><input type="radio" name="speed" value="fast"><span>Ταχεία υπηρεσία<small>1 εργάσιμη ημέρα</small></span></label></div>
+          <div class="option"><label><input type="radio" name="speed" value="express"><span>Επείγουσα υπηρεσία<small>Την ίδια ημέρα</small></span></label></div>
+        </div>
+      </div>
+      <div class="field numeric-field">
+        <label id="pages-label" for="pages">Αριθμός σελίδων</label>
+        <input id="pages" type="number" min="0" max="10000" step="1" value="0" inputmode="numeric">
+      </div>
+      <div class="field numeric-field">
+        <label id="documents-label" for="documents">Αριθμός εγγράφων για συμβολαιογραφική επικύρωση (εφόσον απαιτείται)</label>
+        <input id="documents" type="number" min="0" max="1000" step="1" value="0" inputmode="numeric" disabled>
+      </div>
+      <div class="full">
+        <label id="notary-label" class="checkline" for="notary">
+          <input id="notary" type="checkbox">
+          <span><strong>Προσθήκη συμβολαιογραφικής επικύρωσης</strong><br><span class="notary-detail">13,00 € ανά έγγραφο (10,00 € υπηρεσία + 3,00 € συμβολαιογράφος), σύμφωνα με τον τιμοκατάλογο.</span></span>
+        </label>
+      </div>
     </div>
-  </div>
 
-  <div id="formBanner">
-    <h3>📩 Попълни формата и вземи своята оферта още днес!<br/>📋 Συμπλήρωσε τη φόρμα και ζήτησε την προσφορά σου σήμερα!</h3>
-    <p>💬 Безплатна, бърза и напълно онлайн консултация / Δωρεάν, γρήγορη και πλήρως διαδικτυακή συμβουλευτική</p>
-  </div>
+    <div class="result" aria-live="polite" aria-atomic="true">
+      <div class="result-label">Ενδεικτικό συνολικό κόστος</div>
+      <div class="total" id="total">0,00 €</div>
+      <div class="breakdown"><span>Μετάφραση</span><strong id="translation-cost">0,00 €</strong></div>
+      <div class="breakdown" id="notary-row"><span>Συμβολαιογραφική επικύρωση</span><strong id="notary-cost">0,00 €</strong></div>
+      <p class="note" id="rate-note">8,00 € / σελίδα · Κατηγορία I · Κανονική υπηρεσία</p>
+      <p class="note">Σημαντικό: το ποσό είναι ενδεικτικό και δεν αποτελεί οριστική προσφορά. Η τελική τιμή επιβεβαιώνεται μετά την εξέταση του εγγράφου και μπορεί να εξαρτάται από τη δυσκολία, τον όγκο και τον χρόνο παράδοσης. Ο τιμοκατάλογος δεν διακρίνει τις χρεώσεις ανά κατεύθυνση μετάφρασης.</p>
+      <div class="cta">
+        <button type="button" class="btn" id="show-offer">Ζητήστε οριστική προσφορά</button>
+        <button type="button" class="btn secondary" id="reset">Επαναφορά υπολογισμού</button>
+      </div>
+    </div>
 
-  <iframe id="offerForm" src=" https://forms.fillout.com/t/9NUe5T1CmCus" title="Форма за оферта"></iframe>
+    <div id="category-help" style="margin-top:24px">
+      <h2>Πώς καθορίζεται η κατηγορία;</h2>
+      <div class="grid">
+        <div class="option"><strong id="cat1">Κατηγορία I</strong><p id="cat1desc">Τυποποιημένα έγγραφα έως μισή σελίδα και μη εξειδικευμένα κείμενα: δημοτικά πιστοποιητικά, πιστοποιητικό γάμου ή γέννησης, δελτίο ταυτότητας, διαβατήριο, τραπεζική βεβαίωση ύπαρξης λογαριασμού κ.ά.</p></div>
+        <div class="option"><strong id="cat2">Κατηγορία II</strong><p id="cat2desc">Πληρεξούσια, διπλώματα, αναλυτικές βαθμολογίες, πιστοποιητικά, δηλώσεις, προσωπική και εταιρική αλληλογραφία, βιβλιάρια εμβολιασμού.</p></div>
+        <div class="option full"><strong id="cat3">Κατηγορία III</strong><p id="cat3desc">Τεχνικά και ιατρικά κείμενα – εξωνοσοκομειακά δελτία, ιατρικά εξιτήρια, ιατρικές γνωματεύσεις· οικονομικά, λογιστικά και νομικά κείμενα – συμβολαιογραφικές πράξεις, αποφάσεις διαζυγίου και άλλα ιδιαίτερα εξειδικευμένα κείμενα.</p></div>
+      </div>
+    </div>
+  </section>
 
-  <div style="margin-top: 1rem; font-size: 0.9rem; text-align: center;">
-    🔒 <a href="privacy.html" style="color:#003366; text-decoration: underline;" target="_blank">
-      Политика за поверителност / Πολιτική απορρήτου
-    </a>
-  </div>
-
-  <div style="text-align: center; margin-top: 2rem;">
-    <a class="back-home" href="index.html">⬅️ Обратно към начална страница / Επιστροφή στην αρχική σελίδα</a>
-  </div>
-</section>
-
-<!-- НЯМА JAVASCRIPT КОД - анимацията стартира веднага -->
+  <section id="offer" hidden>
+    <h2>Ζητήστε εξατομικευμένη προσφορά</h2>
+    <div class="banner">
+      <h3>Συμπληρώστε τη φόρμα και λάβετε την προσφορά σας</h3>
+      <p>Δωρεάν, γρήγορη και πλήρως διαδικτυακή συμβουλευτική.</p>
+    </div>
+    <iframe id="offerForm" src="https://forms.fillout.com/t/9NUe5T1CmCus" title="Форма за оферта / Φόρμα προσφοράς" loading="lazy"></iframe>
+    <p class="center"><a href="privacy.html" style="color:#003366;text-decoration:underline" target="_blank" rel="noopener">Πολιτική απορρήτου</a></p>
+  </section>
+  <p class="center"><a class="back-home" href="index.html">⬅️ Επιστροφή στην αρχική σελίδα</a></p>
+</main>
+<script>
+(function(){
+  const rates = {
+    standard: {1:8, 2:10, 3:12},
+    fast: {1:9, 2:12, 3:14},
+    express: {1:10, 2:13, 3:16}
+  };
+  const speedNames = {
+    bg: {standard:'Стандартна услуга',fast:'Бърза услуга',express:'Експресна услуга'},
+    gr: {standard:'Κανονική υπηρεσία',fast:'Ταχεία υπηρεσία',express:'Επείγουσα υπηρεσία'}
+  };
+  const translations = {
+    bg: {
+      title:'Цени и калкулатор за превод', calc:'Калкулатор за ориентировъчна цена', intro:'Изберете посока на превода, категория текст, срок за изпълнение и брой преводачески страници, за да видите ориентировъчната цена.',
+      definition:'Една преводаческа страница е 1800 символа от готовия превод, включително интервалите и препинателните знаци, съгласно БДС (Български държавен стандарт). Броят страници е ориентировъчен. Окончателната цена се изчислява след извършване на превода според действителния обем на готовия текст.',
+      direction:'Посока на превода', elbg:'От гръцки на български', bgel:'От български на гръцки', category:'Категория текст', cat1:'Категория I',cat2:'Категория II',cat3:'Категория III',speed:'Срок за изпълнение', standard:'Стандартна услуга',standardTime:'До 2 работни дни',fast:'Бърза услуга',fastTime:'1 работен ден',express:'Експресна услуга',expressTime:'В същия ден',pages:'Брой страници',docs:'Брой документи за нотариална заверка (ако е приложимо)',notary:'Добавяне на нотариална заверка',notaryDetail:'13,00 € за документ (10,00 € услуга + 3,00 € нотариус).',totalLabel:'Ориентировъчна обща цена',translation:'Превод',notaryCost:'Нотариална заверка',important:'Важно: сумата е ориентировъчна и не представлява окончателна оферта. Окончателната цена се потвърждава след преглед на документа и може да зависи от сложността, обема и срока за изпълнение. Ценоразписът не разграничава цените според посоката на превода.',quote:'Поискай окончателна оферта',reset:'Нулирай калкулатора',categoriesTitle:'Как се определя категорията?',cat1desc:'Шаблонни документи до половин страница и неспециализирани текстове: общински удостоверения за брак или раждане, лична карта, паспорт, банково удостоверение за наличие на сметка и др.',cat2desc:'Пълномощни, дипломи, академични справки, сертификати, декларации, лична и фирмена кореспонденция, имунизационни паспорти.',cat3desc:'Технически и медицински текстове – амбулаторни листи, епикризи, медицински становища; икономически, счетоводни и юридически текстове – нотариални актове, решения за развод и други силно специализирани текстове.',offer:'Поискай индивидуална оферта',offerBanner:'Попълни формуляра и получи своята оферта',offerDesc:'Безплатна, бърза и изцяло онлайн консултация.',privacy:'Политика за поверителност',home:'⬅️ Обратно към началната страница',page:'страница',pagesPlural:'страници',rate:' / страница · Категория '},
+      gr: {
+      title:'Τιμές και υπολογιστής μετάφρασης', calc:'Υπολογιστής ενδεικτικού κόστους', intro:'Επιλέξτε κατεύθυνση μετάφρασης, κατηγορία κειμένου, χρόνο παράδοσης και αριθμό μεταφραστικών σελίδων για να δείτε το ενδεικτικό κόστος.',definition:'Μία μεταφραστική σελίδα αντιστοιχεί σε 1.800 χαρακτήρες του τελικού μεταφρασμένου κειμένου, συμπεριλαμβανομένων των διαστημάτων και των σημείων στίξης, σύμφωνα με το Βουλγαρικό Κρατικό Πρότυπο (BDS). Ο αριθμός σελίδων είναι ενδεικτικός. Η τελική τιμή υπολογίζεται μετά την ολοκλήρωση της μετάφρασης, με βάση τον πραγματικό όγκο του τελικού κειμένου.',direction:'Κατεύθυνση μετάφρασης',elbg:'Από τα ελληνικά στα βουλγαρικά',bgel:'Από τα βουλγαρικά στα ελληνικά',category:'Κατηγορία κειμένου',cat1:'Κατηγορία I',cat2:'Κατηγορία II',cat3:'Κατηγορία III',speed:'Χρόνος παράδοσης',standard:'Κανονική υπηρεσία',standardTime:'Έως 2 εργάσιμες ημέρες',fast:'Ταχεία υπηρεσία',fastTime:'1 εργάσιμη ημέρα',express:'Επείγουσα υπηρεσία',expressTime:'Την ίδια ημέρα',pages:'Αριθμός σελίδων',docs:'Αριθμός εγγράφων για συμβολαιογραφική επικύρωση (εφόσον απαιτείται)',notary:'Προσθήκη συμβολαιογραφικής επικύρωσης',notaryDetail:'13,00 € ανά έγγραφο (10,00 € υπηρεσία + 3,00 € συμβολαιογράφος).',totalLabel:'Ενδεικτικό συνολικό κόστος',translation:'Μετάφραση',notaryCost:'Συμβολαιογραφική επικύρωση',important:'Σημαντικό: το ποσό είναι ενδεικτικό και δεν αποτελεί οριστική προσφορά. Η τελική τιμή επιβεβαιώνεται μετά την εξέταση του εγγράφου και μπορεί να εξαρτάται από τη δυσκολία, τον όγκο και τον χρόνο παράδοσης. Ο τιμοκατάλογος δεν διακρίνει τις χρεώσεις ανά κατεύθυνση μετάφρασης.',quote:'Ζητήστε οριστική προσφορά',reset:'Επαναφορά υπολογισμού',categoriesTitle:'Πώς καθορίζεται η κατηγορία;',cat1desc:'Τυποποιημένα έγγραφα έως μισή σελίδα και μη εξειδικευμένα κείμενα: δημοτικά πιστοποιητικά γάμου ή γέννησης, δελτίο ταυτότητας, διαβατήριο, τραπεζική βεβαίωση ύπαρξης λογαριασμού κ.ά.',cat2desc:'Πληρεξούσια, διπλώματα, αναλυτικές βαθμολογίες, πιστοποιητικά, δηλώσεις, προσωπική και εταιρική αλληλογραφία, βιβλιάρια εμβολιασμού.',cat3desc:'Τεχνικά και ιατρικά κείμενα – εξωνοσοκομειακά δελτία, ιατρικά εξιτήρια, ιατρικές γνωματεύσεις· οικονομικά, λογιστικά και νομικά κείμενα – συμβολαιογραφικές πράξεις, αποφάσεις διαζυγίου και άλλα ιδιαίτερα εξειδικευμένα κείμενα.',offer:'Ζητήστε εξατομικευμένη προσφορά',offerBanner:'Συμπληρώστε τη φόρμα και λάβετε την προσφορά σας',offerDesc:'Δωρεάν, γρήγορη και πλήρως διαδικτυακή συμβουλευτική.',privacy:'Πολιτική απορρήτου',home:'⬅️ Επιστροφή στην αρχική σελίδα',page:'σελίδα',pagesPlural:'σελίδες',rate:' / σελίδα · Κατηγορία '}
+  };
+  let language='gr';
+  const $=id=>document.getElementById(id);
+  function setLanguage(lang, save=true){
+    language=lang==='bg'?'bg':'gr';
+    document.documentElement.lang=language==='bg'?'bg':'el';
+    const t=translations[language];
+    const put=(id,key)=>{const el=$(id);if(el)el.textContent=t[key];};
+    put('page-title','title');put('calc-heading','calc');document.querySelector('.intro').textContent=t.intro;document.querySelector('.page-definition').textContent=t.definition;
+    document.querySelector('label[for="direction"]').textContent=t.direction;
+    $('direction').options[0].text=t.elbg;$('direction').options[1].text=t.bgel;
+    document.querySelector('label[for="category"]').textContent=t.category;
+    [...$('category').options].forEach((o,i)=>o.text=t['cat'+(i+1)]);
+    document.querySelector('.field.full .field-title').textContent=t.speed;
+    const opts=document.querySelectorAll('.option label span');
+    [[t.standard,t.standardTime],[t.fast,t.fastTime],[t.express,t.expressTime]].forEach((a,i)=>{opts[i].childNodes[0].textContent=a[0];opts[i].querySelector('small').textContent=a[1]});
+    put('pages-label','pages');put('documents-label','docs');
+    const notaryLabel=$('notary-label');notaryLabel.childNodes[1].textContent='';notaryLabel.querySelector('strong').textContent=t.notary;notaryLabel.querySelector('.notary-detail').textContent=t.notaryDetail;
+    document.querySelector('.result-label').textContent=t.totalLabel;document.querySelectorAll('.breakdown span')[0].textContent=t.translation;document.querySelectorAll('.breakdown span')[1].textContent=t.notaryCost;
+    document.querySelectorAll('.result .note')[1].textContent=t.important;
+    $('show-offer').textContent=t.quote;$('reset').textContent=t.reset;
+    document.querySelector('#category-help h2').textContent=t.categoriesTitle;
+    ['cat1desc','cat2desc','cat3desc'].forEach((id)=>$(id).textContent=t[id]);['cat1','cat2','cat3'].forEach((id,i)=>$(id).textContent=t['cat'+(i+1)]);
+    document.querySelector('#offer h2').textContent=t.offer;document.querySelector('#offer .banner h3').textContent=t.offerBanner;document.querySelector('#offer .banner p').textContent=t.offerDesc;
+    document.querySelector('a[href="privacy.html"]').textContent=t.privacy;document.querySelector('.back-home').textContent=t.home;
+    $('lang-bg').classList.toggle('active',language==='bg');$('lang-el').classList.toggle('active',language==='gr');
+    if(save){try{localStorage.setItem('prevodigrSiteLanguage',language==='bg'?'bg':'el')}catch(e){}}
+    update();
+  }
+  function money(value){return value.toLocaleString(language==='gr'?'el-GR':'bg-BG',{minimumFractionDigits:2,maximumFractionDigits:2})+' €';}
+  function update(){
+    const pages=Math.max(0,Math.min(10000,parseInt($('pages').value,10)||0));
+    $('pages').value=pages;
+    const cat=$('category').value;
+    const speed=document.querySelector('input[name="speed"]:checked').value;
+    const rate=rates[speed][cat];
+    const translation=rate*pages;
+    const notaryOn=$('notary').checked;
+    $('documents').disabled=!notaryOn;
+    const docs=Math.max(0,Math.min(1000,parseInt($('documents').value,10)||0));
+    if(notaryOn)$('documents').value=docs;
+    const notary=notaryOn?13*docs:0;
+    $('translation-cost').textContent=money(translation);
+    $('notary-cost').textContent=money(notary);
+    $('notary-row').hidden=!notaryOn;
+    $('total').textContent=money(translation+notary);
+    const catLabel=(language==='bg'?'Категория ':'Κατηγορία ')+cat;
+    const pageLabel=pages===1?translations[language].page:translations[language].pagesPlural;
+    $('rate-note').textContent=money(rate)+(language==='bg'?' / страница · Категория ':' / σελίδα · Κατηγορία ')+cat+' · '+speedNames[language][speed]+' · '+pages+' '+pageLabel;
+  }
+  ['direction','category','pages','documents','notary'].forEach(id=>$(id).addEventListener('input',update));
+  document.querySelectorAll('input[name="speed"]').forEach(el=>el.addEventListener('change',update));
+  $('show-offer').addEventListener('click',()=>{
+    $('offer').hidden=false;
+    $('offer').scrollIntoView({behavior:'smooth',block:'start'});
+  });
+  $('reset').addEventListener('click',()=>{
+    $('direction').value='el-bg';$('category').value='1';$('pages').value='0';$('documents').value='0';
+    $('notary').checked=false;document.querySelector('input[name="speed"][value="standard"]').checked=true;update();
+  });
+  $('lang-bg').addEventListener('click',()=>setLanguage('bg'));
+  $('lang-el').addEventListener('click',()=>setLanguage('gr'));
+  let initial=new URLSearchParams(location.search).get('lang');
+  if(initial!=='bg'&&initial!=='el'){try{initial=localStorage.getItem('prevodigrSiteLanguage')}catch(e){initial=null}}
+  setLanguage(initial==='bg'?'bg':'gr',false);
+})();
+</script>
 </body>
 </html>
