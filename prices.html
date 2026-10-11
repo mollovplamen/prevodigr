@@ -81,10 +81,8 @@ iframe{border:0;width:100%;height:700px;border-radius:10px}
       <div class="field">
         <label for="direction"><span data-bg>Посока на превода</span><span data-gr hidden>Κατεύθυνση μετάφρασης</span></label>
         <select id="direction">
-          <option value="el-bg" data-bg>От гръцки на български</option>
-          <option value="bg-el" data-bg>От български на гръцки</option>
-          <option value="el-bg" data-gr hidden>Από τα ελληνικά στα βουλγαρικά</option>
-          <option value="bg-el" data-gr hidden>Από τα βουλγαρικά στα ελληνικά</option>
+          <option value="el-bg">От гръцки на български</option>
+          <option value="bg-el">От български на гръцки</option>
         </select>
       </div>
       <div class="field">
@@ -189,6 +187,18 @@ iframe{border:0;width:100%;height:700px;border-radius:10px}
     });
     const category=$('category');
     [...category.options].forEach((o,i)=>o.textContent=(lang==='bg'?'Категория ':'Κατηγορία ')+(i+1));
+    const direction=$('direction');
+    const previousDirection=direction.value;
+    const directionLabels=lang==='bg'
+      ? [['el-bg','От гръцки на български'],['bg-el','От български на гръцки']]
+      : [['el-bg','Από τα ελληνικά στα βουλγαρικά'],['bg-el','Από τα βουλγαρικά στα ελληνικά']];
+    direction.replaceChildren(...directionLabels.map(([value,label])=>{
+      const option=document.createElement('option');
+      option.value=value;
+      option.textContent=label;
+      return option;
+    }));
+    direction.value=previousDirection;
     update();
   }
   function money(value){return value.toLocaleString(language==='gr'?'el-GR':'bg-BG',{minimumFractionDigits:2,maximumFractionDigits:2})+' €';}
