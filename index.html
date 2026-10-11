@@ -273,15 +273,21 @@ a:active {
   transform: scale(0.96);
 }
 </style>
-<meta content="Заклет преводач от и на гръцки език. Преводи от гръцки език на български език и от български език на гръцки език, официални документи, заверки и легализация." name="description"/><meta content="заклет преводач гръцки език, устни преводи гръцки, писмени преводи, имоти в Гърция, покупко-продажба на имоти, легализация, Ακίνητα στην Ελλάδα, μεταφράσεις ελληνικά, заверки на документи, апостил, апостил на документи, устни и писмени преводи с гръцки език, легализация на документи" name="keywords"/><meta content="Пламен Моллов" name="author"/><link href="https://www.prevodigr.eu" rel="canonical"/>
-<meta content="Пламен Моллов – Преводи от и на гръцки език" property="og:title"/>
-<meta content="Заклет преводач с 17 г. опит, устни и писмени преводи от и на гръцки език, заверки и легализация на документи, консултации, имоти в Гърция." property="og:description"/>
+<meta name="description" content="Преводи от гръцки на български и от български на гръцки. Заклет преводач с над 17 години опит. Писмени и устни преводи, заверки и легализация на документи от Гърция."/><meta content="Пламен Моллов" name="author"/><link rel="canonical" href="https://www.prevodigr.eu/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:locale" content="bg_BG"/>
+<meta property="og:locale:alternate" content="el_GR"/>
+<meta property="og:site_name" content="prevodigr.eu – Пламен Моллов"/>
+<meta content="Преводач от и на гръцки език | Заклет преводач – Пламен Моллов" property="og:title"/>
+<meta content="Превод от гръцки на български и от български на гръцки, заклет преводач, писмени и устни преводи, заверки и легализация на документи от Гърция." property="og:description"/>
 <meta content="https://www.prevodigr.eu/assets/images/logo-google.png" property="og:image"/>
 <meta content="image/png" property="og:image:type"/>
 <meta content="864" property="og:image:width"/>
 <meta content="909" property="og:image:height"/>
-<meta content="https://www.prevodigr.eu" property="og:url"/>
+<meta content="https://www.prevodigr.eu/" property="og:url"/>
 <meta content="summary_large_image" name="twitter:card"/>
+<meta name="twitter:title" content="Преводач от и на гръцки език | Заклет преводач – Пламен Моллов"/>
+<meta name="twitter:description" content="Превод от гръцки на български и от български на гръцки. Заклет преводач с над 17 години опит. Заверки и легализация на документи от Гърция."/>
 <meta content="https://www.prevodigr.eu/assets/images/logo-google.png" name="twitter:image"/>
 <style>
 @font-face {
@@ -316,30 +322,30 @@ a:active {
 <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "name": "Преводи от и на гръцки език – Пламен Моллов",
+  "@id": "https://www.prevodigr.eu/#business",
+  "name": "Пламен Моллов – заклет преводач от и на гръцки език",
+  "description": "Превод от гръцки на български и от български на гръцки. Заклет преводач с над 17 години опит. Писмени и устни преводи, заверки, легализация и Апостил на документи от Гърция. Запитвания от цяла България и от чужбина.",
+  "url": "https://www.prevodigr.eu/",
   "image": "https://www.prevodigr.eu/assets/images/logo-google.png",
   "logo": "https://www.prevodigr.eu/assets/images/logo-google.png",
-  "url": "https://www.prevodigr.eu",
   "telephone": "+359897098959",
-  "priceRange": "$$",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "ул. Димитър Талев 132",
     "addressLocality": "Пловдив",
+    "addressRegion": "Област Пловдив",
     "postalCode": "4000",
-    "addressCountry": "BG",
-    "addressRegion": "Област Пловдив"
+    "addressCountry": "BG"
   },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5",
-    "reviewCount": 4
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 42.1186115,
+    "longitude": 24.734022
   },
-  "@id": "https://www.prevodigr.eu/#business",
+  "hasMap": "https://www.google.com/maps/search/?api=1&query=42.1186115%2C24.734022",
   "sameAs": [
     "https://www.facebook.com/PlamenMollov",
-    "https://www.linkedin.com/in/plamenmollov",
-    "https://goo.gl/maps/yourgooglemaplink"
+    "https://www.linkedin.com/in/plamenmollov"
   ]
 }</script>
 <style id="academy-button-effect">
@@ -384,7 +390,9 @@ a:active {
 }
 @media (prefers-reduced-motion: reduce) {
   .academy-cta,
-  .academy-cta::after
+  .academy-cta::after {
+    animation: none !important;
+  }
 }
 </style>
 <style id="mobile-wide-layout">
@@ -2980,12 +2988,36 @@ body.global-greek #about .experience-card{
   #google-reviews .rating-star,#google-reviews .google-review-cta{transition:none!important}
 }
 </style>
+<style id="ai-language-buttons-single-line-v50">
+/* AI assistant language buttons: keep both labels on one line on every screen. */
+.ai-assistant-language .ai-lang-btn{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  flex-wrap:nowrap!important;
+  white-space:nowrap!important;
+  gap:8px!important;
+  min-width:0!important;
+}
+.ai-assistant-language .ai-lang-btn svg{
+  flex:0 0 auto!important;
+  display:block!important;
+}
+@media (max-width:420px){
+  .ai-assistant-language .ai-lang-btn{
+    padding-left:6px!important;
+    padding-right:6px!important;
+    gap:7px!important;
+    font-size:.72rem!important;
+  }
+}
+</style>
 </head>
 <body>
 <header class="site-header">
 <img alt="Plamen Mollov Logo" fetchpriority="high" src="assets/images/logo-header.png"/>
 <h1><span class="global-bg-text">Заклет преводач от и на гръцки език – Пламен Моллов</span><span class="global-gr-text">Επίσημος μεταφραστής από και προς την ελληνική γλώσσα – Πλάμεν Μόλλοβ</span></h1>
-<h2><strong><span class="global-bg-text">17 години опит в устни и писмени преводи, заверки, легализации и консултации</span><span class="global-gr-text">17 χρόνια εμπειρίας σε γραπτές και προφορικές μεταφράσεις, επικυρώσεις, νομιμοποιήσεις και υποστήριξη</span></strong></h2>
+<h2><strong><span class="global-bg-text">Превод от гръцки на български и от български на гръцки · Писмени и устни преводи, заверки и легализация на документи от Гърция · Над 17 години опит</span><span class="global-gr-text">Μετάφραση από τα ελληνικά στα βουλγαρικά και από τα βουλγαρικά στα ελληνικά · Γραπτές και προφορικές μεταφράσεις, επικυρώσεις και νομιμοποίηση εγγράφων από την Ελλάδα · Πάνω από 17 χρόνια εμπειρίας</span></strong></h2>
 </header>
 <nav>
 <div class="menu-toggle">
@@ -4486,27 +4518,3 @@ document.addEventListener('DOMContentLoaded',function(){
 
 </body>
 </html>
-<style id="ai-language-buttons-single-line-v50">
-/* AI assistant language buttons: keep both labels on one line on every screen. */
-.ai-assistant-language .ai-lang-btn{
-  display:flex!important;
-  align-items:center!important;
-  justify-content:center!important;
-  flex-wrap:nowrap!important;
-  white-space:nowrap!important;
-  gap:8px!important;
-  min-width:0!important;
-}
-.ai-assistant-language .ai-lang-btn svg{
-  flex:0 0 auto!important;
-  display:block!important;
-}
-@media (max-width:420px){
-  .ai-assistant-language .ai-lang-btn{
-    padding-left:6px!important;
-    padding-right:6px!important;
-    gap:7px!important;
-    font-size:.72rem!important;
-  }
-}
-</style>
