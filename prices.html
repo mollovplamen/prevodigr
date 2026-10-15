@@ -227,7 +227,20 @@ iframe{border:0;width:100%;height:700px;border-radius:10px}
   document.querySelectorAll('[data-set-lang]').forEach(btn=>btn.addEventListener('click',()=>setLanguage(btn.dataset.setLang)));
   ['direction','category','pages','documents','notary'].forEach(id=>$(id).addEventListener('input',update));
   document.querySelectorAll('input[name="speed"]').forEach(el=>el.addEventListener('change',update));
-  $('show-offer').addEventListener('click',function(){ $('offer').hidden=false; });
+  $('show-offer').addEventListener('click',function(e){
+    e.preventDefault();
+    const params=new URLSearchParams();
+    params.set('request','1');
+    params.set('lang',language);
+    params.set('pages',$('pages').value||'0');
+    params.set('direction',$('direction').value);
+    params.set('category',$('category').value);
+    params.set('speed',document.querySelector('input[name="speed"]:checked').value);
+    params.set('notary',$('notary').checked?'1':'0');
+    params.set('documents',$('documents').value||'0');
+    params.set('estimate',$('total').textContent);
+    window.location.href='index.html?'+params.toString();
+  });
   $('reset').addEventListener('click',()=>{
     $('direction').value='el-bg';$('category').value='1';$('pages').value='0';$('documents').value='0';
     $('notary').checked=false;document.querySelector('input[name="speed"][value="standard"]').checked=true;update();

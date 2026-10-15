@@ -4099,7 +4099,36 @@ document.addEventListener('DOMContentLoaded',function(){
   }
  });
  updateFormLanguage();
-})();
+ // Open the exact same request modal when arriving from the price calculator.
+ try {
+  const params=new URLSearchParams(window.location.search);
+  if(params.get('request')==='1'){
+   const lang=params.get('lang')==='gr'?'gr':'bg';
+   try { localStorage.setItem('siteLanguage',lang); } catch(e) {}
+   document.body.classList.toggle('global-greek',lang==='gr');
+   document.documentElement.lang=lang==='gr'?'el':'bg';
+   document.querySelectorAll('.global-language-btn').forEach(btn=>{
+    btn.classList.toggle('active',btn.getAttribute('data-language')===lang);
+   });
+   updateFormLanguage();
+   const pages=params.get('pages');
+   if(pages!==null)document.getElementById('prPages').value=Math.max(0,Math.min(10000,parseInt(pages,10)||0));
+   const directionValue=params.get('direction');
+   if(directionValue)direction.value=directionValue==='bg-el'?(lang==='gr'?'Βουλγαρικά → Ελληνικά':'Български → Гръцки'):(lang==='gr'?'Ελληνικά → Βουλγαρικά':'Гръцки → Български');
+   const docs=params.get('documents');
+   if(docs!==null)document.getElementById('prNotary').value=Math.max(0,Math.min(10000,parseInt(docs,10)||0));
+   const estimate=params.get('estimate');
+   if(estimate){
+    const msg=document.getElementById('prMessage');
+    msg.value=(lang==='gr'?'Ενδεικτικό ποσό από τον υπολογιστή τιμών: ':'Ориентировъчна сума от калкулатора за цени: ')+estimate+
+      (lang==='gr'?' — παρακαλώ επιβεβαιώστε την τελική προσφορά.':' — моля, потвърдете окончателната оферта.');
+   }
+   open();
+   // Remove the query so refreshing the page won't reopen the form repeatedly.
+   history.replaceState({},document.title,window.location.pathname+window.location.hash);
+  }
+ } catch(e) {}
+})(); 
 </script>
 
 <footer><p><span class="global-bg-text">© 2025 Пламен Моллов – Заклет преводач от и на гръцки език</span><span class="global-gr-text">© 2025 Πλάμεν Μόλλοβ – Επίσημος μεταφραστής από και προς την ελληνική γλώσσα</span></p><p class="footer-language-row"><svg aria-label="Български език" class="final-flag bg-flag" role="img" viewbox="0 0 36 24"><rect fill="#D62612" height="24" width="36"></rect><rect fill="#00966E" height="16" width="36"></rect><rect fill="#FFFFFF" height="8" width="36"></rect></svg><span>България</span><span class="footer-separator">|</span><span>Ελλάδα</span><svg aria-label="Ελληνικά" class="final-flag gr-flag" role="img" viewbox="0 0 36 24" xmlns="http://www.w3.org/2000/svg">
