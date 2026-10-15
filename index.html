@@ -3021,6 +3021,175 @@ body.global-greek #about .experience-card{
   }
 }
 </style>
+<style id="prevodigr-brand-button-v2">
+/* Elegant brand label: compact, responsive, and animated only when tapped. */
+.site-brand-badge{
+  position:absolute!important;
+  left:18px!important;
+  top:50%!important;
+  transform:translateY(-50%)!important;
+  z-index:101!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  box-sizing:border-box!important;
+  max-width:calc(100% - 155px)!important;
+  padding:8px 15px!important;
+  border:1px solid rgba(151,211,255,.95)!important;
+  border-radius:999px!important;
+  background:linear-gradient(135deg,#ffffff 0%,#f1f8ff 100%)!important;
+  color:#073365!important;
+  box-shadow:inset 0 1px 0 #fff,0 3px 10px rgba(0,20,50,.18)!important;
+  font-family:'Poppins','Segoe UI',Arial,sans-serif!important;
+  font-size:clamp(1.02rem,1.2vw,1.2rem)!important;
+  font-weight:800!important;
+  letter-spacing:.15px!important;
+  line-height:1.1!important;
+  text-decoration:none!important;
+  white-space:nowrap!important;
+  cursor:pointer!important;
+  appearance:none!important;
+  -webkit-appearance:none!important;
+  outline:none!important;
+  overflow:hidden!important;
+  transition:background .25s ease,border-color .25s ease,box-shadow .25s ease,transform .25s ease!important;
+}
+.site-brand-badge .brand-gr{
+  color:#0055a5!important;
+  font-weight:900!important;
+  margin-left:2px!important;
+  text-shadow:0 1px 0 rgba(255,255,255,.85)!important;
+}
+.site-brand-badge::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  background:linear-gradient(110deg,transparent 20%,rgba(91,178,239,.24) 48%,transparent 70%);
+  transform:translateX(-130%);
+  pointer-events:none;
+}
+.site-brand-badge:hover,.site-brand-badge:focus-visible{
+  background:linear-gradient(135deg,#ffffff 0%,#e5f4ff 100%)!important;
+  border-color:#4ca9e8!important;
+  box-shadow:inset 0 1px 0 #fff,0 0 0 3px rgba(76,169,232,.16),0 5px 14px rgba(0,20,50,.22)!important;
+}
+.site-brand-badge.is-animating{
+  animation:brandBadgePulse .72s ease-out!important;
+}
+.site-brand-badge.is-animating::before{
+  animation:brandBadgeShimmer .72s ease-out!important;
+}
+@keyframes brandBadgePulse{
+  0%{transform:translateY(-50%) scale(1)}
+  35%{transform:translateY(-50%) scale(1.045);box-shadow:0 0 0 5px rgba(76,169,232,.18),0 0 22px rgba(76,169,232,.34)}
+  100%{transform:translateY(-50%) scale(1)}
+}
+@keyframes brandBadgeShimmer{
+  0%{transform:translateX(-130%)}
+  100%{transform:translateX(130%)}
+}
+@media(max-width:768px){
+  .site-brand-badge{
+    left:7px!important;
+    top:7px!important;
+    transform:none!important;
+    max-width:calc(100% - 120px)!important;
+    padding:7px 11px!important;
+    font-size:clamp(.82rem,3.5vw,.96rem)!important;
+    letter-spacing:.15px!important;
+  }
+  .site-brand-badge.is-animating{animation:brandBadgePulseMobile .72s ease-out!important}
+  @keyframes brandBadgePulseMobile{
+    0%{transform:scale(1)}
+    35%{transform:scale(1.035);box-shadow:0 0 0 4px rgba(76,169,232,.18),0 0 18px rgba(76,169,232,.30)}
+    100%{transform:scale(1)}
+  }
+}
+@media(max-width:360px){
+  .site-brand-badge{max-width:calc(100% - 112px)!important;padding:6px 8px!important;font-size:.8rem!important;letter-spacing:0!important}
+}
+@media(prefers-reduced-motion:reduce){
+  .site-brand-badge,.site-brand-badge::before{transition:none!important;animation:none!important}
+}
+</style>
+
+<style id="prevodigr-translation-request-styles">
+#prevodigrRequestModal{position:fixed;inset:0;z-index:99999;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(3,20,43,.72);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px)}
+#prevodigrRequestModal.is-open{display:flex}
+#prevodigrRequestModal .pr-card{position:relative;width:min(760px,100%);max-height:min(92vh,920px);overflow:auto;background:linear-gradient(160deg,#fff 0%,#f4f9ff 100%);border:1px solid #b8d9f2;border-radius:22px;box-shadow:0 24px 70px rgba(0,17,43,.35);color:#102b4c;padding:clamp(20px,4vw,34px);font-family:'Poppins','Segoe UI',Arial,sans-serif}
+#prevodigrRequestModal .pr-topline{height:5px;position:absolute;top:0;left:0;right:0;background:linear-gradient(90deg,#003366,#1684c7,#9bdcff);border-radius:22px 22px 0 0}
+#prevodigrRequestModal .pr-close{position:absolute;right:15px;top:14px;width:38px;height:38px;border-radius:50%;border:1px solid #c7dced;background:#fff;color:#12375d;font-size:25px;line-height:1;cursor:pointer}
+#prevodigrRequestModal .pr-title{font-size:clamp(1.45rem,3vw,2rem);line-height:1.2;margin:9px 42px 7px 0;color:#073365;font-weight:800}
+#prevodigrRequestModal .pr-intro{margin:0 0 22px;color:#4b6680;line-height:1.55}
+#prevodigrRequestModal .pr-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+#prevodigrRequestModal .pr-field{min-width:0;display:flex;flex-direction:column;gap:7px;margin-bottom:15px}
+#prevodigrRequestModal .pr-field.full{grid-column:1/-1}
+#prevodigrRequestModal label{font-size:.91rem;font-weight:700;color:#153b63}
+#prevodigrRequestModal input:not([type=checkbox]):not([type=file]),#prevodigrRequestModal select,#prevodigrRequestModal textarea{box-sizing:border-box;width:100%;min-width:0;border:1px solid #c4d8e9;border-radius:11px;padding:12px 13px;background:#fff;color:#142f4b;font:inherit;font-size:.96rem;outline:none;transition:border-color .2s,box-shadow .2s}
+#prevodigrRequestModal input:focus,#prevodigrRequestModal select:focus,#prevodigrRequestModal textarea:focus{border-color:#1684c7;box-shadow:0 0 0 3px rgba(22,132,199,.13)}
+#prevodigrRequestModal textarea{min-height:95px;resize:vertical}
+#prevodigrRequestModal .pr-filebox{border:1.5px dashed #91bfe1;background:#edf7ff;border-radius:14px;padding:16px;gap:9px}
+#prevodigrRequestModal input[type=file]{width:100%;max-width:100%;font-size:.9rem;color:#244a70}
+#prevodigrRequestModal .pr-hint{font-size:.8rem;color:#5b7188;line-height:1.45}
+#prevodigrRequestModal .pr-consent{box-sizing:border-box;display:grid;grid-template-columns:18px minmax(0,1fr);align-items:start;justify-content:start;column-gap:10px;width:100%;margin:4px 0 20px;padding:0;text-align:left;font-size:.88rem;line-height:1.55;font-weight:500;color:#254561}
+#prevodigrRequestModal .pr-consent input[type=checkbox]{appearance:auto;-webkit-appearance:checkbox;display:block;position:static;float:none;width:16px;height:16px;min-width:16px;margin:3px 0 0;padding:0;justify-self:start;align-self:start;accent-color:#0755a0;flex:none;transform:none}
+#prevodigrRequestModal .pr-consent>span{display:block;min-width:0;width:100%;margin:0;padding:0;text-align:left;overflow-wrap:anywhere}
+#prevodigrRequestModal .pr-consent .global-bg-text,#prevodigrRequestModal .pr-consent .global-gr-text{display:inline;text-align:left}
+#prevodigrRequestModal .pr-field label{display:block;width:100%;margin:0;text-align:left;line-height:1.4}
+#prevodigrRequestModal .pr-grid>*{min-width:0}
+#prevodigrRequestModal .pr-filebox input[type=file]{display:block;box-sizing:border-box;width:100%;min-width:0;max-width:100%;padding:9px;border:1px solid #c7dced;border-radius:9px;background:#fff;white-space:normal}
+#prevodigrRequestModal .pr-filebox input[type=file]::file-selector-button{margin:0 10px 4px 0;padding:8px 11px;border:1px solid #b5d2e8;border-radius:7px;background:#f0f7fd;color:#123d66;font:inherit;font-weight:600;cursor:pointer}
+#prevodigrRequestModal .pr-card *{box-sizing:border-box}
+#prevodigrRequestModal .pr-status{overflow-wrap:anywhere}
+@media(min-width:601px){#prevodigrRequestModal .pr-card{width:min(780px,100%);padding:32px 34px}#prevodigrRequestModal .pr-grid{column-gap:20px;row-gap:0}}
+@media(max-width:600px){#prevodigrRequestModal{padding:8px;align-items:center}#prevodigrRequestModal .pr-card{width:100%;max-width:100%;max-height:calc(100dvh - 16px);overflow-y:auto;overscroll-behavior:contain;border-radius:18px;padding:25px 17px 20px}#prevodigrRequestModal .pr-grid{grid-template-columns:minmax(0,1fr);gap:0}#prevodigrRequestModal .pr-field.full{grid-column:1}#prevodigrRequestModal .pr-consent{grid-template-columns:18px minmax(0,1fr);column-gap:9px;font-size:.84rem}#prevodigrRequestModal .pr-close{right:11px;top:10px}#prevodigrRequestModal .pr-filebox{padding:13px}#prevodigrRequestModal input[type=file]{font-size:.82rem}}
+@media(max-width:360px){#prevodigrRequestModal .pr-card{padding:24px 13px 17px}#prevodigrRequestModal .pr-consent{font-size:.81rem;column-gap:7px}}
+#prevodigrRequestModal .pr-submit{width:100%;border:0;border-radius:12px;padding:14px 18px;background:linear-gradient(135deg,#073365,#0878ba);color:white;font:inherit;font-weight:800;font-size:1rem;cursor:pointer;box-shadow:0 7px 18px rgba(0,65,120,.2);transition:transform .2s,filter .2s}
+#prevodigrRequestModal .pr-submit:hover{filter:brightness(1.08);transform:translateY(-1px)}
+#prevodigrRequestModal .pr-submit:disabled{opacity:.65;cursor:wait;transform:none}
+#prevodigrRequestModal .pr-status{display:none;margin:0 0 14px;padding:10px 12px;border-radius:9px;background:#fff4e5;color:#754800;font-size:.86rem}
+body.pr-modal-open{overflow:hidden}
+@media(max-width:600px){#prevodigrRequestModal{padding:8px;align-items:flex-end}#prevodigrRequestModal .pr-card{max-height:94vh;border-radius:18px;padding:23px 16px 18px}#prevodigrRequestModal .pr-grid{grid-template-columns:1fr;gap:0}#prevodigrRequestModal .pr-field.full{grid-column:auto}#prevodigrRequestModal .pr-close{right:11px;top:10px}}
+</style>
+
+
+<style id="prevodigr-form-row-alignment">
+/* Keep every label/control pair on a consistent two-column grid baseline. */
+@media (min-width:601px){
+  #prevodigrRequestModal .pr-grid{
+    align-items:start;
+    column-gap:20px;
+    row-gap:0;
+  }
+  #prevodigrRequestModal .pr-field:not(.full){
+    display:grid;
+    grid-template-rows:2.8em 48px;
+    align-content:start;
+    gap:7px;
+    min-width:0;
+  }
+  #prevodigrRequestModal .pr-field:not(.full) > label{
+    height:2.8em;
+    min-height:2.8em;
+    display:flex;
+    align-items:flex-start;
+    line-height:1.4;
+    overflow-wrap:anywhere;
+  }
+  #prevodigrRequestModal .pr-field:not(.full) > input:not([type=file]),
+  #prevodigrRequestModal .pr-field:not(.full) > select{
+    height:48px;
+    min-height:48px;
+    margin:0;
+  }
+}
+@media (max-width:600px){
+  #prevodigrRequestModal .pr-field:not(.full){display:flex;gap:7px}
+  #prevodigrRequestModal .pr-field:not(.full) > label{height:auto;min-height:0}
+}
+</style>
+
 </head>
 <body>
 <header class="site-header">
@@ -3029,6 +3198,7 @@ body.global-greek #about .experience-card{
 <h2><strong><span class="global-bg-text">17 години опит в устни и писмени преводи, заверки, легализации и консултации</span><span class="global-gr-text">17 χρόνια εμπειρίας σε γραπτές και προφορικές μεταφράσεις, επικυρώσεις, νομιμοποιήσεις και συμβουλευτικές υπηρεσίες</span></strong></h2>
 </header>
 <nav>
+<button class="site-brand-badge" type="button" aria-label="PrevodiGR — заявка за превод"><span>Prevodi</span><span class="brand-gr">GR</span></button>
 <div class="menu-toggle">
 <span></span>
 <span></span>
@@ -3717,6 +3887,91 @@ document.addEventListener('DOMContentLoaded',function(){
 </form>
 <div class="ai-assistant-note" id="aiAssistantNote">Можете да пишете на български или гръцки.</div>
 </div>
+
+<div id="prevodigrRequestModal" aria-hidden="true">
+ <section class="pr-card" role="dialog" aria-modal="true" aria-labelledby="prTitle">
+  <div class="pr-topline"></div>
+  <button type="button" class="pr-close" id="prClose" aria-label="Затвори формата">×</button>
+  <h2 class="pr-title" id="prTitle"><span class="global-bg-text">Заявка за превод</span><span class="global-gr-text">Αίτηση μετάφρασης</span></h2>
+  <p class="pr-intro"><span class="global-bg-text">Попълнете данните и приложете документите, за да получите индивидуална оферта.</span><span class="global-gr-text">Συμπληρώστε τα στοιχεία σας και επισυνάψτε τα έγγραφα για να λάβετε εξατομικευμένη προσφορά.</span></p>
+  <form id="prevodigrTranslationRequest" action="https://formsubmit.co/mollovplamen@gmail.com" method="POST" enctype="multipart/form-data">
+   <input type="hidden" name="_subject" value="Нова заявка за превод — PrevodiGR">
+   <input type="hidden" name="_next" value="https://www.prevodigr.eu/thanks.html">
+   <input type="hidden" name="_template" value="table">
+   <input type="hidden" name="_url" value="https://www.prevodigr.eu/">
+   <input type="hidden" name="Език на формата" id="prFormLanguage" value="Български">
+   <div class="pr-grid">
+    <div class="pr-field"><label for="prName"><span class="global-bg-text">Име и фамилия *</span><span class="global-gr-text">Ονοματεπώνυμο *</span></label><input id="prName" name="Име и фамилия" type="text" autocomplete="name" required maxlength="120" placeholder="Вашето име" data-bg-placeholder="Вашето име" data-el-placeholder="Το ονοματεπώνυμό σας"></div>
+    <div class="pr-field"><label for="prEmail"><span class="global-bg-text">Имейл адрес *</span><span class="global-gr-text">Διεύθυνση email *</span></label><input id="prEmail" name="Имейл на клиента" type="email" autocomplete="email" required maxlength="180" placeholder="name@example.com" data-bg-placeholder="name@example.com" data-el-placeholder="name@example.com"></div>
+    <div class="pr-field"><label for="prPhone"><span class="global-bg-text">Телефон (по желание)</span><span class="global-gr-text">Τηλέφωνο (προαιρετικό)</span></label><input id="prPhone" name="Телефон" type="tel" autocomplete="tel" maxlength="60" placeholder="+359…" data-bg-placeholder="+359…" data-el-placeholder="+30… ή +359…"></div>
+    <div class="pr-field"><label for="prDirection"><span class="global-bg-text">Посока на превода *</span><span class="global-gr-text">Κατεύθυνση μετάφρασης *</span></label><select id="prDirection" name="Посока на превода" required><option value="Гръцки → Български" data-bg="Гръцки → Български" data-el="Ελληνικά → Βουλγαρικά">Гръцки → Български</option><option value="Български → Гръцки" data-bg="Български → Гръцки" data-el="Βουλγαρικά → Ελληνικά">Български → Гръцки</option></select></div>
+    <div class="pr-field"><label for="prDocType"><span class="global-bg-text">Вид документ</span><span class="global-gr-text">Είδος εγγράφου</span></label><select id="prDocType" name="Вид документ"><option value="Официален документ" data-bg="Официален документ" data-el="Επίσημο έγγραφο">Официален документ</option><option value="Фирмен или търговски документ" data-bg="Фирмен или търговски документ" data-el="Εταιρικό ή εμπορικό έγγραφο">Фирмен или търговски документ</option><option value="Друг вид документ" data-bg="Друг вид документ" data-el="Άλλο έγγραφο">Друг вид документ</option></select></div>
+    <div class="pr-field"><label for="prDeadline"><span class="global-bg-text">Желан срок</span><span class="global-gr-text">Επιθυμητή προθεσμία</span></label><select id="prDeadline" name="Желан срок"><option value="Стандартен срок" data-bg="Стандартен срок" data-el="Κανονική προθεσμία">Стандартен срок</option><option value="Спешна поръчка" data-bg="Спешна поръчка" data-el="Επείγουσα παραγγελία">Спешна поръчка</option></select></div>
+    <div class="pr-field"><label for="prPages"><span class="global-bg-text">Брой страници (ориентировъчно)</span><span class="global-gr-text">Αριθμός σελίδων (ενδεικτικά)</span></label><input id="prPages" name="Брой страници" type="number" min="0" max="10000" value="0" inputmode="numeric"></div>
+    <div class="pr-field"><label for="prNotary"><span class="global-bg-text">Документи за нотариална заверка (ако е приложимо)</span><span class="global-gr-text">Έγγραφα για συμβολαιογραφική επικύρωση (εφόσον απαιτείται)</span></label><input id="prNotary" name="Документи за нотариална заверка" type="number" min="0" max="10000" value="0" inputmode="numeric"></div>
+    <div class="pr-field full"><label for="prMessage"><span class="global-bg-text">Допълнителна информация</span><span class="global-gr-text">Πρόσθετες πληροφορίες</span></label><textarea id="prMessage" name="Допълнителна информация" maxlength="4000" placeholder="Опишете изискванията си, срока или други подробности…" data-bg-placeholder="Опишете изискванията си, срока или други подробности…" data-el-placeholder="Περιγράψτε τις απαιτήσεις σας, την προθεσμία ή άλλες λεπτομέρειες…"></textarea></div>
+    <div class="pr-field full pr-filebox"><label for="prFiles"><span class="global-bg-text">Прикачете документите *</span><span class="global-gr-text">Επισυνάψτε τα έγγραφα *</span></label><input id="prFiles" name="Документи" type="file" accept=".pdf,.doc,.docx,.odt,.jpg,.jpeg,.png,.tif,.tiff" multiple required><span class="pr-hint"><span class="global-bg-text">Формати: PDF, DOC, DOCX, ODT, JPG, PNG, TIFF. Общ размер на файловете до 10 MB на заявка. Не изпращайте оригинали или документи, които не са необходими за офертата.</span><span class="global-gr-text">Μορφές: PDF, DOC, DOCX, ODT, JPG, PNG, TIFF. Συνολικό μέγεθος αρχείων έως 10 MB ανά αίτημα. Μην αποστέλλετε πρωτότυπα ή έγγραφα που δεν είναι απαραίτητα για την προσφορά.</span></span><div id="prFileNames" class="pr-hint" aria-live="polite"></div></div>
+   </div>
+   <label class="pr-consent"><input id="prConsent" type="checkbox" name="Съгласие за обработване на данни" value="Да" required><span><span class="global-bg-text">Съгласен/съгласна съм данните ми да бъдат обработени единствено за отговор на запитването. *</span><span class="global-gr-text">Συμφωνώ τα δεδομένα μου να υποβληθούν σε επεξεργασία αποκλειστικά για την απάντηση στο αίτημά μου. *</span></span></label>
+   <p class="pr-status" id="prStatus" role="alert"></p>
+   <button class="pr-submit" type="submit"><span class="global-bg-text">Изпрати заявката</span><span class="global-gr-text">Αποστολή αιτήματος</span></button>
+   <p class="pr-hint" style="text-align:center;margin:12px 0 0"><span class="global-bg-text">Ще получите отговор по имейл или телефон.</span><span class="global-gr-text">Θα λάβετε απάντηση μέσω email ή τηλεφώνου.</span></p>
+  </form>
+ </section>
+</div>
+<script id="prevodigr-translation-request-script">
+(function(){
+ const modal=document.getElementById('prevodigrRequestModal');
+ const form=document.getElementById('prevodigrTranslationRequest');
+ const badge=document.querySelector('.site-brand-badge');
+ const close=document.getElementById('prClose');
+ const files=document.getElementById('prFiles');
+ const fileNames=document.getElementById('prFileNames');
+ const status=document.getElementById('prStatus');
+ const direction=document.getElementById('prDirection');
+ const docType=document.getElementById('prDocType');
+ const deadline=document.getElementById('prDeadline');
+ const langField=document.getElementById('prFormLanguage');
+ function isGreek(){return document.body.classList.contains('global-greek')}
+ function updateFormLanguage(){
+  const greek=isGreek();
+  langField.value=greek?'Ελληνικά':'Български';
+  form.querySelector('[name="_subject"]').value=greek?'Νέο αίτημα μετάφρασης — PrevodiGR':'Нова заявка за превод — PrevodiGR';
+  form.querySelectorAll('input,textarea,select').forEach(el=>{
+   if(el.dataset.bgPlaceholder||el.dataset.elPlaceholder) el.placeholder=greek?(el.dataset.elPlaceholder||''):(el.dataset.bgPlaceholder||'');
+  });
+  [direction,docType,deadline].forEach(sel=>Array.from(sel.options).forEach(opt=>{const txt=opt.getAttribute(greek?'data-el':'data-bg');if(txt){opt.textContent=txt;opt.value=txt;}}));
+  const fieldNames=greek?{
+   'prName':'Ονοματεπώνυμο','prEmail':'Email πελάτη','prPhone':'Τηλέφωνο','prDirection':'Κατεύθυνση μετάφρασης','prDocType':'Είδος εγγράφου','prDeadline':'Επιθυμητή προθεσμία','prPages':'Αριθμός σελίδων','prNotary':'Έγγραφα για συμβολαιογραφική επικύρωση','prMessage':'Πρόσθετες πληροφορίες','prFiles':'Έγγραφα','prConsent':'Συγκατάθεση επεξεργασίας δεδομένων'
+  }:{'prName':'Име и фамилия','prEmail':'Имейл на клиента','prPhone':'Телефон','prDirection':'Посока на превода','prDocType':'Вид документ','prDeadline':'Желан срок','prPages':'Брой страници','prNotary':'Документи за нотариална заверка','prMessage':'Допълнителна информация','prFiles':'Документи','prConsent':'Съгласие за обработване на данни'};
+  Object.entries(fieldNames).forEach(([id,value])=>{const el=document.getElementById(id);if(el)el.name=value;});
+  files.setAttribute('aria-label',greek?'Επισυνάψτε τα έγγραφα':'Прикачете документите');
+  close.setAttribute('aria-label',greek?'Κλείσιμο φόρμας':'Затвори формата');
+ }
+ function open(){modal.classList.add('is-open');modal.setAttribute('aria-hidden','false');document.body.classList.add('pr-modal-open');updateFormLanguage();setTimeout(()=>document.getElementById('prName').focus(),60)}
+ function shut(){modal.classList.remove('is-open');modal.setAttribute('aria-hidden','true');document.body.classList.remove('pr-modal-open');if(badge)badge.focus()}
+ if(badge)badge.addEventListener('click',open);
+ close.addEventListener('click',shut);
+ modal.addEventListener('click',e=>{if(e.target===modal)shut()});
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('is-open'))shut()});
+ document.querySelectorAll('.global-language-btn').forEach(btn=>btn.addEventListener('click',()=>setTimeout(updateFormLanguage,40)));
+ files.addEventListener('change',()=>{
+  const chosen=Array.from(files.files||[]);const total=chosen.reduce((sum,f)=>sum+f.size,0);const max=10*1024*1024;
+  fileNames.textContent=chosen.length?chosen.map(f=>f.name).join(', '):'';
+  if(total>max){status.style.display='block';status.textContent=isGreek()?'Το συνολικό μέγεθος των αρχείων υπερβαίνει τα 10 MB. Επιλέξτε μικρότερα αρχεία.':'Общият размер на файловете надвишава 10 MB. Изберете по-малки файлове.';}
+  else{status.style.display='none';status.textContent='';}
+ });
+ form.addEventListener('submit',e=>{
+  const chosen=Array.from(files.files||[]);const total=chosen.reduce((sum,f)=>sum+f.size,0);
+  if(!chosen.length){e.preventDefault();status.style.display='block';status.textContent=isGreek()?'Επισυνάψτε τουλάχιστον ένα έγγραφο.':'Прикачете поне един документ.';files.focus();return;}
+  if(total>10*1024*1024){e.preventDefault();status.style.display='block';status.textContent=isGreek()?'Το συνολικό μέγεθος των αρχείων πρέπει να είναι έως 10 MB.':'Общият размер на файловете трябва да бъде до 10 MB.';files.focus();return;}
+  if(!form.reportValidity()){e.preventDefault();return;}
+  // Native multipart POST is intentional: the provider's AJAX endpoint does not reliably deliver attachments.
+ });
+ updateFormLanguage();
+})();
+</script>
+
 <footer><p><span class="global-bg-text">© 2025 Пламен Моллов – Заклет преводач от и на гръцки език</span><span class="global-gr-text">© 2025 Πλάμεν Μόλλοβ – Επίσημος μεταφραστής από και προς την ελληνική γλώσσα</span></p><p class="footer-language-row"><svg aria-label="Български език" class="final-flag bg-flag" role="img" viewbox="0 0 36 24"><rect fill="#D62612" height="24" width="36"></rect><rect fill="#00966E" height="16" width="36"></rect><rect fill="#FFFFFF" height="8" width="36"></rect></svg><span>България</span><span class="footer-separator">|</span><span>Ελλάδα</span><svg aria-label="Ελληνικά" class="final-flag gr-flag" role="img" viewbox="0 0 36 24" xmlns="http://www.w3.org/2000/svg">
 <rect fill="#0D5EAF" height="24" width="36"></rect>
 <path d="M0 2.6667H36V5.3334H0ZM0 8H36V10.6667H0ZM0 13.3333H36V16H0ZM0 18.6666H36V21.3333H0Z" fill="#FFFFFF"></path>
@@ -4525,5 +4780,18 @@ document.addEventListener('DOMContentLoaded',function(){
 });
 </script>
 
+
+<script>
+(function(){
+  const brandBadge=document.querySelector('.site-brand-badge');
+  if(!brandBadge)return;
+  brandBadge.addEventListener('click',function(){
+    this.classList.remove('is-animating');
+    void this.offsetWidth;
+    this.classList.add('is-animating');
+    window.setTimeout(()=>this.classList.remove('is-animating'),760);
+  });
+})();
+</script>
 </body>
 </html>
