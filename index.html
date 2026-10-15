@@ -4793,5 +4793,26 @@ document.addEventListener('DOMContentLoaded',function(){
   });
 })();
 </script>
+
+<script id="prevodigr-brand-badge-bfcache-fix">
+(function () {
+  function restoreBrandBadge() {
+    const badge = document.querySelector('.site-brand-badge');
+    if (!badge) return;
+    badge.style.setProperty('display', 'inline-flex', 'important');
+    badge.style.setProperty('visibility', 'visible', 'important');
+    badge.style.setProperty('opacity', '1', 'important');
+    badge.style.setProperty('pointer-events', 'auto', 'important');
+    badge.classList.remove('is-hidden', 'hidden');
+  }
+  document.addEventListener('DOMContentLoaded', restoreBrandBadge);
+  window.addEventListener('pageshow', restoreBrandBadge);
+  window.addEventListener('popstate', restoreBrandBadge);
+  document.addEventListener('visibilitychange', function () {
+    if (!document.hidden) restoreBrandBadge();
+  });
+})();
+</script>
+
 </body>
 </html>
