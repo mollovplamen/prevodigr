@@ -248,5 +248,37 @@ iframe{border:0;width:100%;height:700px;border-radius:10px}
   setLanguage(readInitialLanguage());
 })();
 </script>
+
+<style id="prevodigr-mobile-close-button-fix">
+/* Mobile-only fix: keep the close button fully visible inside the modal. */
+@media (max-width: 600px) {
+  #prevodigrRequestModal {
+    align-items: center !important;
+    justify-content: center !important;
+    padding: max(16px, env(safe-area-inset-top)) 8px max(16px, env(safe-area-inset-bottom)) !important;
+    box-sizing: border-box !important;
+  }
+  #prevodigrRequestModal .pr-card {
+    max-height: calc(100vh - 32px) !important;
+    max-height: calc(100dvh - 32px) !important;
+    position: relative !important;
+    overflow-y: auto !important;
+  }
+  #prevodigrRequestModal .pr-close {
+    position: absolute !important;
+    top: 12px !important;
+    right: 12px !important;
+    z-index: 5 !important;
+    width: 40px !important;
+    height: 40px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    line-height: 1 !important;
+    touch-action: manipulation;
+  }
+}
+</style>
 </body>
 </html>
