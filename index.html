@@ -3191,84 +3191,114 @@ body.pr-modal-open{overflow:hidden}
 </style>
 
 
-<style id="prevodigr-mobile-nav-overlap-fix">
-/* Mobile: keep the PrevodiGR badge and hamburger menu on separate, non-overlapping areas. */
+
+
+
+<style id="prevodigr-mobile-nav-symmetry-v2">
 @media (max-width: 768px) {
   body nav {
     display: grid !important;
-    grid-template-columns: minmax(0, 1fr) auto;
-    grid-template-rows: auto auto;
+    grid-template-columns: minmax(0, 1fr) 48px minmax(0, 1fr);
+    grid-template-rows: 48px auto;
     align-items: center !important;
-    column-gap: 12px !important;
-    row-gap: 12px !important;
+    justify-items: stretch;
+    gap: 12px 10px !important;
+    width: 100%;
     padding: 12px 14px !important;
-    position: relative !important;
     box-sizing: border-box !important;
+    position: relative !important;
   }
   body nav > .site-brand-badge {
     grid-column: 1;
     grid-row: 1;
     justify-self: start;
     align-self: center;
-    position: relative !important;
+    position: static !important;
     inset: auto !important;
     transform: none !important;
     margin: 0 !important;
     max-width: 100% !important;
     min-width: 0 !important;
-    z-index: 2 !important;
+    min-height: 42px;
+    padding: 8px 12px !important;
     white-space: nowrap;
+    box-sizing: border-box !important;
+    z-index: 2 !important;
   }
   body nav > .menu-toggle {
     grid-column: 2;
     grid-row: 1;
-    justify-self: end;
+    justify-self: center;
     align-self: center;
-    display: flex !important;
-    position: relative !important;
+    position: static !important;
     inset: auto !important;
     transform: none !important;
     margin: 0 !important;
-    padding: 8px !important;
+    padding: 5px !important;
+    width: 44px !important;
+    height: 44px !important;
     min-width: 44px;
     min-height: 44px;
-    box-sizing: border-box;
+    display: flex !important;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    z-index: 3 !important;
+    box-sizing: border-box !important;
+    z-index: 5 !important;
+  }
+  body nav > .menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 3px 0 !important;
+    border-radius: 3px;
+  }
+  body nav > .global-language-switcher {
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: end;
+    align-self: center;
+    position: static !important;
+    inset: auto !important;
+    transform: none !important;
+    margin: 0 !important;
+    z-index: 4 !important;
   }
   body nav > .nav-links {
     grid-column: 1 / -1;
     grid-row: 2;
     width: 100% !important;
     min-width: 0;
-    box-sizing: border-box;
     margin: 0 !important;
-  }
-  body nav > .global-language-switcher {
-    top: 12px !important;
-    right: 66px !important;
-    transform: none !important;
-    z-index: 4 !important;
-  }
-  body nav > .site-brand-badge::before {
-    pointer-events: none;
+    box-sizing: border-box;
   }
 }
 @media (max-width: 380px) {
   body nav {
-    column-gap: 7px !important;
+    grid-template-columns: minmax(0, 1fr) 44px minmax(0, 1fr);
+    column-gap: 6px !important;
     padding-left: 10px !important;
     padding-right: 10px !important;
   }
   body nav > .site-brand-badge {
     font-size: .78rem !important;
-    padding: 7px 10px !important;
+    padding: 7px 9px !important;
   }
   body nav > .global-language-switcher {
-    right: 62px !important;
+    gap: 2px !important;
+    padding: 3px !important;
+  }
+  body nav > .global-language-switcher .global-language-btn {
+    width: 32px !important;
+    min-width: 32px !important;
+    height: 27px !important;
   }
 }
+</style>
+
+
+<style id="prevodigr-submit-progress">
+#prevodigrTranslationRequest .pr-submit:disabled { opacity:.72!important; cursor:wait!important; }
 </style>
 
 </head>
@@ -4043,11 +4073,30 @@ document.addEventListener('DOMContentLoaded',function(){
   else{status.style.display='none';status.textContent='';}
  });
  form.addEventListener('submit',e=>{
+  // Send the thank-you page in the same language as the request form.
+  const nextField=form.querySelector('[name="_next"]');
+  if(nextField){
+   const target=new URL('https://www.prevodigr.eu/thanks.html');
+   target.searchParams.set('lang',isGreek()?'el':'bg');
+   nextField.value=target.toString();
+  }
+
   const chosen=Array.from(files.files||[]);const total=chosen.reduce((sum,f)=>sum+f.size,0);
   if(!chosen.length){e.preventDefault();status.style.display='block';status.textContent=isGreek()?'Επισυνάψτε τουλάχιστον ένα έγγραφο.':'Прикачете поне един документ.';files.focus();return;}
   if(total>10*1024*1024){e.preventDefault();status.style.display='block';status.textContent=isGreek()?'Το συνολικό μέγεθος των αρχείων πρέπει να είναι έως 10 MB.':'Общият размер на файловете трябва да бъде до 10 MB.';files.focus();return;}
   if(!form.reportValidity()){e.preventDefault();return;}
-  // Native multipart POST is intentional: the provider's AJAX endpoint does not reliably deliver attachments.
+  // Native multipart POST is intentional: it preserves reliable attachment delivery and provider-side spam checks.
+  const submitButton=form.querySelector('button[type="submit"]');
+  if(submitButton){
+   submitButton.disabled=true;
+   submitButton.setAttribute('aria-busy','true');
+   submitButton.style.opacity='.72';
+   submitButton.style.cursor='wait';
+   submitButton.querySelectorAll('span').forEach(span=>{
+    span.dataset.originalText=span.textContent;
+    span.textContent=isGreek()?'Αποστολή…':'Изпращане…';
+   });
+  }
  });
  updateFormLanguage();
 })();
