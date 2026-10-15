@@ -3190,6 +3190,87 @@ body.pr-modal-open{overflow:hidden}
 }
 </style>
 
+
+<style id="prevodigr-mobile-nav-overlap-fix">
+/* Mobile: keep the PrevodiGR badge and hamburger menu on separate, non-overlapping areas. */
+@media (max-width: 768px) {
+  body nav {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-rows: auto auto;
+    align-items: center !important;
+    column-gap: 12px !important;
+    row-gap: 12px !important;
+    padding: 12px 14px !important;
+    position: relative !important;
+    box-sizing: border-box !important;
+  }
+  body nav > .site-brand-badge {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: start;
+    align-self: center;
+    position: relative !important;
+    inset: auto !important;
+    transform: none !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    z-index: 2 !important;
+    white-space: nowrap;
+  }
+  body nav > .menu-toggle {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+    align-self: center;
+    display: flex !important;
+    position: relative !important;
+    inset: auto !important;
+    transform: none !important;
+    margin: 0 !important;
+    padding: 8px !important;
+    min-width: 44px;
+    min-height: 44px;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    z-index: 3 !important;
+  }
+  body nav > .nav-links {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    width: 100% !important;
+    min-width: 0;
+    box-sizing: border-box;
+    margin: 0 !important;
+  }
+  body nav > .global-language-switcher {
+    top: 12px !important;
+    right: 66px !important;
+    transform: none !important;
+    z-index: 4 !important;
+  }
+  body nav > .site-brand-badge::before {
+    pointer-events: none;
+  }
+}
+@media (max-width: 380px) {
+  body nav {
+    column-gap: 7px !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+  body nav > .site-brand-badge {
+    font-size: .78rem !important;
+    padding: 7px 10px !important;
+  }
+  body nav > .global-language-switcher {
+    right: 62px !important;
+  }
+}
+</style>
+
 </head>
 <body>
 <header class="site-header">
