@@ -712,8 +712,11 @@ a:active {
 @media(max-width:768px){
   .ai-assistant-launcher{right:14px;bottom:14px;width:61px;height:61px}
   .ai-assistant-window{
-    left:9px;right:9px;bottom:83px;width:auto;max-width:none;height:min(650px,calc(100vh - 105px));
-    max-height:calc(100vh - 105px);border-radius:18px
+    left:9px;right:9px;
+    top:max(8px, env(safe-area-inset-top));
+    bottom:calc(83px + env(safe-area-inset-bottom));
+    width:auto;max-width:none;height:auto;max-height:none;
+    border-radius:18px
   }
   .ai-assistant-header{padding:13px 14px}
   .ai-assistant-messages{padding:12px 10px}
@@ -724,7 +727,7 @@ a:active {
   .ai-assistant-note{font-size:.57rem}
 }
 @media(max-width:360px){
-  .ai-assistant-window{left:5px;right:5px;bottom:78px}
+  .ai-assistant-window{left:5px;right:5px;bottom:calc(78px + env(safe-area-inset-bottom))}
   .ai-assistant-quick{gap:5px;padding:6px}
   .ai-quick-btn{font-size:.64rem}
 }
